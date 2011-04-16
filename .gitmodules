@@ -16,3 +16,6 @@
 [submodule "drupal/modules/features"]
 	path = drupal/modules/features
 	url = http://git.drupal.org/project/features.git
+[submodule "drupal/modules/views"]
+	path = drupal/modules/views
+	url = http://git.drupal.org/project/views.git
