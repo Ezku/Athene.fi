@@ -25,3 +25,6 @@
 [submodule "drupal/modules/token"]
 	path = drupal/modules/token
 	url = http://git.drupal.org/project/token.git
+[submodule "drupal/modules/site_map"]
+	path = drupal/modules/site_map
+	url = http://git.drupal.org/project/site_map.git
