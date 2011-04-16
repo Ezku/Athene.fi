@@ -13,3 +13,6 @@
 [submodule "drupal/themes/tao"]
 	path = drupal/themes/tao
 	url = http://git.drupal.org/project/tao.git
+[submodule "drupal/modules/features"]
+	path = drupal/modules/features
+	url = http://git.drupal.org/project/features.git
