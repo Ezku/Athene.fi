@@ -3,3 +3,6 @@ nbproject
 
 # Instance specific settings (DB et al)
 drupal/sites/default/settings.php
+
+# Mac OS cruft
+**/.DS_Store
