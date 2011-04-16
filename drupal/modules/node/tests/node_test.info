@@ -1,0 +1,13 @@
+name = "Node module tests"
+description = "Support module for node related testing."
+package = Testing
+version = VERSION
+core = 7.x
+hidden = TRUE
+
+; Information added by drupal.org packaging script on 2011-04-15
+version = "7.x-dev"
+core = "7.x"
+project = "drupal"
+datestamp = "1302869139"
+

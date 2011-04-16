@@ -1,0 +1,13 @@
+name = "Batch API test"
+description = "Support module for Batch API tests."
+package = Testing
+version = VERSION
+core = 7.x
+hidden = TRUE
+
+; Information added by drupal.org packaging script on 2011-04-15
+version = "7.x-dev"
+core = "7.x"
+project = "drupal"
+datestamp = "1302869139"
+

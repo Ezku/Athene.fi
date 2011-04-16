@@ -1,0 +1,15 @@
+name = Filter
+description = Filters content in preparation for display.
+package = Core
+version = VERSION
+core = 7.x
+files[] = filter.test
+required = TRUE
+configure = admin/config/content/formats
+
+; Information added by drupal.org packaging script on 2011-04-15
+version = "7.x-dev"
+core = "7.x"
+project = "drupal"
+datestamp = "1302869139"
+

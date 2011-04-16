@@ -1,0 +1,14 @@
+name = Options
+description = Defines selection, check box and radio button widgets for text and numeric fields.
+package = Core
+version = VERSION
+core = 7.x
+dependencies[] = field
+files[] = options.test
+
+; Information added by drupal.org packaging script on 2011-04-15
+version = "7.x-dev"
+core = "7.x"
+project = "drupal"
+datestamp = "1302869139"
+

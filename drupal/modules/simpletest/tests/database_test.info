@@ -1,0 +1,13 @@
+name = "Database Test"
+description = "Support module for Database layer tests."
+core = 7.x
+package = Testing
+version = VERSION
+hidden = TRUE
+
+; Information added by drupal.org packaging script on 2011-04-15
+version = "7.x-dev"
+core = "7.x"
+project = "drupal"
+datestamp = "1302869139"
+
