@@ -1,0 +1,69 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ----------- THEME INFO ------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+name        = Panels 960gs
+description = A theming nirvana brought to you by the guys at <a href="http://snydertechnologies.com">Snyder Technologies</a>.  Shout out to Earl... The guy that made it all possible.
+screenshot  = screenshot.png
+core        = 7.x
+base theme  = boron
+engine      = phptemplate
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ------------- REGIONS -------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+regions[page_top]           = Page Top
+regions[page_bottom]        = Page Bottom
+regions[content]            = Content
+regions[help]               = Help
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; --------------- LIB ---------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+stylesheets[all][] = lib/reset.css
+stylesheets[all][] = lib/clearfix.css
+stylesheets[all][] = lib/grid.css
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; --------------- CSS ---------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+stylesheets[all][] = css/html.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/styles.css
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ---------------- JS ---------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; NONE
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ------------- PLUGINS -------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles]  = panels/styles
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ------------- OPTIONS -------------- ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; these are the stock options
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; additional theme settings
+settings[breadcrumb_display]   = yes
+settings[breadcrumb_separator] = ' › '
+settings[breadcrumb_home]      = 1
+settings[breadcrumb_trailing]  = 0
+settings[breadcrumb_title]     = 0
+; Information added by drupal.org packaging script on January 1, 1970 - 00:00
+version = "7.x-1.2"
+core = "7.x"
+project = "panels_960gs"
+datestamp = "1296624395"
+

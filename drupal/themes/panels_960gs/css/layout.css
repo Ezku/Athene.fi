@@ -1,0 +1,35 @@
+/* page width
+========================================================== */
+.pagewidth { width: 960px; margin: 0 auto; }
+
+/* panel spacing - fo all the design freaks out there :)
+========================================================== */
+.panel-col       .panel-inner { padding 0; margin: 0 10px 12px 10px; }
+.panel-col-first .panel-inner { padding 0; margin: 0 10px 12px  0px; }
+.panel-col-last  .panel-inner { padding 0; margin: 0  0px 12px 10px; }
+.panel-col-full  .panel-inner { padding 0; margin: 0  0px 12px  0px; }
+
+/* layout of main page items
+========================================================== */
+#page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+  #header {}
+     
+    #header .pagewidth {}
+
+      #navbar {}
+    
+  #main {}
+  
+    #main .pagewidth {}
+    
+      #content {}
+    
+    #footer {}
+    
+      #footer .pagewidth {}

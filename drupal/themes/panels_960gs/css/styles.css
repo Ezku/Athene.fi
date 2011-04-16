@@ -1,0 +1,64 @@
+/* panel admin links
+========================================================= */
+.panel-pane                      { position: relative; }
+.panel-pane .admin-links         { top: 0; right: 0; position: absolute; }
+.panel-pane .admin-links a       { color: #dddddd;}
+.panel-pane .admin-links a:hover { color: #999999;}
+
+
+/* page title, as rendered by Panels
+========================================================= */
+.panel-display .pane-page-title .panel-inner { margin-bottom: 0px;} /* let the h1 tag handle the margin, not the pane */
+
+
+/* system blocks - keep it simple, keep it classy
+========================================================= */
+.panel-display .block-inner {
+  padding: 10px 10px 1px;
+  border: 1px solid #ffffff;
+  background-color: #f8f8f8;
+  box-shadow:         0 1px 3px rgba(0,0,0, .15);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .15);
+  -moz-box-shadow:    0 1px 3px rgba(0,0,0, .15);
+}
+
+.panel-display .block h2 {
+  padding: 0 0 3px;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.panel-display .block .content {
+  font-size: 0.95em;  /* subtly smaller than surrounding content */
+}
+
+/* rounded corners - soft and cuddly
+========================================================= */
+.panel-display .rounded-corners .pane-inner {
+  padding: 15px 15px 5px;
+  background-color: #f8f8f8;
+  border: 1px solid #ffffff;
+  border-radius:             5px;
+  -moz-border-radius:        5px;
+  -webkit-border-radius:     5px;
+  box-shadow:         0 1px 5px rgba(0,0,0, .15),
+                      0 2px 0px rgba(0,0,0, .15);
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0, .15),
+                      0 2px 0px rgba(0,0,0, .15);
+  -moz-box-shadow:    0 1px 5px rgba(0,0,0, .15),
+                      0 2px 0px rgba(0,0,0, .15);
+}
+
+.panel-display .rounded-corners .pane-title {
+  padding: 0 0 3px;
+  color: #404040;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.panel-display .rounded-corners .pane-content {
+  font-size: 0.95em; /* subtly smaller than surrounding content */
+  border-top: none;
+}

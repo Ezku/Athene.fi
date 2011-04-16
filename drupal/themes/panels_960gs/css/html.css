@@ -1,0 +1,105 @@
+/* html & body
+=============================================== */
+body {
+  color: #555555;
+  font: 13px/20px "Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif;
+  background-color: #eeeeee;
+}
+
+/* headings
+=============================================== */
+h1,h2,h3,h4,h5,h6 { 
+  color: #313131;
+  line-height: 1em;
+  text-shadow: 0 1px 1px #ffffff;
+  font-family: "Cambria","Palatino Linotype","Georgia","Times New Roman",serif;
+}
+
+h1 { font-size: 36px;  margin-bottom: 7px; font-weight: 400; }
+h2 { font-size: 22px;  margin-bottom: 5px; font-weight: 400; }
+h3 { font-size: 18px;  margin-bottom: 5px; font-weight: 400; }
+h4 { font-size: 1.0em; margin-bottom: 5px; font-weight: 700; }
+h5 { font-size: 1.0em; margin-bottom: 5px; font-weight: 700; }
+h6 { font-size: 1.0em; margin-bottom: 5px; font-weight: 700; }
+
+/* special classes
+=============================================== */
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { text-align: center; }
+
+.bold     { font-weight: 700; }
+.bolder   { font-weight: 900; }
+
+.small    { font-size: .9em; }
+.smaller  { font-size: .8em; }
+
+.big      { font-size: 1.1em; }
+.bigger   { font-size: 1.2em; }
+
+.shout    { font-size: 70px; }
+
+/* text elements
+=============================================== */
+p           { margin: 0 0 10px; }
+img         { display: block; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus,
+a:hover     { color: #999999; }
+a           { color: #005C8A; text-decoration: underline; }
+
+blockquote  { margin: 1.5em; color: #999999; font-style: italic; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;}
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr,
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre         { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+/* lists
+=============================================== */
+ul, 
+ol          { margin: 5px 0 5px 5px; padding-left: 5px; }
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+ul li,
+ol li       { margin: 0 0 3px 20px; }
+
+li ul,
+li ol       { margin: 0; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+/* tables
+=============================================== */
+table         { margin-bottom: 1.4em; width:100%; }
+th            { font-weight: bold; }
+thead th      { background: #c3d9ff; }
+th,td,caption { padding: 4px 10px 4px 5px; }
+tr.even td    { background: #e5ecf9; }
+tfoot         { font-style: italic; }
+caption       { background: #eee; }
+
+/* success, notice and error boxes
+=============================================== */
+.error,
+.notice,
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.success a  { color: #264409; }
