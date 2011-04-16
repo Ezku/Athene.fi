@@ -19,3 +19,9 @@
 [submodule "drupal/modules/views"]
 	path = drupal/modules/views
 	url = http://git.drupal.org/project/views.git
+[submodule "drupal/modules/pathauto"]
+	path = drupal/modules/pathauto
+	url = http://git.drupal.org/project/pathauto.git
+[submodule "drupal/modules/token"]
+	path = drupal/modules/token
+	url = http://git.drupal.org/project/token.git
