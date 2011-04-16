@@ -1,0 +1,15 @@
+[submodule "drupal/modules/ctools"]
+	path = drupal/modules/ctools
+	url = http://git.drupal.org/project/ctools.git
+[submodule "drupal/modules/panels"]
+	path = drupal/modules/panels
+	url = http://git.drupal.org/project/panels.git
+[submodule "drupal/themes/boron"]
+	path = drupal/themes/boron
+	url = http://git.drupal.org/project/boron.git
+[submodule "drupal/themes/rubik"]
+	path = drupal/themes/rubik
+	url = http://git.drupal.org/project/rubik.git
+[submodule "drupal/themes/tao"]
+	path = drupal/themes/tao
+	url = http://git.drupal.org/project/tao.git
