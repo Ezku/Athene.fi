@@ -578,7 +578,7 @@ class wpdb {
 	function set_prefix( $prefix, $set_table_names = true ) {
 
 		if ( preg_match( '|[^a-z0-9_]|i', $prefix ) )
-			return new WP_Error('invalid_db_prefix', /*WP_I18N_DB_BAD_PREFIX*/'Taulukon etuliite ei kelpaa'/*/WP_I18N_DB_BAD_PREFIX*/);
+			return new WP_Error('invalid_db_prefix', /*WP_I18N_DB_BAD_PREFIX*/'Invalid database prefix'/*/WP_I18N_DB_BAD_PREFIX*/);
 
 		$old_prefix = is_multisite() ? '' : $prefix;
 
@@ -749,14 +749,14 @@ class wpdb {
 
 		if ( !@mysql_select_db( $db, $dbh ) ) {
 			$this->ready = false;
-			$this->bail( sprintf( /*WP_I18N_DB_SELECT_DB*/'<h1>Emme pystyneet valitsemaan tietokantaa</h1>
-<p>Onnistuimme ottamaan yhteyden tietokantapalvelimeen (mikä tarkoittaa että tunnuksesi ja salasanasi on kunnossa) mutta emme saaneet yhteyttä <code>%1$s</code>-tietokantaan.</p>
+			$this->bail( sprintf( /*WP_I18N_DB_SELECT_DB*/'<h1>Can&#8217;t select database</h1>
+<p>We were able to connect to the database server (which means your username and password is okay) but not able to select the <code>%1$s</code> database.</p>
 <ul>
-<li>Onko se varmasti olemassa?</li>
-<li>Onko käyttäjällä <code>%2$s</code> oikeudet tietokannan <code>%1$s</code> käyttöön?</li>
-<li>Joissakin järjestelmissä tietokannan etuliitteenä on käyttäjätunnus, esim. <code>username_%1$s</code>. Voisiko tästä olla kysymys?</li>
+<li>Are you sure it exists?</li>
+<li>Does the user <code>%2$s</code> have permission to use the <code>%1$s</code> database?</li>
+<li>On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?</li>
 </ul>
-<p>Jos et tiedä miten tietokanta-asetuksia muutetaan, <strong>ota yhteys palveluntarjoajaan</strong>. Jos mikään muu ei auta, saatat löytää apua <a href="http://fi.forums.wordpress.org/">WordPress tukifoorumeilta</a>.</p>'/*/WP_I18N_DB_SELECT_DB*/, $db, $this->dbuser ), 'db_select_fail' );
+<p>If you don\'t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href="http://wordpress.org/support/">WordPress Support Forums</a>.</p>'/*/WP_I18N_DB_SELECT_DB*/, $db, $this->dbuser ), 'db_select_fail' );
 			return;
 		}
 	}
@@ -927,9 +927,9 @@ class wpdb {
 			return false;
 
 		if ( $caller = $this->get_caller() )
-			$error_str = sprintf( /*WP_I18N_DB_QUERY_ERROR_FULL*/'WordPress-tietokannan virhe %1$s kyselylle %2$s Tekijä: %3$s'/*/WP_I18N_DB_QUERY_ERROR_FULL*/, $str, $this->last_query, $caller );
+			$error_str = sprintf( /*WP_I18N_DB_QUERY_ERROR_FULL*/'WordPress database error %1$s for query %2$s made by %3$s'/*/WP_I18N_DB_QUERY_ERROR_FULL*/, $str, $this->last_query, $caller );
 		else
-			$error_str = sprintf( /*WP_I18N_DB_QUERY_ERROR*/'WordPress-tietokannan virhe %1$s kyselylle %2$s'/*/WP_I18N_DB_QUERY_ERROR*/, $str, $this->last_query );
+			$error_str = sprintf( /*WP_I18N_DB_QUERY_ERROR*/'WordPress database error %1$s for query %2$s'/*/WP_I18N_DB_QUERY_ERROR*/, $str, $this->last_query );
 
 		if ( function_exists( 'error_log' )
 			&& ( $log_file = @ini_get( 'error_log' ) )
@@ -1039,16 +1039,16 @@ class wpdb {
 		}
 
 		if ( !$this->dbh ) {
-			$this->bail( sprintf( /*WP_I18N_DB_CONN_ERROR*/'
-<h1>Virhe tietokantayhteydessä</h1>
-<p>Tämä voi johtua joko virheellisestä käyttäjänimestä ja salasanasta <code>wp-config.php</code>-tiedostossa tai me emme voi yhdistää palvelimeen <code>%s</code>. Tietokantapalvelimesi on mahdollisesti kaatunut.</p>
+			$this->bail( sprintf( /*WP_I18N_DB_CONN_ERROR*/"
+<h1>Error establishing a database connection</h1>
+<p>This either means that the username and password information in your <code>wp-config.php</code> file is incorrect or we can't contact the database server at <code>%s</code>. This could mean your host's database server is down.</p>
 <ul>
-	<li>Oletko varma, että käyttäjänimi ja salasana ovat oikeita?</li>
-	<li>Oletko varmasti syöttänyt oikein palvelimen nimen?</li>
-	<li>Oletko varma, että palvelimesi ei ole kaatunut?</li>
+	<li>Are you sure you have the correct username and password?</li>
+	<li>Are you sure that you have typed the correct hostname?</li>
+	<li>Are you sure that the database server is running?</li>
 </ul>
-<p>Mikäli et ole varma mitä nämä tarkoittavat, ota yhteys palveluntarjoajaasi. Mikäli tarvitset vielä lisäapua tutustu <a href=\'http://fi.forums.wordpress.org/\'>WordPressin tukifoorumeihin</a>.</p>
-'/*/WP_I18N_DB_CONN_ERROR*/, $this->dbhost ), 'db_connect_fail' );
+<p>If you're unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href='http://wordpress.org/support/'>WordPress Support Forums</a>.</p>
+"/*/WP_I18N_DB_CONN_ERROR*/, $this->dbhost ), 'db_connect_fail' );
 
 			return;
 		}
@@ -1325,7 +1325,7 @@ class wpdb {
 		} elseif ( $output == ARRAY_N ) {
 			return $this->last_result[$y] ? array_values( get_object_vars( $this->last_result[$y] ) ) : null;
 		} else {
-			$this->print_error(/*WP_I18N_DB_GETROW_ERROR*/' $db->get_row(string query, output type, int offset) - Ulostulon tyyppi pitää olla jokin seuraavista: OBJECT, ARRAY_A, ARRAY_N'/*/WP_I18N_DB_GETROW_ERROR*/);
+			$this->print_error(/*WP_I18N_DB_GETROW_ERROR*/" \$db->get_row(string query, output type, int offset) -- Output type must be one of: OBJECT, ARRAY_A, ARRAY_N"/*/WP_I18N_DB_GETROW_ERROR*/);
 		}
 	}
 

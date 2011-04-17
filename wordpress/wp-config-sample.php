@@ -1,88 +1,88 @@
 <?php
-/** 
- * WordPressin perusasetukset.
+/**
+ * The base configurations of the WordPress.
  *
- * Tämä tiedosto sisältää seuraavat asetukset: MySQL-asetukset, Tietokantataulun etuliite,
- * henkilökohtaiset salausavaimet (Secret Keys), WordPressin kieli, ja ABSPATH. Löydät lisätietoja
- * Codex-sivulta {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php}. Saat MySQL-asetukset palveluntarjoajaltasi.
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, WordPress Language, and ABSPATH. You can find more information
+ * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
+ * wp-config.php} Codex page. You can get the MySQL settings from your web host.
  *
- * Automaattinen wp-config.php-tiedoston luontityökalu käyttää tätä tiedostoa
- * asennuksen yhteydessä. Sinun ei tarvitse käyttää web-asennusta, vaan voit 
- * tallentaa tämän tiedoston nimellä "wp-config.php" ja muokata allaolevia arvoja.
+ * This file is used by the wp-config.php creation script during the
+ * installation. You don't have to use the web site, you can just copy this file
+ * to "wp-config.php" and fill in the values.
  *
  * @package WordPress
  */
 
-// ** MySQL asetukset - Saat nämä tiedot palveluntarjoajaltasi ** //
-/** WordPressin käyttämän tietokannan nimi */
-define('DB_NAME', 'tietokannan_nimi');
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'database_name_here');
 
-/** MySQL-tietokannan käyttäjätunnus */
-define('DB_USER', 'tietokannan_tunnus');
+/** MySQL database username */
+define('DB_USER', 'username_here');
 
-/** MySQL-tietokannan salasana */
-define('DB_PASSWORD', 'tietokannan_salasana');
+/** MySQL database password */
+define('DB_PASSWORD', 'password_here');
 
-/** MySQL-palvelin */
+/** MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Tietokantatauluissa käytettävä merkistö. */
+/** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Älä muuta tätä jos et ole varma. */
-define('DB_COLLATE', 'utf8_swedish_ci');
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
  *
- * Muuta nämä omiksi uniikeiksi lauseiksi.
- * Voit luoda nämä käyttämällä {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org palvelua}
- * Voit muuttaa nämä koska tahansa. Kaikki käyttäjät joutuvat silloin kirjautumaan uudestaan.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'oma uniikki lauseesi');
-define('SECURE_AUTH_KEY',  'oma uniikki lauseesi');
-define('LOGGED_IN_KEY',    'oma uniikki lauseesi');
-define('NONCE_KEY',        'oma uniikki lauseesi');
-define('AUTH_SALT',        'oma uniikki lauseesi');
-define('SECURE_AUTH_SALT', 'oma uniikki lauseesi');
-define('LOGGED_IN_SALT',   'oma uniikki lauseesi');
-define('NONCE_SALT',       'oma uniikki lauseesi');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
+
 /**#@-*/
 
 /**
- * WordPressin tietokantataulujen etuliite (Table Prefix).
+ * WordPress Database Table prefix.
  *
- * Samassa tietokannassa voi olla useampi WordPress-asennus, jos annat jokaiselle
- * eri tietokantataulujen etuliitteen. Sallittuja merkkejä ovat numerot, kirjaimet
- * ja alaviiva _.
- *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
 
 /**
- * WordPressin kieli.
+ * WordPress Localized Language, defaults to English.
  *
- * Muuta tämä WordPressin kieliasetusten muuttamiseksi. Vastaavasti nimetty 
- * kielitiedosto pitää asentaa hakemistoon wp-content/languages. Esimerkiksi,
- * asenna de.mo wp-content/languages -hakemistoon ja muuta WPLANG:in arvoksi 'de'
- * käyttääksesi WordPressiä saksan kielellä.
+ * Change this to localize WordPress. A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
+ * language support.
  */
-define ('WPLANG', 'fi');
+define('WPLANG', '');
 
 /**
- * Kehittäjille: WordPressin debug-moodi.
+ * For developers: WordPress debugging mode.
  *
- * Muuta tämän arvoksi true jos haluat nähdä kehityksen ajan debug-ilmoitukset
- * Tämä on erittäin suositeltavaa lisäosien ja teemojen kehittäjille.
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
  */
 define('WP_DEBUG', false);
 
-/* Siinä kaikki, älä jatka pidemmälle! */
+/* That's all, stop editing! Happy blogging. */
 
-/** WordPress absolute path to the Wordpress directory. */
+/** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 

@@ -46,23 +46,23 @@ require_once(ABSPATH . WPINC . '/class-wp-error.php');
 require_once(ABSPATH . WPINC . '/version.php');
 
 if (!file_exists(ABSPATH . 'wp-config-sample.php'))
-	wp_die('Tarvitsen wp-config-sample.php -tiedoston lähtökohdaksi. Siirrä tämä tiedosto uudelleen WordPressin asennuskansioosi.');
+	wp_die('Sorry, I need a wp-config-sample.php file to work from. Please re-upload this file from your WordPress installation.');
 
 $configFile = file(ABSPATH . 'wp-config-sample.php');
 
 // Check if wp-config.php has been created
 if (file_exists(ABSPATH . 'wp-config.php'))
-	wp_die("<p>Asetustiedosto 'wp-config.php' on jo olemassa. Jos haluat nollata tiedoston sisältämät asetukset, poista se ensin. Voit sitten yrittää <a href='install.php'>asennusta uudelleen</a>.</p>");
+	wp_die("<p>The file 'wp-config.php' already exists. If you need to reset any of the configuration items in this file, please delete it first. You may try <a href='install.php'>installing now</a>.</p>");
 
 // Check if wp-config.php exists above the root directory but is not part of another install
 if (file_exists(ABSPATH . '../wp-config.php') && ! file_exists(ABSPATH . '../wp-settings.php'))
-	wp_die("<p>Tiedosto 'wp-config.php' on jo olemassa ylemmässä hakemistossa. Jos haluat nollata tiedoston sisältämät asetukset, poista se ensin. Voit sitten yrittää <a href='install.php'>asennusta uudelleen</a>.</p>");
+	wp_die("<p>The file 'wp-config.php' already exists one level above your WordPress installation. If you need to reset any of the configuration items in this file, please delete it first. You may try <a href='install.php'>installing now</a>.</p>");
 
 if ( version_compare( $required_php_version, phpversion(), '>' ) )
-	wp_die( sprintf( /*WP_I18N_OLD_PHP*/'Palvelimellasi on PHP-versio %1$s mutta WordPress vaatii ainakin version %2$s.'/*/WP_I18N_OLD_PHP*/, phpversion(), $required_php_version ) );
+	wp_die( sprintf( /*WP_I18N_OLD_PHP*/'Your server is running PHP version %1$s but WordPress requires at least %2$s.'/*/WP_I18N_OLD_PHP*/, phpversion(), $required_php_version ) );
 
 if ( !extension_loaded('mysql') && !file_exists(ABSPATH . 'wp-content/db.php') )
-	wp_die( /*WP_I18N_OLD_MYSQL*/'PHP-asennuksestasi vaikuttaa puuttuvan MySQL-laajennus, joka on WordPressille välttämätön. Asenna se ensin.'/*/WP_I18N_OLD_MYSQL*/ );
+	wp_die( /*WP_I18N_OLD_MYSQL*/'Your PHP installation appears to be missing the MySQL extension which is required by WordPress.'/*/WP_I18N_OLD_MYSQL*/ );
 
 if (isset($_GET['step']))
 	$step = $_GET['step'];
@@ -84,7 +84,7 @@ function display_header() {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>WordPress &rsaquo; Asetustiedosto</title>
+<title>WordPress &rsaquo; Setup Configuration File</title>
 <link rel="stylesheet" href="css/install.css" type="text/css" />
 
 </head>
@@ -98,18 +98,18 @@ switch($step) {
 		display_header();
 ?>
 
-<p>Tervetuloa käyttämään WordPressiä. Tarvitset seuraavat tietokantaan liittyvät tiedot ennen jatkamista.</p>
+<p>Welcome to WordPress. Before getting started, we need some information on the database. You will need to know the following items before proceeding.</p>
 <ol>
-	<li>Tietokannan nimi</li>
-	<li>Tietokannan käyttäjänimi</li>
-	<li>Tietokannan salasana</li>
-	<li>Tietokantapalvelin</li>
-	<li>Tietokantataulujen etuliite (jos haluat tehdä useamman WordPress-asennuksen samaan tietokantaan) </li>
+	<li>Database name</li>
+	<li>Database username</li>
+	<li>Database password</li>
+	<li>Database host</li>
+	<li>Table prefix (if you want to run more than one WordPress in a single database) </li>
 </ol>
-<p><strong>Jos tämä automaattinen asetustyökalu ei jostain syystä toimi, ei hätää. Voit myös avata tiedoston <code>wp-config-sample.php</code> tekstieditoriin, täyttää tarvittavat tiedot ja tallentaa sen nimellä <code>wp-config.php</code>. </strong></p>
-<p>Olet saanut todennäköisesti yllämainitut tiedot palveluntarjoajaltasi. Muussa tapauksessa sinun pitää olla ensin palveluntarjoajaasi yhteydessä tietojen saamiseksi. Jos olet valmis&hellip;</p>
+<p><strong>If for any reason this automatic file creation doesn't work, don't worry. All this does is fill in the database information to a configuration file. You may also simply open <code>wp-config-sample.php</code> in a text editor, fill in your information, and save it as <code>wp-config.php</code>. </strong></p>
+<p>In all likelihood, these items were supplied to you by your Web Host. If you do not have this information, then you will need to contact them before you can continue. If you&#8217;re all ready&hellip;</p>
 
-<p class="step"><a href="setup-config.php?step=1<?php if ( isset( $_GET['noapi'] ) ) echo '&amp;noapi'; ?>" class="button">Jatketaan!</a></p>
+<p class="step"><a href="setup-config.php?step=1<?php if ( isset( $_GET['noapi'] ) ) echo '&amp;noapi'; ?>" class="button">Let&#8217;s go!</a></p>
 <?php
 	break;
 
@@ -117,36 +117,36 @@ switch($step) {
 		display_header();
 	?>
 <form method="post" action="setup-config.php?step=2">
-	<p>Kirjoita alle tietokannan tiedot. Jos et ole varma yksityiskohdista, ota yhteys palveluntarjoajaasi.</p>
+	<p>Below you should enter your database connection details. If you're not sure about these, contact your host. </p>
 	<table class="form-table">
 		<tr>
-			<th scope="row"><label for="dbname">Tietokannan nimi</label></th>
+			<th scope="row"><label for="dbname">Database Name</label></th>
 			<td><input name="dbname" id="dbname" type="text" size="25" value="wordpress" /></td>
-			<td>Sen tietokannan nimi, jota haluat käyttää WordPressin kanssa. </td>
+			<td>The name of the database you want to run WP in. </td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="uname">Tunnus</label></th>
+			<th scope="row"><label for="uname">User Name</label></th>
 			<td><input name="uname" id="uname" type="text" size="25" value="username" /></td>
-			<td>MySQL-käyttäjätunnuksesi</td>
+			<td>Your MySQL username</td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="pwd">Salasana</label></th>
+			<th scope="row"><label for="pwd">Password</label></th>
 			<td><input name="pwd" id="pwd" type="text" size="25" value="password" /></td>
-			<td>...ja MySQL-salasanasi.</td>
+			<td>...and MySQL password.</td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="dbhost">Tietokantapalvelin</label></th>
+			<th scope="row"><label for="dbhost">Database Host</label></th>
 			<td><input name="dbhost" id="dbhost" type="text" size="25" value="localhost" /></td>
-			<td>Jos <code>localhost</code> ei toimi, sinun pitäisi saada tämä tieto palveluntarjoajaltasi.</td>
+			<td>You should be able to get this info from your web host, if <code>localhost</code> does not work.</td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="prefix">Tietokantataulujen etuliite</label></th>
+			<th scope="row"><label for="prefix">Table Prefix</label></th>
 			<td><input name="prefix" id="prefix" type="text" id="prefix" value="wp_" size="25" /></td>
-			<td>Jos haluat tehdä useamman WordPress-asennuksen samaan tietokantaan, muuta tämä joksikin muuksi.</td>
+			<td>If you want to run multiple WordPress installations in a single database, change this.</td>
 		</tr>
 	</table>
 	<?php if ( isset( $_GET['noapi'] ) ) { ?><input name="noapi" type="hidden" value="true" /><?php } ?>
-	<p class="step"><input name="submit" type="submit" value="Tallenna" class="button" /></p>
+	<p class="step"><input name="submit" type="submit" value="Submit" class="button" /></p>
 </form>
 <?php
 	break;
@@ -162,7 +162,7 @@ switch($step) {
 
 	// Validate $prefix: it can only contain letters, numbers and underscores
 	if ( preg_match( '|[^a-z0-9_]|i', $prefix ) )
-		wp_die( /*WP_I18N_BAD_PREFIX*/'<strong>VIRHE</strong>: "Tietokantataulun etuliite" voi sisältää vain numeroita, kirjaimia ja alaviivan.'/*/WP_I18N_BAD_PREFIX*/ );
+		wp_die( /*WP_I18N_BAD_PREFIX*/'<strong>ERROR</strong>: "Table Prefix" can only contain numbers, letters, and underscores.'/*/WP_I18N_BAD_PREFIX*/ );
 
 	// Test the db connection.
 	/**#@+
@@ -217,13 +217,13 @@ switch($step) {
 	foreach ($configFile as $line_num => $line) {
 		switch (substr($line,0,16)) {
 			case "define('DB_NAME'":
-				$configFile[$line_num] = str_replace("tietokannan_nimi", $dbname, $line);
+				$configFile[$line_num] = str_replace("database_name_here", $dbname, $line);
 				break;
 			case "define('DB_USER'":
-				$configFile[$line_num] = str_replace("'tietokannan_tunnus'", "'$uname'", $line);
+				$configFile[$line_num] = str_replace("'username_here'", "'$uname'", $line);
 				break;
 			case "define('DB_PASSW":
-				$configFile[$line_num] = str_replace("'tietokannan_salasana'", "'$passwrd'", $line);
+				$configFile[$line_num] = str_replace("'password_here'", "'$passwrd'", $line);
 				break;
 			case "define('DB_HOST'":
 				$configFile[$line_num] = str_replace("localhost", $dbhost, $line);
@@ -239,22 +239,22 @@ switch($step) {
 			case "define('SECURE_A":
 			case "define('LOGGED_I":
 			case "define('NONCE_SA":
-				$configFile[$line_num] = str_replace('oma uniikki lauseesi', $secret_keys[$key++], $line );
+				$configFile[$line_num] = str_replace('put your unique phrase here', $secret_keys[$key++], $line );
 				break;
 		}
 	}
 	if ( ! is_writable(ABSPATH) ) :
 		display_header();
 ?>
-<p>En pysty kirjoittamaan <code>wp-config.php</code>-tiedostoon.</p>
-<p>Voit luoda tiedoston <code>wp-config.php</code> käsin ja liittää allaolevan tekstin siihen.</p>
+<p>Sorry, but I can't write the <code>wp-config.php</code> file.</p>
+<p>You can create the <code>wp-config.php</code> manually and paste the following text into it.</p>
 <textarea cols="98" rows="15" class="code"><?php
 		foreach( $configFile as $line ) {
 			echo htmlentities($line, ENT_COMPAT, 'UTF-8');
 		}
 ?></textarea>
-<p>Kun olet saanut sen tehtyä, napsauta "Asenna WordPress."</p>
-<p class="step"><a href="install.php" class="button">Asenna WordPress</a></p>
+<p>After you've done that, click "Run the install."</p>
+<p class="step"><a href="install.php" class="button">Run the install</a></p>
 <?php
 	else :
 		$handle = fopen(ABSPATH . 'wp-config.php', 'w');
@@ -265,9 +265,9 @@ switch($step) {
 		chmod(ABSPATH . 'wp-config.php', 0666);
 		display_header();
 ?>
-<p>Mainiota! Selvisit tähän asti, WordPress voi nyt ottaa yhteyden tietokantaasi. Jos olet valmis&hellip;</p>
+<p>All right sparky! You've made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;</p>
 
-<p class="step"><a href="install.php" class="button">Asenna WordPress</a></p>
+<p class="step"><a href="install.php" class="button">Run the install</a></p>
 <?php
 	endif;
 	break;
