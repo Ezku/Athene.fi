@@ -45,6 +45,7 @@
     	  });
     	  
     	  $("#flickrphotos .photoset a").click(function(e) {
+    	    $(this).parents('.photoset').toggleClass('active');
     	    var el = $(this).parents('.photoset').children(".photos");
     	    el.toggleClass("hide");
     	    if (!el.hasClass("hide")) {
@@ -89,6 +90,7 @@
   				}
   			});
         el.removeClass("hide");
+        el.parents('.photoset').addClass('active');
         
       });
     },
@@ -137,11 +139,14 @@
   #flickrphotos {
   }
   .photoset {
-    background-color: #8e8;
+    background-color: #6c6;
     clear: both;
   }
   .photosettitle {
-    background-color: rgba(0,0,0,0.1);
+    
+  }
+  .photoset.active {
+    background-color: #7d7;
   }
   .photo {
     margin: 5px;
