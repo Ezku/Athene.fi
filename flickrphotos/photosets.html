@@ -26,8 +26,12 @@
     	+ "&jsoncallback=?"
     	+ paramsString;
     	
-	  	//console.log(url); 
 	  	return url;
+    },
+    log: function(msg) {
+      if (window.console && typeof console.log == "function") {
+        console.log(msg);
+      }
     },
     getPhotosets: function() {
       var url = flickrbrowser.getQueryString("flickr.photosets.getList", {user_id: flickrbrowser.user_id});
@@ -35,7 +39,6 @@
       flickrbrowser.showSpinner(true);
       $.getJSON(url,function(data){
     	  flickrbrowser.showSpinner(false);
-    	  //console.log(data);
     	  $("#flickrphotos").html("");
     	  $.each(data.photosets.photoset, function() {
     	    var title = this.title._content;
@@ -56,7 +59,6 @@
     	  });
     	  
     	  if (flickrbrowser.explodeHash().photoset) {
-    	    console.debug("Getting photoset according to hash")
     	    flickrbrowser.getPhotoset(flickrbrowser.explodeHash().photoset);
     	  }
   	  });
@@ -75,10 +77,8 @@
         });
         photosetString += '<div style="clear: both;"></div>';
         if (!el) {
-          console.log("Getting el...");
           el = $('#photoset'+id + " .photos");
         } 
-        console.log(el);
         el.append(photosetString);
         
         el.find("div a").fancybox({
@@ -112,10 +112,10 @@
       $.each(hashParams, function(i, param) {
         var keyValue = param.split("=");
         if (keyValue.length == 2) {
-          console.debug('Adding key "' + keyValue[0] + '" with value "'+keyValue[1]+'"')
+          flickrbrowser.log('Adding key "' + keyValue[0] + '" with value "'+keyValue[1]+'"')
           processedParams[keyValue[0]] = keyValue[1];
         } else {
-          console.warn("Illegal hash param: "+param);
+          flickrbrowser.log("Illegal hash param: "+param);
         }
       });
         
