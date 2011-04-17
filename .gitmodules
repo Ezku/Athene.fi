@@ -28,3 +28,15 @@
 [submodule "drupal/modules/site_map"]
 	path = drupal/modules/site_map
 	url = http://git.drupal.org/project/site_map.git
+[submodule "drupal/modules/context"]
+	path = drupal/modules/context
+	url = http://git.drupal.org/project/context.git
+[submodule "drupal/modules/calendar"]
+	path = drupal/modules/calendar
+	url = http://git.drupal.org/project/calendar.git
+[submodule "drupal/modules/date"]
+	path = drupal/modules/date
+	url = http://git.drupal.org/project/date.git
+[submodule "drupal/modules/advanced_help"]
+	path = drupal/modules/advanced_help
+	url = http://git.drupal.org/project/advanced_help.git
