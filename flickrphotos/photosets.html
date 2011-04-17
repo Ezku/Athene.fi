@@ -79,6 +79,7 @@
         if (!el) {
           el = $('#photoset'+id + " .photos");
         } 
+        el.html("");
         el.append(photosetString);
         
         el.find("div a").fancybox({
