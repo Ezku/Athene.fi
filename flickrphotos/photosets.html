@@ -38,14 +38,20 @@
       
       flickrbrowser.showSpinner(true);
       $.getJSON(url,function(data){
+        flickrbrowser.log(data);
     	  flickrbrowser.showSpinner(false);
     	  $("#flickrphotos").html("");
-    	  $.each(data.photosets.photoset, function() {
-    	    var title = this.title._content;
-    	    $("#flickrphotos").append("<div id=\"photoset"+this.id+"\" class=\"photoset\" data-photoset-id=\"" + this.id + "\">"
-    	      + "<div class=\"photosettitle\"><a href=\"#\">" + title + "</a></div>"
+    	  $.each(data.photosets.photoset, function(i, val) {
+    	    var title = val.title._content;
+    	    $("#flickrphotos").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
+    	      + "<div class=\"photosettitle\"><a href=\"#\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
     	      + "<div class=\"photos hide\"></div>"
     	      + "</div>");
+    	    $.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
+    	      flickrbrowser.log(data);
+    	      $("#photoset"+val.id + " img.primary").attr('src', flickrbrowser.getPhotoURL(data.photo, "thumbnail"));
+    	    });
+    	    var img = this.primary;
     	  });
     	  
     	  $("#flickrphotos .photoset a").click(function(e) {
@@ -54,6 +60,8 @@
     	    el.toggleClass("hide");
     	    if (!el.hasClass("hide")) {
     	      flickrbrowser.getPhotoset($(this).parents('.photoset').attr('data-photoset-id'), el);
+    	    } else {
+    	      flickrbrowser.setHash({}); // empty hash
     	    }
     	    e.preventDefault();
     	  });
@@ -144,8 +152,9 @@
     background-color: #6c6;
     clear: both;
   }
-  .photosettitle {
-    
+  .photosettitle:hover {
+    background-color: #7d7;
+    cursor: pointer;
   }
   .photoset.active {
     background-color: #7d7;
