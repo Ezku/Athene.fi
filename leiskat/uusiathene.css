@@ -1,0 +1,169 @@
+/*
+ Title: Informaatioverkostojen kilta Athene ry:n nettisivut
+ Date: 2011-04-17
+ Authors: Petteri Noponen, Eevert Saukkokoski, Pyry Kröger, Otto Ebeling, Otso Hannula
+*/
+
+
+/* --- Body --- */
+
+body {
+  background-color: #777777; /* Footer color */
+}
+
+#content-wrapper {
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+
+/* --- Header --- */
+
+#header-container {
+  background-color: #00c000;
+}
+
+header {
+  position: relative;
+}
+
+h1#logo {
+  display: block;
+  width: 300px;
+  border: 1px solid black; /* DEBUG */
+}
+
+h1#logo .korvaus {
+  display: none;
+}
+
+header h1#logo {
+  background: url("athene-logo.png") no-repeat;
+  height: 50px;
+}
+
+header h1#logo a {
+  display: block;
+  width: 300px;
+  height: 50px;
+}
+
+header#frontpage-header h1#logo {
+  background: url("athene-logo-frontpage.png") no-repeat;
+  height: 100px;
+}
+
+header#frontpage-header h1#logo a {
+  display: block;
+  width: 300px;
+  height: 100px;
+}
+
+
+/* --- Footer --- */
+
+#footer-container {
+  background-color: #777777;
+  clear: both;
+  color: #dddddd;
+  padding: 10px 0 30px;
+}
+
+footer {
+  
+}
+
+
+/* --- Navigation --- */
+
+#main-navigation {
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#main-navigation ul {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+#main-navigation ul > li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#main-navigation a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+#main-navigation a.selected {
+  border-bottom: 2px solid #000;
+}
+
+#main-navigation a:active {
+  color: #555;
+}
+
+#main-navigation a:hover {
+  border-bottom: 2px solid #555;
+}
+
+
+/* --- Footer sitemap --- */
+
+.sitemap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemap li {
+  margin: 0;
+  padding: 0;
+}
+
+.sitemap a.mainlink {
+  font-weight: bold;
+}
+
+
+/* --- Frontpage layout --- */
+
+.frontpage-box {
+  background-color: #ddd;
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+#frontpage-intro {
+  background-color: #ddd;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+/* --- Subnavi layout --- */
+
+.subnavi-box {
+  background-color: #cfc;
+}
+
+#subnavi-wrapper {
+  background-color: #ddd;
+  padding-top: 10px;
+}
+
+#subnavi-content .subnavi-box {
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+#subnavi-small .subnavi-box {
+  height: 50px;
+  margin-bottom: 10px;
+}
