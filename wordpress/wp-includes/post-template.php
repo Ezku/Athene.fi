@@ -529,10 +529,13 @@ function get_body_class( $class = '' ) {
 			$classes[] = 'post-type-paged-' . $page;
 	}
 
-	if ( !empty( $class ) ) {
+	if ( ! empty( $class ) ) {
 		if ( !is_array( $class ) )
 			$class = preg_split( '#\s+#', $class );
 		$classes = array_merge( $classes, $class );
+	} else {
+		// Ensure that we always coerce class to being an array.
+		$class = array();
 	}
 
 	$classes = array_map( 'esc_attr', $classes );
@@ -1100,9 +1103,8 @@ class Walker_PageDropdown extends Walker {
 		if ( $page->ID == $args['selected'] )
 			$output .= ' selected="selected"';
 		$output .= '>';
-		$title = esc_html($page->post_title);
 		$title = apply_filters( 'list_pages', $page->post_title );
-		$output .= "$pad$title";
+		$output .= $pad . esc_html( $title );
 		$output .= "</option>\n";
 	}
 }
@@ -1243,7 +1245,7 @@ function is_page_template($template = '') {
 
 	// We have no argument passed so just see if a page_template has been specified
 	if ( empty( $template ) ) {
-		if (!empty( $page_template ) ) {
+		if ( !empty( $page_template ) and ( 'default' != $page_template ) ) {
 			return true;
 		}
 	} elseif ( $template == $page_template) {
@@ -1349,7 +1351,7 @@ function wp_list_post_revisions( $post_id = 0, $args = null ) {
 	if ( $parent )
 		array_unshift( $revisions, $post );
 
-	$rows = '';
+	$rows = $right_checked = '';
 	$class = false;
 	$can_edit_post = current_user_can( 'edit_post', $post->ID );
 	foreach ( $revisions as $revision ) {
