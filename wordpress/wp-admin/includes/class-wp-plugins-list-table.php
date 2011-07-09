@@ -9,7 +9,7 @@
  */
 class WP_Plugins_List_Table extends WP_List_Table {
 
-	function WP_Plugins_List_Table() {
+	function __construct() {
 		global $status, $page;
 
 		$default_status = get_user_option( 'plugins_last_view' );
@@ -21,13 +21,17 @@ class WP_Plugins_List_Table extends WP_List_Table {
 		if ( $status != $default_status && 'search' != $status )
 			update_user_meta( get_current_user_id(), 'plugins_last_view', $status );
 
+
+		if ( isset($_REQUEST['s']) )
+			$_SERVER['REQUEST_URI'] = add_query_arg('s', stripslashes($_REQUEST['s']) );
+
 		$page = $this->get_pagenum();
 
-		parent::WP_List_Table( array(
+		parent::__construct( array(
 			'plural' => 'plugins',
 		) );
 	}
-	
+
 	function get_table_classes() {
 		return array( 'widefat', $this->_args['plural'] );
 	}
@@ -132,7 +136,7 @@ class WP_Plugins_List_Table extends WP_List_Table {
 			uasort( $this->items, array( &$this, '_order_callback' ) );
 		}
 
-		$plugins_per_page = $this->get_items_per_page( str_replace( '-', '_', $screen->id . '_per_page' ) );
+		$plugins_per_page = $this->get_items_per_page( str_replace( '-', '_', $screen->id . '_per_page' ), 999 );
 
 		$start = ( $page - 1 ) * $plugins_per_page;
 
@@ -193,13 +197,6 @@ class WP_Plugins_List_Table extends WP_List_Table {
 
 	function get_sortable_columns() {
 		return array();
-	}
-
-	function display_tablenav( $which ) {
-		global $status;
-
-		if ( !in_array( $status, array( 'mustuse', 'dropins' ) ) )
-			parent::display_tablenav( $which );
 	}
 
 	function get_views() {
@@ -286,11 +283,19 @@ class WP_Plugins_List_Table extends WP_List_Table {
 	function extra_tablenav( $which ) {
 		global $status;
 
-		if ( 'recently_activated' == $status ) { ?>
-			<div class="alignleft actions">
-				<?php submit_button( __( 'Clear List' ), 'secondary', 'clear-recent-list', false ); ?>
-			</div>
-		<?php }
+		if ( ! in_array($status, array('recently_activated', 'mustuse', 'dropins') ) )
+			return;
+
+		echo '<div class="alignleft actions">';
+
+		if ( 'recently_activated' == $status )
+			submit_button( __( 'Clear List' ), 'secondary', 'clear-recent-list', false );
+		elseif ( 'top' == $which && 'mustuse' == $status )
+			echo '<p>' . sprintf( __( 'Files in the <code>%s</code> directory are executed automatically.' ), str_replace( ABSPATH, '/', WPMU_PLUGIN_DIR ) ) . '</p>';
+		elseif ( 'top' == $which && 'dropins' == $status )
+			echo '<p>' . sprintf( __( 'Drop-ins are advanced plugins in the <code>%s</code> directory that replace WordPress functionality when present.' ), str_replace( ABSPATH, '', WP_CONTENT_DIR ) ) . '</p>';
+
+		echo '</div>';
 	}
 
 	function current_action() {

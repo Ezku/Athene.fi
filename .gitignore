@@ -5,7 +5,7 @@ nbproject
 drupal/sites/default/settings.php
 
 # Mac OS cruft
-**/.DS_Store
+*.DS_Store
 
 # Wordpress config
 wordpress/wp-config.php
