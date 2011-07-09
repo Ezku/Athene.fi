@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Athene
  */
 
 if ( ! function_exists( 'toolbox_comment' ) ) :

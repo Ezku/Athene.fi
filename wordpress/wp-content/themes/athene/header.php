@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Athene
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
