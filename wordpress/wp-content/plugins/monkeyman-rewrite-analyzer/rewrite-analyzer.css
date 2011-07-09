@@ -1,0 +1,50 @@
+.regexgroup, .regexgroup-target
+{
+    color: #21759B;
+}
+
+.regexgroup, .queryvalue
+{
+    font-weight: bold;
+}
+
+.queryvar-unread
+{
+    color: red;
+    text-decoration: line-through;
+}
+
+.regex-repeater-target.highlight
+{
+    text-decoration: underline;
+}
+
+#regex-help-wrap dd
+{
+    margin-left: 1em;
+}
+
+.rewrite-rule-matched.rewrite-rule-matched-first
+{
+    background-color: #e6db55;
+}
+
+.rewrite-rule-matched .regexgroup-target-value
+{
+    display: inline;
+}
+
+.regexgroup-target-value
+{
+    display: none;
+}
+
+.rewrite-rule-matched .regexgroup-target
+{
+    display: none;
+}
+
+.rewrite-rule-unmatched
+{
+    display: none;
+}

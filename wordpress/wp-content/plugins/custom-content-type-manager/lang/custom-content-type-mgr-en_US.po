@@ -1,0 +1,691 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Content Type Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-27 00:04-0700\n"
+"PO-Revision-Date: 2010-11-27 00:06-0700\n"
+"Last-Translator: Everett Griffiths <everett@fireproofsocks.com>\n"
+"Language-Team: fireproofsocks <everett@fireproofsocks.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../index.php:58
+msgid "Function"
+msgstr "Function"
+
+#: ../index.php:67
+msgid "Class"
+msgstr "Class"
+
+#: ../index.php:76
+msgid "Constant"
+msgstr "Constant"
+
+#: ../post-selector.php:41
+msgid "You do not have permission to edit posts."
+msgstr "You do not have permission to edit posts."
+
+#: ../includes/CCTM.php:130
+#: ../includes/CCTM.php:167
+msgid "Remove This Field"
+msgstr "Remove This Field"
+
+#: ../includes/CCTM.php:294
+msgid "Create Custom Content Type"
+msgstr "Create Custom Content Type"
+
+#: ../includes/CCTM.php:298
+msgid "Create New Content Type"
+msgstr "Create New Content Type"
+
+#: ../includes/CCTM.php:315
+#, php-format
+msgid "The content type %s has been created"
+msgstr "The content type %s has been created"
+
+#: ../includes/CCTM.php:354
+#, fuzzy, php-format
+msgid "Deactivate Content Type %s"
+msgstr "Deactivate Content Type"
+
+#: ../includes/CCTM.php:358
+#: ../includes/single_content_type_tr.php:25
+#: ../includes/single_content_type_tr.php:63
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: ../includes/CCTM.php:378
+#, php-format
+msgid "You are about to deactivate the %s post type. Deactivation does not delete anything."
+msgstr "You are about to deactivate the %s post type. Deactivation does not delete anything."
+
+#: ../includes/CCTM.php:385
+#, php-format
+msgid "After deactivation, %s posts will be unavailable to the outside world. %s will be removed from the administration menus and you will no longer be able to edit them using the WordPress manager."
+msgstr "After deactivation, %s posts will be unavailable to the outside world. %s will be removed from the administration menus and you will no longer be able to edit them using the WordPress manager."
+
+#: ../includes/CCTM.php:391
+#, php-format
+msgid "This would affect %1$s published %2$s sposts."
+msgstr "This would affect %1$s published %2$s sposts."
+
+#: ../includes/CCTM.php:395
+#: ../includes/CCTM.php:439
+msgid "Are you sure you want to do this?"
+msgstr "Are you sure you want to do this?"
+
+#: ../includes/CCTM.php:416
+#, fuzzy, php-format
+msgid "Delete Content Type: %s"
+msgstr "Delete Content Type: "
+
+#: ../includes/CCTM.php:420
+#: ../includes/single_content_type_tr.php:87
+msgid "Delete"
+msgstr "Delete"
+
+#: ../includes/CCTM.php:430
+#, fuzzy, php-format
+msgid "The post type %s has been deleted"
+msgstr "The post type name cannot begin with %s"
+
+#: ../includes/CCTM.php:437
+#, php-format
+msgid "You are about to delete the %s post type. This will remove all of its settings from the database, but this will NOT delete any rows from the wp_posts table. However, without a custom post type defined for those rows, they will be essentially invisible to WordPress."
+msgstr "You are about to delete the %s post type. This will remove all of its settings from the database, but this will NOT delete any rows from the wp_posts table. However, without a custom post type defined for those rows, they will be essentially invisible to WordPress."
+
+#: ../includes/CCTM.php:451
+msgid "Invalid post type."
+msgstr "Invalid post type."
+
+#: ../includes/CCTM.php:453
+msgid "Back"
+msgstr "Back"
+
+#: ../includes/CCTM.php:476
+msgid "Edit Content Type: "
+msgstr "Edit Content Type: "
+
+#: ../includes/CCTM.php:480
+msgid "Save"
+msgstr "Save"
+
+#: ../includes/CCTM.php:500
+#, fuzzy, php-format
+msgid "Settings for %s have been updated."
+msgstr "Custom fields for %1$s have been <strong>updated</strong>"
+
+#: ../includes/CCTM.php:564
+#, php-format
+msgid "%s contains invalid characters."
+msgstr "%s contains invalid characters."
+
+#: ../includes/CCTM.php:572
+#, php-format
+msgid "%s is too long."
+msgstr "%s is too long."
+
+#: ../includes/CCTM.php:578
+#: ../includes/CCTM.php:939
+#, php-format
+msgid "%s is a reserved name."
+msgstr "%s is a reserved name."
+
+#: ../includes/CCTM.php:597
+msgid "There were errors in the names of your custom fields."
+msgstr "There were errors in the names of your custom fields."
+
+#: ../includes/CCTM.php:598
+msgid "Names must not exceed 20 characters in length."
+msgstr "Names must not exceed 20 characters in length."
+
+#: ../includes/CCTM.php:599
+msgid "Names may contain the letters a-z and underscores only."
+msgstr "Names may contain the letters a-z and underscores only."
+
+#: ../includes/CCTM.php:600
+msgid "You cannot name your field using any reserved name."
+msgstr "You cannot name your field using any reserved name."
+
+#: ../includes/CCTM.php:608
+#, fuzzy, php-format
+msgid "Custom fields for %s have been updated"
+msgstr "Custom fields for %1$s have been <strong>updated</strong>"
+
+#: ../includes/CCTM.php:631
+#, php-format
+msgid "The %s post type does not have any custom fields yet."
+msgstr "The %s post type does not have any custom fields yet."
+
+#: ../includes/CCTM.php:633
+msgid "Click the button above to add a custom field."
+msgstr "Click the button above to add a custom field."
+
+#: ../includes/CCTM.php:670
+#, php-format
+msgid "WordPress supports a custom theme file for each registered post-type (content-type). Copy the text below into a file named <strong>%s</strong> and save it into your active theme."
+msgstr "WordPress supports a custom theme file for each registered post-type (content-type). Copy the text below into a file named <strong>%s</strong> and save it into your active theme."
+
+#: ../includes/CCTM.php:673
+#, php-format
+msgid "You are currently using the %1$s theme. Save the file into the %2$s directory."
+msgstr "You are currently using the %1$s theme. Save the file into the %2$s directory."
+
+#: ../includes/CCTM.php:726
+msgid "Built-in post type"
+msgstr "Built-in post type"
+
+#: ../includes/CCTM.php:921
+msgid "Name is required."
+msgstr "Name is required."
+
+#: ../includes/CCTM.php:928
+#, php-format
+msgid "The post type name cannot begin with %s because that is a reserved prefix."
+msgstr "The post type name cannot begin with %s because that is a reserved prefix."
+
+#: ../includes/CCTM.php:937
+#: ../includes/CCTM.php:946
+msgid "Please choose another name."
+msgstr "Please choose another name."
+
+#: ../includes/CCTM.php:948
+#, fuzzy, php-format
+msgid "%s is already in use as a registered taxonomy name."
+msgstr "%$1s is already in use as a registered taxonomy name."
+
+#: ../includes/CCTM.php:958
+msgid "That name is already in use."
+msgstr "That name is already in use."
+
+#: ../includes/CCTM.php:1086
+msgid "Label"
+msgstr "Label"
+
+#: ../includes/CCTM.php:1094
+#: ../includes/CCTM.php:1138
+msgid "Name"
+msgstr "Name"
+
+#: ../includes/CCTM.php:1097
+#, fuzzy
+msgid "The name identifies the option_name in the wp_postmeta database table. You will use this name in your template functions to identify this custom field."
+msgstr "The name identifies the <em>option_name</em> in the <em>wp_postmeta</em> database table. You will use this name in your template functions to identify this custom field."
+
+#: ../includes/CCTM.php:1102
+#: ../includes/CCTM.php:1162
+msgid "Description"
+msgstr "Description"
+
+#: ../includes/CCTM.php:1110
+msgid "Input Type"
+msgstr "Input Type"
+
+#: ../includes/CCTM.php:1119
+msgid "Sort Order"
+msgstr "Sort Order"
+
+#: ../includes/CCTM.php:1122
+msgid "This controls where this field will appear on the page. Fields with smaller numbers will appear higher on the page."
+msgstr "This controls where this field will appear on the page. Fields with smaller numbers will appear higher on the page."
+
+#: ../includes/CCTM.php:1141
+msgid "Unique singular name to identify this post type in the database, e.g. \"movie\",\"book\". This may show up in your URLs, e.g. ?movie=star-wars. This will also make a new theme file available, starting with prefix named \"single-\", e.g. <strong>single-movie.php</strong>. The name should be lowercase with only letters and underscores. This name cannot be changed!"
+msgstr "Unique singular name to identify this post type in the database, e.g. \"movie\",\"book\". This may show up in your URLs, e.g. ?movie=star-wars. This will also make a new theme file available, starting with prefix named \"single-\", e.g. <strong>single-movie.php</strong>. The name should be lowercase with only letters and underscores. This name cannot be changed!"
+
+#: ../includes/CCTM.php:1146
+msgid "Singular Label"
+msgstr "Singular Label"
+
+#: ../includes/CCTM.php:1149
+msgid "Human readable single instance of this content type, e.g. \"Post\""
+msgstr "Human readable single instance of this content type, e.g. \"Post\""
+
+#: ../includes/CCTM.php:1154
+msgid "Menu Label (Plural)"
+msgstr "Menu Label (Plural)"
+
+#: ../includes/CCTM.php:1157
+msgid "Plural name used in the admin menu, e.g. \"Posts\""
+msgstr "Plural name used in the admin menu, e.g. \"Posts\""
+
+#: ../includes/CCTM.php:1170
+msgid "Show Admin User Interface"
+msgstr "Show Admin User Interface"
+
+#: ../includes/CCTM.php:1173
+msgid "Should this post type be visible on the back-end?"
+msgstr "Should this post type be visible on the back-end?"
+
+#: ../includes/CCTM.php:1178
+msgid "Capability Type"
+msgstr "Capability Type"
+
+#: ../includes/CCTM.php:1181
+msgid "The post type to use for checking read, edit, and delete capabilities. Default: \"post\""
+msgstr "The post type to use for checking read, edit, and delete capabilities. Default: \"post\""
+
+#: ../includes/CCTM.php:1186
+msgid "Public"
+msgstr "Public"
+
+#: ../includes/CCTM.php:1189
+msgid "Should these posts be visible on the front-end?"
+msgstr "Should these posts be visible on the front-end?"
+
+#: ../includes/CCTM.php:1194
+msgid "Hierarchical"
+msgstr "Hierarchical"
+
+#: ../includes/CCTM.php:1197
+msgid "Allows parent to be specified (Page Attributes should be checked)"
+msgstr "Allows parent to be specified (Page Attributes should be checked)"
+
+#: ../includes/CCTM.php:1203
+#: ../includes/PostSelector.php:208
+msgid "Title"
+msgstr "Title"
+
+#: ../includes/CCTM.php:1207
+msgid "Post Title"
+msgstr "Post Title"
+
+#: ../includes/CCTM.php:1213
+msgid "Content"
+msgstr "Content"
+
+#: ../includes/CCTM.php:1217
+msgid "Main content block."
+msgstr "Main content block."
+
+#: ../includes/CCTM.php:1223
+msgid "Author"
+msgstr "Author"
+
+#: ../includes/CCTM.php:1227
+msgid "Track the author."
+msgstr "Track the author."
+
+#: ../includes/CCTM.php:1233
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: ../includes/CCTM.php:1237
+msgid "Featured image (the activetheme must also support post-thumbnails)"
+msgstr "Featured image (the activetheme must also support post-thumbnails)"
+
+#: ../includes/CCTM.php:1243
+#: ../includes/PostSelector.php:209
+msgid "Excerpt"
+msgstr "Excerpt"
+
+#: ../includes/CCTM.php:1247
+msgid "Small summary field."
+msgstr "Small summary field."
+
+#: ../includes/CCTM.php:1253
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: ../includes/CCTM.php:1263
+msgid "Supports Custom Fields"
+msgstr "Supports Custom Fields"
+
+#: ../includes/CCTM.php:1273
+msgid "Enable Comments"
+msgstr "Enable Comments"
+
+#: ../includes/CCTM.php:1283
+msgid "Store Revisions"
+msgstr "Store Revisions"
+
+#: ../includes/CCTM.php:1293
+msgid "Enable Page Attributes"
+msgstr "Enable Page Attributes"
+
+#: ../includes/CCTM.php:1297
+msgid "(template and menu order; hierarchical must be checked)"
+msgstr "(template and menu order; hierarchical must be checked)"
+
+#: ../includes/CCTM.php:1303
+msgid "Menu Position"
+msgstr "Menu Position"
+
+#: ../includes/CCTM.php:1315
+msgid "This setting determines where this post type should appear in the left-hand admin menu. Default: null (below Comments)"
+msgstr "This setting determines where this post type should appear in the left-hand admin menu. Default: null (below Comments)"
+
+#: ../includes/CCTM.php:1316
+#: ../includes/CCTM.php:1318
+msgid "below Posts"
+msgstr "below Posts"
+
+#: ../includes/CCTM.php:1317
+msgid "below Media"
+msgstr "below Media"
+
+#: ../includes/CCTM.php:1319
+msgid "below Pages"
+msgstr "below Pages"
+
+#: ../includes/CCTM.php:1320
+msgid "below first separator"
+msgstr "below first separator"
+
+#: ../includes/CCTM.php:1321
+msgid "below second separator"
+msgstr "below second separator"
+
+#: ../includes/CCTM.php:1328
+msgid "Menu Icon"
+msgstr "Menu Icon"
+
+#: ../includes/CCTM.php:1331
+msgid "Menu icon URL."
+msgstr "Menu icon URL."
+
+#: ../includes/CCTM.php:1336
+msgid "Use Default Menu Icon"
+msgstr "Use Default Menu Icon"
+
+#: ../includes/CCTM.php:1339
+msgid "If checked, your post type will use the posts icon"
+msgstr "If checked, your post type will use the posts icon"
+
+#: ../includes/CCTM.php:1344
+msgid "Rewrite Slug"
+msgstr "Rewrite Slug"
+
+#: ../includes/CCTM.php:1347
+msgid "Prepend posts with this slug - defaults to post type's name"
+msgstr "Prepend posts with this slug - defaults to post type's name"
+
+#: ../includes/CCTM.php:1352
+msgid "Rewrite with Permalink Front"
+msgstr "Rewrite with Permalink Front"
+
+#: ../includes/CCTM.php:1355
+msgid "Allow permalinks to be prepended with front base - defaults to checked"
+msgstr "Allow permalinks to be prepended with front base - defaults to checked"
+
+#: ../includes/CCTM.php:1360
+msgid "Permalink Action"
+msgstr "Permalink Action"
+
+#: ../includes/CCTM.php:1371
+msgid "Use permalink rewrites for this post_type? Default: Off"
+msgstr "Use permalink rewrites for this post_type? Default: Off"
+
+#: ../includes/CCTM.php:1372
+msgid "URLs for custom post_types will always look like: http://site.com/?post_type=book&p=39 even if the rest of the site is using a different permalink structure."
+msgstr "URLs for custom post_types will always look like: http://site.com/?post_type=book&p=39 even if the rest of the site is using a different permalink structure."
+
+#: ../includes/CCTM.php:1373
+msgid "You MUST use the custom permalink structure: \"/%postname%/\". Other formats are <strong>not</strong> supported.  Your URLs will look like http://site.com/movie/star-wars/"
+msgstr "You MUST use the custom permalink structure: \"/%postname%/\". Other formats are <strong>not</strong> supported.  Your URLs will look like http://site.com/movie/star-wars/"
+
+#: ../includes/CCTM.php:1380
+msgid "Query Variable"
+msgstr "Query Variable"
+
+#: ../includes/CCTM.php:1383
+msgid ""
+"(optional) Name of the query var to use for this post type.\n"
+"\t\t\tE.g. \"movie\" would make for URLs like http://site.com/?movie=star-wars. \n"
+"\t\t\tIf blank, the default structure is http://site.com/?post_type=movie&p=18"
+msgstr ""
+"(optional) Name of the query var to use for this post type.\n"
+"E.g. \"movie\" would make for URLs like http://site.com/?movie=star-wars. If blank, the default structure is http://site.com/?post_type=movie&p=18"
+
+#: ../includes/CCTM.php:1390
+msgid "Can Export"
+msgstr "Can Export"
+
+#: ../includes/CCTM.php:1393
+msgid "Can this post_type be exported."
+msgstr "Can this post_type be exported."
+
+#: ../includes/CCTM.php:1398
+msgid "Show in Nav Menus"
+msgstr "Show in Nav Menus"
+
+#: ../includes/CCTM.php:1401
+msgid "Whether post_type is available for selection in navigation menus. Default: value of public argument"
+msgstr "Whether post_type is available for selection in navigation menus. Default: value of public argument"
+
+#: ../includes/CCTM.php:1533
+msgid "Settings"
+msgstr "Settings"
+
+#: ../includes/CCTM.php:1579
+#, php-format
+msgid "The %s plugin encountered errors! It cannot load!"
+msgstr "The %s plugin encountered errors! It cannot load!"
+
+#: ../includes/CCTM.php:1662
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: ../includes/CCTM.php:1674
+msgid "The name of the post-type cannot be changed. The name may show up in your URLs, e.g. ?movie=star-wars. This will also make a new theme file available, starting with prefix named \"single-\", e.g. <strong>single-movie.php</strong>."
+msgstr "The name of the post-type cannot be changed. The name may show up in your URLs, e.g. ?movie=star-wars. This will also make a new theme file available, starting with prefix named \"single-\", e.g. <strong>single-movie.php</strong>."
+
+#: ../includes/errors.php:12
+#, php-format
+msgid "Missing Class: %s"
+msgstr "Missing Class: %s"
+
+#: ../includes/FormGenerator.php:174
+msgid "Choose Media"
+msgstr "Choose Media"
+
+#: ../includes/FormGenerator.php:218
+msgid "Choose Reference"
+msgstr "Choose Reference"
+
+#: ../includes/functions.php:74
+#, php-format
+msgid "No custom fields defined for %1$s field."
+msgstr "No custom fields defined for %1$s field."
+
+#: ../includes/PostSelector.php:143
+msgid "Dimensions"
+msgstr "Dimensions"
+
+#: ../includes/PostSelector.php:167
+#: ../includes/PostSelector.php:201
+msgid "Select"
+msgstr "Select"
+
+#: ../includes/PostSelector.php:168
+#: ../includes/PostSelector.php:202
+msgid "Show / Hide"
+msgstr "Show / Hide"
+
+#: ../includes/PostSelector.php:170
+#: ../includes/PostSelector.php:205
+msgid "View Original"
+msgstr "View Original"
+
+#: ../includes/PostSelector.php:173
+msgid "Filename"
+msgstr "Filename"
+
+#: ../includes/PostSelector.php:174
+#: ../includes/PostSelector.php:204
+msgid "File Type"
+msgstr "File Type"
+
+#: ../includes/PostSelector.php:175
+#: ../includes/PostSelector.php:206
+msgid "Date Uploaded"
+msgstr "Date Uploaded"
+
+#: ../includes/PostSelector.php:210
+msgid "Modified"
+msgstr "Modified"
+
+#: ../includes/PostSelector.php:222
+msgid "Choose Date"
+msgstr "Choose Date"
+
+#: ../includes/PostSelector.php:266
+msgid "Invalid post_type."
+msgstr "Invalid post_type."
+
+#: ../includes/PostSelector.php:275
+msgid "Invalid post_mime_type."
+msgstr "Invalid post_mime_type."
+
+#: ../includes/PostSelector.php:289
+#: ../includes/PostSelector.php:295
+msgid "Invalid field_name."
+msgstr "Invalid field_name."
+
+#: ../includes/PostSelector.php:692
+msgid "Sorry, no results found."
+msgstr "Sorry, no results found."
+
+#: ../includes/PostSelector.php:736
+msgid "Search"
+msgstr "Search"
+
+#: ../includes/PostSelector.php:737
+msgid "Reset"
+msgstr "Reset"
+
+#: ../includes/single_content_type_tr.php:25
+#: ../includes/single_content_type_tr.php:63
+#, fuzzy
+msgid "Deactivate this content type"
+msgstr "Deactivate Content Type"
+
+#: ../includes/single_content_type_tr.php:30
+#: ../includes/single_content_type_tr.php:49
+#: ../includes/single_content_type_tr.php:72
+#: ../includes/single_content_type_tr.php:94
+#, fuzzy
+msgid "Manage Custom Fields"
+msgstr "Custom Fields"
+
+#: ../includes/single_content_type_tr.php:32
+#: ../includes/single_content_type_tr.php:51
+#: ../includes/single_content_type_tr.php:74
+#: ../includes/single_content_type_tr.php:96
+msgid "View Sample Template"
+msgstr "View Sample Template"
+
+#: ../includes/single_content_type_tr.php:42
+msgid "Activate custom field management"
+msgstr "Activate custom field management"
+
+#: ../includes/single_content_type_tr.php:42
+#: ../includes/single_content_type_tr.php:84
+#, fuzzy
+msgid "Activate"
+msgstr "Deactivate"
+
+#: ../includes/single_content_type_tr.php:70
+#: ../includes/single_content_type_tr.php:92
+msgid "Edit"
+msgstr "Edit"
+
+#: ../includes/single_content_type_tr.php:84
+#, fuzzy
+msgid "Activate this content type"
+msgstr "Deactivate Content Type"
+
+#: ../includes/single_content_type_tr.php:87
+#, fuzzy
+msgid "Delete this content type"
+msgstr "Delete Content Type: "
+
+#: ../includes/StandardizedCustomFields.php:80
+msgid "Custom Fields"
+msgstr "Custom Fields"
+
+#: ../includes/StandardizedCustomFields.php:133
+msgid "Settings Page"
+msgstr "Settings Page"
+
+#: ../includes/StandardizedCustomFields.php:135
+#, php-format
+msgid "Custom fields can be added and configured using the %1$s %2$s"
+msgstr "Custom fields can be added and configured using the %1$s %2$s"
+
+#: ../includes/pages/basic_form.php:30
+msgid "Cancel"
+msgstr "Cancel"
+
+#: ../includes/pages/default.php:3
+msgid "Add New Content Type"
+msgstr "Add New Content Type"
+
+#: ../includes/pages/manage_custom_fields.php:61
+msgid "Remove"
+msgstr "Remove"
+
+#: ../includes/pages/manage_custom_fields.php:93
+msgid "Add Option"
+msgstr "Add Option"
+
+#: ../includes/pages/manage_custom_fields.php:146
+msgid "Add Custom Field"
+msgstr "Add Custom Field"
+
+#: ../includes/pages/manage_custom_fields.php:161
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: ../includes/pages/manage_custom_fields.php:162
+msgid "Done"
+msgstr "Done"
+
+#: ../tests/CCTMtests.php:21
+#, php-format
+msgid "%1$s requires MySQL %2$s or newer."
+msgstr "%1$s requires MySQL %2$s or newer."
+
+#: ../tests/CCTMtests.php:24
+#: ../tests/CCTMtests.php:113
+msgid "Talk to your system administrator about upgrading."
+msgstr "Talk to your system administrator about upgrading."
+
+#: ../tests/CCTMtests.php:66
+#: ../tests/CCTMtests.php:75
+msgid "%1$s requires version %$2% of the %3$s plugin."
+msgstr "%1$s requires version %$2% of the %3$s plugin."
+
+#: ../tests/CCTMtests.php:82
+#, php-format
+msgid "The %1$s plugin is not installed."
+msgstr "The %1$s plugin is not installed."
+
+#: ../tests/CCTMtests.php:97
+#, php-format
+msgid "%1$s requires WordPress %2$s or newer. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Please update!</a>"
+msgstr "%1$s requires WordPress %2$s or newer. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Please update!</a>"
+
+#: ../tests/CCTMtests.php:110
+#, php-format
+msgid "%1$s requires PHP %2$s or newer"
+msgstr "%1$s requires PHP %2$s or newer"
+
+#: ../tests/CCTMtests.php:137
+#, php-format
+msgid "%1$s requires the %2$s PHP extension."
+msgstr "%1$s requires the %2$s PHP extension."
+
+#: ../tests/CCTMtests.php:142
+msgid "Talk to your system administrator about reconfiguring PHP."
+msgstr "Talk to your system administrator about reconfiguring PHP."
+
+#~ msgid "%$1s is a reserved name."
+#~ msgstr "%$1s is a reserved name."
