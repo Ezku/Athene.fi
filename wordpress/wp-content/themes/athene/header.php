@@ -51,9 +51,34 @@
 				<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 			</nav><!-- #access -->
 	</header><!-- #branding -->
 
+	<nav id="subnavi-small" role="navigation">
+		<?php
+
+		// Only show subnavi for subpages,
+		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
+		if($post->post_parent) {
+
+			$subpages = get_pages(
+				'child_of='.$post->post_parent.
+				'&parent='.$post->post_parent.
+				'&hierarcial=0&sort_column=menu_order&sort_order=desc'
+			);
+
+			foreach($subpages as $subpage) {
+		?>
+
+		<div class="subnavi-box">
+			<a href="<?php echo get_page_link($subpage->ID) ?>"><?php echo $subpage->post_title ?></a>
+		</div>
+		<?php
+			} // end foreach
+		} // end if
+		?>
+
+	</nav><!-- #subnavi-small -->
 
 	<div id="main">
