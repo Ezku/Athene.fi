@@ -51,13 +51,15 @@
 				<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0 ) ); ?>
 			</nav><!-- #access -->
 	</header><!-- #branding -->
 
 	<nav id="subnavi-small" role="navigation">
+	  
+	  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
+	  
 		<?php
-
 		// Only show subnavi for subpages,
 		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
 		if($post->post_parent) {
