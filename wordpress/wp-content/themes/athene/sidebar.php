@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Athene
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

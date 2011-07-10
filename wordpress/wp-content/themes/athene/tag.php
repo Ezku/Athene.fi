@@ -3,7 +3,7 @@
  * The template used to display Tag Archive pages
  *
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Athene
  */
 
 get_header(); ?>
