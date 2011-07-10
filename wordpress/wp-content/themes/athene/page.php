@@ -6,8 +6,8 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+		<div id="primary" class="container_16">
+			<div id="content" class="grid_12" role="main">
 
 				<?php the_post(); ?>
 
@@ -16,7 +16,9 @@ get_header(); ?>
 				<?php comments_template( '', true ); ?>
 
 			</div><!-- #content -->
+
+			<?php get_sidebar(); ?>
+
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

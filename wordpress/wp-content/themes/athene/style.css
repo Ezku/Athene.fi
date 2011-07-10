@@ -24,7 +24,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 #page {
 	display: block;
-	margin: 1em;
 }
 #primary {
 }
@@ -89,11 +88,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 -------------------------------------------------------------- */
 
 #access {
-	background: #eee;
 	display: block;
-	float: left;
-	margin: 0 auto 1em;
-	width: 100%;
 }
 #access ul {
 	list-style: none;
