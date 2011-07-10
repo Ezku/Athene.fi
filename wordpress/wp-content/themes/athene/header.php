@@ -59,8 +59,10 @@
 	<div class="clear"></div>
 
 	<nav class="container_16" id="subnavi-small" role="navigation">
-		<?php
 
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
+
+		<?php
 		// Only show subnavi for subpages,
 		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
 		if($post->post_parent) {

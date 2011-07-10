@@ -28,6 +28,7 @@ if ( ! isset( $content_width ) )
  */
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'toolbox' ),
+	'secondary' => __( 'Secondary Menu', 'toolbox' ),
 ) );
 
 /**
