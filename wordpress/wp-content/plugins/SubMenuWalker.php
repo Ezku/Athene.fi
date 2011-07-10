@@ -93,6 +93,8 @@ class SubMenuWalker extends Walker {
 
   		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
   		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
+  		
+  		$item_intro = get_post_complete($item->object_id)->intro;
 
   		$output .= $indent . '<li' . $id . $value . $class_names .'>';
 
@@ -104,6 +106,7 @@ class SubMenuWalker extends Walker {
   		$item_output = $args->before;
   		$item_output .= '<a'. $attributes .'>';
   		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+  		$item_output .= '<br/>'.$item_intro;
   		$item_output .= '</a>';
   		$item_output .= $args->after;
 

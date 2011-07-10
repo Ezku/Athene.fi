@@ -28,12 +28,11 @@ foreach ($isos as $iso) {
 }
 }
 ?>
-<h2>Phuksit</h2>
+<h2 style="clear: left;">Phuksit</h2>
 <?php
 foreach($results as $entry) {
   $post = get_post_complete($entry['ID']);
   if (get_custom_field('ryhma') == $wp_query->query_vars['ryhma']) { ?>
-  ?>
   <div style="float: left;">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
