@@ -1,4 +1,8 @@
 <?php
+$args['meta_key'] = 'vuosi';
+$args['meta_value'] = $wp_query->query_vars['vuosi'];
+$results = $Q->get_posts($args);
+
 $isoQ = new GetPostsQuery();
 $isoQ->set_output_type(ARRAY_A);
 $isoQ->limit = 100;

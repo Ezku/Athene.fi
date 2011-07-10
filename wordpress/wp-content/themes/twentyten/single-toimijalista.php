@@ -21,23 +21,19 @@ get_header(); ?>
 <?php 
 $Q = new GetPostsQuery();
 $Q->set_output_type(ARRAY_A);
-$Q->limit = 100;
+$Q->limit = 10000;
 $args = array(
   "post_type" => get_custom_field('tyyppi')
 );
-
+/*
 print "<pre>";
 print_r($_GET);
 print "</pre>";
 print "<pre>Ryhma: ".$wp_query->query_vars['ryhma']."</pre>";
-
+*/
 if ($layout == LAYOUT_PHUKSIT) {
-  $args['meta_key'] = 'vuosi';
-  $args['meta_value'] = $wp_query->query_vars['vuosi'];
-  $results = $Q->get_posts($args);
   include('phuksit.php');
 } else if ($layout == LAYOUT_TOIMIJAT) {
-  $results = $Q->get_posts($args);
   include('toimijat.php');
 } else { // $layout == LAYOUT_VALMISTUNEET
   $results = $Q->get_posts($args);

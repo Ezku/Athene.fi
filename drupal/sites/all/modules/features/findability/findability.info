@@ -1,8 +1,0 @@
-core = "7.x"
-dependencies[] = "path"
-dependencies[] = "pathauto"
-dependencies[] = "search"
-dependencies[] = "site_map"
-description = "Clean URLs, searches, sitemap"
-name = "Findability"
-package = "Features"

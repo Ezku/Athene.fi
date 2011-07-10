@@ -215,12 +215,13 @@ class CCTM_date extends FormElement
 			 		.__('Date Format', CCTM_TXTDOMAIN) .'</label>
 					<select id="date_format" name="date_format">
 						<option value="mm/dd/yy" '.$date_format['mm/dd/yy'].'>Default - mm/dd/yy</option>
-						<option value="yyyy-mm-dd" '.$date_format['yyyy-mm-dd'].'>MySQL - yyyy-mm-dd</option>
+						<option value="yy-mm-dd" '.$date_format['yy-mm-dd'].'>MySQL - yyyy-mm-dd</option>
 						<option value="yy-mm-dd" '.$date_format['yy-mm-dd'].'>ISO 8601 - yy-mm-dd</option>
 						<option value="d M, y" '.$date_format['d M, y'].'>Short - d M, y</option>
 						<option value="d MM, y" '.$date_format['d MM, y'].'>Medium - d MM, y</option>
 						<option value="DD, d MM, yy" '.$date_format['DD, d MM, yy'].'>Full - DD, d MM, yy</option>
 						<option value="\'day\' d \'of\' MM \'in the year\' yy" '.$date_format["'day' d 'of' MM 'in the year' yy"].'>With text - \'day\' d \'of\' MM \'in the year\' yy</option>
+						<option value="d.m.yy" '.$date_format['d.m.yy'].'>Finnish - d.m.yy</option>
 					</select>
 				</div>';
 
