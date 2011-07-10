@@ -85,5 +85,6 @@
 		?>
 
 	</nav><!-- #subnavi-small -->
+	<div class="clear"></div>
 
 	<div id="main">

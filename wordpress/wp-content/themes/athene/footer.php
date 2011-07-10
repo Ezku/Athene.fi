@@ -6,6 +6,7 @@
 ?>
 
 	</div><!-- #main -->
+	<div class="clear"></div>
 
 	<footer id="colophon" class="container_16" role="contentinfo">
 
