@@ -13,6 +13,12 @@ From Toolbox: "This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others."
 */
 
+/* =Imports
+-------------------------------------------------------------- */
+@import url('960gs/reset.css');
+@import url('960gs/text.css');
+@import url('960gs/960.css');
+
 /* =Structure
 -------------------------------------------------------------- */
 
@@ -21,22 +27,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin: 1em;
 }
 #primary {
-	float: left;
-	margin: 0 -240px 0 0;
-	width: 100%;
 }
 #content {
-	margin: 0 280px 0 0;
 }
 #main .widget-area {
-	float: right;
 	overflow: hidden;
-	width: 220px;
 }
 #colophon {
 	clear: both;
 	display: block;
-	width: 100%;
 }
 
 /* Increase the size of the content area for templates without sidebars */
@@ -148,6 +147,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* =Content
 -------------------------------------------------------------- */
 
+blockquote {
+	margin-left: 40px;
+}
 .entry-meta {
 	clear: both;
 	display: block;
