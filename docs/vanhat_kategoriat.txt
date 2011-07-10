@@ -1,20 +1,20 @@
 Kilta:
-  Esittely -> ok
-  Hallitus & toimarit -> ok
-  J'senet -> ok
-  Athene network -> nope
-  Athene Alumni -> linkkilistalle
-  Säännöt -> ok
-  Dokumenttiarkisto -> ei tehd'
-  Viestintäkanavat -> footeriin / fuksisivuille
-  Yhteystiedot -> footeriin / fuksisivuille
-  Vaalit (2010):
-    virkojen kuvaukset
-    ehdokkaat
-    tulokset
+	Esittely -> ok
+	Hallitus & toimarit -> ok
+	J'senet -> ok
+	Athene network -> nope
+	Athene Alumni -> linkkilistalle
+	Säännöt -> ok
+	Dokumenttiarkisto -> ei tehd'
+	Viestintäkanavat -> footeriin / fuksisivuille
+	Yhteystiedot -> footeriin / fuksisivuille
+	Vaalit (2010):
+	    virkojen kuvaukset
+	    ehdokkaat
+	    tulokset
 
 Toiminta:
-    Tapahtumakalenteri -> ok
+	Tapahtumakalenteri -> ok
 	Uutisarkisto -> ok
 	Urheilusivut -> ok
 	Kiltalehti -> ok
@@ -28,24 +28,24 @@ Toiminta:
 	
 
 Phuksit:
-  Tärkeitä linkkejä -> "apua ja linkkejä"
-  Phuksiryhmät -> ok
-  Teekkarikulttuuri -> "fuksivuosi"
-  Phuksipisteet -> "fuksivuosi"
-  
+	Tärkeitä linkkejä -> "apua ja linkkejä"
+	Phuksiryhmät -> ok
+	Teekkarikulttuuri -> "fuksivuosi"
+	Phuksipisteet -> "fuksivuosi"
+	
 Opinnot:
-  Edunvalvonta -> fuktoroitava
-  Tenttiarkisto -> linkkilistaan
-  Varjo-opinto-opas -> linkkilistaan
-  Valmistuneet -> killan alle
+	Edunvalvonta -> fuktoroitava
+	Tenttiarkisto -> linkkilistaan
+	Varjo-opinto-opas -> linkkilistaan
+	Valmistuneet -> killan alle
 
 Pallomeri:
-  Kuvagalleria -> linkkilistaan
-  Keskustelupalsta -> ejolee
-  OLOcam -> etusivulle loota, kenties linkkilistaan
-  #purkusessio -> villaan
-  Wiki -> villaan
-  
+	Kuvagalleria -> linkkilistaan
+	Keskustelupalsta -> ejolee
+	OLOcam -> etusivulle loota, kenties linkkilistaan
+	#purkusessio -> villaan
+	Wiki -> villaan
+	
 International: -> villaan
-  Athene in Brief 
-  Athenelaiset maailmalla
+	Athene in Brief 
+	Athenelaiset maailmalla
