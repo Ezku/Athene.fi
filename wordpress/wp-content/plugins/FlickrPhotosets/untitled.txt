@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<div id="flickrphotos">
+</div>
+</body
+</html>
