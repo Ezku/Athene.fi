@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gecka Sub-Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-10 15:30+1100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Laurent Dinclaux <laurent@gecka.nc>\n"
+"Language-Team: Gecka <contact@gecka.nc>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../gecka-submenu.class.php:153
+msgid "You are using Gecka Submenu."
+msgstr ""
+
+#: ../gecka-submenu.class.php:153
+msgid "<a href=\"http://www.gecka-apps.com\" target=\"_blank\">Discover the pro version</a> to get the most out of the Wordpress menu system."
+msgstr ""
+
+#: ../views/Nav-Menu-Fields.php:6
+msgid "Automaticaly populate with child pages"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:288
+#, php-format
+msgid "%s (Pending)"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:327
+#: ../models/NavMenuHacks.php:329
+msgid "Edit Menu Item"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:338
+msgid "URL"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:345
+msgid "Navigation Label"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:351
+msgid "Title Attribute"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:357
+msgid "Link Target"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:359
+msgid "Same window or tab"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:360
+msgid "New window or tab"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:366
+msgid "CSS Classes (optional)"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:372
+msgid "Link Relationship (XFN)"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:378
+msgid "Description"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:380
+msgid "The description will be displayed in the menu if the current theme supports it."
+msgstr ""
+
+#: ../models/NavMenuHacks.php:389
+#, php-format
+msgid "Original: %s"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:402
+msgid "Remove"
+msgstr ""
+
+#: ../models/NavMenuHacks.php:403
+msgid "Cancel"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:12
+msgid "Use this widget to add one of your custom menus as a widget."
+msgstr ""
+
+#: ../widgets/Custom-menu.php:13
+msgid "Custom Menu"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:13
+msgid "[advanced]"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:76
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: ../widgets/Custom-menu.php:82
+msgid "Title:"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:87
+msgid "Use top parent item title"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:90
+msgid "Select Menu:"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:93
+msgid "Select"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:104
+msgid "Start menu from:"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:107
+msgid "Click save first"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:113
+msgid "Depth:"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:119
+msgid "Show parent item"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:122
+msgid "Show description"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:141
+#: ../widgets/Custom-menu.php:150
+msgid "First select a nav menu"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:157
+msgid "Error: Unknow menu."
+msgstr ""
+
+#: ../widgets/Custom-menu.php:163
+msgid "Nav menu root"
+msgstr ""
+
+#: ../widgets/Custom-menu.php:164
+msgid "Current page"
+msgstr ""
+

@@ -31,9 +31,11 @@ class GCE_Feed{
 		//Add the default parameters to the querystring (retrieving JSON, not XML)
 		$query = '?alt=json&singleevents=true&sortorder=ascending&orderby=starttime';
 
+		$gmt_offset = get_option( 'gmt_offset' ) * 3600;
+
 		//Append the feed specific parameters to the querystring
-		$query .= '&start-min=' . date( 'Y-m-d\TH:i:s', $this->feed_start );
-		$query .= '&start-max=' . date( 'Y-m-d\TH:i:s', $this->feed_end );
+		$query .= '&start-min=' . date( 'Y-m-d\TH:i:s', $this->feed_start - $gmt_offset );
+		$query .= '&start-max=' . date( 'Y-m-d\TH:i:s', $this->feed_end - $gmt_offset );
 		$query .= '&max-results=' . $this->max_events;
 
 		if ( ! empty( $this->timezone ) )
@@ -84,11 +86,11 @@ class GCE_Feed{
 								//Create a GCE_Event using the above data. Add it to the array of events
 								$this->events[] = new GCE_Event( $id, $title, $description, $location, $start_time, $end_time, $link );
 							}
-
-							//Cache the feed data
-							set_transient( 'gce_feed_' . $this->feed_id, $this->events, $this->cache_duration );
-							set_transient( 'gce_feed_' . $this->feed_id . '_url', $url, $this->cache_duration );
 						}
+
+						//Cache the feed data
+						set_transient( 'gce_feed_' . $this->feed_id, $this->events, $this->cache_duration );
+						set_transient( 'gce_feed_' . $this->feed_id . '_url', $url, $this->cache_duration );
 					} else {
 						//json_decode failed
 						$this->error = __( 'Some data was retrieved, but could not be parsed successfully. Please ensure your feed URL is correct.', GCE_TEXT_DOMAIN );

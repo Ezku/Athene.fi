@@ -3,7 +3,7 @@
 Plugin Name: Google Calendar Events
 Plugin URI: http://www.rhanney.co.uk/plugins/google-calendar-events
 Description: Parses Google Calendar feeds and displays the events as a calendar grid or list on a page, post or widget.
-Version: 0.7
+Version: 0.7.1
 Author: Ross Hanney
 Author URI: http://www.rhanney.co.uk
 License: GPL2
@@ -36,7 +36,7 @@ define( 'GCE_PLUGIN_NAME', str_replace( '.php', '', basename( __FILE__ ) ) );
 define( 'GCE_TEXT_DOMAIN', 'google-calendar-events' );
 define( 'GCE_OPTIONS_NAME', 'gce_options' );
 define( 'GCE_GENERAL_OPTIONS_NAME', 'gce_general' );
-define( 'GCE_VERSION', 0.7 );
+define( 'GCE_VERSION', '0.7.1' );
 
 if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 	class Google_Calendar_Events {
@@ -207,8 +207,19 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 
 		//Setup admin settings page
 		function setup_admin(){
-			if ( function_exists( 'add_options_page' ) )
-				add_options_page( 'Google Calendar Events', 'Google Calendar Events', 'manage_options', basename( __FILE__ ), array( $this, 'admin_page' ) );
+			global $gce_settings_page;
+
+			$gce_settings_page = add_options_page( 'Google Calendar Events', 'Google Calendar Events', 'manage_options', basename( __FILE__ ), array( $this, 'admin_page' ) );
+
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+		}
+
+		//Add admin JavaScript (to GCE settings page only)
+		function enqueue_admin_scripts( $hook_suffix ) {
+			global $gce_settings_page;
+
+			if ( $gce_settings_page == $hook_suffix )
+				wp_enqueue_script( 'gce_scripts', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/gce-admin-script.js', array( 'jquery' ) );
 		}
 
 		//Prints admin settings page
@@ -493,7 +504,7 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 				extract( shortcode_atts( array(
 					'id' => '',
 					'type' => 'grid',
-					'title' => false,
+					'title' => null,
 					'max' => 0,
 					'order' => 'asc'
 				), $atts ) );
@@ -576,7 +587,7 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 
 		//Adds the required scripts
 		function add_scripts() {
-			//Don't add scripts if on admin screens
+			//Don't add scripts if on admin pages
 			if ( ! is_admin() ) {
 				$options = get_option( GCE_GENERAL_OPTIONS_NAME );
 				$add_to_footer = (bool) $options['javascript'];
@@ -588,19 +599,19 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
 					'loading' => $options['loading']
 				) );
-			} else {
-				wp_enqueue_script( 'gce_scripts', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/gce-admin-script.js', array( 'jquery' ) );
 			}
 		}
 
 		//AJAX stuffs
 		function gce_ajax() {
 			if ( isset( $_GET['gce_feed_ids'] ) ) {
-				$ids = esc_html( $_GET['gce_feed_ids'] );
-				$title = esc_html( $_GET['gce_title_text'] );
-				$max = absint( $_GET['gce_max_events'] );
-				$month = absint( $_GET['gce_month'] );
-				$year = absint( $_GET['gce_year'] );
+				$ids = $_GET['gce_feed_ids'];
+				$title = $_GET['gce_title_text'];
+				$max = $_GET['gce_max_events'];
+				$month = $_GET['gce_month'];
+				$year = $_GET['gce_year'];
+
+				$title = ( 'null' == $title ) ? null : $title;
 
 				if ( 'page' == $_GET['gce_type'] ) {
 					//The page grid markup to be returned via AJAX
@@ -643,7 +654,7 @@ function gce_print_list( $feed_ids, $title_text, $max_events, $sort_order, $grou
 			return $list->error_messages();
 		} else {
 			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
-			return $options['error'];
+			return wp_kses_post( $options['error'] );
 		}
 	}
 }
@@ -660,11 +671,14 @@ function gce_print_grid( $feed_ids, $title_text, $max_events, $ajaxified = false
 
 	//If there are less errors than feeds parsed, at least one feed must have parsed successfully so continue to display the grid
 	if ( $num_errors < count( $ids ) ) {
-		$markup = '<div class="gce-page-grid" id="gce-page-grid-' . $feed_ids .'">';
+		$feed_ids = esc_attr( $feed_ids );
+		$title_text = isset( $title_text ) ? esc_html( $title_text) : 'null';
+
+		$markup = '<div class="gce-page-grid" id="gce-page-grid-' . $feed_ids . '">';
 
 		//Add AJAX script if required
 		if ( $ajaxified )
-			$markup .= '<script type="text/javascript">jQuery(document).ready(function($){gce_ajaxify("gce-page-grid-' . $feed_ids . '", "' . $feed_ids . '", "' . $max_events . '", "' . $title_text . '", "page");});</script>';
+			$markup .= '<script type="text/javascript">jQuery(document).ready(function($){gce_ajaxify("gce-page-grid-' . $feed_ids . '", "' . $feed_ids . '", "' . absint( $max_events ) . '", "' . $title_text . '", "page");});</script>';
 
 		$markup .= $grid->get_grid( $year, $month, $ajaxified ) . '</div>';
 
@@ -680,7 +694,7 @@ function gce_print_grid( $feed_ids, $title_text, $max_events, $ajaxified = false
 			return $grid->error_messages();
 		} else {
 			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
-			return $options['error'];
+			return wp_kses_post( $options['error'] );
 		}
 	}
 }
