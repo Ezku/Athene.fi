@@ -206,8 +206,11 @@ class GCE_Event{
 				if ( $markdown && function_exists( 'Markdown' ) )
 					$title = Markdown( $title );
 
+			  echo "Encoding: ".mb_internal_encoding();
+			  echo "Locale: ".setlocale(LC_ALL, "0");
+
 				if ( $html )
-					$title = wp_kses_post( html_entity_decode( $title ) );
+					$title = wp_kses_post( html_entity_decode( $title , "UTF-8" ) );
 
 				return $m[1] . $title . $m[6];
 
@@ -260,7 +263,7 @@ class GCE_Event{
 						$description = Markdown( $description );
 
 					if ( $html )
-						$description = wp_kses_post( html_entity_decode( $description ) );
+						$description = wp_kses_post( html_entity_decode( $description , ENT_NOQUOTES , "UTF-8" ) );
 				}else{
 					//Otherwise, preserve line breaks
 					$description = nl2br( $description );
