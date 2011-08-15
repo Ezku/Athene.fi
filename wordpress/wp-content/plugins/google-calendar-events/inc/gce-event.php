@@ -210,7 +210,7 @@ class GCE_Event{
 			  echo "Locale: ".setlocale(LC_ALL, "0");
 
 				if ( $html )
-					$title = wp_kses_post( html_entity_decode( $title , "UTF-8" ) );
+					$title = wp_kses_post( html_entity_decode( $title , ENT_NOQUOTES , "UTF-8" ) );
 
 				return $m[1] . $title . $m[6];
 
@@ -245,7 +245,7 @@ class GCE_Event{
 					$location = Markdown( $location );
 
 				if ( $html )
-					$location = wp_kses_post( html_entity_decode( $location ) );
+					$location = wp_kses_post( html_entity_decode( $location , ENT_NOQUOTES , "UTF-8" ) );
 
 				return $m[1] . $location . $m[6];
 
