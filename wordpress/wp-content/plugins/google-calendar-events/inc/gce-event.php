@@ -206,9 +206,6 @@ class GCE_Event{
 				if ( $markdown && function_exists( 'Markdown' ) )
 					$title = Markdown( $title );
 
-			  echo "Encoding: ".mb_internal_encoding();
-			  echo "Locale: ".setlocale(LC_ALL, "0");
-
 				if ( $html )
 					$title = wp_kses_post( html_entity_decode( $title , ENT_NOQUOTES , "UTF-8" ) );
 
