@@ -207,7 +207,7 @@ class GCE_Event{
 					$title = Markdown( $title );
 
 				if ( $html )
-					$title = wp_kses_post( html_entity_decode( $title , ENT_NOQUOTES , "UTF-8" ) );
+					$title = wp_kses_post( html_entity_decode( $title , ENT_COMPAT , "UTF-8" ) );
 
 				return $m[1] . $title . $m[6];
 
@@ -242,7 +242,7 @@ class GCE_Event{
 					$location = Markdown( $location );
 
 				if ( $html )
-					$location = wp_kses_post( html_entity_decode( $location , ENT_NOQUOTES , "UTF-8" ) );
+					$location = wp_kses_post( html_entity_decode( $location , ENT_COMPAT , "UTF-8" ) );
 
 				return $m[1] . $location . $m[6];
 
@@ -260,7 +260,7 @@ class GCE_Event{
 						$description = Markdown( $description );
 
 					if ( $html )
-						$description = wp_kses_post( html_entity_decode( $description , ENT_NOQUOTES , "UTF-8" ) );
+						$description = wp_kses_post( html_entity_decode( $description , ENT_COMPAT , "UTF-8" ) );
 				}else{
 					//Otherwise, preserve line breaks
 					$description = nl2br( $description );
