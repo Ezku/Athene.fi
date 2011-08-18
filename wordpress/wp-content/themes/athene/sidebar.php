@@ -4,6 +4,7 @@
  * @subpackage Athene
  */
 ?>
+        <?php if (false): // disabled block ?>
 		<div id="secondary" class="grid_4 widget-area" role="complementary">
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
@@ -29,6 +30,7 @@
 
 			<?php endif; // end sidebar widget area ?>
 		</div><!-- #secondary .widget-area -->
+		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 		<div id="tertiary" class="widget-area" role="complementary">
