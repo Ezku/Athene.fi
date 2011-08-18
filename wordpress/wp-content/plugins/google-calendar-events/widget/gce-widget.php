@@ -183,26 +183,33 @@ function gce_widget_content_grid( $feed_ids, $title_text, $max_events, $widget_i
 
 	$num_errors = $grid->get_num_errors();
 
+	$markup = '';
+
 	//If there are less errors than feeds parsed, at least one feed must have parsed successfully so continue to display the grid
 	if ( $num_errors < count( $ids ) ) {
+		$ids = esc_attr( $ids );
+		$title_text = isset( $title_text ) ? esc_html( $title_text) : 'null';
+
 		//If there was at least one error, and user is an admin, output error messages
 		if ( $num_errors > 0 && current_user_can( 'manage_options' ) )
-			echo $grid->error_messages();
+			$markup .= $grid->error_messages();
 
 		//Add AJAX script if required
 		if ( $ajaxified )
-			?><script type="text/javascript">jQuery(document).ready(function($){gce_ajaxify("<?php echo $widget_id; ?>", "<?php echo $feed_ids; ?>", "<?php echo $max_events; ?>", "<?php echo $title_text; ?>", "widget");});</script><?php
+			$markup .= '<script type="text/javascript">jQuery(document).ready(function($){gce_ajaxify("' . $widget_id . '", "' . $feed_ids . '", "' . $max_events . '", "' . $title_text .'", "widget");});</script>';
 
-		echo $grid->get_grid( $year, $month, $ajaxified );
+		$markup .= $grid->get_grid( $year, $month, $ajaxified );
 	} else {
 		//If current user is an admin, display an error message explaining problem. Otherwise, display a 'nice' error messsage
 		if ( current_user_can( 'manage_options' ) ) {
-			echo $grid->error_messages();
+			$markup .= $grid->error_messages();
 		} else {
 			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
-			echo $options['error'];
+			$markup .= $options['error'];
 		}
 	}
+
+	echo $markup;
 }
 
 function gce_widget_content_list( $feed_ids, $title_text, $max_events, $sort_order, $grouped = false ) {

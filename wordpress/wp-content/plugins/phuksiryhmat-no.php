@@ -12,7 +12,7 @@ Version: 1.0
 Author URI: http://pkroger.org/
 */
 
-add_filter( 'generate_rewrite_rules', 'add_phuksiryhmat_rewrite' ); 
+//add_filter( 'generate_rewrite_rules', 'add_phuksiryhmat_rewrite' ); 
 function add_phuksiryhmat_rewrite($wp_rewrite) {
   $new_rules = array( 
        'lista/phuksit/(.+)' => 'index.php?pagename=phuksit&ryhma=' .

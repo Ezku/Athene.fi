@@ -40,25 +40,28 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="hfeed">
-	<header id="branding" role="banner">
-			<hgroup>
-				<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
 
-			<nav id="access" role="navigation">
-				<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
+	<header class="container_16" id="branding" role="banner">
+		<hgroup class="grid_6">
+			<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0 ) ); ?>
-			</nav><!-- #access -->
+		<nav class="grid_10" id="access" role="navigation">
+			<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
+			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+		</nav><!-- #access -->
 	</header><!-- #branding -->
+	<div class="clear"></div>
 
-	<nav id="subnavi-small" role="navigation">
-	  
-	  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
-	  
+	<nav class="container_16" id="subnavi-small" role="navigation">
+
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
+
 		<?php
 		// Only show subnavi for subpages,
 		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
@@ -73,7 +76,7 @@
 			foreach($subpages as $subpage) {
 		?>
 
-		<div class="subnavi-box">
+		<div class="grid_4 subnavi-box">
 			<a href="<?php echo get_page_link($subpage->ID) ?>"><?php echo $subpage->post_title ?></a>
 		</div>
 		<?php
@@ -82,5 +85,6 @@
 		?>
 
 	</nav><!-- #subnavi-small -->
+	<div class="clear"></div>
 
 	<div id="main">

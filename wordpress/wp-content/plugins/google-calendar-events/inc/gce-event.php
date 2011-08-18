@@ -12,6 +12,8 @@ class GCE_Event{
 	private $pos;
 	private $feed;
 	private $day_type;
+	private $time_now;
+	private $regex;
 
 	function __construct( $id, $title, $description, $location, $start_time, $end_time, $link ) {
 		$this->id = $id;
@@ -66,7 +68,7 @@ class GCE_Event{
 		$days = array();
 
 		//If multiple day events should be handled, and this event is a multi-day event, add multiple day event to required days
-		if ( $this->feed->get_multi_day() && ( $this->day_type == 'MPD' || $this->day_type == 'MWD' ) ) {
+		if ( $this->feed->get_multi_day() && ( 'MPD' == $this->day_type || 'MWD' == $this->day_type ) ) {
 			$on_next_day = true;
 			$next_day = $start_time;
 
@@ -100,6 +102,8 @@ class GCE_Event{
 
 		//Set the position of this event in array of events currently being processed
 		$this->pos = $num;
+
+		$this->time_now = current_time( 'timestamp' );
 
 		//Use the builder or the old display options to create the markup, depending on user choice
 		if ( $this->feed->get_use_builder() )
@@ -156,30 +160,19 @@ class GCE_Event{
 			'if-single-day'   //The event does not span multiple days
 		);
 
-		$shortcodes = implode( '|', $shortcodes );
+		$this->regex = '/(.?)\[(' . implode( '|', $shortcodes ) . ')\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s';
 
-		$markup = $this->feed->get_builder();
+		return $this->look_for_shortcodes( $this->feed->get_builder() );
+	}
 
-		$count = 0;
-
-		//Go through the builder text looking for valid shortcodes. If one is found, send it to parse_shortcodes(). Once $count reaches 0, there are no un-parsed shortcodes
-		//left, so return the markup (which now contains all the appropriate event information)
-		do {
-			$markup = preg_replace_callback(
-				'/(.?)\[(' . $shortcodes . ')\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s',
-				array( $this, 'parse_shortcode' ),
-				$markup,
-				-1,
-				$count
-			);
-		} while ( $count > 0 );
-
-		return $markup;
+	//Look through the EDB markup for shortcodes
+	function look_for_shortcodes( $markup ) {
+		return preg_replace_callback( $this->regex, array( $this, 'process_shortcode' ), $markup );
 	}
 
 	//Parse a shortcode, returning the appropriate event information
 	//Much of this code is 'borrowed' from WordPress' own shortcode handling stuff!
-	function parse_shortcode( $m ) {
+	function process_shortcode( $m ) {
 		if ( '[' == $m[1] && ']' == $m[6] )
 			return substr( $m[0], 1, -1 );
 
@@ -205,8 +198,6 @@ class GCE_Event{
 		$offset    = intval( $offset );
 		$autolink  = ( 'true' === $autolink );
 
-		$time_now = current_time( 'timestamp' );
-
 		//Do the appropriate stuff depending on which shortcode we're looking at. See valid shortcode list (above) for explanation of each shortcode
 		switch ( $m[2] ) {
 			case 'event-title':
@@ -216,7 +207,7 @@ class GCE_Event{
 					$title = Markdown( $title );
 
 				if ( $html )
-					$title = wp_kses_post( html_entity_decode( $title, ENT_COMPAT, "UTF-8" ) );
+					$title = wp_kses_post( html_entity_decode( $title , ENT_COMPAT , "UTF-8" ) );
 
 				return $m[1] . $title . $m[6];
 
@@ -230,7 +221,7 @@ class GCE_Event{
 				return $m[1] . date_i18n( $format, $this->start_time + $offset ) . $m[6];
 
 			case 'start-human':
-				return $m[1] . $this->gce_human_time_diff( $this->start_time + $offset, $time_now, $precision ) . $m[6];
+				return $m[1] . $this->gce_human_time_diff( $this->start_time + $offset, $this->time_now, $precision ) . $m[6];
 
 			case 'end-time':
 				return $m[1] . date_i18n( $this->feed->get_time_format(), $this->end_time + $offset ) . $m[6];
@@ -242,7 +233,7 @@ class GCE_Event{
 				return $m[1] . date_i18n( $format, $this->end_time + $offset ) . $m[6];
 
 			case 'end-human':
-				return $m[1] . $this->gce_human_time_diff( $this->end_time + $offset, $time_now, $precision ) . $m[6];
+				return $m[1] . $this->gce_human_time_diff( $this->end_time + $offset, $this->time_now, $precision ) . $m[6];
 
 			case 'location':
 				$location = esc_html( trim( $this->location ) );
@@ -251,7 +242,7 @@ class GCE_Event{
 					$location = Markdown( $location );
 
 				if ( $html )
-					$location = wp_kses_post( html_entity_decode( $location, ENT_COMPAT, "UTF-8" ) );
+					$location = wp_kses_post( html_entity_decode( $location , ENT_COMPAT , "UTF-8" ) );
 
 				return $m[1] . $location . $m[6];
 
@@ -269,7 +260,7 @@ class GCE_Event{
 						$description = Markdown( $description );
 
 					if ( $html )
-						$description = wp_kses_post( html_entity_decode( $description, ENT_COMPAT, "UTF-8" ) );
+						$description = wp_kses_post( html_entity_decode( $description , ENT_COMPAT , "UTF-8" ) );
 				}else{
 					//Otherwise, preserve line breaks
 					$description = nl2br( $description );
@@ -283,133 +274,133 @@ class GCE_Event{
 
 			case 'link':
 				$new_window = ( $newwindow ) ? ' target="_blank"' : '';
-				return $m[1] . '<a href="' . $this->link . '&amp;ctz=' . $this->feed->get_timezone() . '"' . $new_window . '>' . $m[5] . '</a>' . $m[6];
+				return $m[1] . '<a href="' . esc_url( $this->link . '&ctz=' . $this->feed->get_timezone() ) . '"' . $new_window . '>' . $this->look_for_shortcodes( $m[5] ) . '</a>' . $m[6];
 
 			case 'url':
-				return $m[1] . $this->link . '&amp;ctz=' . $this->feed->get_timezone() . $m[6];
+				return $m[1] . esc_url( $this->link . '&ctz=' . $this->feed->get_timezone() ) . $m[6];
 
 			case 'feed-id':
-				return $m[1] . $this->feed->get_feed_id() . $m[6];
+				return $m[1] . intval( $this->feed->get_feed_id() ) . $m[6];
 
 			case 'feed-title':
-				return $m[1] . $this->feed->get_feed_title() . $m[6];
+				return $m[1] . esc_html( $this->feed->get_feed_title() ) . $m[6];
 
 			case 'maps-link':
 				$new_window = ( $newwindow ) ? ' target="_blank"' : '';
-				return $m[1] . '<a href="http://maps.google.com?q=' . urlencode( $this->location ) . '"' . $new_window . '>' . $m[5] . '</a>' . $m[6];
+				return $m[1] . '<a href="' . esc_url( 'http://maps.google.com?q=' . urlencode( $this->location ) ) . '"' . $new_window . '>' . $this->look_for_shortcodes( $m[5] ) . '</a>' . $m[6];
 
 			case 'length':
 				return $m[1] . $this->gce_human_time_diff( $this->start_time, $this->end_time, $precision ) . $m[6];
 
 			case 'event-num':
-				return $m[1] . $this->pos . $m[6];
+				return $m[1] . intval( $this->pos ) . $m[6];
 
 			case 'event-id':
-				return $m[1] . $this->id . $m[6];
+				return $m[1] . esc_html( $this->id ) . $m[6];
 
 			case 'cal-id':
 				$cal_id = explode( '/', $this->feed->get_feed_url() );
-				return $m[1] . $cal_id[5] . $m[6];
+				return $m[1] . esc_html( $cal_id[5] ) . $m[6];
 
 			case 'if-all-day':
 				if ( 'SWD' == $this->day_type || 'MWD' == $this->day_type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
-					return '';
+				return '';
 
 			case 'if-not-all-day':
 				if ( 'SPD' == $this->day_type || 'MPD' == $this->day_type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-title':
 				if ( '' != $this->title )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-description':
 				if ( '' != $this->description )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-location':
 				if ( '' != $this->location )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-tooltip':
 				if ( 'tooltip' == $this->type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-list':
 				if ( 'list' == $this->type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-now':
-				if ( $time_now >= $this->start_time && $time_now < $this->end_time )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->time_now >= $this->start_time && $this->time_now < $this->end_time )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-not-now':
-				if ( $this->end_time < $time_now || $this->start_time > $time_now )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->end_time < $this->time_now || $this->start_time > $this->time_now )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-started':
-				if ( $this->start_time < $time_now )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->start_time < $this->time_now )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-not-started':
-				if ( $this->start_time > $time_now )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->start_time > $this->time_now )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-ended':
-				if ( $this->end_time < $time_now )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->end_time < $this->time_now )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-not-ended':
-				if ( $this->end_time > $time_now )
-					return $m[1] . $m[5] . $m[6];
+				if ( $this->end_time > $this->time_now )
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-first':
 				if ( 0 == $this->num_in_day )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-not-first':
 				if ( 0 != $this->num_in_day )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-multi-day':
 				if ( 'MPD' == $this->day_type || 'MWD' == $this->day_type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 
 			case 'if-single-day':
 				if ( 'SPD' == $this->day_type || 'SWD' == $this->day_type )
-					return $m[1] . $m[5] . $m[6];
+					return $m[1] . $this->look_for_shortcodes( $m[5] ) . $m[6];
 
 				return '';
 		}
@@ -443,16 +434,16 @@ class GCE_Event{
 
 		//Add the correct start / end, date / time information to $markup
 		foreach ( $start_end as $start_or_end => $info ) {
-			$markup .= '<p class="gce-' . $this->type . '-' . $start_or_end . '"><span>' . $display_options['display_' . $start_or_end . '_text'] . '</span> ';
+			$markup .= '<p class="gce-' . $this->type . '-' . $start_or_end . '"><span>' . esc_html( $display_options['display_' . $start_or_end . '_text'] ) . '</span> ';
 
 			switch ( $display_options['display_' . $start_or_end] ) {
-				case 'time': $markup .= $info['time'];
+				case 'time': $markup .= esc_html( $info['time'] );
 					break;
-				case 'date': $markup .= $info['date'];
+				case 'date': $markup .= esc_html( $info['date'] );
 					break;
-				case 'time-date': $markup .= $info['time'] . $display_options['display_separator'] . $info['date'];
+				case 'time-date': $markup .= esc_html( $info['time'] . $display_options['display_separator'] . $info['date'] );
 					break;
-				case 'date-time': $markup .= $info['date'] . $display_options['display_separator'] . $info['time'];
+				case 'date-time': $markup .= esc_html( $info['date'] . $display_options['display_separator'] . $info['time'] );
 			}
 
 			$markup .= '</p>';
@@ -462,7 +453,7 @@ class GCE_Event{
 		if ( isset( $display_options['display_location'] ) ) {
 			$event_location = $this->location;
 			if ( '' != $event_location )
-				$markup .= '<p class="gce-' . $this->type . '-loc"><span>' . $display_options['display_location_text'] . '</span> ' . esc_html( $event_location ) . '</p>';
+				$markup .= '<p class="gce-' . $this->type . '-loc"><span>' . esc_html( $display_options['display_location_text'] ) . '</span> ' . esc_html( $event_location ) . '</p>';
 		}
 
 		//If description should be displayed (and is not empty) add to $markup
@@ -482,7 +473,7 @@ class GCE_Event{
 
 		//If link should be displayed add to $markup
 		if ( isset($display_options['display_link'] ) )                                                                                    //Below: add target="_blank" if required
-			$markup .= '<p class="gce-' . $this->type . '-link"><a href="' . $this->link . '&amp;ctz=' . $this->feed->get_timezone() . '"' . ( ( isset( $display_options['display_link_target'] ) ) ? ' target="_blank"' : '' ) . '>' . $display_options['display_link_text'] . '</a></p>';
+			$markup .= '<p class="gce-' . $this->type . '-link"><a href="' . esc_url( $this->link ) . '&amp;ctz=' . esc_url( $this->feed->get_timezone() ) . '"' . ( ( isset( $display_options['display_link_target'] ) ) ? ' target="_blank"' : '' ) . '>' . esc_html( $display_options['display_link_text'] ) . '</a></p>';
 
 		return $markup;
 	}

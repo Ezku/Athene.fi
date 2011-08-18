@@ -1,0 +1,32 @@
+.edit-menu-item-autopopulate label {
+
+    font-size: 110%;
+    font-weight: bold;
+
+}
+
+.edit-menu-item-autopopulate-options {
+
+margin-right: 7px;
+
+}
+
+.gsm_posts_options, .gsm_taxonomies_options {
+    margin-top: 2px;
+    display: block;
+
+}
+
+.gsm_posts_options span.description-thin, .gsm_taxonomies_options  span.description-thin{
+
+    display: block;
+    width: 180px;
+}
+
+.gsm-autopopulate-posttype {
+
+    font-size: 12px;   
+
+}
+
+.gsm-title {display: block; border-bottom: 1px solid #DFDFDF;}
