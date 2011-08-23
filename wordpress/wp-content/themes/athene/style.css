@@ -101,15 +101,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 #subnavi-small li.menu-item {
   width: 100px;
+  height: 75px;
+  font-size: 10pt;
 }
 
 #subnavi-large li.menu-item {
   width: 200px;
+  height: 150px;
+  font-size: 12pt;
 }
 
 #subnavi-large li.menu-item .intro,
 #subnavi-small li.menu-item .intro {
   display: block;
+}
+
+#subnavi-small li.menu-item .intro {
+  font-size: 8pt;
+}
+
+#subnavi-large li.menu-item .intro {
+  font-size: 10pt;
 }
 
 
