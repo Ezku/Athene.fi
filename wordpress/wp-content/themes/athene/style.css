@@ -360,3 +360,30 @@ article.comment {
 	padding: 1em 0 0;
 }
 
+#colophon ul.menu {
+  
+}
+
+/* main sections (kilta, toiminta etc) in sitemap */
+#colophon ul.menu > li {
+  /*display: inline-block;*/
+  float: left;
+  width: 100px;
+  list-style-type: none;
+}
+
+/* main section links */
+#colophon ul.menu > li > a {
+  font-weight: bold;
+}
+
+/* intro text */
+#colophon ul.menu .intro {
+  display: none;
+}
+
+/* subpages */
+#colophon ul.menu li ul.sub-menu li.menu-item {
+  margin-left: 0;
+  list-style-type: none;
+}
