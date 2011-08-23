@@ -8,6 +8,18 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
+			  
+			  <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+    		<div id="tertiary" class="widget-area" role="complementary">
+    			<?php dynamic_sidebar( 'sidebar-3' ); ?>
+    		</div><!-- #tertiary .widget-area -->
+    		<?php endif; ?>
+    		
+    		<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
+    		<div id="tertiary" class="widget-area" role="complementary">
+    			<?php dynamic_sidebar( 'sidebar-4' ); ?>
+    		</div><!-- #tertiary .widget-area -->
+    		<?php endif; ?>
 
 				<?php /* Display navigation to next/previous pages when applicable */ ?>
 				<?php if ( $wp_query->max_num_pages > 1 ) : ?>
