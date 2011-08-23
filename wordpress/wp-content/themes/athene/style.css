@@ -83,6 +83,35 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin: 0 0 1em;
 }
 
+/* menus */
+
+#subnavi-small li.menu-item:first,
+#subnavi-large li.menu-item:first {
+  margin-left: 0;
+}
+
+#subnavi-small li.menu-item,
+#subnavi-large li.menu-item {
+  float: left;
+  border: 1px solid rgba(0,0,0,0.3);
+  list-style-type: none;
+  margin: 0.5em;
+  padding: 0.5em  ;
+}
+
+#subnavi-small li.menu-item {
+  width: 100px;
+}
+
+#subnavi-large li.menu-item {
+  width: 200px;
+}
+
+#subnavi-large li.menu-item .intro,
+#subnavi-small li.menu-item .intro {
+  display: block;
+}
+
 
 /* =Menu
 -------------------------------------------------------------- */
