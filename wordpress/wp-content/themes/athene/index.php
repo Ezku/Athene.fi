@@ -9,17 +9,13 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" role="main">
 			  
-			  <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-    		<div id="tertiary" class="widget-area" role="complementary">
-    			<?php dynamic_sidebar( 'sidebar-3' ); ?>
-    		</div><!-- #tertiary .widget-area -->
-    		<?php endif; ?>
-    		
-    		<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
-    		<div id="tertiary" class="widget-area" role="complementary">
-    			<?php dynamic_sidebar( 'sidebar-4' ); ?>
-    		</div><!-- #tertiary .widget-area -->
-    		<?php endif; ?>
+			  <?php for($i=1; $i<13; $i++) { ?>
+  			  <?php if ( is_active_sidebar( 'index-widget-'.$i ) ) : ?>
+      		<div class="widget-area" role="complementary">
+      			<?php dynamic_sidebar( 'index-widget-'.$i ); ?>
+      		</div><!-- .widget-area -->
+      		<?php endif; ?>
+    		<?php } ?>
 
 				<?php /* Display navigation to next/previous pages when applicable */ ?>
 				<?php if ( $wp_query->max_num_pages > 1 ) : ?>
@@ -31,11 +27,11 @@ get_header(); ?>
 				<?php endif; ?>
 				
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php /* while ( have_posts() ) : the_post(); ?>
 					
 					<?php get_template_part( 'content', get_post_format() ); ?>
 
-				<?php endwhile; ?>
+				<?php endwhile; */ ?>
 				
 				<?php /* Display navigation to next/previous pages when applicable */ ?>
 				<?php if (  $wp_query->max_num_pages > 1 ) : ?>
