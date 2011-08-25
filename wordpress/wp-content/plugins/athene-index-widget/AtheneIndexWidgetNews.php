@@ -17,17 +17,41 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  <p>
   	  <label for="<?php echo $this->get_field_id('page'); ?>">Page</label>
   	  <select id="<?php echo $this->get_field_id('page'); ?>" name="<?php echo $this->get_field_name('page'); ?>">
+  	    <?php $pagedepths = array(); ?>
   	    <?php foreach(get_pages(array()) as $page) { ?>
-  	      <option value="<?php echo $page->ID ?>" <?php echo $pageId == $page->ID ? 'selected="selected"' : ""; ?>><?php echo $page->post_title ?></option>
+          <?php 
+  	        if ($page->post_parent > 0) {
+  	          $pagedepths[$page->ID] = $pagedepths[$page->post_parent]+1;
+  	        } else {
+  	          $pagedepths[$page->ID] = 0;
+  	        }
+  	      ?>
+  	      <option value="<?php echo $page->ID ?>" 
+  	        <?php echo $pageId == $page->ID ? 'selected="selected"' : ""; ?>>
+  	        <?php echo str_repeat("&nbsp;", $pagedepths[$page->ID]*2); ?>
+  	        <?php echo $page->post_title ?></option>
   	    <?php } ?>
   	  </select>
   	  </p>
   	  <p>
   	  <label for="<?php echo $this->get_field_id('category'); ?>">News category</label>
   	  <select id="<?php echo $this->get_field_id('category'); ?>" name="<?php echo $this->get_field_name('category'); ?>">
+  	    <?php $catdepths = array(); ?>
   	    <?php foreach(get_categories(array('hide_empty' => 0)) as $category) { ?>
-  	      <!-- <?php print_r($category) ?> -->
-  	      <option value="<?php echo $category->cat_ID ?>" <?php echo $categoryId == $category->cat_ID ? 'selected="selected"' : ""; ?>><?php echo $category->cat_name ?></option>
+  	      <?php 
+  	        if ($category->category_parent > 0) {
+  	          echo "<!-- parent found -->";
+  	          $catdepths[$category->cat_ID] = $catdepths[$category->category_parent]+1;
+  	        } else {
+  	          $catdepths[$category->cat_ID] = 0;
+  	        }
+  	        echo "<!-- "; print_r($category); echo " -->";
+  	        echo "<!-- ".$catdepths[$category->cat_ID]." -->"
+  	      ?>
+  	      <option value="<?php echo $category->cat_ID ?>" 
+  	        <?php echo $categoryId == $category->cat_ID ? 'selected="selected"' : ""; ?>>
+  	        <?php echo str_repeat("&nbsp;", $catdepths[$category->cat_ID]*2); ?>
+  	        <?php echo $category->cat_name ?></option>
   	    <?php } ?>
   	  </select>
   	  </p>
