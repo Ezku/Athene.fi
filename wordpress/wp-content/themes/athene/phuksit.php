@@ -1,6 +1,14 @@
 <?php
+$defaults = array('vuosi' => date('Y'), 'ryhma' => '1');
+$params = array();
+$params['vuosi'] = $wp_query->query_vars['vuosi'] ? $wp_query->query_vars['vuosi'] : $defaults['vuosi'];
+$params['ryhma'] = $wp_query->query_vars['ryhma'] ? $wp_query->query_vars['ryhma'] : $defaults['ryhma'];
+
+$options = get_option('phuksiryhmat_options');
+
 $args['meta_key'] = 'vuosi';
-$args['meta_value'] = $wp_query->query_vars['vuosi'];
+$args['meta_value'] = $params['vuosi']; 
+
 $results = $Q->get_posts($args);
 
 $isoQ = new GetPostsQuery();
@@ -9,15 +17,21 @@ $isoQ->limit = 100;
 $isoArgs = array(
   "post_type" => 'ISO',
   "meta_key" => 'vuosi',
-  "meta_value" => $wp_query->query_vars['vuosi']
+  "meta_value" => $params['vuosi']
 );
 $isos = $isoQ->get_posts($isoArgs);
 ?>
+Phuksiryhmät 
+<?php for($i=1;$i<=$options['groups']; $i++) { ?>
+  <a href="<?php echo get_permalink() ?><?php echo $options['year'].'/'.$i ?>"><?php echo $i ?></a> 
+<?php } ?>
 <h2>ISO-henkilöt</h2>
 <?php
+$count = 0;
 foreach ($isos as $iso) {
   $post = get_post_complete($iso['ID']);
-  if (get_custom_field('ryhma') == $wp_query->query_vars['ryhma']) { ?>
+  if (get_custom_field('ryhma') == $params['ryhma']) { 
+    $count++; ?>
   <div style="float: left;">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
@@ -25,14 +39,21 @@ foreach ($isos as $iso) {
   <?php if (custom_field_found('puhelin')) print get_custom_field('puhelin')."<br />"; ?>
   </div>
   <?php
-}
+  }
+  if ($count == 0) {
+    ?> 
+    <p>Ei isoja tälle ryhmälle</p>
+    <?php
+  }
 }
 ?>
 <h2 style="clear: left;">Phuksit</h2>
 <?php
+$count = 0;
 foreach($results as $entry) {
   $post = get_post_complete($entry['ID']);
-  if (get_custom_field('ryhma') == $wp_query->query_vars['ryhma']) { ?>
+  if (get_custom_field('ryhma') == $params['ryhma']) { 
+    $count++; ?>
   <div style="float: left;">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
@@ -41,5 +62,10 @@ foreach($results as $entry) {
   </div>
 <?php
 }
+}
+if ($count == 0) {
+  ?> 
+  <p>Ei phukseja tässä ryhmässä</p>
+  <?php
 }
 ?>
