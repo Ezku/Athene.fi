@@ -10,7 +10,8 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  $categoryId = $instance ? $instance['category'] : 0;
   	  $show_time = sizeof($instance) > 0 ? $instance['show_time'] : 'on';
   	  $show_date = sizeof($instance) > 0 ? $instance['show_date'] : 'on';
-  	  $template = $instance['template']
+  	  $template = $instance['template'];
+  	  $title = $instance['title'];
   	  ?>
   	  <!-- <?php print_r($instance) ?> -->
   	  <p>
@@ -31,9 +32,14 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  </select>
   	  </p>
   	  <p>
+	      <label for="<?php echo $this->get_field_id('title'); ?>" title="To use page title, leave empty">Override title</label>
+  	    <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>">
+  	  </p>
+  	  <p>
   	  <input type="checkbox" id="<?php echo $this->get_field_id('show_time'); ?>" name="<?php echo $this->get_field_name('show_time'); ?>" <?php echo $show_time == 'on' ? 'checked="checked"' : '' ?>>
   	  <label for="<?php echo $this->get_field_id('show_time'); ?>">Show times</label>
   	  </p>
+  	  
   	  <p>
   	  <input type="checkbox" id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>" <?php echo $show_date == 'on' ? 'checked="checked"' : '' ?>>
   	  <label for="<?php echo $this->get_field_id('show_date'); ?>">Show dates</label>

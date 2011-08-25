@@ -2,7 +2,7 @@
 $page = get_post_complete($instance['page']);
 $news = get_posts(array('cat' => $instance['category']));
 ?>
-<h1><?php echo $page->post_title ?></h1>
+<h1><?php echo !empty($instance['title']) ? $instance['title'] : $page->post_title ?></h1>
 <?php foreach($news as $news_item) { ?>
   <p><?php echo $news_item->post_title ?></p>
   <!-- <?php print_r($news_item) ?> -->
