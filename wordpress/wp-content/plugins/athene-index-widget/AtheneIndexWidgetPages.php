@@ -45,6 +45,9 @@ class AtheneIndexWidgetPages extends WP_Widget {
   	}
 
   	function widget($args, $instance) {
+      $page = get_post_complete($instance['page']);
+  	  
+  	  // template 
   	  $template = TEMPLATEPATH.'/'.$instance['template'];
   	  if (strlen($instance['template']) > 0 && is_readable($template)) {
   	    include($template);

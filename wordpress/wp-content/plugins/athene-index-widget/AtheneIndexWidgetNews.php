@@ -64,6 +64,19 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	}
 
   	function widget($args, $instance) {
+      $page = get_post_complete($instance['page']);
+      $news = get_posts(array('cat' => $instance['category']));
+
+        $dateString = "";
+        if ($instance['show_date'] == 'on') {
+          $dateString .= get_option('date_format').' ';
+        }
+        if ($instance['show_time'] == 'on') {
+          $dateString .= get_option('time_format');
+        }
+        $dateString = trim($dateString);
+  	  
+  	  // load the template
   	  $template = TEMPLATEPATH.'/'.$instance['template'];
   	  if (strlen($instance['template']) > 0 && is_readable($template)) {
   	    include($template);
