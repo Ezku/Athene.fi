@@ -70,6 +70,13 @@
 				<p>PL 15400 (Konemiehentie 2)<br />
 					00076 AALTO</p>
 			</address>
+			
+			<div id="footer-links">
+			  <ul>
+        <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 
+        'length', FALSE); ?>
+        </ul>
+			</div>
 
 			<div id="site-generator">
 				<a href="http://wordpress.org/" rel="generator">Proudly powered by WordPress</a>
