@@ -59,11 +59,14 @@
 	</header><!-- #branding -->
 	<div class="clear"></div>
 
+  <?php if (!$no_small_submenu) { ?>
+    
 	<nav class="container_16" id="subnavi-small" role="navigation">
 
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
 
 		<?php
+		/*
 		// Only show subnavi for subpages,
 		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
 		if($post->post_parent) {
@@ -83,9 +86,11 @@
 		<?php
 			} // end foreach
 		} // end if
+		*/
 		?>
 
 	</nav><!-- #subnavi-small -->
+	<?php } /* end if no small submenu */ ?>
 	<div class="clear"></div>
 
 	<div id="main" class="clearfix">

@@ -6,8 +6,8 @@
  * @package WordPress
  * @subpackage Athene
  */
-
-get_header(); ?>
+$no_small_submenu = true;
+include("header.php"); ?>
 
 		<div id="primary" class="container_16 subnavi-full">
 			<div id="content" class="grid_16" role="main">
@@ -20,7 +20,11 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="subnavi-content alpha omega grid_16">
+					  <nav class="container_16" id="subnavi-large" role="navigation">
+					  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
+					  </nav>
 						<?php
+						/*
 						$subpages = get_pages(
 							'child_of='.$post->ID.
 							'&parent='.$post->ID.

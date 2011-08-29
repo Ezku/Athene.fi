@@ -11,7 +11,9 @@
 	<footer id="colophon" class="container_16 clearfix" role="contentinfo">
 
 		<div class="grid_10 sitemap">
-			<div class="grid_2 alpha">
+		  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(0,1,2), false) ) ); ?>
+			<!--<div class="grid_2 alpha">
+			  
 		      <ul>
 		        <li><a href="" class="mainlink">Kilta</a></li>
 		        <li><a>Säännöt</a></li>
@@ -59,7 +61,7 @@
 		      <ul>
 		        <li><a href="" class="mainlink">Yrityksille</a></li>
 		      </ul>
-		    </div>
+		    </div>-->
 		</div><!-- .sitemap -->
 
 		<div class="grid_6">
@@ -68,6 +70,13 @@
 				<p>PL 15400 (Konemiehentie 2)<br />
 					00076 AALTO</p>
 			</address>
+			
+			<div id="footer-links">
+			  <ul>
+        <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 
+        'length', FALSE); ?>
+        </ul>
+			</div>
 
 			<div id="site-generator">
 				<a href="http://wordpress.org/" rel="generator">Proudly powered by WordPress</a>

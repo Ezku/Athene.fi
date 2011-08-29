@@ -35,3 +35,83 @@ footer, footer a {
 h1 a, h2 a, h3 a {
 	
 }
+
+/* menus */
+
+#subnavi-small li.menu-item:first,
+#subnavi-large li.menu-item:first {
+  margin-left: 0;
+}
+
+#subnavi-small li.menu-item,
+#subnavi-large li.menu-item {
+  float: left;
+  border: 1px solid rgba(0,0,0,0.3);
+  list-style-type: none;
+  margin: 0.5em;
+  padding: 0.5em  ;
+}
+
+#subnavi-small li.menu-item {
+  width: 100px;
+  height: 75px;
+  font-size: 10pt;
+}
+
+#subnavi-large li.menu-item {
+  width: 200px;
+  height: 150px;
+  font-size: 12pt;
+}
+
+#subnavi-large li.menu-item .intro,
+#subnavi-small li.menu-item .intro {
+  display: block;
+}
+
+#subnavi-small li.menu-item .intro {
+  font-size: 8pt;
+}
+
+#subnavi-large li.menu-item .intro {
+  font-size: 10pt;
+}
+
+/* content */
+blockquote {
+	margin-left: 40px;
+}
+
+/* widgets in index */
+#content .widget-area {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(0,0,0,0.3);
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+/* main sections (kilta, toiminta etc) in sitemap */
+#colophon ul.menu > li {
+  /*display: inline-block;*/
+  float: left;
+  width: 100px;
+  list-style-type: none;
+}
+
+/* main section links */
+#colophon ul.menu > li > a {
+  font-weight: bold;
+}
+
+/* intro text */
+#colophon ul.menu .intro {
+  display: none;
+}
+
+/* subpages */
+#colophon ul.menu li ul.sub-menu li.menu-item {
+  margin-left: 0;
+  list-style-type: none;
+}
