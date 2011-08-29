@@ -8,7 +8,7 @@
 	</div><!-- #main -->
 	<div class="clear"></div>
 
-	<footer id="colophon" class="container_16" role="contentinfo">
+	<footer id="colophon" class="container_16 clearfix" role="contentinfo">
 
 		<div class="grid_10 sitemap">
 			<div class="grid_2 alpha">
@@ -78,6 +78,11 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/noisy/1.0/jquery.noisy.min.js"></script>
+<script src="<?php bloginfo( 'template_directory' ); ?>/athene.js" type="text/javascript"></script>
 
 </body>
 </html>

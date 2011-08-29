@@ -43,18 +43,19 @@
 
 <div id="page" class="hfeed">
 
-	<header class="container_16" id="branding" role="banner">
-		<hgroup class="grid_6">
-			<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
+	<header id="branding" role="banner">
+	    <div class="container_16 clearfix">
+    		<hgroup class="grid_6">
+    			<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+    		</hgroup>
 
-		<nav class="grid_10" id="access" role="navigation">
-			<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
-			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
+    		<nav class="grid_10" id="access" role="navigation">
+    			<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
+    			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
-		</nav><!-- #access -->
+    			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+    		</nav><!-- #access -->
+		</div>
 	</header><!-- #branding -->
 	<div class="clear"></div>
 
@@ -87,4 +88,4 @@
 	</nav><!-- #subnavi-small -->
 	<div class="clear"></div>
 
-	<div id="main">
+	<div id="main" class="clearfix">
