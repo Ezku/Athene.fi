@@ -21,19 +21,36 @@ Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-
 -------------------------------------------------------------- */
 
 body {
-	
+	/* Dark gray with blue tint */
+	background-color: #1E2626;
+}
+
+#main {
+	/* Creamy yellow */
+	background-color: #F3F4F0;
+}
+
+header#branding {
+	/* Athene green */
+	background-color: #79B654;
 }
 
 body a {
+	/* Darker Athene green */
 	color: #75B251;
 }
 
 footer, footer a {
+	/* Creamy yellow */
 	color: #F3F4F0;
 }
 
-h1 a, h2 a, h3 a {
-	
+header#branding a, h1 a, h2 a, h3 a {
+	color: #1E2626;
+}
+
+h1, h2, h3 {
+	color: #1E2626;
 }
 
 /* menus */
