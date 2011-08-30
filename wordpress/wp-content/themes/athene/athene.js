@@ -1,6 +1,6 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
 	var noisy = function(e) {
-		return $(e).noisy({
+		return jQuery(e).noisy({
 	 	    'intensity' : 5,
 		    'size' : 200,
 		    'opacity' : 0.05,
