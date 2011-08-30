@@ -91,6 +91,7 @@ var flickrbrowser = {
       el.html("");
       el.append(photosetString);
       
+      flickrbrowser.log(el.find("div a"));
       el.find("div a").fancybox({
 				'transitionIn'		: 'none',
 				'transitionOut'		: 'none',

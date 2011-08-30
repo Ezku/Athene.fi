@@ -1,0 +1,20 @@
+#flickrphotos {
+}
+.photoset {
+  /*background-color: #6c6;*/
+  margin: 10px 0;
+}
+.photosettitle:hover {
+  background-color: #ded;
+}
+.photoset.active {
+  background-color: #ded;
+}
+.photo {
+  margin: 5px;
+}
+#spinner {
+}
+
+.hide {
+}

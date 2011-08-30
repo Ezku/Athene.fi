@@ -28,14 +28,6 @@ class FlickrPhotosetsWidget extends WP_Widget {
   	}
 
   	function widget($args, $instance) {
-  	  
-  	  // include scripts & styles
-  	  /*wp_enqueue_style('jquery-fancybox-css', plugins_url('fancybox/jquery.fancybox-1.3.4.css', __FILE__));
-  		wp_enqueue_script('jquery-easing', plugins_url('fancybox/jquery.easing-1.3.pack.js', __FILE__), array('jquery'));
-  		wp_enqueue_script('jquery-mousewheel', plugins_url('fancybox/jquery.mousewheel-3.0.4.pack.js', __FILE__), array('jquery'));
-  		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
-  		wp_enqueue_script('flickr-browser', plugins_url('flickrbrowser.js', __FILE__), array('jquery-fancybox'));
-  		*/
   		$options = get_option('flickr_photosets_options');
   		$link = get_permalink($instance['link_target'])
   		?>
