@@ -21,8 +21,14 @@ var flickrbrowser = {
       console.log(msg);
     }
   },
-  getPhotosets: function() {
-    var url = flickrbrowser.getQueryString("flickr.photosets.getList", {user_id: flickrbrowser.user_id});
+  getPhotosets: function(attrs) {
+    var params = {user_id: flickrbrowser.user_id};
+    if (attrs && attrs.photosets) {
+      params.page = 1;
+      params.per_page = attrs.photosets;
+    }
+    
+    var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
     
     flickrbrowser.showSpinner(true);
     jQuery.getJSON(url,function(data){
@@ -33,6 +39,9 @@ var flickrbrowser = {
   	    jQuery("#flickrphotos").html("Error fetching photosets: "+data.message);
   	  } else {
   	  jQuery.each(data.photosets.photoset, function(i, val) {
+  	      if (attrs && attrs.photos > i) {
+  	        return;
+  	      }
   	      var title = val.title._content;
     	    jQuery("#flickrphotos").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
     	      + "<div class=\"photosettitle\"><a href=\"#\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
@@ -129,10 +138,17 @@ var flickrbrowser = {
       } else {
         el.addClass('hide');
       }
+    },
+    showWidget: function() {
+      var params = {user_id: flickrbrowser.user_id, per_page: 2, page: 1};
+      var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
+      jQuery.getJSON(url, function(data) {
+        var output = '<ul>';
+        jQuery.each(data.photosets.photoset, function(i, set) {
+          output += '<li>'+set.title._content+' ('+set.photos+' kuvaa)</li>';
+        });
+        output += '</ul>';
+        jQuery('#flickr-widget').html(output);
+      });
     }
   };
-  
-jQuery(function() {
-  flickrbrowser.getPhotosets();
-  
-});

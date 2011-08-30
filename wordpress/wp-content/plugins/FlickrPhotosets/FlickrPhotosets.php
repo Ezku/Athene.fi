@@ -149,14 +149,14 @@ function flickr_photosets_options() {
 // add js and css for the gallery if needed
 // see: http://beerpla.net/2010/01/13/wordpress-plugin-development-how-to-include-css-and-javascript-conditionally-and-only-when-needed-by-the-posts/
 add_filter('the_posts', 'flickr_photosets_add_css_js'); // the_posts gets triggered before wp_head
-function flickr_photosets_add_css_js($posts){
+function flickr_photosets_add_css_js($posts, $force = FALSE){
   global $flickr_gallery_shortcode; // im bad. punish me
-	if (empty($posts)) return $posts;
+	if (!$force && empty($posts)) return $posts;
  
-	$shortcode_found = false; // use this flag to see if styles and scripts need to be enqueued
+	$shortcode_found = $force; // use this flag to see if styles and scripts need to be enqueued
 	foreach ($posts as $post) {
 		if (stripos($post->post_content, '['.$flickr_gallery_shortcode.']') !== FALSE) {
-			$shortcode_found = true; // bingo!
+			$shortcode_found = TRUE; // bingo!
 			break;
 		}
 	}
@@ -168,9 +168,12 @@ function flickr_photosets_add_css_js($posts){
 		wp_enqueue_script('jquery-mousewheel', plugins_url('fancybox/jquery.mousewheel-3.0.4.pack.js', __FILE__), array('jquery'));
 		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
 		wp_enqueue_script('flickr-browser', plugins_url('flickrbrowser.js', __FILE__), array('jquery-fancybox'));
+		wp_enqueue_script('flickr-page', plugins_url('page.js', __FILE__), array('flickr-browser'));
 	} else {
 	}
  
 	return $posts;
 }
+
+include('FlickrWidget.php'); // newest photos widget to front page
 ?>
