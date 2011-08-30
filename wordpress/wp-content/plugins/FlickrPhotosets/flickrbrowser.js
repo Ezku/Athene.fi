@@ -143,12 +143,19 @@ var flickrbrowser = {
       var params = {user_id: flickrbrowser.user_id, per_page: 2, page: 1};
       var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
       jQuery.getJSON(url, function(data) {
+        jQuery('#flickr-widget').html('');
         var output = '<ul>';
-        jQuery.each(data.photosets.photoset, function(i, set) {
-          output += '<li>'+set.title._content+' ('+set.photos+' kuvaa)</li>';
-        });
-        output += '</ul>';
-        jQuery('#flickr-widget').html(output);
+        jQuery.each(data.photosets.photoset, function(i, val) {
+      	  var title = val.title._content;
+      	  jQuery("#flickr-widget").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
+      	    + "<div class=\"photosettitle\"><a href=\""+flickrbrowser.link_url+"\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
+      	    + "<div class=\"photos hide\"></div>"
+      	    + "</div>");
+      	  jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
+      	    jQuery("#photoset"+val.id + " img.primary").attr('src', flickrbrowser.getPhotoURL(data.photo, "thumbnail"));
+      	  });
+      	});
+      	
       });
     }
   };
