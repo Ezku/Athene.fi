@@ -53,6 +53,17 @@ h1, h2, h3 {
 	color: #1E2626;
 }
 
+#site-title {
+	margin: 0;
+}
+#site-title a {
+	text-indent: -9999em;
+	display: block;
+	width: 159px;
+	height: 58px;
+	background-image: url(athene-mini.png);
+}
+
 /* menus */
 
 #subnavi-small li.menu-item:first,
