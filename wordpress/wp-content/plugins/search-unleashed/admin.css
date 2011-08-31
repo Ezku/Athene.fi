@@ -1,0 +1,133 @@
+#wrapper
+{
+border: 1px solid #666;
+height: 2em;
+position: relative;
+width: 70%;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+margin: 0 auto;
+}
+
+#wrapper p
+{
+margin: 0;  
+padding: 0;
+padding-top: 0.3em;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+text-align: center;
+font-weight: bold;
+}
+
+#inner
+{
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+width: 10px;
+height: 2em;
+background-color: #ccc;
+}
+
+#status
+{
+position: absolute;
+top: 0;
+left: 0;
+text-align: center;
+color: #444;
+width: 100%;
+}
+
+.modules
+{
+list-style-type: none;
+margin: 0; padding: 0;
+}
+
+.modules li
+{
+background-color: #C9F2C9;
+padding: 5px;
+padding-left: 10px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+list-style-type: none;
+}
+
+.modules a
+{
+border: none;  
+text-decoration: underline;
+}
+
+.modules li, .modules li a
+{
+color: #0B2005;
+}
+
+.modules li.disabled, .modules li.disabled a
+{
+background-color: #EBF1E9;
+color: #A7B9A2;
+}
+
+.option
+{
+float: right;
+}
+
+.sublist
+{
+font-size: 0.9em;
+list-style-type: none;
+margin: 0; padding: 0;
+}
+
+.sublist li
+{
+background-color: transparent;
+  margin: 0; padding: 0;
+padding: 2px;
+}
+
+.sub
+{
+font-weight: normal;
+font-size: 0.8em;
+color: #666;
+}
+
+.sub input { font-size: 0.8em; }
+
+.wrap h5
+{
+font-size: 1em;
+}
+
+.bulleted li {
+list-style-type: square;
+margin-left: 20px;
+}
+
+.donations li
+{
+list-style-type: none;
+float: left;
+text-align: center;
+padding: 1em 2em;
+}
+
+.translators li
+{
+float: left;
+width: 300px;
+margin-left: 1.5em;
+}
+
+div .supporter strong
+{
+background-color: yellow;
+}

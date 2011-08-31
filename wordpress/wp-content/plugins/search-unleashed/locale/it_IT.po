@@ -1,0 +1,327 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-12-11 11:58+0100\n"
+"Last-Translator: Da <da@da.ot>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+
+#: ajax.php:68
+msgid "Finished!"
+msgstr "Completato!"
+
+#: ajax.php:68
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d di %d / %d%%"
+
+#: plugin.php:593
+msgid "How many widgets would you like?"
+msgstr "Quanti widgets desideri?"
+
+#: plugin.php:600
+#: view/admin/module_edit.php:7
+#: view/admin/options.php:73
+msgid "Save"
+msgstr "Salva"
+
+#: search-unleashed.php:267
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Risultati della ricerca per '%s'"
+
+#: search-unleashed.php:380
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: search-unleashed.php:415
+msgid "Your options have been saved"
+msgstr "Le tue opzioni sono state salvate"
+
+#: modules/comment_author.php:22
+#: modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Autore del commento"
+
+#: modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Commento:</strong> %s</p>"
+
+#: modules/comment_content.php:29
+#: modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Commento di %s:</strong> %s</p>"
+
+#: modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Testo del commento"
+
+#: modules/comment_content.php:74
+#: modules/post_content.php:43
+#: modules/post_excerpt.php:50
+msgid "Characters before first match"
+msgstr "Caratteri anteriori al primo risultato"
+
+#: modules/comment_content.php:80
+#: modules/post_content.php:49
+#: modules/post_excerpt.php:56
+msgid "Characters after first match"
+msgstr "Caratteri successivi al primo risultato"
+
+#: modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Includi nel confronto"
+
+#: modules/comment_content.php:89
+msgid "Just content"
+msgstr "Colo il contenuto"
+
+#: modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Contenuto &amp; e nome dell'autore"
+
+#: modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Contenuto, nome dell'autore e link al suo sito"
+
+#: modules/comment_url.php:21
+#: modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "URL dell'autore del commento"
+
+#: modules/post_content.php:23
+msgid "Post content"
+msgstr "Contenuto del post"
+
+#: modules/post_excerpt.php:24
+msgid "Excerpt"
+msgstr "Estratto"
+
+#: modules/post_excerpt.php:30
+msgid "Post excerpt"
+msgstr "Estratto del post"
+
+#: modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Metadata"
+
+#: modules/post_meta.php:49
+msgid "Post meta-data"
+msgstr "Post metadata"
+
+#: modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Campi meta"
+
+#: modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Seleziona i metadata da includere nella ricerca"
+
+#: modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: modules/post_slug.php:29
+msgid "Post slug"
+msgstr "Post slug"
+
+#: modules/post_title.php:10
+msgid "Post title"
+msgstr "Titolo del post"
+
+#: modules/tags.php:37
+#: modules/tags.php:45
+msgid "Tags"
+msgstr "Tags"
+
+#: view/admin/index.php:2
+msgid "Search Index Information"
+msgstr "Search index information"
+
+#: view/admin/index.php:5
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "L'indice di ricerca è vuoto; ri-indicizza al più presto!"
+
+#: view/admin/index.php:7
+msgid "You have"
+msgstr "Hai"
+
+#: view/admin/index.php:7
+msgid "items in the search index."
+msgstr "elementi nell'indice di ricerca"
+
+#: view/admin/index.php:11
+msgid "have been performed using this plugin. "
+msgstr "sono state effettuate usando questo plugin."
+
+#: view/admin/index.php:14
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Puoi aiutare l'autore inviando una donazione. Ogni ricerca effettuata senza supportare l'autore causerà <strong>la morte di un gattino</strong>."
+
+#: view/admin/index.php:15
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "Tutto quello che ci vuole <strong>rendere felici i gattini</strong> sono 8$ che mi incentiveranno a continuare a scrivere software gratuito."
+
+#: view/admin/index.php:40
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Grazie per il tuo aiuto ai gattini!"
+
+#: view/admin/index.php:42
+msgid "If you 'mistakenly' said you supported the author without actually doingso then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Se 'per errore' hai dichiarato di aver aiutato l'autore senza effettivamente farlo, allora non solo i gattini rischiano ancora di morire, ma i loro stomaci gridano e loro si sentono malissimo."
+
+#: view/admin/index.php:48
+msgid "Re-Index Search Unleashed"
+msgstr "Re-indicizza Search Unleashed"
+
+#: view/admin/index.php:50
+msgid "You need to re-index the search database when"
+msgstr "C'è bisogno di re-indicizzare il database quando"
+
+#: view/admin/index.php:52
+msgid "You first install this plugin"
+msgstr "Viene installato per la prima volta questo plugin"
+
+#: view/admin/index.php:53
+msgid "You change what to include in the search"
+msgstr "Cambi cosa includere nella ricerca"
+
+#: view/admin/index.php:54
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Installi un altro plugin che altera i posts o i commenti"
+
+#: view/admin/index.php:57
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Modifiche ai singoli posts/commenti saranno automaticamente re-indicizzati - <strong>non è necessario re-indicizzare dopo aver modificato gli articoli</strong>."
+
+#: view/admin/index.php:60
+msgid "Re-index posts"
+msgstr "Re-indicizza gli articoli"
+
+#: view/admin/index.php:61
+msgid "Re-index comments"
+msgstr "Re-indicizza i commenti"
+
+#: view/admin/index.php:68
+#: view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Annulla"
+
+#: view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Ricerca è resa possibile da <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+#: view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "L"
+
+#: view/admin/modules.php:2
+msgid "Search Unleashed Options"
+msgstr "Opzioni di Search Unleashed"
+
+#: view/admin/modules.php:4
+msgid "Select what to include in the search"
+msgstr "Seleziona cosa includere nella ricerca"
+
+#: view/admin/options.php:2
+#: view/admin/submenu.php:4
+msgid "Options"
+msgstr "Opzioni"
+
+#: view/admin/options.php:7
+msgid "Pages to exclude"
+msgstr "Pagine da escludere"
+
+#: view/admin/options.php:9
+msgid "Comma-separated list of page/post IDs"
+msgstr "Comma-separated list of page/post IDs"
+
+#: view/admin/options.php:13
+msgid "Search results page title"
+msgstr "Titolo della pagina di risultati della ricerca"
+
+#: view/admin/options.php:15
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Cambia il titolo della pagina dei risultati per evidenziare la chiave di ricerca"
+
+#: view/admin/options.php:19
+msgid "Highlight incoming searches"
+msgstr "Evidenzia le ricerche proveniente da altri siti"
+
+#: view/admin/options.php:21
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "Evidenzia le ricerche da altri siti evidenziando altre frasi e mostrando un box di aiuto"
+
+#: view/admin/options.php:26
+msgid "Theme title position"
+msgstr "Posizione del titolo nel tema"
+
+#: view/admin/options.php:34
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "La maggior parte dei temi richiede 1 come posizione, ma se l'evidenziazione di default non funziona correttamente prova con un altro valore"
+
+#: view/admin/options.php:39
+msgid "Force content display:"
+msgstr "Force content display:"
+
+#: view/admin/options.php:42
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+
+#: view/admin/options.php:46
+msgid "Kitten protection"
+msgstr "Protezione <i>gattini</i>"
+
+#: view/admin/options.php:49
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Clicca qui se hai già supportato l'autore donando su Paypal"
+
+#: view/admin/options.php:54
+msgid "Include highlight CSS"
+msgstr "Includi il css per l'evidenziazione"
+
+#: view/admin/options.php:61
+msgid "Highlight colour"
+msgstr "Colore dell'evidenziazione"
+
+#: view/admin/options.php:66
+msgid "Specify colour as a hex value"
+msgstr "Colore (valore esadecimale)"
+
+#: view/admin/submenu.php:2
+msgid "Search Index"
+msgstr "Indice di ricerca"
+
+#: view/admin/submenu.php:3
+msgid "Modules"
+msgstr "Moduli"
+
+#: view/search-unleashed/incoming_local.php:2
+msgid "hide"
+msgstr "nascondi"
+
+#: view/search-unleashed/incoming_local.php:3
+msgid "Search Results"
+msgstr "Risultati di ricerca"
+
+#: view/search-unleashed/incoming_local.php:7
+msgid "You arrived here after searching for the following phrase"
+msgstr "Sei arrivato qui cercando il seguente termine"
+
+#: view/search-unleashed/incoming_local.php:9
+msgid "You arrived here after searching for the following phrases"
+msgstr "Sei arrivato qui cercando i seguenti termini"
+
+#: view/search-unleashed/incoming_local.php:17
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Clicca su un termine per andare direttamente alla sua prima occorenza, oppure <a href=\"%s\">torna ai risultati di ricerca</a>."
+

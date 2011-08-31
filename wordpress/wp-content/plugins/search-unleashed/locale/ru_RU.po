@@ -1,0 +1,424 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed 0.2 Russian\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-11-04 22:32+0600\n"
+"Last-Translator: Kalinin Ivan <lecactus@lecactus.ru>\n"
+"Language-Team: Lecactus <lecactus@lecactus.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-SearchPath-0: X:\\web\\Модификации\\wordpress\\SearchUnleashed\\search-unleashed\n"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/ajax.php:68
+msgid "Finished!"
+msgstr "Готово!"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/ajax.php:68
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d из %d / %d%%"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/plugin.php:612
+msgid "How many widgets would you like?"
+msgstr "Сколько виджетов вам нужно?"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/plugin.php:619
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/module_edit.php:7
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:99
+msgid "Save"
+msgstr "Сохранить"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/search-unleashed.php:285
+#, php-format
+msgid "Search results for '%s'"
+msgstr " Результаты поиска по '%s'"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/search-unleashed.php:398
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/search-unleashed.php:431
+msgid "All logs have been deleted."
+msgstr "Все логи были удалены."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/search-unleashed.php:458
+msgid "Your options have been saved"
+msgstr "Ваши настройки были успешно сохранены"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/models/pager.php:198
+msgid "Previous"
+msgstr "Предыдущие"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/models/pager.php:199
+msgid "Next"
+msgstr "Следующие"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_author.php:22
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Автор комментария"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Комментарий:</strong> %s</p>"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:29
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Комментарий от %s:</strong> %s</p>"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Содержимое комментария"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:74
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_content.php:42
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_excerpt.php:50
+msgid "Characters before first match"
+msgstr "Символов перед первым совпадением"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:80
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_content.php:48
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_excerpt.php:56
+msgid "Characters after first match"
+msgstr "Символов после первого совпадения"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Включить в совпадение"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:89
+msgid "Just content"
+msgstr "Только содержимое"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Содержимое и имя автора"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Содержимое, имя автора и ссылка на сайт автора"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_url.php:21
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "URL автора комментария"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_content.php:25
+msgid "Post content"
+msgstr "Содержимое записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_excerpt.php:24
+msgid "Excerpt"
+msgstr "Цитата"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_excerpt.php:30
+msgid "Post excerpt"
+msgstr "Цитата записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Мета-данные"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_meta.php:49
+msgid "Post meta-data"
+msgstr "Мета-данные записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Мета-произвольные поля"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Выберите мета-данные для поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_slug.php:29
+msgid "Post slug"
+msgstr "Короткая ссылка записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/post_title.php:10
+msgid "Post title"
+msgstr "Заголовок записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/tags.php:37
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/modules/tags.php:45
+msgid "Tags"
+msgstr "Метки (тэги)"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:2
+msgid "Search Index Information"
+msgstr "Информация о индексации"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:5
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Вы не имеете записей в поисковом индексе. Пожалуйста, переиндексируйте сайт!"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:7
+#, php-format
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "Вы имеете <strong>%d</strong> запись в поисковом индексе."
+msgstr[1] "Вы имеете <strong>%d</strong> записей в поисковом индексе."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:11
+#, php-format
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "<strong>%d поиск</strong> было сделано с использованием этого плагина. "
+msgstr[1] "<strong>%d поисков</strong> было сделано с использованием этого плагина. "
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:14
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Вы можете поддержать автора, отправив пожертвование. Каждый поиск, которые вы делаете без поддержки вызывает<strong>плач котенка</strong>."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:15
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "Все что нужно это <strong>$8 чтобы поддержать котенка счастливым</strong> и подействовать в качестве стимула для меня чтобы писать другое бесплатное программное обеспечение."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:40
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Ваша помощь в прекращении плача котенка принята!"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:42
+msgid "If you 'mistakenly' said you supported the author without actually doing so then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Если вы 'ошибочно' сказали что вы поддержали автора, а на самом деле не сделали этого, тогда не только котенок будет плакать, но и его желудок будет болеть."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:48
+msgid "Re-Index Search Unleashed"
+msgstr "Переиндексировать Search Unleashed"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:50
+msgid "You need to re-index the search database when"
+msgstr "Вам нужно переиндексировать поисковую базу данных, когда "
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:52
+msgid "You first install this plugin"
+msgstr "Вы впервые устанавливаете этот плагин"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:53
+msgid "You change what to include in the search"
+msgstr "Вы изменили то, что надо включить в поиск"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:54
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Вы установили другой плагин, который может изменить записи или комментарии"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:57
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Изменения в индивидуальных записях и комментариях будут автоматически переиндексированы - <strong>вам не нужно переиндексироваться после редактировании записей</strong>."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:60
+msgid "Re-index posts"
+msgstr "Переиндексировать записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:61
+msgid "Re-index comments"
+msgstr "Переиндексировать комментарии"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/index.php:68
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Отмена"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Этот замечательный поиск работает с помощью <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "Ваш поиск вызвал плач котенка.  Помогите предотвратить это, попросив владельца сайта поддержать это программного обеспечения."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:2
+msgid "Search Log"
+msgstr "Поисковый лог"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:10
+msgid "Phrase"
+msgstr "Фраза"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:11
+msgid "Time"
+msgstr "Время"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:12
+msgid "IP"
+msgstr "IP"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:13
+msgid "Referrer"
+msgstr "Реферер"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:36
+msgid "There is nothing to display"
+msgstr "Нечего показывать"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:41
+msgid "Delete Logs"
+msgstr "Удалить логи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:43
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Эта опция удалит все поисковые логи. Пожалуйста, будьте уверены что вы хотите сделать это."
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/log.php:46
+msgid "Delete logs"
+msgstr "Удалить логи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/modules.php:2
+msgid "Search Unleashed Options"
+msgstr "Настройки Search Unleashed"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/modules.php:4
+msgid "Select what to include in the search"
+msgstr "Выберите что нужно включить в поиск"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:2
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/submenu.php:5
+msgid "Options"
+msgstr "Настройки"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:7
+msgid "General Options"
+msgstr "Основные настройки"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:10
+msgid "Pages to exclude"
+msgstr "Исключить страницы"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:12
+msgid "Comma-separated list of page/post IDs"
+msgstr "Разделенный запятыми список ID записей/страниц"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:15
+msgid "Search results page title"
+msgstr "Заголовок страницы результатов поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:17
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Изменить заголовок страницы в результатах поиска, чтобы отразить условия поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:21
+msgid "Include password-protected posts"
+msgstr "Включить защищенные паролем записи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:26
+msgid "Search Mode"
+msgstr "Режим поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:29
+msgid "Full text with logical operations"
+msgstr "Полнотекстовый поиск с логическими операторами"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:29
+msgid "Simple text matching"
+msgstr "Простое совпадение текста"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:34
+msgid "Kitten protection"
+msgstr "Защита котенка"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:37
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Нажмите сюда, если вы поддержали автора и помогли остановить плач котенка"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:44
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:47
+msgid "Force content display"
+msgstr "Принудительный показ содержимого"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:50
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Некоторые темы не отображают любые результаты поиска корректно.  Включение этой опции принудительно покажет результаты"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:54
+msgid "Highlight incoming searches"
+msgstr "Подсветка искомых фраз"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:59
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "Показывает результаты поиска, подсвечивая фразы и показывая окно помощи"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:63
+msgid "Theme title position"
+msgstr "Позиция заголовка темы"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:67
+msgid "(includes default theme)"
+msgstr "(включая тему по умолчанию)"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:71
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "Большинство тем требуют позицию 1, но если у вас некорректно подсвечиваются заголовки, установите другое значение"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:79
+msgid "Search Style"
+msgstr "Стиль поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:82
+msgid "Include highlight CSS"
+msgstr "Включить подсветку CSS"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:87
+msgid "Highlight colour"
+msgstr "Цвет подсветки"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/options.php:92
+msgid "Specify colour as a hex value"
+msgstr "Задайте цвет в HEX значении"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/pager.php:7
+msgid "Search"
+msgstr "Поиск"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Результатов на страницу"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/pager.php:17
+msgid "go"
+msgstr "пошел"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/submenu.php:2
+msgid "Search Index"
+msgstr "Поисковый индекс"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/submenu.php:3
+msgid "Log"
+msgstr "Лог"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/admin/submenu.php:4
+msgid "Modules"
+msgstr "Модули"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/search-unleashed/incoming_local.php:3
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/search-unleashed/incoming_local.php:6
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "Вы прибыли сюда после поиска следующей фразы"
+msgstr[1] "Вы прибыли сюда после поиска следующих фраз"
+
+#: X:\web\Ìîäèôèêàöèè\wordpress\SearchUnleashed\search-unleashed/view/search-unleashed/incoming_local.php:13
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Щелкните на фразу чтобы перейти к ее первому появлению, или <a href=\"%s\">вернитесь к результатам поиска</a>."
+

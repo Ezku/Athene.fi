@@ -1,0 +1,510 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed SL 1.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2009-12-13 15:28+0100\n"
+"Last-Translator: Rok <rok.mihevc@gmail.com>\n"
+"Language-Team: Rok Mihevc <rok@mihevc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+
+#: ../ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "Končano! Klikni za vrnitev"
+
+#: ../ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d od %d / %d%%"
+
+#: ../plugin.php:626
+msgid "How many widgets would you like?"
+msgstr "Koliko našrednih vtičnikov želiš?"
+
+#: ../plugin.php:633
+msgid "Save"
+msgstr "Shrani"
+
+#: ../search-unleashed.php:334
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Išči rezultate za '%s'"
+
+#: ../search-unleashed.php:479
+msgid "Search Unleashed"
+msgstr "Iskanje odpeto z verige"
+
+#: ../search-unleashed.php:521
+msgid "You are not allowed access to this resource"
+msgstr "Nimaš dostopa do teh sredstev"
+
+#: ../search-unleashed.php:532
+msgid "All logs have been deleted."
+msgstr "Vsi dnevniki so bili izbrisani."
+
+#: ../search-unleashed.php:564
+msgid "Your options have been saved"
+msgstr "Tvoje nastavitve so bile shranjene"
+
+#: ../models/pager.php:198
+msgid "Previous"
+msgstr "Nazaj"
+
+#: ../models/pager.php:199
+msgid "Next"
+msgstr "Naprej"
+
+#: ../models/search_engine.php:103
+msgid "Local"
+msgstr "Lokalno"
+
+#: ../models/widget.php:27
+msgid "Search"
+msgstr "Išči"
+
+#: ../models/widget.php:39
+msgid "Title"
+msgstr "Naslov"
+
+#: ../modules/comment_author.php:22
+#: ../modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Avtor komentarja"
+
+#: ../modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Komentar:</strong> %s</p>"
+
+#: ../modules/comment_content.php:29
+#: ../modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Komentator %s:</strong> %s</p>"
+
+#: ../modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Komentar"
+
+#: ../modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "Znaki pred prvim ujemanjem"
+
+#: ../modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "Znaki za prvim ujemanjem"
+
+#: ../modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Vključeno v ujemanju"
+
+#: ../modules/comment_content.php:89
+msgid "Just content"
+msgstr "Samo vsebina"
+
+#: ../modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Vsebina &amp; avtojevo ime"
+
+#: ../modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Vsebina, avtorjevo ime, povezava do avtorjeve domače strani"
+
+#: ../modules/comment_url.php:21
+#: ../modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Stran avtorja komentarja"
+
+#: ../modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "NextGen galerija"
+
+#: ../modules/post_author.php:32
+msgid "Author"
+msgstr "Avtor"
+
+#: ../modules/post_author.php:38
+msgid "Post/page author"
+msgstr "Avtor objave/strani"
+
+#: ../modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "Prikaži povezavo do avtorjeve strani"
+
+#: ../modules/post_category.php:18
+msgid "Category"
+msgstr "Kategorija"
+
+#: ../modules/post_category.php:24
+msgid "Post category"
+msgstr "Kategorija objav"
+
+#: ../modules/post_content.php:41
+msgid "Post/page content"
+msgstr "Vsebina objave/strani"
+
+#: ../modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "Ne vključi vsebine v kazalo, vendar pokaži v rezultatih"
+
+#: ../modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "Povzetek"
+
+#: ../modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "Povzetek objave/strani"
+
+#: ../modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Metapodatki"
+
+#: ../modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "Metapodatki objave/strani"
+
+#: ../modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Meta polja"
+
+#: ../modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Izberi metapodatke po katerih želiš iskati"
+
+#: ../modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: ../modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "Zrno objave/strani"
+
+#: ../modules/post_title.php:10
+msgid "Post/page title"
+msgstr "Naslov objave/strani"
+
+#: ../modules/tags.php:41
+#: ../modules/tags.php:50
+msgid "Tags"
+msgstr "Značke"
+
+#: ../modules/tags.php:65
+msgid "Show tag in results"
+msgstr "Pokaži značke v rezultatih"
+
+#: ../view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Iskanje odpeto z verige | Kazalo"
+
+#: ../view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "V iskalnem kazalu nimaš nobenih predmetov. Ponovno ustvari kazalo!"
+
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "Imaš <strong>%d</strong> predmetov v iskalnem kazalu."
+msgstr[1] "Imaš <strong>%d</strong> predmet v iskalnem kazalu."
+msgstr[2] "Imaš <strong>%d</strong> predmeta v iskalnem kazalu."
+msgstr[3] "Imaš <strong>%d</strong> predmete v iskalnem kazalu."
+
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "<strong>%d iskanja</strong> so bila opravljena uporabljajoč ta vtičnik. "
+msgstr[1] "<strong>%d iskanje</strong> je bilo opravljeno uporabljajoč ta vtičnik. "
+msgstr[2] "<strong>%d iskanji</strong> sta bili opravljeni uporabljajoč ta vtičnik. "
+msgstr[3] "<strong>%d iskanja</strong> so bila opravljena uporabljajoč ta vtičnik. "
+
+#: ../view/admin/index.php:15
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Avtorja lahko podprete z donacijo. Vsako iskanje opravljeno brez podpore avtorja bo povzročilo <strong>jok mucke</strong>."
+
+#: ../view/admin/index.php:16
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "Vse kar je potrebno <strong>8$, za ohranitev sreče muck</strong> in služi za mojo vspodbudo pri pisanju brezplačnega programja."
+
+#: ../view/admin/index.php:41
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Tvoja podpora pri preprečevanju joka muck je močno cenjena!"
+
+#: ../view/admin/index.php:43
+msgid "If you 'mistakenly' said you supported the author without actually doing so then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Če si \"pomotoma\" rekel, da podpiraš avtorja, brez da bi ga res, potem ne samo da vse mucke še vedno jokajo, ampak jih tudi bolijo želodčki in se nasploh počutijo zelo salbo."
+
+#: ../view/admin/index.php:49
+msgid "Re-Index Search Unleashed"
+msgstr "Ponovno ustvari kazalo Iskanja odpetega z verige."
+
+#: ../view/admin/index.php:51
+msgid "You need to re-index the search database when"
+msgstr "Ponovno moraš ustavriti kazalo iskanje baze podatkov ko"
+
+#: ../view/admin/index.php:53
+msgid "You first install this plugin"
+msgstr "prvič namestiš ta vtilnič"
+
+#: ../view/admin/index.php:54
+msgid "You change what to include in the search"
+msgstr "spremeniš kaj naj bo vključeno v iskanje"
+
+#: ../view/admin/index.php:55
+msgid "You install another plugin that may alter posts or comments"
+msgstr "ko namestiš kakšen vtičnik, ki bi spremenil objave ali komentarje"
+
+#: ../view/admin/index.php:58
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Spremembe v posameznih objavah &amp; komentarjih bodo avtomatično ponovno obdelani in vključeni v kazalo - <strong>po urejanju objav ni potrebno ponovno ustvariti kazala</strong>."
+
+#: ../view/admin/index.php:61
+msgid "Re-index posts"
+msgstr "Ponovno ustvari kazalo objav"
+
+#: ../view/admin/index.php:62
+msgid "Re-index comments"
+msgstr "Ponovno ustvari kazalo komentarjev"
+
+#: ../view/admin/index.php:69
+#: ../view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: ../view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "To čudovito iskanje omogoča <a href=\"%s\"><strong>Iskanje odpeto z verige</strong></a>."
+
+#: ../view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "Tvoje iskanje je povzročilo jok mucke. Pomagaj to preprečiti, tako da predlagaš lastniku strani, da podpre to programje."
+
+#: ../view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Iskanje odpeto z verige | Dnevnik"
+
+#: ../view/admin/log.php:12
+msgid "Phrase"
+msgstr "Fraza"
+
+#: ../view/admin/log.php:13
+msgid "Time"
+msgstr "Čas"
+
+#: ../view/admin/log.php:14
+msgid "IP"
+msgstr "IP"
+
+#: ../view/admin/log.php:15
+msgid "Referrer"
+msgstr "Napotitelj"
+
+#: ../view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "Ničesar ni za prikazati."
+
+#: ../view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "Pobriši dnevnik"
+
+#: ../view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Ta opcija bo pobrisala vse iskalne dnevnike. Si gotov, da želiš to storiti?"
+
+#: ../view/admin/log.php:48
+msgid "Delete logs"
+msgstr "Pobriši dnevnik"
+
+#: ../view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Iskanje odpeto z verige | Moduli"
+
+#: ../view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "Izberi, objekte ki jih želiš vključiti v iskanje"
+
+#: ../view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Iskanje odpeto z verige | Možnosti"
+
+#: ../view/admin/options.php:9
+msgid "General Options"
+msgstr "Splošne možnosti"
+
+#: ../view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "Strani, ki naj bodo izločene"
+
+#: ../view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "Z vejico ločen seznam ID-jev strani/objav"
+
+#: ../view/admin/options.php:17
+msgid "Search results page title"
+msgstr "Naslov strani z rezultati iskanja"
+
+#: ../view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Spremeni naslov strani, ko prikazuješ rezultate iskanja, da bo odseval pogoje iskanja"
+
+#: ../view/admin/options.php:23
+msgid "Include"
+msgstr "Vključi"
+
+#: ../view/admin/options.php:25
+msgid "pages"
+msgstr "strani"
+
+#: ../view/admin/options.php:26
+msgid "posts"
+msgstr "objave"
+
+#: ../view/admin/options.php:28
+msgid "password-protected"
+msgstr "zaščiteno z geslom"
+
+#: ../view/admin/options.php:29
+msgid "private"
+msgstr "zasebno"
+
+#: ../view/admin/options.php:30
+msgid "draft"
+msgstr "osnutek"
+
+#: ../view/admin/options.php:31
+msgid "future"
+msgstr "prihodnje"
+
+#: ../view/admin/options.php:35
+msgid "Search Mode"
+msgstr "Način za iskanje"
+
+#: ../view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "Polno besedilo z logičnimi operatorji"
+
+#: ../view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "Preprosto ujemanje besedila"
+
+#: ../view/admin/options.php:43
+msgid "Kitten protection"
+msgstr "Varovanje muck"
+
+#: ../view/admin/options.php:46
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Klikni tukaj, če si podprl avtorja in pomagal preprečiti jok muck"
+
+#: ../view/admin/options.php:53
+msgid "Theme Options"
+msgstr "Možnosti izgleda"
+
+#: ../view/admin/options.php:56
+msgid "Force content display"
+msgstr "Vsili prikazovanje vsebine"
+
+#: ../view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Nekateri izgledi ne prikazujejo nobene vsebine rezultatov iskanja. Vključi to možnost, da vsiliš izgledu prikazovanje rezultatov"
+
+#: ../view/admin/options.php:63
+msgid "Highlight incoming searches"
+msgstr "Označi iskalne izraze"
+
+#: ../view/admin/options.php:66
+msgid "No highlighting"
+msgstr "Brez označevanja"
+
+#: ../view/admin/options.php:66
+msgid "Content, no titles"
+msgstr "Vsebina, brez naslovov"
+
+#: ../view/admin/options.php:66
+msgid "Content &amp; titles"
+msgstr "Vsebina &amp; naslovi"
+
+#: ../view/admin/options.php:68
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr ""
+
+#: ../view/admin/options.php:72
+msgid "Theme title position"
+msgstr "Položaj naslova teme"
+
+#: ../view/admin/options.php:76
+msgid "(includes default theme)"
+msgstr "(vključuje privzet izgled)"
+
+#: ../view/admin/options.php:80
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "Večina izgledov potrebuje položaj 1, vendar če imate neprimerno poudarjanje v naslovih, lahko tukaj nastavite drugo vrednost"
+
+#: ../view/admin/options.php:88
+msgid "Search Style"
+msgstr "Slog iskanja"
+
+#: ../view/admin/options.php:91
+msgid "Include highlight CSS"
+msgstr "Vključi CSS za poudarjanje"
+
+#: ../view/admin/options.php:96
+msgid "Highlight colour"
+msgstr "Barva za poudarjanje"
+
+#: ../view/admin/options.php:101
+msgid "Specify colour as a hex value"
+msgstr "Podaj barvo kot heksadecimalno vrednost"
+
+#: ../view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Število rezultatov na stran"
+
+#: ../view/admin/pager.php:17
+msgid "go"
+msgstr "pojdi"
+
+#: ../view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "Kazalo iskanja"
+
+#: ../view/admin/submenu.php:4
+msgid "Log"
+msgstr "Dnevnik"
+
+#: ../view/admin/submenu.php:5
+msgid "Modules"
+msgstr "Moduli"
+
+#: ../view/admin/submenu.php:6
+msgid "Options"
+msgstr "Možnosti"
+
+#: ../view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "skrij"
+
+#: ../view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "Rezultati iskanja"
+
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "Sem si prišel po iskanju sledečih fraz"
+msgstr[1] "Sem si prišel po iskanju sledeče fraze"
+msgstr[2] "Sem si prišel po iskanju sledečih fraz"
+msgstr[3] "Sem si prišel po iskanju sledečih fraz"
+
+#: ../view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Klikni frazo za skok na njeno prvo pojavljanje, ali <a href=\"%s\">se vrni na rezultate iskanja</a>."
+
+#~ msgid "Search Log"
+#~ msgstr "Durchsuche Log"
+#~ msgid "Search Index Information"
+#~ msgstr "Durchsuche Index Informationen"
+

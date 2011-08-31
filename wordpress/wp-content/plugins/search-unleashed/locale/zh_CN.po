@@ -1,0 +1,503 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed DE 2.9\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-10-11 21:45+0800\n"
+"Last-Translator: jack <syfvb@hotmail.com>\n"
+"Language-Team: Frank Bueltge (original), Gerhard Lehnhoff (Aenderungen, Ergaenzungen, Erweiterungen - aufBlog.de), Andre Gaertner (Aenderungen, Ergaenzungen, Erweiterungen - phodana.de) <aufBlog@gmx.de, info@phodana.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+
+#: ../ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "完成,单击返回"
+
+#: ../ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d of  %d / %d%%"
+
+#: ../plugin.php:626
+msgid "How many widgets would you like?"
+msgstr "你想要多少小部件(widgets)?"
+
+#: ../plugin.php:633
+msgid "Save"
+msgstr "保存"
+
+#: ../search-unleashed.php:334
+#, php-format
+msgid "Search results for '%s'"
+msgstr " '%s' 的查询结果"
+
+#: ../search-unleashed.php:479
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: ../search-unleashed.php:521
+msgid "You are not allowed access to this resource"
+msgstr "您无权访问此资源"
+
+#: ../search-unleashed.php:532
+msgid "All logs have been deleted."
+msgstr "所有的日志均已被删除。"
+
+#: ../search-unleashed.php:564
+msgid "Your options have been saved"
+msgstr "您的选择项已经被保存"
+
+#: ../models/pager.php:198
+msgid "Previous"
+msgstr "上一页"
+
+#: ../models/pager.php:199
+msgid "Next"
+msgstr "下一页"
+
+#: ../models/search_engine.php:103
+msgid "Local"
+msgstr "本地"
+
+#: ../models/widget.php:27
+msgid "Search"
+msgstr "搜索"
+
+#: ../models/widget.php:39
+msgid "Title"
+msgstr "标题"
+
+#: ../modules/comment_author.php:22
+#: ../modules/comment_author.php:29
+msgid "Comment author"
+msgstr "评论的作者"
+
+#: ../modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>评论:</strong> %s</p>"
+
+#: ../modules/comment_content.php:29
+#: ../modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>评论者 %s:</strong> %s</p>"
+
+#: ../modules/comment_content.php:50
+msgid "Comment content"
+msgstr "评论内容"
+
+#: ../modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "第一匹配前的字符数"
+
+#: ../modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "第一匹配后的字符数"
+
+#: ../modules/comment_content.php:86
+msgid "Include in match"
+msgstr "包含于匹配"
+
+#: ../modules/comment_content.php:89
+msgid "Just content"
+msgstr "仅内容"
+
+#: ../modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "内容和作者的姓名"
+
+#: ../modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "内容,作者姓名,和作者的连接站点"
+
+#: ../modules/comment_url.php:21
+#: ../modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "评论者的URL"
+
+#: ../modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "下一代图库"
+
+#: ../modules/post_author.php:32
+msgid "Author"
+msgstr "作者"
+
+#: ../modules/post_author.php:38
+msgid "Post/page author"
+msgstr "日志/页面 作者"
+
+#: ../modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "显示作者主页的连接"
+
+#: ../modules/post_category.php:18
+msgid "Category"
+msgstr "分类"
+
+#: ../modules/post_category.php:24
+msgid "Post category"
+msgstr "日志分类"
+
+#: ../modules/post_content.php:41
+msgid "Post/page content"
+msgstr "日志/页面 内容"
+
+#: ../modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "不要索引内容,但显示在结果中"
+
+#: ../modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "概要"
+
+#: ../modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "日志/页面 概要"
+
+#: ../modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "元数据"
+
+#: ../modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "日志/页面 元数据"
+
+#: ../modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Meta fields"
+
+#: ../modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "选择要搜索的元数据"
+
+#: ../modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: ../modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "日志/页面 简短说明"
+
+#: ../modules/post_title.php:10
+msgid "Post/page title"
+msgstr "日志/页面 标题"
+
+#: ../modules/tags.php:41
+#: ../modules/tags.php:50
+msgid "Tags"
+msgstr "标签"
+
+#: ../modules/tags.php:65
+msgid "Show tag in results"
+msgstr "在结果中显示标签"
+
+#: ../view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | 索引"
+
+#: ../view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "当前索引中没有条目，请重建索引"
+
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "你有 <strong>%d</strong> 个条目在索引中。"
+msgstr[1] "你有 <strong>%d</strong> 个条目在索引中。"
+
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "已经使用本插件执行了<strong>%d 个搜索</strong>"
+msgstr[1] "已经使用本插件执行了<strong>%d 个搜索</strong>"
+
+#: ../view/admin/index.php:15
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "您可以通过捐赠来支持本插件的发展.  没有您的支持，每执行一次搜索都会让 <strong>小猫哭一次</strong>."
+
+#: ../view/admin/index.php:16
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "您所需要做的就是给 <strong>8美元 让小猫开心</strong> 并激励我继续从事开源软件的开发."
+
+#: ../view/admin/index.php:41
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "我们欢迎你您来让小猫停止哭泣"
+
+#: ../view/admin/index.php:43
+msgid "If you 'mistakenly' said you supported the author without actually doing so then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "如果你不小心说了你要支持作者，但是又没有实际行动，那么不但小猫会继续哭泣而且它还会胃疼并且很沮丧."
+
+#: ../view/admin/index.php:49
+msgid "Re-Index Search Unleashed"
+msgstr "重新索引 Search Unleashed"
+
+#: ../view/admin/index.php:51
+msgid "You need to re-index the search database when"
+msgstr "你需要重新索引 搜索库，当你"
+
+#: ../view/admin/index.php:53
+msgid "You first install this plugin"
+msgstr "第一次安装本插件"
+
+#: ../view/admin/index.php:54
+msgid "You change what to include in the search"
+msgstr "你要改变包含到搜索结果中的内容"
+
+#: ../view/admin/index.php:55
+msgid "You install another plugin that may alter posts or comments"
+msgstr "你安装了另一个可能改变日志或者评论的插件"
+
+#: ../view/admin/index.php:58
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "日志和评论编辑后将会被自动重新索引 - <strong>你在编辑日志后不需要重建索引</strong>."
+
+#: ../view/admin/index.php:61
+msgid "Re-index posts"
+msgstr "重建日志的索引"
+
+#: ../view/admin/index.php:62
+msgid "Re-index comments"
+msgstr "重建评论的索引"
+
+#: ../view/admin/index.php:69
+#: ../view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "取消"
+
+#: ../view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "本次索引是由 <a href=\"%s\"><strong>Search Unleashed</strong></a>所执行."
+
+#: ../view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "你的搜索让小猫哭了.  联系站主支持本插件可以让小猫不哭."
+
+#: ../view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | 插件日志"
+
+#: ../view/admin/log.php:12
+msgid "Phrase"
+msgstr "段落"
+
+#: ../view/admin/log.php:13
+msgid "Time"
+msgstr "时间"
+
+#: ../view/admin/log.php:14
+msgid "IP"
+msgstr "IP"
+
+#: ../view/admin/log.php:15
+msgid "Referrer"
+msgstr "推荐人"
+
+#: ../view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "没有可显示的内容."
+
+#: ../view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "删除插件日志"
+
+#: ../view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "这个选项将删除所有的搜索日志.  请确认你要这么做."
+
+#: ../view/admin/log.php:48
+msgid "Delete logs"
+msgstr "删除插件日志"
+
+#: ../view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | 模块"
+
+#: ../view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "选择要包含到搜索中的内容"
+
+#: ../view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | 选项"
+
+#: ../view/admin/options.php:9
+msgid "General Options"
+msgstr "通用选项"
+
+#: ../view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "要排除的页面"
+
+#: ../view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "逗号分割的页面/日志 ID列表"
+
+#: ../view/admin/options.php:17
+msgid "Search results page title"
+msgstr "搜索结果页标题"
+
+#: ../view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "改变搜索结果页的标题来反映搜索条件."
+
+#: ../view/admin/options.php:23
+msgid "Include"
+msgstr "包含"
+
+#: ../view/admin/options.php:25
+msgid "pages"
+msgstr "页面"
+
+#: ../view/admin/options.php:26
+msgid "posts"
+msgstr "日志"
+
+#: ../view/admin/options.php:28
+msgid "password-protected"
+msgstr "密码保护的"
+
+#: ../view/admin/options.php:29
+msgid "private"
+msgstr "私有的"
+
+#: ../view/admin/options.php:30
+msgid "draft"
+msgstr "草稿"
+
+#: ../view/admin/options.php:31
+msgid "future"
+msgstr "将来"
+
+#: ../view/admin/options.php:35
+msgid "Search Mode"
+msgstr "搜索模式"
+
+#: ../view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "全文逻辑操作"
+
+#: ../view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "简单文本匹配"
+
+#: ../view/admin/options.php:43
+msgid "Kitten protection"
+msgstr "Kitten 保护"
+
+#: ../view/admin/options.php:46
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "点击这里,如果你已经支持了作者并且帮助小猫不哭."
+
+#: ../view/admin/options.php:53
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: ../view/admin/options.php:56
+msgid "Force content display"
+msgstr "强制内容显示"
+
+#: ../view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "有些主题不显示任何搜索结果的内容.  启用这个选项可以强制主题来显示结果"
+
+#: ../view/admin/options.php:63
+msgid "Highlight incoming searches"
+msgstr "高亮显示进来的搜索"
+
+#: ../view/admin/options.php:66
+msgid "No highlighting"
+msgstr "不高亮显示"
+
+#: ../view/admin/options.php:66
+msgid "Content, no titles"
+msgstr "内容,没有标题"
+
+#: ../view/admin/options.php:66
+msgid "Content &amp; titles"
+msgstr "内容和标题"
+
+#: ../view/admin/options.php:68
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "高亮短语并显示一个帮助框来显示进来的搜索请求."
+
+#: ../view/admin/options.php:72
+msgid "Theme title position"
+msgstr "主题的标题位置"
+
+#: ../view/admin/options.php:76
+msgid "(includes default theme)"
+msgstr " (包含 默认的主题)"
+
+#: ../view/admin/options.php:80
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "大多数主题需要位置1，但如果你发现在主题中有不正确的高亮显示，那么把这个值设置成其他值。"
+
+#: ../view/admin/options.php:88
+msgid "Search Style"
+msgstr "搜索样式"
+
+#: ../view/admin/options.php:91
+msgid "Include highlight CSS"
+msgstr "包含高亮显示样式"
+
+#: ../view/admin/options.php:96
+msgid "Highlight colour"
+msgstr "高亮显示的颜色"
+
+#: ../view/admin/options.php:101
+msgid "Specify colour as a hex value"
+msgstr "以16进制指定颜色值"
+
+#: ../view/admin/pager.php:10
+msgid "Results per page"
+msgstr "每个页面的结果数量"
+
+#: ../view/admin/pager.php:17
+msgid "go"
+msgstr "继续"
+
+#: ../view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "搜索索引"
+
+#: ../view/admin/submenu.php:4
+msgid "Log"
+msgstr "插件日志"
+
+#: ../view/admin/submenu.php:5
+msgid "Modules"
+msgstr "模块"
+
+#: ../view/admin/submenu.php:6
+msgid "Options"
+msgstr "选项"
+
+#: ../view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "隐藏"
+
+#: ../view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "搜索结果"
+
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "你搜索了下面的短语后来到这里"
+msgstr[1] "你搜索了下面的短语后来到这里"
+
+#: ../view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "点击上面的短语可以跳转到首次匹配的地方, 否则 <a href=\"%s\">返回到搜索结果页面</a>."
+
+#~ msgid "Search Log"
+#~ msgstr "Durchsuche Log"
+#~ msgid "Search Index Information"
+#~ msgstr "Durchsuche Index Informationen"
+

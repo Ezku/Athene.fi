@@ -1,0 +1,565 @@
+# Advanced search engine that provides full text searching across posts, pages, comments, titles, and URLs.  Searches take into account any data added by other plugins, and all search results are contextually highlighted. You can also highlight incoming searches from popular search engines.
+# Copyright (C) 2008 John Godley
+# This file is distributed under the same license as the Search Unleashed package.
+# John Godley, http://urbangiraffe.com/, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Danish locale for Search Unleashed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-06 13:50+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Kristoffer Landsend <kristoffer@landsend.no>\n"
+"Language-Team: GSA <g.s.adamsen@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Danish\n"
+"X-Poedit-Country: DENMARK\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
+"X-Poedit-Basepath: d:\\wordpress\\plugins\\search-unleashed\n"
+"X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\search-unleashed\n"
+
+#: d:\wordpress\plugins\search-unleashed/ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "Ferdig! Klikk for å gå tilbake"
+
+#: d:\wordpress\plugins\search-unleashed/ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d av %d / %d%%"
+
+#: d:\wordpress\plugins\search-unleashed/plugin.php:642
+msgid "How many widgets would you like?"
+msgstr "Hvor mange widgets vil du ha?"
+
+#: d:\wordpress\plugins\search-unleashed/plugin.php:649
+msgid "Save"
+msgstr "Lagre"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:353
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Søkeresultat for '%s'"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:498
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:540
+msgid "You are not allowed access to this resource"
+msgstr "Du har ikke tilgang til denne ressursen"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:551
+msgid "All logs have been deleted."
+msgstr "Alle logger har blitt slettet."
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:584
+msgid "Your options have been saved"
+msgstr "Oppsettet ditt er lagret."
+
+#: d:\wordpress\plugins\search-unleashed/models/pager.php:198
+msgid "Previous"
+msgstr "Forrige"
+
+#: d:\wordpress\plugins\search-unleashed/models/pager.php:199
+msgid "Next"
+msgstr "Neste"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:96
+msgid "MSN"
+msgstr "MSN"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:97
+msgid "Altavista"
+msgstr "Altavista"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:98
+msgid "Lycos"
+msgstr "Lycos"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:99
+msgid "Baidu"
+msgstr "Baidu"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:100
+msgid "Sogou"
+msgstr "Sogou"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:101
+msgid "Google"
+msgstr "Google"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:102
+msgid "Yandex"
+msgstr "Yandex"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:103
+msgid "Local"
+msgstr "Lokal"
+
+#: d:\wordpress\plugins\search-unleashed/models/widget.php:27
+msgid "Search"
+msgstr "Søk"
+
+#: d:\wordpress\plugins\search-unleashed/models/widget.php:39
+msgid "Title"
+msgstr "Tittel"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_author.php:22
+#: d:\wordpress\plugins\search-unleashed/modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Kommentarforfattere"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Kommentar:</strong> %s</p>"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:29
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Kommentar av %s:</strong> %s</p>"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Kommentarens innhold"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "Antall tegn før første treff"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "Antall tegn etter første treff"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Inkluder i treff"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:89
+msgid "Just content"
+msgstr "Kun innhold"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Innhold og forfatternavn"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Innhold, forfatternavn og lenke til forfatters hjemmeside"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_url.php:21
+#: d:\wordpress\plugins\search-unleashed/modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Kommentarforfatters URL"
+
+#: d:\wordpress\plugins\search-unleashed/modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "NextGen Gallery"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:32
+msgid "Author"
+msgstr "Forfatter"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:38
+msgid "Post/page author"
+msgstr "Artikkel-/sideforfatter"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "Vis lenke til forfatterens side"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_category.php:18
+msgid "Category"
+msgstr "Kategori"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_category.php:24
+msgid "Post category"
+msgstr "Artikkelens kategori"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_content.php:41
+msgid "Post/page content"
+msgstr "Artikkelens/sidens innhold"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "Indekser ikke innholdet, men vis det i resultater"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "Utdrag"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "Artikkel-/sideutdrag"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Metadata"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "Artikkelens/sidens metadata"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Metafelter"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Velg metadataene som skal tas med i søk"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "Kort tittel på artikkel/side"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_title.php:10
+msgid "Post/page title"
+msgstr "Artikkelens/sidens overskrift"
+
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:41
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:50
+msgid "Tags"
+msgstr "Stikkord"
+
+# Måske bare: Vis tag ?
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:65
+msgid "Show tag in results"
+msgstr "Vis stikkord i resultater"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | Indeks"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Søkeindeksen er tom. Reindekser snarest!"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:8
+#, php-format
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "Du har <strong>%d</strong> begrep i søkeindeksen."
+msgstr[1] "Du har <strong>%d</strong> begrep i søkeindeksen."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:12
+#, php-format
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "<strong>%d søk </strong> er gjort med denne søkemotoren."
+msgstr[1] "<strong>%d søk </strong>  er gjort med denne søkemotoren."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:15
+msgid "You can help support the author by sending a donation.."
+msgstr "Du kan støtte programereren ved å gi en donasjon."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:16
+msgid "All it takes is <strong>$8</strong> to act as an incentive for me to carry on writing other free software."
+msgstr "Det koster bare <strong>8$</strong> å oppfordre meg til å fortsette å lage andre gratisprogram."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:46
+msgid "Re-Index Search Unleashed"
+msgstr "Reindekser Search Unleashed"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:48
+msgid "You need to re-index the search database when"
+msgstr "Du trenger å reindeksere søkedatabasen når "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:50
+msgid "You first install this plugin"
+msgstr "du  installerer innstikket  for første gang"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:51
+msgid "You change what to include in the search"
+msgstr "du endrer det du vil inkludere i søkene"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:52
+msgid "You install another plugin that may alter posts or comments"
+msgstr "du installerer et annet innstikk som gjør endringer i artikler eller kommentarer"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:55
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Endringer i artikler og kommentarer vil automatisk bli reindeksert - <strong>du behøver ikke å reindeksere etter at du har redigert artikler</strong>."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:58
+msgid "Re-index posts"
+msgstr "Reindekser artikkel"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:59
+msgid "Re-index comments"
+msgstr "Reindekser kommentarer"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:66
+#: d:\wordpress\plugins\search-unleashed/view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Dette søket ble utført av <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+# Is there an error in the original text?
+#: d:\wordpress\plugins\search-unleashed/view/admin/kitten.php:4
+msgid "Help to prevent remove this message by getting the site owner to support this software."
+msgstr "Du kan bidra til å fjerne denne beskjeden ved å be bloggens eier om å støtte denne programvaren."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | Logg"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:12
+msgid "Phrase"
+msgstr "Frase"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:13
+msgid "Time"
+msgstr "Tid"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:14
+msgid "IP"
+msgstr "IP"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:15
+msgid "Referrer"
+msgstr "Referert fra "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "Det er ingenting å vise"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "Slett logger"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Dette valget vil slette alle søkelogger. Forsikre deg om at det er det du ønsker å gjøre."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:48
+msgid "Delete logs"
+msgstr "Slett logger"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | Moduler"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "Velg hva som skal tas med i søkene"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | Oppsett"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:9
+msgid "General Options"
+msgstr "Generelle innstillinger"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "Sider som skal ekskluderes"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "Kommaseparert liste over side-/artikkel-id'er"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:17
+msgid "Search results page title"
+msgstr "Søkeresultatets sideoverskrift"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Endre søkeresultatenes sideoverskrift slik at den viser søkebegrepene"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:23
+msgid "Include"
+msgstr "Inkluder"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:25
+msgid "pages"
+msgstr "sider"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:26
+msgid "posts"
+msgstr "artikler"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:28
+msgid "password-protected"
+msgstr "passordbeskyttet"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:29
+msgid "private"
+msgstr "privat"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:30
+msgid "draft"
+msgstr "kladd"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:31
+msgid "future"
+msgstr "fremtidig"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:35
+msgid "Search Mode"
+msgstr "Søkemodus"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "Fulltekst med logiske operasjoner"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "Enkel tekstmatching"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:43
+msgid "Plugin Support"
+msgstr "Støtte for innstikk"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:46
+msgid "Click this if you have supported the author"
+msgstr "Klikk her hvis du har støttet programmereren"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:53
+msgid "Theme Options"
+msgstr "Oppsett av temaet"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:56
+msgid "Force content display"
+msgstr "Fremtving visning av innhold"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Noen tema viser ikke søkeresultater. Velger du denne indstillingen, tvinges temaet til å vise resultatene"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:63
+msgid "Highlight searches"
+msgstr "Uthev søk"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:66
+msgid "Highlight searches on search page or default to <code>the_excerpt</code>"
+msgstr "Uthev søkene på søkesiden, eller bruk <code>the_excerpt</code> som standard"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:70
+msgid "Highlight incoming searches"
+msgstr "Uthev eksterne søk "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "No highlighting"
+msgstr "Ingen uthevning"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "Content, no titles"
+msgstr "Innhold, ingen overskrifter"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "Content &amp; titles"
+msgstr "Innhold og overskrifter"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:75
+msgid "Highlighting phrases and display a help box on post pages after a search has been performed"
+msgstr "Uthev fraser og vis en hjelpeboks på artikler og sider, når et søk er gjort"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:79
+msgid "Theme title position"
+msgstr "Posisjon for temaoverskrift"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:83
+msgid "(includes default theme)"
+msgstr "(inkluderer standardtema)"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:87
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "De fleste tema krever posisjionen 1, men hvis overskrifter utheves feilaktig, skal du endre verdien"
+
+# Lidt lang oversættelse
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:95
+msgid "Search Style"
+msgstr "Visning av søkeresultat"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:98
+msgid "Include highlight CSS"
+msgstr "Inkluder uthevning av CSS"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:103
+msgid "Highlight colour"
+msgstr "Farge for uthevning"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:108
+msgid "Specify colour as a hex value"
+msgstr "Angi farge som hexadesimal verdi"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Resultater pr. side"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/pager.php:17
+msgid "go"
+msgstr "Utfør"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "Søkeindeks"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:4
+msgid "Log"
+msgstr "Logg"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:5
+msgid "Modules"
+msgstr "Moduler"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:6
+msgid "Options"
+msgstr "Oppsett"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "skjul"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "søkeresultat"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:8
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "Du er landet her, fordi du søkte efter følgende"
+msgstr[1] "Du har kommet hit fordi du søkte etter følgende"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Klikk på en frase for å gå til første forekomst, eller <a href=\"%s\">gå tilbake til søkeresultatet</a>."
+
+#~ msgid ""
+#~ "If you 'mistakenly' said you supported the author without actually "
+#~ "doingso then not only are the kittens still crying, but their stomachs "
+#~ "ache and they all feel miserable."
+#~ msgstr ""
+#~ "Hvis du ved en \"fejl\" har angivet at støtte forfatteren uden faktisk at "
+#~ "gøre det, så skriger killingerne stadig. Ja, de har ondt i maven og føler "
+#~ "sig elendige tilpas."
+#~ msgid "Kitten protection"
+#~ msgstr "Killingebeskyttelse"
+#~ msgid "Search Index Information"
+#~ msgstr "Information om søgeindex"
+#~ msgid "Search Log"
+#~ msgstr "Søgelog"
+#~ msgid "Search Unleashed Options"
+#~ msgstr "Search Unleashed Indstillinger"
+#~ msgid ""
+#~ "Show incoming search requests by highlighting phrases and displaying a "
+#~ "help box"
+#~ msgstr ""
+#~ "Vis søgeanmodninger udefra ved at fremhæve fraser og vise en hjælpeboks"
+

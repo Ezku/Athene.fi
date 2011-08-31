@@ -1,0 +1,327 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-10-17 11:58+0100\n"
+"Last-Translator: Olle Hellgren <olle.hellgren@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+
+#: ajax.php:68
+msgid "Finished!"
+msgstr "Färdig!"
+
+#: ajax.php:68
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d av %d / %d%%"
+
+#: plugin.php:593
+msgid "How many widgets would you like?"
+msgstr "Hur många widgets vill du ha?"
+
+#: plugin.php:600
+#: view/admin/module_edit.php:7
+#: view/admin/options.php:73
+msgid "Save"
+msgstr "Spara"
+
+#: search-unleashed.php:267
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Sökresultat för '%s'"
+
+#: search-unleashed.php:380
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: search-unleashed.php:415
+msgid "Your options have been saved"
+msgstr "Dina val har sparats"
+
+#: modules/comment_author.php:22
+#: modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Kommentarförfattare"
+
+#: modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Kommentar:</strong> %s</p>"
+
+#: modules/comment_content.php:29
+#: modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Kommentar av %s:</strong> %s</p>"
+
+#: modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Kommentarinnehåll"
+
+#: modules/comment_content.php:74
+#: modules/post_content.php:43
+#: modules/post_excerpt.php:50
+msgid "Characters before first match"
+msgstr "Bokstäver före första träff"
+
+#: modules/comment_content.php:80
+#: modules/post_content.php:49
+#: modules/post_excerpt.php:56
+msgid "Characters after first match"
+msgstr "Bokstäver efter första träff"
+
+#: modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Inkludera i träff"
+
+#: modules/comment_content.php:89
+msgid "Just content"
+msgstr "Bara innehåll"
+
+#: modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Innehåll och författarens namn"
+
+#: modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Innehåll, författarens namn och länk till författarens sajt"
+
+#: modules/comment_url.php:21
+#: modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Kommentarförfattarens URL"
+
+#: modules/post_content.php:23
+msgid "Post content"
+msgstr "Inläggsinnehåll"
+
+#: modules/post_excerpt.php:24
+msgid "Excerpt"
+msgstr "Utdrag"
+
+#: modules/post_excerpt.php:30
+msgid "Post excerpt"
+msgstr "Inläggsutdrag"
+
+#: modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Metadata"
+
+#: modules/post_meta.php:49
+msgid "Post meta-data"
+msgstr "Postmetadata"
+
+#: modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Metafält"
+
+#: modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Välj metadata att söka"
+
+#: modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: modules/post_slug.php:29
+msgid "Post slug"
+msgstr "\"Sluggad\" inläggstitel"
+
+#: modules/post_title.php:10
+msgid "Post title"
+msgstr "Inläggstitel"
+
+#: modules/tags.php:37
+#: modules/tags.php:45
+msgid "Tags"
+msgstr "Etiketter"
+
+#: view/admin/index.php:2
+msgid "Search Index Information"
+msgstr "Sökindexinformation"
+
+#: view/admin/index.php:5
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Du har inga poster i sökindexet. Var snäll och indexera om snart!"
+
+#: view/admin/index.php:7
+msgid "You have"
+msgstr "Du har"
+
+#: view/admin/index.php:7
+msgid "items in the search index."
+msgstr "poster i sökindexet."
+
+#: view/admin/index.php:11
+msgid "have been performed using this plugin. "
+msgstr "har utförts med det här insticksprogrammet."
+
+#: view/admin/index.php:14
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Du kan stödja författaren genom en donation. Varje sökning som görs utan stöd kommer göra en <strong>kattunge ledsen</strong>."
+
+#: view/admin/index.php:15
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "Det krävs bara <strong>8$ för att kattungarna ska fortsätta vara glada</strong> och ger mig incitament att fortsätta utveckla fri programvara."
+
+#: view/admin/index.php:40
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Din hjälp att stoppa kattungar från att gråta är uppskattad!"
+
+#: view/admin/index.php:42
+msgid "If you 'mistakenly' said you supported the author without actually doingso then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Om du av 'misstag' sa att du stödjer författaren utan att faktiskt göra det så är det inte nog med att kattungarna fortfarande gråter utan de har även magont och mår pyton."
+
+#: view/admin/index.php:48
+msgid "Re-Index Search Unleashed"
+msgstr "Indexera om Search Unleashed"
+
+#: view/admin/index.php:50
+msgid "You need to re-index the search database when"
+msgstr "Du behöver indexera om sökdatabasen när"
+
+#: view/admin/index.php:52
+msgid "You first install this plugin"
+msgstr "Du installerar det här insticksprogrammet för första gången"
+
+#: view/admin/index.php:53
+msgid "You change what to include in the search"
+msgstr "Du ändrar vad som ska inkluderas i sökningen"
+
+#: view/admin/index.php:54
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Du installerar ett annat insticksprogram som kan förändra inlägg eller kommentarer"
+
+#: view/admin/index.php:57
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Ändringar av enskilda inlägg och kommentarer indexeras automatiskt om - <strong>du behöver inte indexera om efter redigering av inlägg</strong>."
+
+#: view/admin/index.php:60
+msgid "Re-index posts"
+msgstr "Indexera om inlägg"
+
+#: view/admin/index.php:61
+msgid "Re-index comments"
+msgstr "Indexera om kommentarer"
+
+#: view/admin/index.php:68
+#: view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Den här mäktiga sökningen gjordes av <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+#: view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "Din sökning\tgjorde att en kattunge började gråta. Hjälp till att förebygga detta genom att förmå sajtens ägare att stödja den här mjukvaran."
+
+#: view/admin/modules.php:2
+msgid "Search Unleashed Options"
+msgstr "Search Unleashed inställningar"
+
+#: view/admin/modules.php:4
+msgid "Select what to include in the search"
+msgstr "Välj vad som ska inkluderas i sökningen"
+
+#: view/admin/options.php:2
+#: view/admin/submenu.php:4
+msgid "Options"
+msgstr "Inställningar"
+
+#: view/admin/options.php:7
+msgid "Pages to exclude"
+msgstr "Sidor som ska exkluderas"
+
+#: view/admin/options.php:9
+msgid "Comma-separated list of page/post IDs"
+msgstr "Kommaseparerad lista av sid- och inläggs-ID:n"
+
+#: view/admin/options.php:13
+msgid "Search results page title"
+msgstr "Titel för sökresultatssida"
+
+#: view/admin/options.php:15
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Ändra sidtitel för sökresultat som återspeglar sökkriterier"
+
+#: view/admin/options.php:19
+msgid "Highlight incoming searches"
+msgstr "Framhäv inkommande sökningar"
+
+#: view/admin/options.php:21
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "Visa inkommande sökningar genom att framhäva fraser och visa en hjälpruta"
+
+#: view/admin/options.php:26
+msgid "Theme title position"
+msgstr "Position för tematitel"
+
+#: view/admin/options.php:34
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "De flesta teman kräver en position på 1, men om du har inkorrekt framhävning i titlar sätt denna till ett annat värde"
+
+#: view/admin/options.php:39
+msgid "Force content display:"
+msgstr "Tvinga visning av innehåll:"
+
+#: view/admin/options.php:42
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "En del teman visar inte något innehåll för sökresultatet. Sätt det här valet för att tvinga temat att visa resultat"
+
+#: view/admin/options.php:46
+msgid "Kitten protection"
+msgstr "Kattungeskydd"
+
+#: view/admin/options.php:49
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Klicka här om du har gett stöd till författaren och hjälp till att få kattungarna att sluta gråta"
+
+#: view/admin/options.php:54
+msgid "Include highlight CSS"
+msgstr "Inkludera framhävnings-CSS"
+
+#: view/admin/options.php:61
+msgid "Highlight colour"
+msgstr "Framhävningsfärg"
+
+#: view/admin/options.php:66
+msgid "Specify colour as a hex value"
+msgstr "Ange färg som hex-värde"
+
+#: view/admin/submenu.php:2
+msgid "Search Index"
+msgstr "Sökindex"
+
+#: view/admin/submenu.php:3
+msgid "Modules"
+msgstr "Moduler"
+
+#: view/search-unleashed/incoming_local.php:2
+msgid "hide"
+msgstr "göm"
+
+#: view/search-unleashed/incoming_local.php:3
+msgid "Search Results"
+msgstr "Sökresultat"
+
+#: view/search-unleashed/incoming_local.php:7
+msgid "You arrived here after searching for the following phrase"
+msgstr "Du kom hit efter sökning efter följande fras"
+
+#: view/search-unleashed/incoming_local.php:9
+msgid "You arrived here after searching for the following phrases"
+msgstr "Du kom hit efter sökning efter följande fraser"
+
+#: view/search-unleashed/incoming_local.php:17
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Klicka på en fras för att hoppa till den första förekomsten, eller <a href=\"%s\">återvänd till sökresultat</a>."
+

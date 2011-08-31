@@ -1,0 +1,500 @@
+# Advanced search engine that provides full text searching across posts, pages, comments, titles, and URLs.  Searches take into account any data added by other plugins, and all search results are contextually highlighted. You can also highlight incoming searches from popular search engines.
+# Copyright (C) 2008 John Godley
+# This file is distributed under the same license as the Search Unleashed package.
+# John Godley, http://urbangiraffe.com/, 2008.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: Search Unleashed 0.2.8\n"
+        "Report-Msgid-Bugs-To: \n"
+        "POT-Creation-Date: 2008-01-27 15:00+0100\n"
+        "PO-Revision-Date: 2008-MO-DA HO:MI+ZONE\n"
+        "Last-Translator: Evert Jan van Ramselaar http://www.onbezet.nl/\n"
+        "Language-Team: LANGUAGE <LL@li.org>\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ajax.php:75
+#, php-format
+msgid   "%d of %d / %d%%"
+msgstr  "%d van %d / %d%%"
+
+#: view/admin/options.php:71
+msgid   "(includes default theme)"
+msgstr  "(inclusief standaard thema)"
+
+#: modules/comment_content.php:29 modules/comment_content.php:31
+#, php-format
+msgid   "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr  "<p><strong>Reactie van %s:</strong> %s</p>"
+
+#: modules/comment_content.php:27
+#, php-format
+msgid   "<p><strong>Comment:</strong> %s</p>"
+msgstr  "<p><strong>Reactie:</strong> %s</p>"
+
+#: view/admin/index.php:11
+#, php-format
+msgid   "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural    "<strong>%d searches</strong> have been performed using this "
+        "plugin. "
+msgstr[0]       "Er is <strong>%d keer gezocht</strong> middels deze plugin."
+msgstr[1]       "Er is <strong>%d keer gezocht</strong> middels deze plugin."
+
+#: view/admin/index.php:15
+msgid   "All it takes is <strong>$8 to keep the kittens happy</strong> and "
+        "act as an incentive for me to carry on writing other free software."
+msgstr  "Het kost maar <strong>$8 om de poesjes blij te houden</strong> en "
+	"om mij gemotiveerd te laten blijven om meer gratis software te maken."
+
+#: search-unleashed.php:494
+msgid   "All logs have been deleted."
+msgstr  "Alle logs zijn verwijderd."
+
+#: modules/post_author.php:32
+msgid   "Author"
+msgstr  "Auteur"
+
+#: view/admin/index.php:68 view/admin/module_edit.php:8
+msgid   "Cancel"
+msgstr  "Afbreken"
+
+#: view/admin/options.php:17
+msgid   "Change page title on search results to reflect the search condition"
+msgstr  "Wijzig pagina titel op zoekresultaat om zoektermen weer te geven"
+
+#: view/admin/index.php:57
+msgid   "Changes to individual posts &amp; comments will be automatically re-"
+        "indexed - <strong>you do not need to re-index after editing posts</"
+        "strong>."
+msgstr  "Wijzigingen in individuele berichten en reacties worden vanzelf "
+	"geherindexeerd - <strong>je hoeft niet te herindexeren na het "
+	"wijzigen van berichten</strong>."
+
+#: modules/comment_content.php:80 modules/post_content.php:48
+#: modules/post_excerpt.php:56
+msgid   "Characters after first match"
+msgstr  "Tekens na eerste voorkomen"
+
+#: modules/comment_content.php:74 modules/post_content.php:42
+#: modules/post_excerpt.php:50
+msgid   "Characters before first match"
+msgstr  "Tekens voor eerste voorkomen"
+
+#: view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid   "Click a phrase to jump to the first occurrence, or <a href=\"%s"
+        "\">return to the search results</a>."
+msgstr  "Klik op een term om naar de plek te springen waar deze het eerst voorkomt, <br />"
+	"of <a href=\"%s\">ga terug naar de zoekresultaten</a>"
+
+#: view/admin/options.php:41
+msgid   "Click this if you have supported the author and helped stop the "
+        "kittens from crying"
+msgstr  "Selecteer dit als je de auteur hebt gesponsord en er daarmee "
+	"voor zort dat de poesjes niet meer huilen."
+
+#: view/admin/options.php:12
+msgid   "Comma-separated list of page/post IDs"
+msgstr  "Komma-gescheiden lijst van pagina/bericht nummers"
+
+#: modules/comment_author.php:22 modules/comment_author.php:29
+msgid   "Comment author"
+msgstr  "Reactie schrijver"
+
+#: modules/comment_url.php:21 modules/comment_url.php:28
+msgid   "Comment author URL"
+msgstr  "Reactie schrijver URL"
+
+#: modules/comment_content.php:50
+msgid   "Comment content"
+msgstr  "Reactie inhoud"
+
+#: modules/comment_content.php:90
+msgid   "Content &amp; author's name"
+msgstr  "Reactie en naam schrijver"
+
+#: view/admin/options.php:61
+msgid   "Content &amp; titles"
+msgstr  "Inhoud en titels"
+
+#: modules/comment_content.php:91
+msgid   "Content, author's name, and link to author's site"
+msgstr  "Inhoud, naam schrijver en link naar site schrijver"
+
+#: view/admin/options.php:61
+msgid   "Content, no titles"
+msgstr  "Inhoud, geen titels"
+
+#: view/admin/log.php:41
+msgid   "Delete Logs"
+msgstr  "Verwijder logs"
+
+#: view/admin/log.php:46
+msgid   "Delete logs"
+msgstr  "Verwijder logs"
+
+#: modules/post_author.php:52
+msgid   "Display link to author page"
+msgstr  "Toon link naar pagina auteur"
+
+#: modules/post_excerpt.php:24
+msgid   "Excerpt"
+msgstr  "Samenvatting"
+
+#: ajax.php:75
+msgid   "Finished!  Click to return"
+msgstr  "Klaar! Klik om terug te gaan"
+
+#: view/admin/options.php:51
+msgid   "Force content display"
+msgstr  "Forceer tonen van inhoud"
+
+#: view/admin/options.php:33
+msgid   "Full text with logical operations"
+msgstr  "Volledige tekst met logische operatoren"
+
+#: view/admin/options.php:7
+msgid   "General Options"
+msgstr  "Algemene opties"
+
+#: view/admin/options.php:91
+msgid   "Highlight colour"
+msgstr  "Highlight kleur"
+
+#: view/admin/options.php:58
+msgid   "Highlight incoming searches"
+msgstr  "Highlight inkomende zoektermen"
+
+#: plugin.php:623
+msgid   "How many widgets would you like?"
+msgstr  "Hoeveel widgets wil je?"
+
+#: view/admin/log.php:12
+msgid   "IP"
+msgstr  "IP"
+
+#: view/admin/index.php:42
+msgid   "If you 'mistakenly' said you supported the author without actually "
+        "doing so then not only are the kittens still crying, but their "
+        "stomachs ache and they all feel miserable."
+msgstr  "Als je 'per ongeluk' hebt gezegd dat je de auteur sponsort zonder "
+	"dat daadwerkelijk te doen, huilen de poesjes niet alleen nog, "
+	"maar hebben ze ook buikpijn en voelen ze zich belabberd."
+
+#: view/admin/options.php:21
+msgid   "Include Posts"
+msgstr  "Inclusief berichten"
+
+#: view/admin/options.php:86
+msgid   "Include highlight CSS"
+msgstr  "Insluiten highlight CSS"
+
+#: modules/comment_content.php:86
+msgid   "Include in match"
+msgstr  "Insluiten in resultaat"
+
+#: modules/comment_content.php:89
+msgid   "Just content"
+msgstr  "Alleen inhoud"
+
+#: view/admin/options.php:38
+msgid   "Kitten protection"
+msgstr  "Poesjes beveiliging"
+
+#: models/search_engine.php:103
+msgid   "Local"
+msgstr  "Lokaal"
+
+#: view/admin/submenu.php:3
+msgid   "Log"
+msgstr  "Log"
+
+#: modules/post_meta.php:65
+msgid   "Meta fields"
+msgstr  "Meta velden"
+
+#: modules/post_meta.php:42
+msgid   "Meta-data"
+msgstr  "Meta-data"
+
+#: view/admin/submenu.php:4
+msgid   "Modules"
+msgstr  "Modules"
+
+#: view/admin/options.php:75
+msgid   "Most themes require a position of 1, but if you have incorrect "
+        "highlighting in titles set this to another value"
+msgstr  "De meeste themas hebben positie 1 nodig, maar als je foutieve "
+	"highlights hebt in titels, zet dit dan op een andere waarde"
+
+#: models/pager.php:199
+msgid   "Next"
+msgstr  "Volgende"
+
+#: view/admin/options.php:61
+msgid   "No highlighting"
+msgstr  "Niet highlighten"
+
+#: view/admin/options.php:2 view/admin/submenu.php:5
+msgid   "Options"
+msgstr  "Opties"
+
+#: view/admin/options.php:10
+msgid   "Pages to exclude"
+msgstr  "Paginas om uit te sluiten"
+
+#: view/admin/log.php:10
+msgid   "Phrase"
+msgstr  "Term"
+
+#: modules/post_author.php:38
+msgid   "Post author"
+msgstr  "Bericht auteur"
+
+#: modules/post_content.php:25
+msgid   "Post content"
+msgstr  "Bericht inhoud"
+
+#: modules/post_excerpt.php:30
+msgid   "Post excerpt"
+msgstr  "Bericht samenvatting"
+
+#: modules/post_meta.php:49
+msgid   "Post meta-data"
+msgstr  "Bericht meta-data"
+
+#: modules/post_slug.php:29
+msgid   "Post slug"
+msgstr  "Bericht slug"
+
+#: modules/post_title.php:10
+msgid   "Post title"
+msgstr  "Bericht titel"
+
+#: models/pager.php:198
+msgid   "Previous"
+msgstr  "Vorige"
+
+#: view/admin/index.php:48
+msgid   "Re-Index Search Unleashed"
+msgstr  "Herindexeer Search Unleashed"
+
+#: view/admin/index.php:61
+msgid   "Re-index comments"
+msgstr  "Herindexeer reacties"
+
+#: view/admin/index.php:60
+msgid   "Re-index posts"
+msgstr  "Herindexeer berichten"
+
+#: view/admin/log.php:13
+msgid   "Referrer"
+msgstr  "Referer"
+
+#: view/admin/pager.php:10
+msgid   "Results per page"
+msgstr  "Resultaten per pagina"
+
+#: plugin.php:630 view/admin/module_edit.php:7 view/admin/options.php:103
+msgid   "Save"
+msgstr  "Opslaan"
+
+#: view/admin/pager.php:7
+msgid   "Search"
+msgstr  "Zoeken"
+
+#: view/admin/submenu.php:2
+msgid   "Search Index"
+msgstr  "Zoek Index"
+
+#: view/admin/index.php:2
+msgid   "Search Index Information"
+msgstr  "Zoek Index Informatie"
+
+#: view/admin/log.php:2
+msgid   "Search Log"
+msgstr  "Zoek Log"
+
+#: view/admin/options.php:30
+msgid   "Search Mode"
+msgstr  "Zoek modus"
+
+#: view/search-unleashed/incoming_local.php:5
+msgid   "Search Results"
+msgstr  "zoekresultaat"
+
+#: view/admin/options.php:83
+msgid   "Search Style"
+msgstr  "Zoek Stijl"
+
+#: search-unleashed.php:461
+msgid   "Search Unleashed"
+msgstr  "Search Unleashed"
+
+#: view/admin/modules.php:2
+msgid   "Search Unleashed Options"
+msgstr  "Search Unleashed Opties"
+
+#: search-unleashed.php:316
+#, php-format
+msgid   "Search results for '%s'"
+msgstr  "Zoekresultaat voor '%s'"
+
+#: view/admin/options.php:15
+msgid   "Search results page title"
+msgstr  "Zoekresultaat pagina titel"
+
+#: modules/post_meta.php:66
+msgid   "Select the meta-data to search"
+msgstr  "Selecteer de meta-data om te zoeken"
+
+#: view/admin/modules.php:4
+msgid   "Select what to include in the search"
+msgstr  "Selecteer wat je wilt omvatten bij het zoeken"
+
+#: view/admin/options.php:63
+msgid   "Show incoming search requests by highlighting phrases and displaying "
+        "a help box"
+msgstr  "Laat inkomende zoekresultaten zien door termen te highlighten en "
+	"het tonen van een hulpkader"
+
+#: modules/tags.php:65
+msgid   "Show tag in results"
+msgstr  "Toon tag in resultaten"
+
+#: view/admin/options.php:33
+msgid   "Simple text matching"
+msgstr  "Simpele tekst koppeling"
+
+#: view/admin/options.php:54
+msgid   "Some themes don't display any search result content.  Enable this "
+        "option to force the theme to display results"
+msgstr  "Sommige themas laten geen inhoud van zoekresultaten zien. Vink deze "
+	"optie aan om het tonen van de resultaten te forceren"
+
+#: view/admin/options.php:96
+msgid   "Specify colour as a hex value"
+msgstr  "Specificeer kleur als hex waarde"
+
+#: modules/tags.php:41 modules/tags.php:50
+msgid   "Tags"
+msgstr  "Tags"
+
+#: view/admin/options.php:48
+msgid   "Theme Options"
+msgstr  "Thema opties"
+
+#: view/admin/options.php:67
+msgid   "Theme title position"
+msgstr  "Thema titel positie"
+
+#: view/admin/log.php:36
+msgid   "There is nothing to display"
+msgstr  "Er is niets om te tonen"
+
+#: view/admin/kitten.php:2
+#, php-format
+msgid   "This great search was powered by <a href=\"%s\"><strong>Search "
+        "Unleashed</strong></a>."
+msgstr  "Deze geweldige zoektocht werd mogelijk gemaakt door "
+	"<a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+#: view/admin/log.php:43
+msgid   "This option will delete all search logs.  Please be sure this is "
+        "what you want to do."
+msgstr  "Deze optie zal alle zoeklogs verwijderen. Zorg dat je zeker weet "
+	"dat dit is wat je wilt."
+
+#: view/admin/log.php:11
+msgid   "Time"
+msgstr  "Tijd"
+
+#: modules/post_slug.php:23
+msgid   "URL"
+msgstr  "URL"
+
+#: search-unleashed.php:483
+msgid   "You are not allowed access to this resource"
+msgstr  "Je bent niet gemachtigd om deze bron te benaderen"
+
+#: view/search-unleashed/incoming_local.php:8
+msgid   "You arrived here after searching for the following phrase"
+msgid_plural    "You arrived here after searching for the following phrases"
+msgstr[0]       "Je komt hier omdat je zocht naar de volgende term"
+msgstr[1]       "Je komt hier omdat je zocht naar de volgende termen"
+
+#: view/admin/index.php:14
+msgid   "You can help support the author by sending a donation.  Every search "
+        "that is made without support will cause a <strong>kitten to cry</"
+        "strong>."
+msgstr  "Je kunt de auteur sponsoren door een donatie te doen. Elke zoekopdracht "
+	"die gedaan wordt zonder deze sponsoring zal een <strong>poesje laten "
+	"huilen</strong>."
+
+#: view/admin/index.php:53
+msgid   "You change what to include in the search"
+msgstr  "je verandert wat je wilt omvatten in de zoekopdracht"
+
+#: view/admin/index.php:52
+msgid   "You first install this plugin"
+msgstr  "je deze plugin voor het eerst installeert"
+
+#: view/admin/index.php:7
+#, php-format
+msgid   "You have <strong>%d</strong> item in the search index."
+msgid_plural    "You have <strong>%d</strong> items in the search index."
+msgstr[0]       "Je hebt <strong>%d</strong> item in de zoekindex."
+msgstr[1]       "Je hebt <strong>%d</strong> items in de zoekindex."
+
+#: view/admin/index.php:5
+msgid   "You have no items in the search index.  Please re-index soon!"
+msgstr  "Je hebt geen items in de zoekindex. Herindexeer snel!"
+
+#: view/admin/index.php:54
+msgid   "You install another plugin that may alter posts or comments"
+msgstr  "je een andere plugin installeert die berichten of reacties bewerkt"
+
+#: view/admin/index.php:50
+msgid   "You need to re-index the search database when"
+msgstr  "Je moet de searchindex herindexeren wanneer"
+
+#: view/admin/index.php:40
+msgid   "Your help stopping kittens from crying is appreciated!"
+msgstr  "Je hulp om poesjes te laten stoppen met huilen wordt gewaardeerd!"
+
+#: search-unleashed.php:524
+msgid   "Your options have been saved"
+msgstr  "Je opties zijn opgeslagen"
+
+#: view/admin/kitten.php:4
+msgid   "Your search\tcaused a kitten to cry.  Help to prevent this by "
+        "getting the site owner to support this software."
+msgstr  "Je zoekopdracht liet een poesje huilen. Help dit te voorkomen "
+	"door de eigenaar van deze site zijn software te laten sponsoren."
+
+#: view/admin/options.php:25
+msgid   "draft"
+msgstr  "concept"
+
+#: view/admin/options.php:26
+msgid   "future"
+msgstr  "toekomstig"
+
+#: view/admin/pager.php:17
+msgid   "go"
+msgstr  "gaan"
+
+#: view/search-unleashed/incoming_local.php:3
+msgid   "hide"
+msgstr  "verberg"
+
+#: view/admin/options.php:23
+msgid   "password-protected"
+msgstr  "wachtwoord-beveiligd"
+
+#: view/admin/options.php:24
+msgid   "private"
+msgstr  "prive"

@@ -1,0 +1,543 @@
+# Advanced search engine that provides full text searching across posts, pages, comments, titles, and URLs.  Searches take into account any data added by other plugins, and all search results are contextually highlighted. You can also highlight incoming searches from popular search engines.
+# Copyright (C) 2008 John Godley
+# This file is distributed under the same license as the Search Unleashed package.
+# John Godley, http://urbangiraffe.com/, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Lithuanian translation Search Unleashed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-06 13:50+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Audrius Meseckas <audrius404@gmail.com>\n"
+"Language-Team: WordPress TVS - Audrius Meseckas <audrius404@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
+"X-Poedit-Basepath: d:\\wordpress\\plugins\\search-unleashed\n"
+"X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\search-unleashed\n"
+
+#: d:\wordpress\plugins\search-unleashed/ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "Užbaigta. Spauskite, kad pabaigti"
+
+#: d:\wordpress\plugins\search-unleashed/ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d af %d / %d%%"
+
+#: d:\wordpress\plugins\search-unleashed/plugin.php:642
+msgid "How many widgets would you like?"
+msgstr "Kiek valdiklių norėtumėte?"
+
+#: d:\wordpress\plugins\search-unleashed/plugin.php:649
+msgid "Save"
+msgstr "Saugoti"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:353
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Paieškos rezultatai '%s'"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:498
+msgid "Search Unleashed"
+msgstr "Search Unleashed "
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:540
+msgid "You are not allowed access to this resource"
+msgstr "Jums neleidžiama prieiti prie šio turinio"
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:551
+msgid "All logs have been deleted."
+msgstr "Visi log'ai buvo ištrinti."
+
+#: d:\wordpress\plugins\search-unleashed/search-unleashed.php:584
+msgid "Your options have been saved"
+msgstr "Parinktys išsaugotos"
+
+#: d:\wordpress\plugins\search-unleashed/models/pager.php:198
+msgid "Previous"
+msgstr "Ankstesnis"
+
+#: d:\wordpress\plugins\search-unleashed/models/pager.php:199
+msgid "Next"
+msgstr "Sekantis"
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:96
+msgid "MSN"
+msgstr "MSN "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:97
+msgid "Altavista"
+msgstr "Altavista "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:98
+msgid "Lycos"
+msgstr "Lycos "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:99
+msgid "Baidu"
+msgstr "Baidu "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:100
+msgid "Sogou"
+msgstr "Sogou "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:101
+msgid "Google"
+msgstr "Google "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:102
+msgid "Yandex"
+msgstr "Yandex "
+
+#: d:\wordpress\plugins\search-unleashed/models/search_engine.php:103
+msgid "Local"
+msgstr "Portalo"
+
+#: d:\wordpress\plugins\search-unleashed/models/widget.php:27
+msgid "Search"
+msgstr "Paieška"
+
+#: d:\wordpress\plugins\search-unleashed/models/widget.php:39
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_author.php:22
+#: d:\wordpress\plugins\search-unleashed/modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Komentaro autorius"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Komentaras:</strong> %s</p>"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:29
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Parašė %s:</strong> %s</p>"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Komentaro turinys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "Charakteriai, prieš pirmą atitikmenį"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "Charakterių po pirmo atitikmens"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Įskaitant į atitikmenis"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:89
+msgid "Just content"
+msgstr "Tik turinys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Turinys &amp; autoriaus vardas"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Turinys, autoriaus vardas, ir nuoroda į autoriaus puslapį"
+
+#: d:\wordpress\plugins\search-unleashed/modules/comment_url.php:21
+#: d:\wordpress\plugins\search-unleashed/modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Autoriaus komentaro URL"
+
+#: d:\wordpress\plugins\search-unleashed/modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "NextGen Galerija"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:32
+msgid "Author"
+msgstr "Autorius"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:38
+msgid "Post/page author"
+msgstr "Įrašo/puslapio autorius"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "Rodyti nuorodą į autoriaus puslapį"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_category.php:18
+msgid "Category"
+msgstr "Kategorija"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_category.php:24
+msgid "Post category"
+msgstr "Įrašo kategorija"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_content.php:41
+msgid "Post/page content"
+msgstr "Įrašo/puslapio turinys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "Neindeksuoti turinio bet rodyti rezultatuose"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "Ištrauka"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "Įrašo/puslapio ištrauka"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Meta duomenys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "Įrašo/puslapio Meta duomenys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Meta skiltys"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Pasirinkite Meta duomenis paieškai"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_slug.php:23
+msgid "URL"
+msgstr "URL "
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "Įrašo/puslapio kelias"
+
+#: d:\wordpress\plugins\search-unleashed/modules/post_title.php:10
+msgid "Post/page title"
+msgstr "Įrašo/puslapio pavadinimas"
+
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:41
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:50
+msgid "Tags"
+msgstr "Žymos "
+
+# Måske bare: Vis tag ?
+#: d:\wordpress\plugins\search-unleashed/modules/tags.php:65
+msgid "Show tag in results"
+msgstr "Rodyti žymas rezultatuose"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | Pradžia"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Neturite suindeksuoto turinio. Prašome perindeksuoti tuojau."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:8
+#, php-format
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "Turite <strong>%d</strong>reikšmę paieškos indekse."
+msgstr[1] "Turite <strong>%d</strong> reikšmes paieškos indekse"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:12
+#, php-format
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "<strong>%d paieška</strong> buvo atlikta naudojant šį įskiepį."
+msgstr[1] "<strong>%d paieškos</strong> buvo atliktos naudojant šį įskiepį."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:15
+msgid "You can help support the author by sending a donation.."
+msgstr "Galite atsidėkoti įskiepio autoriui, jam padėkodami.."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:16
+msgid "All it takes is <strong>$8</strong> to act as an incentive for me to carry on writing other free software."
+msgstr "Det koster kun <strong>8$</strong> at give mig en opfordring til at skrive andre gratisprogrammer."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:46
+msgid "Re-Index Search Unleashed"
+msgstr "Reindeksér Search Unleashed"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:48
+msgid "You need to re-index the search database when"
+msgstr "Jums reikia perindeksuoti paieškos duomenų bazę kada"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:50
+msgid "You first install this plugin"
+msgstr "Pirmą kartą aktyvuojate įskiepį"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:51
+msgid "You change what to include in the search"
+msgstr "Kai pakeičiate, ką įtraukti į paiešką"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:52
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Kai suinstaliuojate kitą įskiepį, kuris turi įtakos įrašams ar komentarams"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:55
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Komentarų ir įrašų pakeitimai yra automatiškai perindeksuojami - <strong>jums nereikia perindeksuoti paredagavus įrašą</strong>."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:58
+msgid "Re-index posts"
+msgstr "Perindeksuoti įrašus "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:59
+msgid "Re-index comments"
+msgstr "Perindeksuoti komentarus "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/index.php:66
+#: d:\wordpress\plugins\search-unleashed/view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Ši paieška buvo atlikta pagal <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+# Is there an error in the original text?
+#: d:\wordpress\plugins\search-unleashed/view/admin/kitten.php:4
+msgid "Help to prevent remove this message by getting the site owner to support this software."
+msgstr "Pašalinkite šią žinutę, prisijungę prie admin panelės"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | Log'ai"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:12
+msgid "Phrase"
+msgstr "Frazė "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:13
+msgid "Time"
+msgstr "Laikas "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:14
+msgid "IP"
+msgstr "IP  "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:15
+msgid "Referrer"
+msgstr "Atvedėjas"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "Nėra ką rodyti "
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "Ištrinti log'us"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Ši parinktis ištrins log'us. Ar tikrai jums to reikia."
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/log.php:48
+msgid "Delete logs"
+msgstr "Ištrinti log'us"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | Moduliai"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "Pasirinkite, ką norite įtraukti į paiešką"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | Parinktys"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:9
+msgid "General Options"
+msgstr "Pagrindinės parinktys"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "Puslapiai išskyrimui"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "Kablelias atskirtų puslapių/įrašų ID sąrašas"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:17
+msgid "Search results page title"
+msgstr "Paieškos rezultatai puslapio pavadinime"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Pakeisti puslapio pavadinimą paieškos rezultatuose, kad atsispindėtų sąlyga su paieška"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:23
+msgid "Include"
+msgstr "Įtraukti"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:25
+msgid "pages"
+msgstr "puslapius"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:26
+msgid "posts"
+msgstr "įrašus"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:28
+msgid "password-protected"
+msgstr "apsaugotus slaptažodžiu"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:29
+msgid "private"
+msgstr "privačius"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:30
+msgid "draft"
+msgstr "juodraščius"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:31
+msgid "future"
+msgstr "išskirtinius"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:35
+msgid "Search Mode"
+msgstr "Søgemodus"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "Visas tekstas su loginimo operacijomis"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "Paprasto teksto atitikmenys"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:43
+msgid "Plugin Support"
+msgstr "Įskiepio pagalba"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:46
+msgid "Click this if you have supported the author"
+msgstr "Spauskite, jei turite palaikymo autorių"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:53
+msgid "Theme Options"
+msgstr "Temos parinktys"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:56
+msgid "Force content display"
+msgstr "Priverstinio turinio rodymas"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Kai kurios temos nerodo jokių paieškos rezultatų turinio. Įjunkite šią funkciją priversti tema rodyti rezultatus"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:63
+msgid "Highlight searches"
+msgstr "Išryškinti paieškas"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:66
+msgid "Highlight searches on search page or default to <code>the_excerpt</code>"
+msgstr "Išryškina paieškas paieškos puslapyje arba pagal numatytąjį <code>the_excerpt</code>"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:70
+msgid "Highlight incoming searches"
+msgstr "Išryškinti gaunamas paieškas"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "No highlighting"
+msgstr "Be paryškinimų"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "Content, no titles"
+msgstr "Turinys, be pavadinimų"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:73
+msgid "Content &amp; titles"
+msgstr "Turinys &amp; pavadinimai"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:75
+msgid "Highlighting phrases and display a help box on post pages after a search has been performed"
+msgstr "Paryškina frazes ir rodo pagalbos laukelį įrašų puslapiuose po paieškos atlikimo"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:79
+msgid "Theme title position"
+msgstr "Temos pavadinimo pozicija"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:83
+msgid "(includes default theme)"
+msgstr "(įskaitant nustatytąją temą)"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:87
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "Daugelis temų reikalauja pozicijos 1, bet jei jūsų temoje išryškinimas nekorektiškas, tuomet nustatykite kitą reikšmę"
+
+# Lidt lang oversættelse
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:95
+msgid "Search Style"
+msgstr "Paieškos stilius"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:98
+msgid "Include highlight CSS"
+msgstr "Įtraukti CSS paryškinimą"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:103
+msgid "Highlight colour"
+msgstr "Paryškinimo spalva"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/options.php:108
+msgid "Specify colour as a hex value"
+msgstr "Pasirinkite spalvą kaip reikšmę"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Rezultatų per puslapį"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/pager.php:17
+msgid "go"
+msgstr "eiti"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "Ieškoti pradiniame"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:4
+msgid "Log"
+msgstr "Log'ai"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:5
+msgid "Modules"
+msgstr "Moduliai"
+
+#: d:\wordpress\plugins\search-unleashed/view/admin/submenu.php:6
+msgid "Options"
+msgstr "Parinktys"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "slėpti"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "Paieškos Rezultatai"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:8
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "Esate čia, nes ieškojote šios frazės"
+msgstr[1] "Esate čia, nes ieškojote šių frazių"
+
+#: d:\wordpress\plugins\search-unleashed/view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Paspauskite ant frazės, kad patektumėte ant pirmo paieškos atitikmens, arba <a href=\"%s\">grįžkite į paieškos rezultatus</a>."
+

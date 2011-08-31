@@ -1,0 +1,513 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed 2.8-gl01\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-01-26 14:37+0100\n"
+"Last-Translator: Vincent <vincent.granger@pasdepanique.net>\n"
+"Language-Team: Frank Bueltge (original), Gerhard Lehnhoff (Änderungen, Ergänzungen, Erweiterungen - aufBlog.de) <aufBlog@gmx.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax.php:75
+msgid "Finished!  Click to return"
+msgstr "Terminé ! Cliquez pour revenir"
+
+#: ../ajax.php:75
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d de %d / %d%%"
+
+#: ../plugin.php:623
+msgid "How many widgets would you like?"
+msgstr "Combien de widgets voulez-vous ?"
+
+#: ../plugin.php:630
+#: ../view/admin/options.php:112
+#: ../view/admin/module_edit.php:7
+#: ../view/admin/options (Kopie).php:112
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: ../search-unleashed.php:317
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Résultats de la recherche pour '%s'"
+
+#: ../search-unleashed.php:462
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: ../search-unleashed.php:484
+msgid "You are not allowed access to this resource"
+msgstr "Vous n'êtes pas autorisés à accéder à cette ressouce"
+
+#: ../search-unleashed.php:495
+msgid "All logs have been deleted."
+msgstr "Tous les logs ont été effacés."
+
+#: ../search-unleashed.php:525
+msgid "Your options have been saved"
+msgstr "Vos options ont été sauvegardées"
+
+#: ../view/admin/options.php:3
+#: ../view/admin/submenu.php:5
+#: ../view/admin/options (Kopie).php:3
+msgid "Options"
+msgstr "Options"
+
+#: ../view/admin/options.php:8
+#: ../view/admin/options (Kopie).php:8
+msgid "General Options"
+msgstr "Options générales"
+
+#: ../view/admin/options.php:11
+#: ../view/admin/options (Kopie).php:11
+msgid "Pages to exclude"
+msgstr "Pages à exclure"
+
+#: ../view/admin/options.php:13
+#: ../view/admin/options (Kopie).php:13
+msgid "Comma-separated list of page/post IDs"
+msgstr "Liste des IDs de billets/pages à exclure"
+
+#: ../view/admin/options.php:16
+#: ../view/admin/options (Kopie).php:16
+msgid "Search results page title"
+msgstr "Titre de la page de résultats"
+
+#: ../view/admin/options.php:18
+#: ../view/admin/options (Kopie).php:18
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Changer le titre de la page selon les résultats de recherche pour refléter la condition de recherche"
+
+#: ../view/admin/options.php:22
+#: ../view/admin/options (Kopie).php:22
+msgid "Include Posts"
+msgstr "Inclure les billets"
+
+#: ../view/admin/options.php:24
+#: ../view/admin/options (Kopie).php:24
+msgid "password-protected"
+msgstr "protégés par mot de passe"
+
+#: ../view/admin/options.php:25
+#: ../view/admin/options (Kopie).php:25
+msgid "private"
+msgstr "privé"
+
+#: ../view/admin/options.php:26
+#: ../view/admin/options (Kopie).php:26
+msgid "draft"
+msgstr "brouillon"
+
+#: ../view/admin/options.php:27
+#: ../view/admin/options (Kopie).php:27
+msgid "future"
+msgstr "futurs"
+
+#: ../view/admin/options.php:31
+#: ../view/admin/options (Kopie).php:31
+msgid "Search Mode"
+msgstr "Mode de recherche"
+
+#: ../view/admin/options.php:37
+msgid "Full text with logical operations"
+msgstr "Texte entier avec des opérateurs logiques"
+
+#: ../view/admin/options.php:37
+msgid "Simple text matching"
+msgstr "Correspondance de texte simple"
+
+#: ../view/admin/options.php:43
+#: ../view/admin/options (Kopie).php:43
+msgid "Kitten protection"
+msgstr "Protection des chatons"
+
+#: ../view/admin/options.php:46
+#: ../view/admin/options (Kopie).php:46
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Cliquez si vous avez supporté l'auteur et aidé à arrêter les pleurs des chatons"
+
+#: ../view/admin/options.php:53
+#: ../view/admin/options (Kopie).php:53
+msgid "Theme Options"
+msgstr "Options du thème"
+
+#: ../view/admin/options.php:56
+#: ../view/admin/options (Kopie).php:56
+msgid "Force content display"
+msgstr "Forcer l'affichage du contenu"
+
+#: ../view/admin/options.php:59
+#: ../view/admin/options (Kopie).php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Certains thèmes n'affichent aucun résultat de recherche. Cochez cette option pour forcer le thème à les afficher"
+
+#: ../view/admin/options.php:63
+#: ../view/admin/options (Kopie).php:63
+msgid "Highlight incoming searches"
+msgstr "Surligner les recherches entrantes"
+
+#: ../view/admin/options.php:69
+msgid "No highlighting"
+msgstr "Pas de surlignage"
+
+#: ../view/admin/options.php:69
+msgid "Content, no titles"
+msgstr "Contenu, pas les titres"
+
+#: ../view/admin/options.php:69
+msgid "Content &amp; titles"
+msgstr "Contenu et titres"
+
+#: ../view/admin/options.php:72
+#: ../view/admin/options (Kopie).php:72
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "Montrer les recherches entrantes en surlignant les termes et en affichant un message d'aide"
+
+#: ../view/admin/options.php:76
+#: ../view/admin/options (Kopie).php:76
+msgid "Theme title position"
+msgstr "Position du titre du thème"
+
+#: ../view/admin/options.php:80
+#: ../view/admin/options (Kopie).php:80
+msgid "(includes default theme)"
+msgstr "(inclus le thème par défaut)"
+
+#: ../view/admin/options.php:84
+#: ../view/admin/options (Kopie).php:84
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "La plupart des thèmes requièrent une position de 1, mais si vous expérimentez un surlignage incorrect dans les titres, spécifiez une autre valeur"
+
+#: ../view/admin/options.php:92
+#: ../view/admin/options (Kopie).php:92
+msgid "Search Style"
+msgstr "Apparence de la recherche"
+
+#: ../view/admin/options.php:95
+#: ../view/admin/options (Kopie).php:95
+msgid "Include highlight CSS"
+msgstr "Activer le surlignage CSS"
+
+#: ../view/admin/options.php:100
+#: ../view/admin/options (Kopie).php:100
+msgid "Highlight colour"
+msgstr "Couleur de surlignage"
+
+#: ../view/admin/options.php:105
+#: ../view/admin/options (Kopie).php:105
+msgid "Specify colour as a hex value"
+msgstr "Spécifier la couleur en héxadécimal"
+
+#: ../view/admin/pager.php:7
+msgid "Search"
+msgstr "Recherche"
+
+#: ../view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Résultats par page"
+
+#: ../view/admin/pager.php:17
+msgid "go"
+msgstr "Allez"
+
+#: ../view/admin/log.php:2
+msgid "Search Log"
+msgstr "Log des recherches"
+
+#: ../view/admin/log.php:10
+msgid "Phrase"
+msgstr "Terme"
+
+#: ../view/admin/log.php:11
+msgid "Time"
+msgstr "Date"
+
+#: ../view/admin/log.php:12
+msgid "IP"
+msgstr "IP"
+
+#: ../view/admin/log.php:13
+msgid "Referrer"
+msgstr "Reférent"
+
+#: ../view/admin/log.php:36
+msgid "There is nothing to display"
+msgstr "Il n'y a rien à afficher"
+
+#: ../view/admin/log.php:41
+msgid "Delete Logs"
+msgstr "Effacer les logs"
+
+#: ../view/admin/log.php:43
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Cette option effacera <strong>définitivement</strong>tous les journaux de recherche. Soyez sûr(e)  de ce que vous voulez faire."
+
+#: ../view/admin/log.php:46
+msgid "Delete logs"
+msgstr "Effacer les logs"
+
+#: ../view/admin/index.php:3
+msgid "Search Index Information"
+msgstr "Information de l'index de recherche"
+
+#: ../view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Vous n'avez aucun élément dans l'index de recherche. Veuillez ré-indexer rapidement !"
+
+#: ../view/admin/index.php:11
+#, php-format
+msgid "You have <strong>%d</strong> item in the search index."
+msgstr "Il y a <strong>%d</strong> élément dans l'index de recherche."
+
+#: ../view/admin/index.php:12
+#, php-format
+msgid "You have <strong>%d</strong> items in the search index."
+msgstr "Il y a <strong>%d</strong> éléments dans l'index de recherche."
+
+#: ../view/admin/index.php:21
+#, php-format
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgstr "<strong>%d recherche</strong> a été accomplie avec ce plugin."
+
+#: ../view/admin/index.php:22
+#, php-format
+msgid "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr "<strong>%d recherches</strong> ont été accomplies avec ce plugin."
+
+#: ../view/admin/index.php:27
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Vous pouvez aider l'auteur en envoyant un don. Chaque recherche menée sans support fera <strong>pleurer un chaton</strong>."
+
+#: ../view/admin/index.php:28
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "Tout ce que cela demande c'est <strong>8$ pour rendre les chatons heureux </strong>et me motiver pour continuer d'écrire d'autres logiciels gratuits. "
+
+#: ../view/admin/index.php:53
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Votre aide pour arrêter les pleurs des chatons est appréciée"
+
+#: ../view/admin/index.php:55
+msgid "If you 'mistakenly' said you supported the author without actually doing so then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Si vous avez déclaré 'par erreur' que vous avez supporté l'auteur et que ce n'est actuellement pas le cas, non seulement les chatons continuent à pleurer, mais leurs estomacs les torturent et ils se sentent très mal."
+
+#: ../view/admin/index.php:61
+msgid "Re-Index Search Unleashed"
+msgstr "Ré-indexer Search Unleashed"
+
+#: ../view/admin/index.php:63
+msgid "You need to re-index the search database when"
+msgstr "Vous avez besoin de ré-indexer la base de données des recherches quand"
+
+#: ../view/admin/index.php:65
+msgid "You first install this plugin"
+msgstr "Vous installez ce plugin pour la première fois"
+
+#: ../view/admin/index.php:66
+msgid "You change what to include in the search"
+msgstr "Vous avez changé ce qui doit être inclus dans une recherche"
+
+#: ../view/admin/index.php:67
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Vous avez installé un autre plugin qui modifie le contenu des billets ou des commentaires"
+
+#: ../view/admin/index.php:70
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Les changements sur des billets ou des commentaires seront automatiquement ré-indexés, <strong>vous n'avez pas besoin de ré-indexer après avoir édité un billet</strong>"
+
+#: ../view/admin/index.php:73
+msgid "Re-index posts"
+msgstr "Ré-indexer les billets"
+
+#: ../view/admin/index.php:74
+msgid "Re-index comments"
+msgstr "Ré-indexer les commentaires"
+
+#: ../view/admin/index.php:81
+#: ../view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Cette recherche a brillamment été accomplie par <a href=\"%s\" target=\"_blank\"><strong>Search Unleashed</strong></a>."
+
+#: ../view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "Votre recherche a fait pleurer un chaton. Evitez cela en demandant au responsable de ce site de faire un don pour ce logiciel."
+
+#: ../view/admin/submenu.php:2
+msgid "Search Index"
+msgstr "Index de recherche"
+
+#: ../view/admin/submenu.php:3
+msgid "Log"
+msgstr "Journal"
+
+#: ../view/admin/submenu.php:4
+msgid "Modules"
+msgstr "Modules"
+
+#: ../view/admin/modules.php:2
+msgid "Search Unleashed Options"
+msgstr "Options de Search Unleashed"
+
+#: ../view/admin/modules.php:4
+msgid "Select what to include in the search"
+msgstr "Sélectionnez les éléments à inclure dans la recherche"
+
+#: ../view/search-unleashed/incoming_local.php:4
+msgid "hide"
+msgstr "cacher"
+
+#: ../view/search-unleashed/incoming_local.php:6
+msgid "Search Results"
+msgstr "- résultats de la recherche"
+
+#: ../view/search-unleashed/incoming_local.php:12
+msgid "You arrived here after searching for the following phrase"
+msgstr "Vous êtes arrivés ici en cherchant le terme suivant"
+
+#: ../view/search-unleashed/incoming_local.php:13
+msgid "You arrived here after searching for the following phrases"
+msgstr "Vous êtes arrivés ici en cherchant les termes suivants"
+
+#: ../view/search-unleashed/incoming_local.php:22
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Cliquez sur un terme ci-dessus pour accéder à sa première occurence, ou <a href=\"%s\">retournez à la page des résultats"
+
+#: ../modules/comment_url.php:21
+#: ../modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Pages des commentaires"
+
+#: ../modules/post_content.php:25
+msgid "Post content"
+msgstr "Contenu du billet"
+
+#: ../modules/post_content.php:42
+#: ../modules/post_excerpt.php:50
+#: ../modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "Caractères avant la première correspondance"
+
+#: ../modules/post_content.php:48
+#: ../modules/post_excerpt.php:56
+#: ../modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "Caractères après la première correspondance"
+
+#: ../modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Meta-Donnée"
+
+#: ../modules/post_meta.php:49
+msgid "Post meta-data"
+msgstr "Meta-donnée du billet"
+
+#: ../modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Champs meta"
+
+#: ../modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Sélectionnez la ou les méta-donnée(s) à rechercher"
+
+#: ../modules/post_author.php:32
+msgid "Author"
+msgstr "Auteur"
+
+#: ../modules/post_author.php:38
+msgid "Post author"
+msgstr "Auteur du billet"
+
+#: ../modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "Afficher le lien vers la page de l'auteur"
+
+#: ../modules/post_excerpt.php:24
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: ../modules/post_excerpt.php:30
+msgid "Post excerpt"
+msgstr "Extrait du billet"
+
+#: ../modules/comment_author.php:22
+#: ../modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Commentaires"
+
+#: ../modules/tags.php:41
+#: ../modules/tags.php:50
+msgid "Tags"
+msgstr "Tags"
+
+#: ../modules/tags.php:65
+msgid "Show tag in results"
+msgstr "Montrer les tags dans les résultats"
+
+#: ../modules/post_title.php:10
+msgid "Post title"
+msgstr "Titre du billet"
+
+#: ../modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: ../modules/post_slug.php:29
+msgid "Post slug"
+msgstr "Slug du billet"
+
+#: ../modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Commentaire :</strong> %s</p>"
+
+#: ../modules/comment_content.php:29
+#: ../modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Commentaire par %s:</strong> %s</p>"
+
+#: ../modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Contenu du commentaire"
+
+#: ../modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Inclure dans la correspondance"
+
+#: ../modules/comment_content.php:89
+msgid "Just content"
+msgstr "Juste le contenu"
+
+#: ../modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "Contenu et nom de l'auteur"
+
+#: ../modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "Contenu, nom de l'auteur, et lien vers le site de l'auteur"
+
+#: ../models/pager.php:198
+msgid "Previous"
+msgstr "Précédent"
+
+#: ../models/pager.php:199
+msgid "Next"
+msgstr "Suivant"
+
+#: ../models/search_engine.php:105
+msgid "Local"
+msgstr "Local"
+

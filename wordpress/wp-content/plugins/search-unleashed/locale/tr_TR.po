@@ -1,0 +1,503 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed Turkish\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-09-25 22:51+0200\n"
+"Last-Translator: Mehmet Karaca <doctorkaraca@gmail.com>\n"
+"Language-Team: Mehmet Karaca <doctorkaraca@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+
+#: ../ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "Bitti! Geri dönmek için tıklayın "
+
+#: ../ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d (%d içinde) / %d%% "
+
+#: ../plugin.php:626
+msgid "How many widgets would you like?"
+msgstr "Kaç widget olsun isterdiniz? "
+
+#: ../plugin.php:633
+msgid "Save"
+msgstr "Kaydet"
+
+#: ../search-unleashed.php:334
+#, php-format
+msgid "Search results for '%s'"
+msgstr "'%s' için arama sonuçları "
+
+#: ../search-unleashed.php:479
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: ../search-unleashed.php:521
+msgid "You are not allowed access to this resource"
+msgstr "Bu kaynağa erişim izniniz bulunmuyor"
+
+#: ../search-unleashed.php:532
+msgid "All logs have been deleted."
+msgstr "Tüm günlük kayıtları silindi. "
+
+#: ../search-unleashed.php:564
+msgid "Your options have been saved"
+msgstr "Tercihleriniz kaydedildi"
+
+#: ../models/pager.php:198
+msgid "Previous"
+msgstr "Geri"
+
+#: ../models/pager.php:199
+msgid "Next"
+msgstr "İleri"
+
+#: ../models/search_engine.php:103
+msgid "Local"
+msgstr "Yerel"
+
+#: ../models/widget.php:27
+msgid "Search"
+msgstr "Ara"
+
+#: ../models/widget.php:39
+msgid "Title"
+msgstr "Başlık"
+
+#: ../modules/comment_author.php:22
+#: ../modules/comment_author.php:29
+msgid "Comment author"
+msgstr "Yorum yazarı"
+
+#: ../modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Yorum:</strong> %s</p>"
+
+#: ../modules/comment_content.php:29
+#: ../modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>%s tarafından yapılan yorum:</strong> %s</p>"
+
+#: ../modules/comment_content.php:50
+msgid "Comment content"
+msgstr "Yorum içeriği"
+
+#: ../modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "İlk eşleşmeden önceki karakter adedi"
+
+#: ../modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "Son eşleşmeden sonraki karakter adedi"
+
+#: ../modules/comment_content.php:86
+msgid "Include in match"
+msgstr "Eşleştirmeye dahil et"
+
+#: ../modules/comment_content.php:89
+msgid "Just content"
+msgstr "Yalnızca içerik"
+
+#: ../modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "İçerik ve yazar adı"
+
+#: ../modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "İçerik, yazar adı ve yazarın sitesine bağlantı"
+
+#: ../modules/comment_url.php:21
+#: ../modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "Yorum yazarı için URL"
+
+#: ../modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "NextGen Gallery"
+
+#: ../modules/post_author.php:32
+msgid "Author"
+msgstr "Yazar"
+
+#: ../modules/post_author.php:38
+msgid "Post/page author"
+msgstr "Girdi/sayfa yazarı"
+
+#: ../modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "Yazar sayfasına bağlantıyı görüntüle"
+
+#: ../modules/post_category.php:18
+msgid "Category"
+msgstr "Kategori"
+
+#: ../modules/post_category.php:24
+msgid "Post category"
+msgstr "Girdi kategorisi"
+
+#: ../modules/post_content.php:41
+msgid "Post/page content"
+msgstr "Girdi/sayfa içeriği"
+
+#: ../modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "İçeriği endeksleme ama sonuçlar içinde göster"
+
+#: ../modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "Özet"
+
+#: ../modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "Girdi/sayfa özeti"
+
+#: ../modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "Meta-bilgi"
+
+#: ../modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "Girdi/sayfa meta-bilgisi"
+
+#: ../modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "Meta alanları"
+
+#: ../modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "Aranacak meta-bilgi alanlarını seçin"
+
+#: ../modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: ../modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "Girdi/sayfa için slug"
+
+#: ../modules/post_title.php:10
+msgid "Post/page title"
+msgstr "Girdi/sayfa için başlık"
+
+#: ../modules/tags.php:41
+#: ../modules/tags.php:50
+msgid "Tags"
+msgstr "Etiketler"
+
+#: ../modules/tags.php:65
+msgid "Show tag in results"
+msgstr "Sonuçlar içinde etiket göster"
+
+#: ../view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | Endeks"
+
+#: ../view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Arama endeksiniz boş. Lütfen yeniden-endeksleyin!"
+
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "Arama endeksinizde <strong>%d</strong> öğe bulunuyor."
+msgstr[1] "Arama endeksinizde <strong>%d</strong> öğe bulunuyor."
+
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "Bu eklenti kullanılarak <strong>%d arama</strong> yapıldı."
+msgstr[1] "Bu eklenti kullanılarak <strong>%d arama</strong> yapıldı."
+
+#: ../view/admin/index.php:15
+msgid "You can help support the author by sending a donation.  Every search that is made without support will cause a <strong>kitten to cry</strong>."
+msgstr "Küçük bir bağış yaparak programcıyı destekleyebilirsiniz. Programcıyı desteklemeden yapılan her arama <strong>bir yavru kediyi ağlatacaktır</strong>."
+
+#: ../view/admin/index.php:16
+msgid "All it takes is <strong>$8 to keep the kittens happy</strong> and act as an incentive for me to carry on writing other free software."
+msgstr "<strong>Yavru kedileri mutlu etmek için 8 dolar bağış yapmak</strong> yeterli! Bağışlarınız yeni ücretsiz programlar yazmam için bana motivasyon sağlayacaktır."
+
+#: ../view/admin/index.php:41
+msgid "Your help stopping kittens from crying is appreciated!"
+msgstr "Yavru kedilerin acısına hassasiyetinizi ve yardımlarınızı takdir ediyoruz! "
+
+#: ../view/admin/index.php:43
+msgid "If you 'mistakenly' said you supported the author without actually doing so then not only are the kittens still crying, but their stomachs ache and they all feel miserable."
+msgstr "Eğer 'yanlışlıkla' programcıyı bağışınızla desteklediğinizi belirttiyseniz ve gerçek bu değilse, yavru kediler ağlamakla kalmayacak, karınları ağrıyacak ve kendilerini çok sefil hissedecekler."
+
+#: ../view/admin/index.php:49
+msgid "Re-Index Search Unleashed"
+msgstr "Search Unleashed'i Yeniden-Endeksle"
+
+#: ../view/admin/index.php:51
+msgid "You need to re-index the search database when"
+msgstr "Şu durumlarda arama veritabanını yeniden-endekslemeniz gerekir"
+
+#: ../view/admin/index.php:53
+msgid "You first install this plugin"
+msgstr "Bu eklentiyi ilk kurduğunuzda"
+
+#: ../view/admin/index.php:54
+msgid "You change what to include in the search"
+msgstr "Aramalara dahil edecek veri alanlarını değiştirdiğinizde"
+
+#: ../view/admin/index.php:55
+msgid "You install another plugin that may alter posts or comments"
+msgstr "Yazı ve yorumları değiştiren bir başka eklenti kurduğunuzda"
+
+#: ../view/admin/index.php:58
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Düzenlediğiniz girdi ve yorumlar otomatik olarak yeniden-endekslenir - girdileri düzenledikten sonra yeniden-endeksleme yapmanız gerekmemektedir."
+
+#: ../view/admin/index.php:61
+msgid "Re-index posts"
+msgstr "Girdileri yeniden-endeksle"
+
+#: ../view/admin/index.php:62
+msgid "Re-index comments"
+msgstr "Yorumları yeniden-endeksle "
+
+#: ../view/admin/index.php:69
+#: ../view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "İptal"
+
+#: ../view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Bu harika arama <a href=\"%s\"><strong>Search Unleashed</strong></a> eklentisi yardımıyla yapılmıştır."
+
+#: ../view/admin/kitten.php:4
+msgid "Your search\tcaused a kitten to cry.  Help to prevent this by getting the site owner to support this software."
+msgstr "Yaptığınız arama bir yavru kedinin ağlamasına neden oldu. Bunun tekrarlanmaması için site sahibinden bu eklentiye destek vermesini isteyebilirsiniz. "
+
+#: ../view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | Günlük Kayıtları"
+
+#: ../view/admin/log.php:12
+msgid "Phrase"
+msgstr "Terim(ler)"
+
+#: ../view/admin/log.php:13
+msgid "Time"
+msgstr "Zaman"
+
+#: ../view/admin/log.php:14
+msgid "IP"
+msgstr "IP"
+
+#: ../view/admin/log.php:15
+msgid "Referrer"
+msgstr "Gönderen"
+
+#: ../view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "Görüntülenecek birşey yok"
+
+#: ../view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "Günlük Kayıtlarını Sil"
+
+#: ../view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Bu seçenek tüm arama günlük kayıtlarını silecektir. Lütfen bunu yapmak istediğinizden emin olun."
+
+#: ../view/admin/log.php:48
+msgid "Delete logs"
+msgstr "Günlük kayıtlarını sil "
+
+#: ../view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | Modüller"
+
+#: ../view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "Aramaya nelerin dahil edileceğini seçin"
+
+#: ../view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | Tercihler"
+
+#: ../view/admin/options.php:9
+msgid "General Options"
+msgstr "Genel Tercihler"
+
+#: ../view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "Hariç tutulacak sayfalar"
+
+#: ../view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "Sayfa/girdi ID numaralarının virgülle-ayrılmış listesi"
+
+#: ../view/admin/options.php:17
+msgid "Search results page title"
+msgstr "Arama sonuçları sayfası başlığı"
+
+#: ../view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Arama sonuçları sayfa başlığını, arama koşullarını yansıtacak biçimde değiştir"
+
+#: ../view/admin/options.php:23
+msgid "Include"
+msgstr "Dahil et"
+
+#: ../view/admin/options.php:25
+msgid "pages"
+msgstr "sayfalar"
+
+#: ../view/admin/options.php:26
+msgid "posts"
+msgstr "girdiler"
+
+#: ../view/admin/options.php:28
+msgid "password-protected"
+msgstr "parola-korumalı"
+
+#: ../view/admin/options.php:29
+msgid "private"
+msgstr "özel"
+
+#: ../view/admin/options.php:30
+msgid "draft"
+msgstr "taslak"
+
+#: ../view/admin/options.php:31
+msgid "future"
+msgstr "ileri tarihli"
+
+#: ../view/admin/options.php:35
+msgid "Search Mode"
+msgstr "Arama Modu"
+
+#: ../view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "Mantık operatörleri kullanılabilen tam metin "
+
+#: ../view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "Basit metin eşleştirme"
+
+#: ../view/admin/options.php:43
+msgid "Kitten protection"
+msgstr "Yavru kedi koruma"
+
+#: ../view/admin/options.php:46
+msgid "Click this if you have supported the author and helped stop the kittens from crying"
+msgstr "Eğer yavru kedilerin ızdırabını sona erdirmek için programcıyı bağışınızla desteklediyseniz burayı işaretleyin"
+
+#: ../view/admin/options.php:53
+msgid "Theme Options"
+msgstr "Tema Seçenekleri"
+
+#: ../view/admin/options.php:56
+msgid "Force content display"
+msgstr "İçerik görüntülemesine zorla"
+
+#: ../view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Bazı temalar arama sonuçlarının görüntülenmesine izin vermeyebilir. Bu seçeneği kullanarak temayı sonuçları görüntülemeye zorlayabilirsiniz"
+
+#: ../view/admin/options.php:63
+msgid "Highlight incoming searches"
+msgstr "Dış kaynaklardan gelen aramaları renklendir"
+
+#: ../view/admin/options.php:66
+msgid "No highlighting"
+msgstr "Renklendirme kapalı"
+
+#: ../view/admin/options.php:66
+msgid "Content, no titles"
+msgstr "Yalnız içerik, başlık kapalı"
+
+#: ../view/admin/options.php:66
+msgid "Content &amp; titles"
+msgstr "İçerik ve başlık"
+
+#: ../view/admin/options.php:68
+msgid "Show incoming search requests by highlighting phrases and displaying a help box"
+msgstr "Dış kaynaklardan gelen arama terimlerini renklendir ve yardım kutusunu görüntüle"
+
+#: ../view/admin/options.php:72
+msgid "Theme title position"
+msgstr "Tema başlık konumu"
+
+#: ../view/admin/options.php:76
+msgid "(includes default theme)"
+msgstr "(varsayılan temayı da kapsar)"
+
+#: ../view/admin/options.php:80
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "Pekçok tema 1 konumunu ile çalışır ancak başlıklarda hatalı renklendirme olursa bu değer ile oynamayı deneyebilirsiniz "
+
+#: ../view/admin/options.php:88
+msgid "Search Style"
+msgstr "Arama Tarzı"
+
+#: ../view/admin/options.php:91
+msgid "Include highlight CSS"
+msgstr "Renklendirme CSS kodunu kullan"
+
+#: ../view/admin/options.php:96
+msgid "Highlight colour"
+msgstr "Renklendirme için kullanılacak renk"
+
+#: ../view/admin/options.php:101
+msgid "Specify colour as a hex value"
+msgstr "Rengi hex değeri olarak belirtin"
+
+#: ../view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Sayfa başına sonuç"
+
+#: ../view/admin/pager.php:17
+msgid "go"
+msgstr "git"
+
+#: ../view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "Arama Endeksi"
+
+#: ../view/admin/submenu.php:4
+msgid "Log"
+msgstr "Günlük Kayıtları"
+
+#: ../view/admin/submenu.php:5
+msgid "Modules"
+msgstr "Modüller"
+
+#: ../view/admin/submenu.php:6
+msgid "Options"
+msgstr "Tecihler"
+
+#: ../view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "gizle"
+
+#: ../view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "Bu sayfaya aşağıdaki kelimeyi ararken ulaştınız"
+msgstr[1] "Bu sayfaya aşağıdaki kelimeleri ararken ulaştınız"
+
+#: ../view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Sayfada ilk kullanıldığı yere atlamak istediğiniz kelimeyi tıklayabilir ya da <a href=\"%s\">arama sonuçlarına geri dönebilirsiniz</a>."
+
+#~ msgid "Search Log"
+#~ msgstr "Durchsuche Log"
+#~ msgid "Search Index Information"
+#~ msgstr "Durchsuche Index Informationen"
+

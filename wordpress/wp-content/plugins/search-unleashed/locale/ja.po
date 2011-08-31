@@ -1,0 +1,566 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-08 12:56+0900\n"
+"PO-Revision-Date: 2008-10-08 17:02+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-SearchPath-0: search-unleashed\n"
+
+#: search-unleashed/ajax.php:74
+msgid "Finished!  Click to return"
+msgstr "終わりました！戻るをクリックしてください。"
+
+#: search-unleashed/ajax.php:74
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d (%d) / %d%% "
+
+#: search-unleashed/plugin.php:642
+msgid "How many widgets would you like?"
+msgstr "いくつのウィジェットが必要ですか？"
+
+#: search-unleashed/plugin.php:649
+msgid "Save"
+msgstr "保存する"
+
+#: search-unleashed/search-unleashed.php:350
+#, php-format
+msgid "Search results for '%s'"
+msgstr "検索結果 '%s'"
+
+#: search-unleashed/search-unleashed.php:495
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: search-unleashed/search-unleashed.php:537
+msgid "You are not allowed access to this resource"
+msgstr "あなたはこのリソースへのアクセスが許可されていません。"
+
+#: search-unleashed/search-unleashed.php:548
+msgid "All logs have been deleted."
+msgstr "全てのログは削除されました。"
+
+#: search-unleashed/search-unleashed.php:581
+msgid "Your options have been saved"
+msgstr "オプションは保存されました。"
+
+#: search-unleashed/models/pager.php:198
+msgid "Previous"
+msgstr "前へ"
+
+#: search-unleashed/models/pager.php:199
+msgid "Next"
+msgstr "次へ"
+
+#: search-unleashed/models/search_engine.php:96
+msgid "MSN"
+msgstr "MSN"
+
+#: search-unleashed/models/search_engine.php:97
+msgid "Altavista"
+msgstr "Altavista"
+
+#: search-unleashed/models/search_engine.php:98
+msgid "Lycos"
+msgstr "Lycos"
+
+#: search-unleashed/models/search_engine.php:99
+msgid "Baidu"
+msgstr "Baidu"
+
+#: search-unleashed/models/search_engine.php:100
+msgid "Sogou"
+msgstr "Sogou"
+
+#: search-unleashed/models/search_engine.php:101
+msgid "Google"
+msgstr "Google"
+
+#: search-unleashed/models/search_engine.php:102
+msgid "Yandex"
+msgstr "Yandex"
+
+#: search-unleashed/models/search_engine.php:103
+msgid "Local"
+msgstr "Yerel"
+
+#: search-unleashed/models/widget.php:27
+msgid "Search"
+msgstr "検索"
+
+#: search-unleashed/models/widget.php:39
+msgid "Title"
+msgstr "タイトル"
+
+#: search-unleashed/modules/comment_author.php:22
+#: search-unleashed/modules/comment_author.php:29
+msgid "Comment author"
+msgstr "コメント著者"
+
+#: search-unleashed/modules/comment_content.php:27
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>コメント：</strong> %s</p>"
+
+#: search-unleashed/modules/comment_content.php:29
+#: search-unleashed/modules/comment_content.php:31
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>%sによるコメント：</strong> %s</p>"
+
+#: search-unleashed/modules/comment_content.php:50
+msgid "Comment content"
+msgstr "コメント内容"
+
+#: search-unleashed/modules/comment_content.php:74
+msgid "Characters before first match"
+msgstr "最初のマッチ以前の文字数"
+
+#: search-unleashed/modules/comment_content.php:80
+msgid "Characters after first match"
+msgstr "最初のマッチ以降の文字数"
+
+#: search-unleashed/modules/comment_content.php:86
+msgid "Include in match"
+msgstr "マッチに含める"
+
+#: search-unleashed/modules/comment_content.php:89
+msgid "Just content"
+msgstr "コンテンツのみ"
+
+#: search-unleashed/modules/comment_content.php:90
+msgid "Content &amp; author's name"
+msgstr "コンテンツと著者名"
+
+#: search-unleashed/modules/comment_content.php:91
+msgid "Content, author's name, and link to author's site"
+msgstr "コンテンツ、著者名、著者サイトへのリンク"
+
+#: search-unleashed/modules/comment_url.php:21
+#: search-unleashed/modules/comment_url.php:28
+msgid "Comment author URL"
+msgstr "コメント著者URL"
+
+#: search-unleashed/modules/nextgen_gallery.php:5
+msgid "NextGen Gallery"
+msgstr "NextGen Gallery"
+
+#: search-unleashed/modules/post_author.php:32
+msgid "Author"
+msgstr "著者"
+
+#: search-unleashed/modules/post_author.php:38
+msgid "Post/page author"
+msgstr "投稿/ページ 著者"
+
+#: search-unleashed/modules/post_author.php:52
+msgid "Display link to author page"
+msgstr "著者ページへのリンクを表示する"
+
+#: search-unleashed/modules/post_category.php:18
+msgid "Category"
+msgstr "カテゴリー"
+
+#: search-unleashed/modules/post_category.php:24
+msgid "Post category"
+msgstr "投稿カテゴリー"
+
+#: search-unleashed/modules/post_content.php:41
+msgid "Post/page content"
+msgstr "投稿/ページ コンテンツ"
+
+#: search-unleashed/modules/post_content.php:73
+msgid "Do not index content, but show in results"
+msgstr "コンテンツをインデックスせずに結果に表示する"
+
+#: search-unleashed/modules/post_excerpt.php:25
+msgid "Excerpt"
+msgstr "抜粋"
+
+#: search-unleashed/modules/post_excerpt.php:31
+msgid "Post/page excerpt"
+msgstr "投稿/ページ 抜粋"
+
+#: search-unleashed/modules/post_meta.php:42
+msgid "Meta-data"
+msgstr "メタデータ"
+
+#: search-unleashed/modules/post_meta.php:49
+msgid "Post/page meta-data"
+msgstr "投稿/ページ メタデータ"
+
+#: search-unleashed/modules/post_meta.php:65
+msgid "Meta fields"
+msgstr "メタフィールド"
+
+#: search-unleashed/modules/post_meta.php:66
+msgid "Select the meta-data to search"
+msgstr "検索するメタデータを選択してください。"
+
+#: search-unleashed/modules/post_slug.php:23
+msgid "URL"
+msgstr "URL"
+
+#: search-unleashed/modules/post_slug.php:29
+msgid "Post/page slug"
+msgstr "投稿/ページ スラッグ"
+
+#: search-unleashed/modules/post_title.php:10
+msgid "Post/page title"
+msgstr "投稿/ページ タイトル"
+
+#: search-unleashed/modules/tags.php:41
+#: search-unleashed/modules/tags.php:50
+msgid "Tags"
+msgstr "タグ"
+
+#: search-unleashed/modules/tags.php:65
+msgid "Show tag in results"
+msgstr "結果にタグを表示する"
+
+#: search-unleashed/view/admin/index.php:2
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | インデックス"
+
+#: search-unleashed/view/admin/index.php:6
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "検索インデックスにアイテムがありません。再インデックスをすぐにしてください。"
+
+#: search-unleashed/view/admin/index.php:8
+#, php-format
+msgid "You have <strong>%d</strong> item in the search index."
+msgid_plural "You have <strong>%d</strong> items in the search index."
+msgstr[0] "検索インデックスに<strong>%d</strong>アイテムあります。"
+msgstr[1] "検索インデックスに<strong>%d</strong>アイテムあります。"
+
+#: search-unleashed/view/admin/index.php:12
+#, php-format
+msgid "<strong>%d search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%d searches</strong> have been performed using this plugin. "
+msgstr[0] "<strong>%d 検索</strong>がこのプラグインを使用して行われました。"
+msgstr[1] "<strong>%d 検索</strong>がこのプラグインを使用して行われました。"
+
+#: search-unleashed/view/admin/index.php:15
+msgid "You can help support the author by sending a donation.."
+msgstr "寄付を送ることで著作者をサポートできます。"
+
+#: search-unleashed/view/admin/index.php:16
+msgid "All it takes is <strong>$8</strong> to act as an incentive for me to carry on writing other free software."
+msgstr "私が他のフリーソフトウェアを作るためのインセンティブとして行動するには<strong>$8</strong>が必要です。"
+
+#: search-unleashed/view/admin/index.php:46
+msgid "Re-Index Search Unleashed"
+msgstr "Search Unleashedの再インデックス"
+
+#: search-unleashed/view/admin/index.php:48
+msgid "You need to re-index the search database when"
+msgstr "検索データベースの再インデックスが以下の時、必要です。"
+
+#: search-unleashed/view/admin/index.php:50
+msgid "You first install this plugin"
+msgstr "初めてこのプラグインをインストールしている"
+
+#: search-unleashed/view/admin/index.php:51
+msgid "You change what to include in the search"
+msgstr "検索に含めるものを変更している"
+
+#: search-unleashed/view/admin/index.php:52
+msgid "You install another plugin that may alter posts or comments"
+msgstr "投稿またはコメントを変えるかもしれない別のプラグインをインストールしている。"
+
+#: search-unleashed/view/admin/index.php:55
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "個々の投稿とコメントへの変化は自動的に再インデックスされます。<strong>投稿を編集後に再インデックスする必要はありません。</strong>"
+
+#: search-unleashed/view/admin/index.php:58
+msgid "Re-index posts"
+msgstr "投稿を再インデックスする"
+
+#: search-unleashed/view/admin/index.php:59
+msgid "Re-index comments"
+msgstr "コメントを再インデックスする"
+
+#: search-unleashed/view/admin/index.php:66
+#: search-unleashed/view/admin/module_edit.php:8
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: search-unleashed/view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "この検索は<a href=\"%s\"><strong>Search Unleashed</strong></a>によるものです。"
+
+#: search-unleashed/view/admin/kitten.php:4
+msgid "Help to prevent remove this message by getting the site owner to support this software."
+msgstr "このソフトウェアをサポートするためにサイトオーナーにこのメッセージを削除させないでください。"
+
+#: search-unleashed/view/admin/log.php:2
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | ログ"
+
+#: search-unleashed/view/admin/log.php:12
+msgid "Phrase"
+msgstr "キーワード"
+
+#: search-unleashed/view/admin/log.php:13
+msgid "Time"
+msgstr "日時"
+
+#: search-unleashed/view/admin/log.php:14
+msgid "IP"
+msgstr "IP"
+
+#: search-unleashed/view/admin/log.php:15
+msgid "Referrer"
+msgstr "リファラー"
+
+#: search-unleashed/view/admin/log.php:38
+msgid "There is nothing to display"
+msgstr "表示するものがありません。"
+
+#: search-unleashed/view/admin/log.php:43
+msgid "Delete Logs"
+msgstr "ログを削除する"
+
+#: search-unleashed/view/admin/log.php:45
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "このオプションは全ての検索ログを削除します。本当に実行してよいかご確認ください。"
+
+#: search-unleashed/view/admin/log.php:48
+msgid "Delete logs"
+msgstr "ログを削除する"
+
+#: search-unleashed/view/admin/modules.php:2
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | モジュール"
+
+#: search-unleashed/view/admin/modules.php:6
+msgid "Select what to include in the search"
+msgstr "検索に含めるものを選択してください。"
+
+#: search-unleashed/view/admin/options.php:2
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | オプション"
+
+#: search-unleashed/view/admin/options.php:9
+msgid "General Options"
+msgstr "一般オプション"
+
+#: search-unleashed/view/admin/options.php:12
+msgid "Pages to exclude"
+msgstr "除外するページ"
+
+#: search-unleashed/view/admin/options.php:14
+msgid "Comma-separated list of page/post IDs"
+msgstr "カンマで区切られたページ/投稿IDのリスト"
+
+#: search-unleashed/view/admin/options.php:17
+msgid "Search results page title"
+msgstr "検索結果ページのタイトル"
+
+#: search-unleashed/view/admin/options.php:19
+msgid "Change page title on search results to reflect the search condition"
+msgstr "検索状況を反映する検索結果にページタイトルを変える"
+
+#: search-unleashed/view/admin/options.php:23
+msgid "Include"
+msgstr "含める"
+
+#: search-unleashed/view/admin/options.php:25
+msgid "pages"
+msgstr "ページ"
+
+#: search-unleashed/view/admin/options.php:26
+msgid "posts"
+msgstr "投稿"
+
+#: search-unleashed/view/admin/options.php:28
+msgid "password-protected"
+msgstr "パスワード保護"
+
+#: search-unleashed/view/admin/options.php:29
+msgid "private"
+msgstr "非公開"
+
+#: search-unleashed/view/admin/options.php:30
+msgid "draft"
+msgstr "下書き"
+
+#: search-unleashed/view/admin/options.php:31
+msgid "future"
+msgstr "未来"
+
+#: search-unleashed/view/admin/options.php:35
+msgid "Search Mode"
+msgstr "検索モード"
+
+#: search-unleashed/view/admin/options.php:38
+msgid "Full text with logical operations"
+msgstr "論理演算でフルテキスト"
+
+#: search-unleashed/view/admin/options.php:38
+msgid "Simple text matching"
+msgstr "シンプルテキストマッチング"
+
+#: search-unleashed/view/admin/options.php:43
+msgid "Plugin Support"
+msgstr "プラグインサポート"
+
+#: search-unleashed/view/admin/options.php:46
+msgid "Click this if you have supported the author"
+msgstr "著者をサポートしたならこれをクリックしてください。"
+
+#: search-unleashed/view/admin/options.php:53
+msgid "Theme Options"
+msgstr "テーマオプション"
+
+#: search-unleashed/view/admin/options.php:56
+msgid "Force content display"
+msgstr "コンテンツ表示の強制"
+
+#: search-unleashed/view/admin/options.php:59
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "いくつかのテーマは検索結果内容を表示しません。テーマに結果を表示するように強制するにはこのオプションを有効にしてください。"
+
+#: search-unleashed/view/admin/options.php:63
+msgid "Highlight searches"
+msgstr "ハイライト検索"
+
+#: search-unleashed/view/admin/options.php:66
+msgid "Highlight searches on search page or default to <code>the_excerpt</code>"
+msgstr "<code>the_excerpt</code>に検索ページまたはデフォルトにハイライト検索"
+
+#: search-unleashed/view/admin/options.php:70
+msgid "Highlight incoming searches"
+msgstr "検索"
+
+#: search-unleashed/view/admin/options.php:73
+msgid "No highlighting"
+msgstr "ハイライトしない"
+
+#: search-unleashed/view/admin/options.php:73
+msgid "Content, no titles"
+msgstr "コンテンツのみ"
+
+#: search-unleashed/view/admin/options.php:73
+msgid "Content &amp; titles"
+msgstr "コンテンツとタイトル"
+
+#: search-unleashed/view/admin/options.php:75
+msgid "Highlighting phrases and display a help box on post pages after a search has been performed"
+msgstr "キーワードをハイライトし、検索が実行された後投稿ページにヘルプボックスを表示する"
+
+#: search-unleashed/view/admin/options.php:79
+msgid "Theme title position"
+msgstr "テーマタイトルポジション"
+
+#: search-unleashed/view/admin/options.php:83
+msgid "(includes default theme)"
+msgstr "（デフォルトテーマを含める）"
+
+#: search-unleashed/view/admin/options.php:87
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "ほとんどのテーマは１のポジションを必要としますが、もしタイトルで誤ったハイライトがなされるならこれを別の値へセットしてください。"
+
+#: search-unleashed/view/admin/options.php:95
+msgid "Search Style"
+msgstr "検索スタイル"
+
+#: search-unleashed/view/admin/options.php:98
+msgid "Include highlight CSS"
+msgstr "ハイライトCSSを含める"
+
+#: search-unleashed/view/admin/options.php:103
+msgid "Highlight colour"
+msgstr "ハイライトカラー"
+
+#: search-unleashed/view/admin/options.php:108
+msgid "Specify colour as a hex value"
+msgstr "16進数で色を指定してください。"
+
+#: search-unleashed/view/admin/pager.php:10
+msgid "Results per page"
+msgstr "１ページあたり"
+
+#: search-unleashed/view/admin/pager.php:17
+msgid "go"
+msgstr "go"
+
+#: search-unleashed/view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "検索インデックス"
+
+#: search-unleashed/view/admin/submenu.php:4
+msgid "Log"
+msgstr "ログ"
+
+#: search-unleashed/view/admin/submenu.php:5
+msgid "Modules"
+msgstr "モジュール"
+
+#: search-unleashed/view/admin/submenu.php:6
+msgid "Options"
+msgstr "オプション"
+
+#: search-unleashed/view/search-unleashed/incoming_local.php:3
+msgid "hide"
+msgstr "隠す"
+
+#: search-unleashed/view/search-unleashed/incoming_local.php:5
+msgid "Search Results"
+msgstr "検索結果"
+
+#: search-unleashed/view/search-unleashed/incoming_local.php:8
+msgid "You arrived here after searching for the following phrase"
+msgid_plural "You arrived here after searching for the following phrases"
+msgstr[0] "以下のキーワードで検索しています"
+msgstr[1] "以下のキーワードで検索しています"
+
+#: search-unleashed/view/search-unleashed/incoming_local.php:15
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "キーワードをクリックすると最初の出現場所にジャンプします。<a href=\"%s\">検索結果に戻る方はこちら</a>"
+
+#~ msgid ""
+#~ "You can help support the author by sending a donation.  Every search that "
+#~ "is made without support will cause a <strong>kitten to cry</strong>."
+#~ msgstr ""
+#~ "Küçük bir bağış yaparak programcıyı destekleyebilirsiniz. Programcıyı "
+#~ "desteklemeden yapılan her arama <strong>bir yavru kediyi ağlatacaktır</"
+#~ "strong>."
+#~ msgid "Your help stopping kittens from crying is appreciated!"
+#~ msgstr ""
+#~ "Yavru kedilerin acısına hassasiyetinizi ve yardımlarınızı takdir "
+#~ "ediyoruz! "
+#~ msgid ""
+#~ "If you 'mistakenly' said you supported the author without actually doing "
+#~ "so then not only are the kittens still crying, but their stomachs ache "
+#~ "and they all feel miserable."
+#~ msgstr ""
+#~ "Eğer 'yanlışlıkla' programcıyı bağışınızla desteklediğinizi "
+#~ "belirttiyseniz ve gerçek bu değilse, yavru kediler ağlamakla kalmayacak, "
+#~ "karınları ağrıyacak ve kendilerini çok sefil hissedecekler."
+#~ msgid "Kitten protection"
+#~ msgstr "Yavru kedi koruma"
+#~ msgid ""
+#~ "Show incoming search requests by highlighting phrases and displaying a "
+#~ "help box"
+#~ msgstr ""
+#~ "Dış kaynaklardan gelen arama terimlerini renklendir ve yardım kutusunu "
+#~ "görüntüle"
+#~ msgid "Search Log"
+#~ msgstr "Durchsuche Log"
+#~ msgid "Search Index Information"
+#~ msgstr "Durchsuche Index Informationen"
+

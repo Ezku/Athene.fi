@@ -1,0 +1,1099 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Search Unleashed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-14 14:41+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pavel Soukenik <pavel.soukenik@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
+"X-Poedit-Basepath: c:\\Documents and Settings\\Pavel Soukenik\\My Documents\\Downloads\\search-unleashed\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: c:\\Documents and Settings\\Pavel Soukenik\\My Documents\\Downloads\\search-unleashed\n"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/ajax.php:118
+#, php-format
+msgid "%d of %d / %d%%"
+msgstr "%d z %d / %d%%"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/ajax.php:120
+msgid "Finished!"
+msgstr "Dokončeno!"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:110
+msgid "Search Unleashed Help"
+msgstr "Nápověda k Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:111
+msgid "Search Unleashed Documentation"
+msgstr "Dokumentace k Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:112
+#, fuzzy
+msgid "Search Unleashed Support Forum"
+msgstr "Fórum s podporou pro Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:113
+msgid "Search Unleashed Bug Tracker"
+msgstr "Databáze chyb pro Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:114
+msgid "Search Unleashed FAQ"
+msgstr "Často kladené dotazy k Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:115
+msgid "Please read the documentation and FAQ, and check the bug tracker, before asking a question."
+msgstr "Před kladením dotazů si přečtěte dokumentaci a často kladené dotazy."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:129
+msgid "Settings"
+msgstr "Nastavení"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:558
+#, php-format
+msgid " (page %d of %d)"
+msgstr " (strana %d z %d)"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:561
+#, php-format
+msgid "Search results for '%s'"
+msgstr "Výsledek hledání pro '%s'"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:740
+msgid "Search Unleashed"
+msgstr "Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:768
+msgid "You are not allowed access to this resource"
+msgstr "Přístup k tomuto zdroji nemáte povolen"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:825
+msgid "All logs have been deleted."
+msgstr "Všechny protokoly byly odstraněny."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:869
+msgid "Your options have been saved"
+msgstr "Vaše nastavení bylo uloženo"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:879
+msgid "Search Unleashed has been removed"
+msgstr "Nástroj Search Unleashed byl odebrán"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:884
+msgid "Default WordPress"
+msgstr "Wordpress - výchozí"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:885
+msgid "Indexed WordPress"
+msgstr "WordPress - indexovaný"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:886
+msgid "MySQL Fulltext"
+msgstr "Plnotextové MySQL"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/search-unleashed.php:887
+msgid "Lucene"
+msgstr "Lucene"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:88
+msgid "MSN"
+msgstr "MSN"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:89
+msgid "Altavista"
+msgstr "Altavista"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:90
+msgid "Lycos"
+msgstr "Lycos"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:91
+msgid "Baidu"
+msgstr "Baidu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:92
+msgid "Sogou"
+msgstr "Sogou"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:93
+msgid "Google"
+msgstr "Google"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:94
+msgid "Yandex"
+msgstr "Yandex"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/incoming-search.php:95
+msgid "Local"
+msgstr "Místní"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/pager.php:404
+msgid "Previous"
+msgstr "Předchozí"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/pager.php:405
+msgid "Next"
+msgstr "Další"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/pager.php:463
+#, php-format
+msgid "%d per-page"
+msgstr "%d na stránku"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/pager.php:472
+#, php-format
+msgid "Displaying %s&#8211;%s of %s"
+msgstr "Zobrazuje se %s&#8211;%s z %s"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:28
+msgid "An extended search form"
+msgstr "Rozšířený formulář pro vyhledávání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:58
+msgid "Search"
+msgstr "Hledat"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:62
+msgid "Advanced"
+msgstr "Rozšířené"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:69
+msgid "Tags"
+msgstr "Tagy"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:73
+msgid "Meta"
+msgstr "Meta"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:77
+msgid "None"
+msgstr "Žádné"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:79
+#: Documents\Downloads\search-unleashed/modules/search-post-category.php:30
+msgid "Category"
+msgstr "Kategorie"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:106
+msgid "Title:"
+msgstr "Název:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:107
+msgid "Show categories:"
+msgstr "Zobrazit kategorie:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:108
+msgid "Show tags:"
+msgstr "Zobrazit tagy:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:109
+msgid "Show meta:"
+msgstr "Zobrazit meta:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/models/widget.php:110
+msgid "Advanced link:"
+msgstr "Rozšířené odkazy:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-author.php:32
+#: Documents\Downloads\search-unleashed/modules/search-comment-author.php:44
+msgid "Comment author"
+msgstr "Autor komentáře"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:39
+#, php-format
+msgid "<p><strong>Comment:</strong> %s</p>"
+msgstr "<p><strong>Komentář:</strong> %s</p>"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:41
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:43
+#, php-format
+msgid "<p><strong>Comment by %s:</strong> %s</p>"
+msgstr "<p><strong>Komentář od %s:</strong> %s</p>"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:62
+msgid "Comment content"
+msgstr "Obsah komentárů"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:86
+#: Documents\Downloads\search-unleashed/modules/search-post-content.php:74
+msgid "Characters before first match"
+msgstr "Znaky před první shodou"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:92
+#: Documents\Downloads\search-unleashed/modules/search-post-content.php:80
+msgid "Characters after first match"
+msgstr "Znaky po první shodě"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:98
+msgid "Include in match"
+msgstr "Zahrnout v nálezu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:101
+msgid "Just content"
+msgstr "Pouze obsah"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:102
+msgid "Content &amp; author's name"
+msgstr "Obsah a jméno autora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-content.php:103
+msgid "Content, author's name, and link to author's site"
+msgstr "Obsah, jméno autora a odkaz na stránky autora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-comment-url.php:32
+#: Documents\Downloads\search-unleashed/modules/search-comment-url.php:44
+msgid "Comment author URL"
+msgstr "URL autora komentáře"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-author.php:44
+msgid "Author"
+msgstr "Autor"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-author.php:52
+msgid "Post/page author"
+msgstr "Autor příspěvku nebo stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-author.php:67
+msgid "Display link to author page"
+msgstr "Zobrazit odkaz na stránku autora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-category.php:52
+msgid "Post category"
+msgstr "Kategorie příspěvku"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-content.php:57
+msgid "Post/page content"
+msgstr "Obsah příspěvku nebo stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-content.php:86
+msgid "Do not index content, but show in results"
+msgstr "Neindexovat obsah, ale zobrazovat ve výsledcích"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-excerpt.php:37
+msgid "Excerpt"
+msgstr "Výňatek"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-excerpt.php:49
+#, fuzzy
+msgid "Post/page excerpt"
+msgstr "Výňatek příspěvku nebo stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-meta.php:53
+msgid "Meta-data"
+msgstr "Meta data"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-meta.php:65
+msgid "Post/page meta-data"
+msgstr "Meta data příspěvku nebo stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-meta.php:79
+msgid "Meta fields"
+msgstr "Meta pole"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-meta.php:80
+msgid "Select the meta-data to search"
+msgstr "Vyberte meta data k prohledávání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-slug.php:34
+msgid "Permalink"
+msgstr "Trvalý odkaz"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-slug.php:45
+msgid "Post/page slug"
+msgstr "Závěr odkazu na příspěvek nebo stránku"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-tags.php:65
+msgid "Show tag in results"
+msgstr "Zobrazit tag ve výsledcích"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/modules/search-post-title.php:29
+msgid "Post/page title"
+msgstr "Nadpis příspěvku nebo stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/annoy_front.php:4
+#: Documents\Downloads\search-unleashed/view/admin/kitten.php:2
+#, php-format
+msgid "This great search was powered by <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+msgstr "Toto vynikající hledání zpracoval modul <a href=\"%s\"><strong>Search Unleashed</strong></a>."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/annoy_front.php:6
+msgid "Help to remove this message by getting the site owner to support this software."
+msgstr "Tuto zprávu můžete pomoci odstranit. Poproste majitele stránek, aby podpořil tento software."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/filters.php:7
+msgid "Search Unleashed | Active Filters"
+msgstr "Search Unleashed | Aktivní Filtry"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/filters.php:10
+msgid "The following filters will be active when Search Unleashed is indexing posts or comments. If you wish to prevent a filter from running during this indexing operation then disable it here. This will not affect the running of the filter anywhere else."
+msgstr "Následující filtry budou aktivní během indexování příspěvků a komentářů modulem Search Unleashed. Pokud chcete určitému filtru zabránit v provozu během indexování, deaktivujte jej zde. Tato změna nebude mít vliv na provoz filtru kdekoli jinde."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/filters.php:21
+msgid "Save Filters"
+msgstr "Uložit filtry"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/filters.php:24
+msgid "Note that this feature is experimental"
+msgstr "Upozorňujeme, že tato funkce je ve fázi testování."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:5
+msgid "Search Unleashed | Index"
+msgstr "Search Unleashed | Index"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:9
+msgid "You have no items in the search index.  Please re-index soon!"
+msgstr "Ve vyhledávácím indexu nejsou žádné položky. Proveďte brzy novou indexaci!"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:15
+#, php-format
+msgid "<strong>%s search</strong> has been performed using this plugin. "
+msgid_plural "<strong>%s searches</strong> have been performed using this plugin. "
+msgstr[0] "Pomocí tohoto pluginu bylo provedeno <strong>%s hledání</strong>. "
+msgstr[1] "Pomocí tohoto pluginu bylo provedeno <strong>%s hledání</strong>."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:20
+msgid "Re-Index Search Unleashed"
+msgstr "Znovu indexovat Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:22
+msgid "You need to re-index the search database when"
+msgstr "Vyhledávací databázi nově indexujte v těchto případech:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:24
+msgid "You first install this plugin"
+msgstr "po první instalaci tohoto pluginu,"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:25
+msgid "You change what to include in the search"
+msgstr "změna položek zahrnutých v hledání,"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:26
+msgid "You install another plugin that may alter posts or comments"
+msgstr "instalace jiného pluginu, který má vliv na příspěvky nebo komentáře."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:29
+msgid "Changes to individual posts &amp; comments will be automatically re-indexed - <strong>you do not need to re-index after editing posts</strong>."
+msgstr "Změny jednotlivých příspěvků a komentářů budou indexovány automaticky. <strong>Po úpravě příspěvků není nutné spouštět nové indexování</strong>."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:32
+msgid "Re-Index"
+msgstr "Znovu indexovat"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:44
+#: Documents\Downloads\search-unleashed/view/admin/module_edit.php:17
+msgid "Cancel"
+msgstr "Storno"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/index.php:53
+msgid "You currently have the Default WordPress search engine enabled - there is no need to index anything."
+msgstr "Nyní je aktivní výchozí vyhledávací modul Wordpress, a proto není nutné nic indexovat."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/kitten.php:4
+msgid "Help to prevent remove this message by getting the site owner to support this software."
+msgstr "Pomozte tuto zprávu odstranit. Poproste majitele stránek, aby podpořil tento software."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:7
+msgid "Search Unleashed | Log"
+msgstr "Search Unleashed | Protokol"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:32
+msgid "Bulk Actions"
+msgstr "Dávkové akce"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:33
+msgid "Delete"
+msgstr "Odstranit"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:36
+msgid "Apply"
+msgstr "Použít"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:53
+msgid "Phrase"
+msgstr "Fráze"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:54
+msgid "Time"
+msgstr "Čas"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:55
+msgid "IP"
+msgstr "IP"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:56
+msgid "Referrer"
+msgstr "Odkazující"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:77
+msgid "There is nothing to display"
+msgstr "Není co zobrazit"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:82
+msgid "Delete Logs"
+msgstr "Odstranit protokoly"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:84
+msgid "This option will delete all search logs.  Please be sure this is what you want to do."
+msgstr "Tato volba odstraní všechny protokoly o vyhledávání. Potvrďte tuto akci."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/log.php:87
+msgid "Delete All Logs"
+msgstr "Odstranit všechny protokoly"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/module.php:3
+#, php-format
+msgid "Priority: %1.1f"
+msgstr "Priorita: %1.1f"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/modules.php:7
+msgid "Search Unleashed | Modules"
+msgstr "Search Unleashed | Moduly"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/modules.php:11
+msgid "Select what to include in the search"
+msgstr "Vyberte, co má být zahrnuto do hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/modules.php:21
+msgid "Note that enabling or disabling a module will require you to re-index the search database"
+msgstr "Upozorňujeme, že po aktivaci nebo deaktivaci modulu bude nutné znovu indexovat vyhledávací databázi"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/module_edit.php:8
+msgid "Priority"
+msgstr "Priorita"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/module_edit.php:16
+msgid "Save"
+msgstr "Uložit"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:7
+msgid "Search Unleashed | Options"
+msgstr "Search Unleashed | Možnosti"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:14
+msgid "General Options"
+msgstr "Obecné možnosti"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:18
+msgid "Plugin Support"
+msgstr "Podpora pluginu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:21
+#, php-format
+msgid "Click this if you have <a href=\"%s\">supported</a> the author"
+msgstr "Klepněte zde, pokud jste <a href=\"%s\">podpořili</a> autora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:25
+msgid "Log Expiry"
+msgstr "Exspirace protokolu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:28
+msgid "Expiry value in days. Enter 0 for no expiry and -1 for no logs"
+msgstr "Doba exspirace ve dnech. Hodnota 0 je bez exspirace, hodnota -1 deaktivuje protokol"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:32
+msgid "Replace category archive"
+msgstr "Nahradit archiv kategorií"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:35
+msgid "Replace category archive pages with a search based on the category name"
+msgstr "Nahradit stránky archivu kategorií za výsledky hledání dle názvu kategorie"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:39
+msgid "Replace tag archive"
+msgstr "Nahradit archiv tagů"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:42
+msgid "Replace tag archive pages with a search based on the tag name"
+msgstr "Nahradit stránky archivu tagů za výsledky hledání dle názvu tagu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:47
+msgid "Spider Options"
+msgstr "Možnosti vyhledávače (Spider)"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:49
+msgid "Changing any option in this section will require rebuilding the search index."
+msgstr "Jakákoli změna volby v této části bude vyžadovat znovuvytvoření vyhledávacího indexu."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:53
+msgid "Search Engine"
+msgstr "Vyhledávací modul"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:61
+msgid "Pages to exclude"
+msgstr "Výjimky z hledání - stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:63
+msgid "Comma-separated list of page/post IDs"
+msgstr "Seznam ID stránek a příspěvků oddělený čárkami"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:66
+msgid "Categories to exclude"
+msgstr "Výjimky z hledání - kategorie"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:68
+msgid "Comma-separated list of category IDs"
+msgstr "Seznam ID kategorií oddělený čárkami"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:71
+msgid "Include"
+msgstr "Zahrnout"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:73
+msgid "pages"
+msgstr "stránky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:74
+msgid "posts"
+msgstr "příspěvky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:76
+msgid "password-protected"
+msgstr "chráněné heslem"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:77
+msgid "private"
+msgstr "soukromé"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:78
+msgid "draft"
+msgstr "koncepty"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:84
+msgid "Theme Options"
+msgstr "Možnosti šablony"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:87
+msgid "Force content display"
+msgstr "Vynutit zobrazení obsahu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:90
+msgid "Some themes don't display any search result content.  Enable this option to force the theme to display results"
+msgstr "Některé šablony vůbec nezobrazují obsah s výsledky hledání. Aktivací této volby vynutíte zobrazení výsledků"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:94
+msgid "Search results page title"
+msgstr "Nadpis stránky s výsledky hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:96
+msgid "Change page title on search results to reflect the search condition"
+msgstr "Změnit nadpis stránky s výsledky hledání dle podmínek hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:101
+msgid "Highlight searches"
+msgstr "Zvýraznit hledané položky"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:104
+msgid "Highlight searches on search page or default to <code>the_excerpt</code>"
+msgstr "Zvýraznit hledané položky na stránce s hledáním, případně zobrazit výchozí <code>the_excerpt</code>"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:108
+msgid "Highlight incoming searches"
+msgstr "Zvýraznit příchozí hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:111
+msgid "No highlighting"
+msgstr "Bez zvýraznění"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:111
+msgid "Content, no titles"
+msgstr "Obsah, ale ne nadpisy"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:111
+msgid "Content &amp; titles"
+msgstr "Obsah a nadpisy"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:113
+msgid "Highlighting phrases and display a help box on post pages after a search has been performed. Note this will not work with caching plugins."
+msgstr "Zvýrazňování frází a zobrazení okna s nápovědou na stránkách příspěvků po provedení hledání. Tato funkce nespolupracuje s pluginy pro ukládání v mezipaměti."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:117
+msgid "Theme title position"
+msgstr "Poloha nadpisu v šabloně"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:121
+msgid "(includes default theme)"
+msgstr "(zahrnuje výchozí šablonu)"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:125
+msgid "Most themes require a position of 1, but if you have incorrect highlighting in titles set this to another value"
+msgstr "Většina šablon vyžaduje polohu 1, ale pokud jsou nadpisy zvýrazňovány nesprávně, zkuste jinou hodnotu"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:131
+msgid "Search Style"
+msgstr "Styl hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:134
+msgid "Include highlight CSS"
+msgstr "Zahrnout CSS pro zvýrazňování"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:139
+msgid "Highlight colour"
+msgstr "Barva zvýrazňovače"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:144
+msgid "Specify colour as a hex value"
+msgstr "Určete barvu ve formátu hex"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:150
+msgid "Save Options"
+msgstr "Uložit možnosti"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:155
+msgid "Remove Search Unleashed"
+msgstr "Odebrat plugin Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:157
+msgid "This will delete all settings, database tables, and deactivate the plugin."
+msgstr "Tímto se odstraní všechna nastavení, tabulky databází a deaktivuje se plugin."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/options.php:162
+msgid "Delete Search Unleashed"
+msgstr "Odstranit Search Unleashed"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/pager.php:10
+msgid "Results per page"
+msgstr "Počet výsledků na stránku"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/pager.php:17
+msgid "go"
+msgstr "start"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:3
+msgid "Search Index"
+msgstr "Vyhledávací index"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:4
+msgid "Modules"
+msgstr "Moduly"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:5
+msgid "Options"
+msgstr "Možnosti"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:6
+msgid "Filters"
+msgstr "Filtry"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:7
+msgid "Log"
+msgstr "Protokol"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/submenu.php:8
+msgid "Support"
+msgstr "Podpora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:5
+msgid "Search Unleashed | Support"
+msgstr "Search Unleashed | Podpora"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:9
+msgid "Search Unleashed is free to use - life is wonderful and lovely!  However, it has required a great deal of time and effort to develop and if it has been useful you can help support this development by <strong>making a small donation</strong>."
+msgstr "Search Unleashed je zdarma - život je báječný! Jeho vývoj ale vyžadoval mnoho času a sil, a pokud je vám užitečný, můžete jeho vývoj podpořit <strong>malým darem</strong>."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:10
+msgid "This will act as an incentive for me to carry on developing, providing countless hours of support, and including new features and suggestions. You get some useful software and I get to carry on making it.  Everybody wins."
+msgstr "Ten pro mě slouží jako pobídka k dalšímu vývoji, poskytování podpory a implementaci nových funkcí a návrhů. Vy získáte užitečný software a já vytrvám v jeho vytváření, takže je to výhodné pro všechny."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:13
+msgid "If you are using this plugin in a commercial setup, or feel that it's been particularly useful, then you may want to consider a <strong>commercial donation</strong>.  If you really really want to show your appreciation then there is the <strong>Super Smashing Great</strong> donation which, along with making my day, will earn you a badge of honour (125x125 image of your choosing + nofollow link) to be displayed on the Search Unleashed page for a period of two months."
+msgstr "Používáte-li tento plugin komerčně, nebo jej vnímáte jako zvláště užitečný, zvažte <strong>komerční dar</strong>. A pokud opravdu chcete ukázat ocenění, je tu i <strong>Extra super velký</strong> dar, který -- kromě toho, že mi udělá velkou radost -- vás opravňuje k čestné plaketě (obrázek 125x125 dle vaší volby + odkaz typu nofollow) zobrazené na stránce Search Unleashed po dobu dvou měsíců."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:36
+msgid "Individual<br/>Donation"
+msgstr "Dar<br/>od jednotlivce"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:57
+msgid "Commercial<br/>Donation"
+msgstr "Komerční<br/>dar"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:78
+msgid "Super Smashing<br/>Great Donation"
+msgstr "Extra super<br/>velký dar"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:82
+msgid "Translations"
+msgstr "Překlady"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:84
+msgid "If you're multi-lingual then you may want to consider donating a translation:"
+msgstr "Pokud umíte více jazyků, můžete zvážit darování překladu:"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:92
+msgid "All translators will have a link to their website placed on the plugin homepage at <a href=\"http://urbangiraffe.com/plugins/search-unleashed/\">UrbanGiraffe</a> and <a href=\"http://wordpress.org/extend/plugins/search-unleashed/\">WordPress.org</a>, in addition to being an individual supporter."
+msgstr "Kromě vstupu do řad jednotlivých dárců budou mít všichni překladatelé na domovských stránkách pluginu <a href=\"http://urbangiraffe.com/plugins/search-unleashed/\">UrbanGiraffe</a> a <a href=\"http://wordpress.org/extend/plugins/search-unleashed/\">WordPress.org</a> odkaz na jejich webové stránky."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/admin/support.php:93
+msgid "Full details of producing a translation can be found in this <a href=\"http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/\">guide to translating WordPress plugins</a>."
+msgstr "Podrobnosti o vytváření překladu naleznete v následujícím anglickém návodu: <a href=\"http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/\">guide to translating WordPress plugins</a>."
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/search-unleashed/incoming_local.php:4
+msgid "hide"
+msgstr "skrýt"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/search-unleashed/incoming_local.php:6
+msgid "Search Results"
+msgstr "Výsledky hledání"
+
+#: c:\Documents
+#: and Settings\Pavel Soukenik\My
+#: Documents\Downloads\search-unleashed/view/search-unleashed/incoming_local.php:16
+#, php-format
+msgid "Click a phrase to jump to the first occurrence, or <a href=\"%s\">return to the search results</a>."
+msgstr "Klepnutím na frázi přeskočíte na první výskyt, případně se <a href=\"%s\">vraťte k výsledkům hledání</a>."
+

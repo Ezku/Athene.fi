@@ -26,11 +26,14 @@
             
     		<div class="grid_4 omega">
     		    <div id="footer-links">
-    		        <h4>Linkkejä</h4>
+    		      <h4>Linkkejä</h4>
     			    <ul>
-                        <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 'length', FALSE); ?>
-                    </ul>
-    			</div>
+                <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 'length', FALSE); ?>
+              </ul>
+    			  </div>
+    			  <div id="footer-seach">
+    			    <?php get_search_form(); ?>
+    			  </div>
     		</div>
 		</div>
 		
