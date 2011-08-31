@@ -214,6 +214,16 @@ header#branding {
 }
 */
 
+/* poll */
+
+.wp-polls-form p { /* poll question */
+  margin-bottom: 0;
+}
+
+.wp-polls-ul li {
+  margin-left: 0;
+}
+
 /* content */
 blockquote {
 	margin-left: 40px;
