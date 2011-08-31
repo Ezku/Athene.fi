@@ -65,6 +65,11 @@ h1, h2, h3 {
 	color: #1E2626;
 }
 
+.subheader {
+	/* Greenish medium gray */
+	color: #808D79;
+}
+
 #access a {
 	color: #F9FAF5;
 	text-shadow: 1px 1px #1E2626;
@@ -84,6 +89,8 @@ h1, h2, h3 {
 	width: 159px;
 	height: 58px;
 	background-image: url(athene-mini.png);
+	/* dirty positioning hack. todo: fix image and remove */
+	margin-left: -6px;
 }
 
 /* typography & web fonts */
@@ -139,19 +146,28 @@ address {
 }
 
 
-/* spacing */
-
-#main {
-	padding-top: 18px;
-}
+/* spacing and layout */
 
 #access li {
 	margin: 0;
 }
 
+#access a {
+	padding: 0;
+	margin-right: 2em;
+}
+
 header#branding {
 	/* Grey with a green tint */
 	border-bottom: 1px solid #888C8A;
+}
+
+.subnavi-header {
+	padding-top: 18px;
+}
+
+#main {
+	padding-bottom: 36px;
 }
 
 /* menus */

@@ -9,19 +9,37 @@
 $no_small_submenu = true;
 include("header.php"); ?>
 
-		<div id="primary" class="container_16 subnavi-full">
-			<div id="content" class="grid_16" role="main">
+		<?php the_post(); ?>
 
-				<?php the_post(); ?>
+		<div id="primary" class="subnavi-full">
+			<div id="content" role="main">
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header><!-- .entry-header -->
+		
+		            <div class="subnavi-header clearfix">
+                	    <div class="container_16">
+                			<header class="entry-header grid_4 alpha">
+                				<h1 class="entry-title"><?php the_title(); ?></h1>
+                			</header><!-- .entry-header -->
 
-					<div class="subnavi-content alpha omega grid_16">
+                			<div class="entry-content">
+                			    <div class="grid_8">
+                				    <h4 class="subheader"><?php the_content(); ?></h4>
+                				    <?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
+                				</div>
+                			    <div class="grid_4 omega">
+                					<?php wp_link_pages( array(
+                					    'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ),
+                					    'after' => '</div>' )
+                				    ); ?>
+                				</div>
+                			</div><!-- .entry-content -->
+                		</div>
+            		</div><!-- .subnavi-header -->
+
+					<div class="subnavi-content">
 					  <nav class="container_16" id="subnavi-large" role="navigation">
-					  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
+    					  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
 					  </nav>
 						<?php
 						/*
@@ -46,12 +64,6 @@ include("header.php"); ?>
 						<?php } /* end foreach */ ?>
 
 					</div><!-- .subnavi-content -->
-
-					<div class="entry-content grid_16 alpha omega">
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ), 'after' => '</div>' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-content -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 			</div><!-- #content -->

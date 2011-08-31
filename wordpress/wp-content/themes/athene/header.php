@@ -45,11 +45,11 @@
 
 	<header id="branding" role="banner">
 	    <div class="container_16 clearfix">
-    		<hgroup class="grid_6">
+    		<hgroup class="grid_4 alpha">
     			<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
     		</hgroup>
 
-    		<nav class="grid_10" id="access" role="navigation">
+    		<nav class="grid_12 omega" id="access" role="navigation">
     			<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
     			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
