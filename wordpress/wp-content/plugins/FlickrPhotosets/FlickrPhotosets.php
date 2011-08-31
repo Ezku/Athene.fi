@@ -22,50 +22,11 @@ function flickr_photosets_show( $attrs ) {
 
   $options = get_option('flickr_photosets_options');
   
-  /* <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
-  <script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-  <script type="text/javascript" src="flickrbrowser.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    flickrbrowser.api_key: "'. $options['apikey'].'";
-    flickrbrowser.user_id: "'.$options['username'].'";
-  </script>
-  <link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" /> */
   $output = '
     <script type="text/javascript" charset="utf-8">
       flickrbrowser.api_key = "'. $options['apikey'].'";
       flickrbrowser.user_id = "'.$options['username'].'";
     </script>
-    <style type="text/css" media="screen">
-      #flickrphotos {
-      }
-      .photoset {
-        background-color: #6c6;
-        clear: both;
-      }
-      .photosettitle:hover {
-        background-color: #7d7;
-        cursor: pointer;
-      }
-      .photoset.active {
-        background-color: #7d7;
-      }
-      .photo {
-        margin: 5px;
-        float: left;
-      }
-      #spinner {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: 100px;
-        height: 100px;
-        margin: -50px -50px 0 0;
-      }
-
-      .hide {
-        display: none;
-      }
-    </style>
     <div id="flickrphotos">
     </div>
     <div class="flickrlink">
@@ -78,12 +39,6 @@ function flickr_photosets_show( $attrs ) {
 	return $output;
 }
 add_shortcode( $flickr_gallery_shortcode, 'flickr_photosets_show' );
-
-/*add_action('wp_enqueue_scripts', 'flickr_add_scripts' );
-
-function flickr_add_scripts() {
-  wp_enqueue_script( 'fancybox_jquery_mousewheel', WP_PLUGIN_URL . '/FlickrPhotosets/fancybox/jquery.mousewheel-3.0.4.pack.js', array( 'jquery' ), null, false );
-}*/
 
 // ------------------------------------------------------
 // Options for Flickr Photosets
@@ -149,14 +104,14 @@ function flickr_photosets_options() {
 // add js and css for the gallery if needed
 // see: http://beerpla.net/2010/01/13/wordpress-plugin-development-how-to-include-css-and-javascript-conditionally-and-only-when-needed-by-the-posts/
 add_filter('the_posts', 'flickr_photosets_add_css_js'); // the_posts gets triggered before wp_head
-function flickr_photosets_add_css_js($posts){
+function flickr_photosets_add_css_js($posts, $force = FALSE){
   global $flickr_gallery_shortcode; // im bad. punish me
-	if (empty($posts)) return $posts;
+	if (!$force && empty($posts)) return $posts;
  
-	$shortcode_found = false; // use this flag to see if styles and scripts need to be enqueued
+	$shortcode_found = $force; // use this flag to see if styles and scripts need to be enqueued
 	foreach ($posts as $post) {
 		if (stripos($post->post_content, '['.$flickr_gallery_shortcode.']') !== FALSE) {
-			$shortcode_found = true; // bingo!
+			$shortcode_found = TRUE; // bingo!
 			break;
 		}
 	}
@@ -164,13 +119,19 @@ function flickr_photosets_add_css_js($posts){
 	if ($shortcode_found) {
 		// enqueue here
 		wp_enqueue_style('jquery-fancybox-css', plugins_url('fancybox/jquery.fancybox-1.3.4.css', __FILE__));
+		wp_enqueue_style('flickr-photosets-css', plugins_url('flickr.css', __FILE__));
+		wp_enqueue_style('flickr-photosets-css', plugins_url('flickr.css', __FILE__));
 		wp_enqueue_script('jquery-easing', plugins_url('fancybox/jquery.easing-1.3.pack.js', __FILE__), array('jquery'));
 		wp_enqueue_script('jquery-mousewheel', plugins_url('fancybox/jquery.mousewheel-3.0.4.pack.js', __FILE__), array('jquery'));
-		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
+		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
 		wp_enqueue_script('flickr-browser', plugins_url('flickrbrowser.js', __FILE__), array('jquery-fancybox'));
+		wp_enqueue_script('flickr-page', plugins_url('page.js', __FILE__), array('flickr-browser'));
+		wp_enqueue_style('flickr-photosets-external-css', get_bloginfo('template_url').'/flickr.css');
 	} else {
 	}
  
 	return $posts;
 }
+
+include('FlickrWidget.php'); // newest photos widget to front page
 ?>

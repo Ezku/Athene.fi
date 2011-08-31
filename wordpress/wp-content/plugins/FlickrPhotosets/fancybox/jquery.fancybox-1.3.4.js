@@ -1151,6 +1151,7 @@
 
 	$(document).ready(function() {
 		$.fancybox.init();
+		console.log('fancybox loaded');
 	});
 
 })(jQuery);
