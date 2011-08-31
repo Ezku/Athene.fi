@@ -10,5 +10,6 @@ Author URI: http://pkroger.org/
 
 include('AtheneIndexWidgetPages.php');
 include('AtheneIndexWidgetNews.php');
+include('AtheneIndexWidgetIlmo.php');
 
 ?>
