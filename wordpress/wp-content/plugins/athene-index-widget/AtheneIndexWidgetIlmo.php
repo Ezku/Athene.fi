@@ -16,6 +16,10 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	    $title = DEFAULT_ILMOMASIINA_TITLE;
   	  }
   	  $source_url = $this->getURL($instance);
+  	  $items = $instance['items'];
+  	  if (empty($items)) {
+  	    $items = 2;
+  	  }
   	  ?>
   	  <p>
 	      <label for="<?php echo $this->get_field_id('title'); ?>">Title</label><br/>
@@ -24,6 +28,10 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	  <p>
 	      <label for="<?php echo $this->get_field_id('source_url'); ?>">Source URL</label><br/>
   	    <input type="text" id="<?php echo $this->get_field_id('source_url'); ?>" name="<?php echo $this->get_field_name('source_url'); ?>" value="<?php echo $source_url; ?>">
+  	  </p>
+  	  <p>
+	      <label for="<?php echo $this->get_field_id('items'); ?>">Items to show</label><br/>
+  	    <input type="number" id="<?php echo $this->get_field_id('items'); ?>" name="<?php echo $this->get_field_name('items'); ?>" value="<?php echo $items; ?>">
   	  </p>
   	  <?php
   	}
@@ -39,6 +47,10 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
       if (empty($title)) {
         $title = DEFAULT_ILMOMASIINA_TITLE;
       }
+      $items = $instance['items'];
+  	  if (empty($items)) {
+  	    $items = 2;
+  	  }
       $entries = array();
       $ilmo = file_get_html($ilmomasiina_url);
       foreach($ilmo->find('tr.answer-row') as $row) {
@@ -69,7 +81,8 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
       ?>
       <h1><a href="<?php echo $ilmomasiina_url; ?>"><?php echo $title; ?></a></h1>
       <ul>
-      <?php foreach($entries as $entry) {?>
+      <?php for($i=0; $i<min($items,count($entries)); $i++) { ?>
+        <?php $entry = $entries[$i]; ?>
         <li><a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?> (<?php echo $entry['state'] ?>)</a></li>
       <?php } ?> 
       </ul>
