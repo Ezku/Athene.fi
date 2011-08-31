@@ -31,14 +31,11 @@
                 <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 'length', FALSE); ?>
               </ul>
     			  </div>
-    			  <div id="footer-seach">
-    			    <?php get_search_form(); ?>
-    			  </div>
     		</div>
 		</div>
 		
 		<div class="container_16">
-			<address class="grid_16 alpha omega">
+			<address class="grid_8 alpha omega">
 			    <h4>Yhteystiedot</h4>
 				<p>
 				    <strong>Informaatioverkostojen kilta Athene ry</strong><br />
@@ -46,6 +43,10 @@
 					00076 AALTO
 				</p>
 			</address>
+			<div class="grid_4 omega" id="footer-search">
+			  <h4>Haku</h4>
+			  <?php get_search_form(); ?>
+			</div>
 		</div>
 
 	</footer><!-- #colophon -->
