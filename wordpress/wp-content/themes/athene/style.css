@@ -180,12 +180,12 @@ header#branding {
 #subnavi-small li.menu-item,
 #subnavi-large li.menu-item {
   float: left;
-  border: 1px solid rgba(0,0,0,0.3);
   list-style-type: none;
-  margin: 0.5em;
-  padding: 0.5em  ;
+  margin: 0;
+  padding: 0;
 }
 
+/* TODO
 #subnavi-small li.menu-item {
   width: 100px;
   height: 75px;
@@ -197,6 +197,7 @@ header#branding {
   height: 150px;
   font-size: 12pt;
 }
+*/
 
 #subnavi-large li.menu-item .intro,
 #subnavi-small li.menu-item .intro {

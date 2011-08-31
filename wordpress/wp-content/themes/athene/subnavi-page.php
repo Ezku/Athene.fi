@@ -38,9 +38,24 @@ include("header.php"); ?>
             		</div><!-- .subnavi-header -->
 
 					<div class="subnavi-content">
-					  <nav class="container_16" id="subnavi-large" role="navigation">
-    					  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
-					  </nav>
+                        <nav class="container_16" id="subnavi-large" role="navigation">
+    					    <?php
+    					    $next = cycle(array(' alpha', '', '', ' omega'));
+    					    wp_nav_menu( array(
+					          'theme_location' => 'primary',
+					          'depth' => 0,
+					          'walker' => new SubMenuWalker(
+					              array(1,2),
+					              true,
+					              array(
+					                  'link' => '<h4>%s</h4>',
+					                  'item' => function($content) use($next) {
+					                      return sprintf('<div class="grid_4%s">%s</div>', $next(), $content);
+					                  }
+					              )
+					          ) )
+				            ); ?>
+                        </nav>
 						<?php
 						/*
 						$subpages = get_pages(

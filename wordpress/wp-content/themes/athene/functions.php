@@ -85,3 +85,11 @@ function toolbox_widgets_init() {
   }
 }
 add_action( 'init', 'toolbox_widgets_init' );
+
+function cycle(array $values) {
+    return function() use(&$values) {
+        $next = array_shift($values);
+        $values[] = $next;
+        return $next;
+    };
+}

@@ -59,35 +59,17 @@
 	</header><!-- #branding -->
 	<div class="clear"></div>
 
-  <?php if (!$no_small_submenu) { ?>
+    <?php if (!$no_small_submenu) { ?>
     
-	<nav class="container_16" id="subnavi-small" role="navigation">
+	    <nav class="container_16" id="subnavi-small" role="navigation">
 
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(1,2)) ) ); ?>
-
-		<?php
-		/*
-		// Only show subnavi for subpages,
-		// we'll trust everyone uses the layout "subnavi-page" for parent pages.
-		if($post->post_parent) {
-
-			$subpages = get_pages(
-				'child_of='.$post->post_parent.
-				'&parent='.$post->post_parent.
-				'&hierarcial=0&sort_column=menu_order&sort_order=desc'
-			);
-
-			foreach($subpages as $subpage) {
-		?>
-
-		<div class="grid_4 subnavi-box">
-			<a href="<?php echo get_page_link($subpage->ID) ?>"><?php echo $subpage->post_title ?></a>
-		</div>
-		<?php
-			} // end foreach
-		} // end if
-		*/
-		?>
+        <?php wp_nav_menu( array(
+            'theme_location' => 'primary',
+            'depth' => 0,
+            'walker' => new SubMenuWalker(
+                array(0,1,2)
+            )
+        ) ); ?>
 
 	</nav><!-- #subnavi-small -->
 	<?php } /* end if no small submenu */ ?>
