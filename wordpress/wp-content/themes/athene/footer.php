@@ -8,29 +8,34 @@
 	</div><!-- #main -->
 	<div class="clear"></div>
 
-	<footer id="colophon" class="container_16 clearfix" role="contentinfo">
+	<footer id="colophon" class="clearfix" role="contentinfo">
 
-		<div class="grid_10 sitemap">
-		  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(0,1,2), false) ) ); ?>
-		</div><!-- .sitemap -->
+        <div class="container_16">
+    		<div class="grid_12 alpha sitemap">
+    		    <h4>Sivukartta</h4>
+    		    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 0, 'walker' => new SubMenuWalker(array(0,1,2), false) ) ); ?>
+    		</div><!-- .sitemap -->
 
-		<div class="grid_6">
-			<address>
-				<p><strong>Informaatioverkostojen kilta Athene ry</strong></p>
-				<p>PL 15400 (Konemiehentie 2)<br />
-					00076 AALTO</p>
+            
+    		<div class="grid_4 omega">
+    		    <div id="footer-links">
+    		        <h4>Linkkejä</h4>
+    			    <ul>
+                        <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 'length', FALSE); ?>
+                    </ul>
+    			</div>
+    		</div>
+		</div>
+		
+		<div class="container_16">
+			<address class="grid_16 alpha omega">
+			    <h4>Yhteystiedot</h4>
+				<p>
+				    <strong>Informaatioverkostojen kilta Athene ry</strong><br />
+				    PL 15400 (Konemiehentie 2)<br />
+					00076 AALTO
+				</p>
 			</address>
-			
-			<div id="footer-links">
-			  <ul>
-        <?php get_linksbyname('footer', '<li>', '</li>', '', FALSE, 
-        'length', FALSE); ?>
-        </ul>
-			</div>
-
-			<div id="site-generator">
-				<a href="http://wordpress.org/" rel="generator">Proudly powered by WordPress</a>
-			</div>
 		</div>
 
 	</footer><!-- #colophon -->
@@ -38,8 +43,6 @@
 
 <?php wp_footer(); ?>
 
-<!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
-<script type="text/javascript"> window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/noisy/1.0/jquery.noisy.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/athene.js" type="text/javascript"></script>
 

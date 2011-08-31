@@ -105,18 +105,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	top: 0;
 }
 #access ul ul a {
-	background: #dedede;
 	line-height: 1em;
 	padding: .5em .5em .5em 1em;
 	width: 10em;
 	height: auto;
-}
-#access li:hover > a,
-#access ul ul :hover > a {
-	background: #dedede;
-}
-#access ul ul a:hover {
-	background: #cecece;
 }
 #access ul li:hover > ul {
 	display: block;
