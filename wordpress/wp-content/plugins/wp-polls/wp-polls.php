@@ -3,7 +3,7 @@
 Plugin Name: WP-Polls
 Plugin URI: http://lesterchan.net/portfolio/programming/php/
 Description: Adds an AJAX poll system to your WordPress blog. You can easily include a poll into your WordPress's blog post/page. WP-Polls is extremely customizable via templates and css styles and there are tons of options for you to choose to ensure that WP-Polls runs the way you wanted. It now supports multiple selection of answers.
-Version: 2.61
+Version: 2.62
 Author: Lester 'GaMerZ' Chan
 Author URI: http://lesterchan.net
 */
@@ -554,6 +554,7 @@ function display_pollvote($poll_id, $display_loading = true) {
 ### Function: Display Results Form
 function display_pollresult($poll_id, $user_voted = '', $display_loading = true) {
 	global $wpdb;
+	$poll_id = intval($poll_id);
 	// User Voted
 	if(!is_array($user_voted)) {
 		$user_voted = array();
@@ -753,6 +754,7 @@ add_shortcode('poll', 'poll_shortcode');
 function poll_shortcode($atts) {
 	extract(shortcode_atts(array('id' => 0, 'type' => 'vote'), $atts));
 	if(!is_feed()) {
+		$id = intval($id);
 		if($type == 'vote') {
 			return get_poll($id, false);
 		} elseif($type == 'result') {
@@ -1292,7 +1294,7 @@ function vote_poll() {
 				}
 				$pollip_userid = intval($user_ID);
 				$pollip_ip = get_ipaddress();
-				$pollip_host = @gethostbyaddr($pollip_ip);
+				$pollip_host = esc_attr(@gethostbyaddr($pollip_ip));
 				$pollip_timestamp = current_time('timestamp');
 				// Only Create Cookie If User Choose Logging Method 1 Or 2
 				$poll_logging_method = intval(get_option('poll_logging_method'));

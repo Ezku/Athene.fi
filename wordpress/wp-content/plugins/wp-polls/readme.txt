@@ -37,6 +37,10 @@ WP-Polls is extremely customizable via templates and css styles and there are to
 
 == Changelog ==
 
+= Version 2.62 (31-08-2011) =
+* FIXED: Escaped Hostname. Thanks to Renaud Feil ([Renaud Feil](http://www.stratsec.net "Renaud Feil"))
+* FIXED: Ensure Poll ID In Shortcode Is An Integer. Thanks to Renaud Feil ([Renaud Feil](http://www.stratsec.net "Renaud Feil"))
+
 = Version 2.61 (14-02-2011) =
 * FIXED: XSS Vulnerability. Thanks to Dweeks, Leon Juranic and Chad Lavoie of the Swiftwill Security Team Inc ([www.swiftwill.com](http://www.swiftwill.com "www.swiftwill.com"))
 
