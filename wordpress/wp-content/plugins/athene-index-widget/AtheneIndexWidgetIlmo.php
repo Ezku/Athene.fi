@@ -94,7 +94,7 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	  if (empty($url)) {
   	    $url = DEFAULT_ILMOMASIINA_URL;
   	  }
-  	  if ($url[strlen($str)-1] != '/') { // add trailing /
+  	  if ($url[strlen($url)-1] != '/') { // add trailing /
   	    $url .= '/';
   	  }
   	  return $url;
