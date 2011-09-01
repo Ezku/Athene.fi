@@ -25,12 +25,18 @@ class SubMenuWalker extends Walker {
         'only_current_branch' => true
     );
     
+    /**
+     * @var array<string | Closure>
+     */
     private $wrap = array(
         'link' => "%s",
         'intro' => "%s",
         'item' => "%s"
     );
     
+    /**
+     * @var array<string>
+     */
     private $format = array(
         'lvl_start' => "\n%s<ul class=\"sub-menu\">\n",
         'lvl_end' => "%s</ul>\n",
@@ -40,9 +46,19 @@ class SubMenuWalker extends Walker {
         'el_end' => "</li>\n",
     );
     
-    function __construct($options = array(), $wrap = array()) {
+    /**
+     * @var array<depth => array | Closure>
+     */
+    private $depth_classes = array(
+        0 => array(),
+        1 => array(),
+        2 => array()
+    );
+    
+    function __construct($options = array(), $wrap = array(), $depth_classes = array()) {
         $this->options = $options + $this->options;
         $this->wrap = $wrap + $this->wrap;
+        $this->depth_classes = $depth_classes + $this->depth_classes;
     }
     
 	/**
@@ -92,7 +108,6 @@ class SubMenuWalker extends Walker {
 	 * @param object $args
 	 */
 	function start_el(&$output, $item, $depth, $args) {
-		global $wp_query;
 		array_push($this->current_menu_stack, $item);
 		if (!$this->toBeShown($depth)) {
 		    return;
@@ -101,22 +116,32 @@ class SubMenuWalker extends Walker {
 	
 	    $output .= $this->format('el_start',
 	        $this->indent($depth),
-	        $this->item_id($item, $args) . $this->item_classes($item, $args));
+	        $this->item_id($item, $args) . $this->item_classes($item, $args, $depth));
         $item_output = $this->item_output($item, $args, $depth);
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
         return $output;
 	}
 	
-	private function item_classes($item, $args) {
-		$class_names = '';
-
+	private function item_classes($item, $args, $depth) {
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
 		$classes[] = 'menu-item-' . $item->ID;
+		$classes = array_merge($classes, $this->item_depth_classes($depth));
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 		$class_names = ' class="' . esc_attr( $class_names ) . '"';
 		return $class_names;
+	}
+	
+	private function item_depth_classes($depth)
+	{
+	    $classes = array();
+	    if (isset($this->depth_classes[$depth])) {
+	        $classes = $this->depth_classes[$depth];
+	        if (!is_array($classes)) {
+	            $classes = (array) $classes($depth);
+	        }
+	    }
+	    return $classes;
 	}
 	
 	private function item_id($item, $args) {

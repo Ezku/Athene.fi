@@ -240,14 +240,8 @@ blockquote {
 }
 
 /* main sections (kilta, toiminta etc) in sitemap */
-#colophon ul.menu > li {
-  /*display: inline-block;*/
-  float: left;
+#colophon ul.menu li {
   list-style-type: none;
-	margin: 0;
-	/* Emulate a 16 container 3 grid column */
-	width: 165px;
-	margin-right: 10px;
 }
 
 /* main section links */
