@@ -64,9 +64,10 @@
             <?php wp_nav_menu( array(
                 'theme_location' => 'primary',
                 'depth' => 0,
-                'walker' => new SubMenuWalker(
-                    array(1,2)
-                )
+                'walker' => new SubMenuWalker(array(
+		            'levels_shown' => array(0,1,2),
+		            'only_current_branch' => true
+		        ))
             ) ); ?>
     	</nav><!-- #subnavi-small -->
 	<?php } /* end if no small submenu */ ?>

@@ -42,19 +42,21 @@ include("header.php"); ?>
     					    <?php
     					    $next = cycle(array(' alpha', '', '', ' omega'));
     					    wp_nav_menu( array(
-					          'theme_location' => 'primary',
-					          'depth' => 0,
-					          'walker' => new SubMenuWalker(
-					              array(1),
-					              true,
-					              array(
-					                  'link' => '<h4>%s</h4>',
-					                  'item' => function($content) use($next) {
-					                      return sprintf('<div class="grid_4%s">%s</div>', $next(), $content);
-					                  }
-					              )
-					          ) )
-				            ); ?>
+					            'theme_location' => 'primary',
+					            'depth' => 0,
+					            'walker' => new SubMenuWalker(
+					                array(
+					                    'levels_shown' => array(1),
+					                    'only_current_branch' => true
+					                ),
+					                array(
+					                    'link' => '<h4>%s</h4>',
+					                    'item' => function($content) use($next) {
+					                        return sprintf('<div class="grid_4%s">%s</div>', $next(), $content);
+					                    }
+					                )
+					            )
+					        )); ?>
                         </nav>
 						<?php
 						/*

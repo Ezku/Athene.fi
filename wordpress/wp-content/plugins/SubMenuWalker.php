@@ -18,9 +18,18 @@ Author URI: http://pkroger.org/
  */
 class SubMenuWalker extends Walker {
 
-    var $levels_shown;
-    var $only_current;
-    var $current_menu_stack;
+    private $current_menu_stack = array();
+    
+    private $options = array(
+        'levels_shown' => array(0,1,2),
+        'only_current_branch' => true
+    );
+    
+    private $wrap = array(
+        'link' => "%s",
+        'intro' => "%s",
+        'item' => "%s"
+    );
     
     private $format = array(
         'lvl_start' => "\n%s<ul class=\"sub-menu\">\n",
@@ -31,18 +40,9 @@ class SubMenuWalker extends Walker {
         'el_end' => "</li>\n",
     );
     
-    private $wrap = array(
-        'link' => "%s",
-        'intro' => "%s",
-        'item' => "%s"
-    );
-    
-    function __construct($levels_shown, $only_current = true, $wrap = array()) {
-        $this->levels_shown = $levels_shown;
-        $this->only_current = $only_current;
+    function __construct($options = array(), $wrap = array()) {
+        $this->options = $options + $this->options;
         $this->wrap = $wrap + $this->wrap;
-        
-        $this->current_menu_stack = array();
     }
     
 	/**
@@ -170,23 +170,36 @@ class SubMenuWalker extends Walker {
 	}
 	
 	private function toBeShown($level) {
-	    if ($this->only_current) {
-	        $current = false;
-	        foreach($this->current_menu_stack as $stack_item) {
-	            if (in_array("current-menu-item",$stack_item->classes) ||
-	                    in_array("current-menu-ancestor",$stack_item->classes)) {
-	                $current = true;
-	            }
-	        }
-	        if (!$current) {
+	    if ($this->showCurrentBranchOnly()) {
+	        if (!$this->isItemOnCurrentBranch()) {
 	            return false;
 	        }
 	    }
-	    if (is_array($this->levels_shown)) {
-	        return in_array($level,$this->levels_shown);
+	    
+	    $levels = $this->levelsToShow();
+	    if (is_array($levels)) {
+	        return in_array($level, $levels);
 	    } else {
-	        return $level == $this->levels_shown;
+	        return $level == $levels;
 	    }
+	}
+	
+	private function isItemOnCurrentBranch() {
+        foreach($this->current_menu_stack as $stack_item) {
+            if (in_array("current-menu-item",$stack_item->classes) ||
+                    in_array("current-menu-ancestor",$stack_item->classes)) {
+                return true;
+            }
+        }
+        return false;
+	}
+	
+	private function levelsToShow() {
+	    return $this->option('levels_shown');
+	}
+	
+	private function showCurrentBranchOnly() {
+	    return (bool) $this->option('only_current_branch');
 	}
 	
 	private function indent($depth) {
@@ -210,6 +223,14 @@ class SubMenuWalker extends Walker {
 	    array_shift($args);
 	    
 	    return vsprintf($this->format[$name], $args);
+	}
+	
+	private function option($name)
+	{
+	    if (!isset($this->options[$name])) {
+	        throw new Exception('Undefined option: ' . $name);
+	    }
+	    return $this->options[$name];
 	}
 }
 

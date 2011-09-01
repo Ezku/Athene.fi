@@ -14,13 +14,13 @@
     		<div class="grid_12 alpha sitemap">
     		    <h4>Sivukartta</h4>
     		    <?php wp_nav_menu( array(
-    		      'theme_location' => 'primary',
-    		      'depth' => 0,
-    		      'walker' => new SubMenuWalker(
-    		        array(0,1,2),
-    		        false
-    		      )
-  		      ) ); ?>
+    		        'theme_location' => 'primary',
+    		        'depth' => 0,
+    		        'walker' => new SubMenuWalker(array(
+    		            'levels_shown' => array(0,1,2),
+    		            'only_current_branch' => false
+    		        ))
+  		        ) ); ?>
     		</div><!-- .sitemap -->
 
             
