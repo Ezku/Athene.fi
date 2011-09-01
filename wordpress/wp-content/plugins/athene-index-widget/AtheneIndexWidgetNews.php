@@ -12,6 +12,10 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  $show_date = sizeof($instance) > 0 ? $instance['show_date'] : 'on';
   	  $template = $instance['template'];
   	  $title = $instance['title'];
+  	  $items = $instance['items'];
+  	  if (empty($items)) {
+  	    $items = 2;
+  	  }
   	  ?>
   	  <!-- <?php print_r($instance) ?> -->
   	  <p>
@@ -45,10 +49,13 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  <input type="checkbox" id="<?php echo $this->get_field_id('show_time'); ?>" name="<?php echo $this->get_field_name('show_time'); ?>" <?php echo $show_time == 'on' ? 'checked="checked"' : '' ?>>
   	  <label for="<?php echo $this->get_field_id('show_time'); ?>">Show times</label>
   	  </p>
-  	  
   	  <p>
   	  <input type="checkbox" id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>" <?php echo $show_date == 'on' ? 'checked="checked"' : '' ?>>
   	  <label for="<?php echo $this->get_field_id('show_date'); ?>">Show dates</label>
+  	  </p>
+  	  <p>
+	      <label for="<?php echo $this->get_field_id('items'); ?>">Items to show</label><br/>
+  	    <input type="number" id="<?php echo $this->get_field_id('items'); ?>" name="<?php echo $this->get_field_name('items'); ?>" value="<?php echo $items; ?>">
   	  </p>
   	  <p>
 	      <label for="<?php echo $this->get_field_id('template'); ?>">Template file</label>
@@ -64,8 +71,12 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	}
 
   	function widget($args, $instance) {
+  	  $items = $instance['items'];
+  	  if (empty($items)) {
+  	    $items = 2;
+  	  }
       $page = get_post_complete($instance['page']);
-      $news = get_posts(array('cat' => $instance['category']));
+      $news = get_posts(array('cat' => $instance['category'], 'numberposts' => $items));
 
         $dateString = "";
         if ($instance['show_date'] == 'on') {
