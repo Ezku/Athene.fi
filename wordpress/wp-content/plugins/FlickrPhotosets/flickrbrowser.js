@@ -151,7 +151,7 @@ var flickrbrowser = {
         jQuery.each(data.photosets.photoset, function(i, val) {
       	  var title = val.title._content;
       	  jQuery("#flickr-widget").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
-      	    + "<div class=\"photosettitle\"><a href=\""+flickrbrowser.link_url+"\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
+      	    + "<div class=\"photosettitle\"><a href=\""+flickrbrowser.link_url+"#photoset="+val.id+"\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
       	    + "<div class=\"photos hide\"></div>"
       	    + "</div>");
       	  jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
