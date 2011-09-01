@@ -57,8 +57,7 @@ class SubMenuWalker extends Walker {
 	 */
 	function start_lvl(&$output, $depth) {
 	    if ($this->toBeShown($depth)) {
-		    $indent = str_repeat("\t", $depth);
-		    $output .= "\n$indent<ul class=\"sub-menu\">\n";
+		    $output .= "\n" . $this->indent($depth) . "<ul class=\"sub-menu\">\n";
 	    }
 	}
 
@@ -70,8 +69,7 @@ class SubMenuWalker extends Walker {
 	 */
 	function end_lvl(&$output, $depth) {
 	    if ($this->toBeShown($depth)) {
-		    $indent = str_repeat("\t", $depth);
-		    $output .= "$indent</ul>\n";
+		    $output .= $this->indent($depth) . "</ul>\n";
 	    }
 	}
 
@@ -90,10 +88,10 @@ class SubMenuWalker extends Walker {
 		if (!$this->toBeShown($depth)) {
 		    return;
 	    }
-	    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+	    $indent = $this->indent($depth);
 	
 		$output .= $indent. '<li' . $this->item_id($item, $args) . $this->item_classes($item, $args) .'>';
-        $item_output = $this->item_output($item, $args);
+        $item_output = $this->item_output($item, $args, $depth);
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
         return $output;
 	}
@@ -116,36 +114,19 @@ class SubMenuWalker extends Walker {
 		return $id;
 	}
 	
-	private function item_output($item, $args) {
+	private function item_output($item, $args, $depth) {
 		$item_output = $args->before;
-		$item_output .= $this->item_link($item, $args);
+		$item_output .= $this->item_link($item, $args, $depth);
 		$item_output .= $this->item_intro($item);
 		$item_output .= $args->after;
-		return $this->wrap('item', $item_output);
+		return $this->wrap('item', $item_output, $depth);
 	}
 	
-	private function item_link($item, $args) {
+	private function item_link($item, $args, $depth) {
 		$link = '<a'. $this->item_attributes($item) .'>';
 		$link .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$link .= '</a>';
-		return $this->wrap('link', $link);
-	}
-	
-	private function item_intro($item) {
-	    $intro = get_post_complete($item->object_id)->intro;
-	    $intro = '<div class="intro">'.$intro.'</div>';
-	    return $this->wrap('intro', $intro);
-	}
-	
-	private function wrap($name, $content) {
-	    if (empty($this->wrap[$name])) {
-	        return $content;
-	    }
-	    $wrapper = $this->wrap[$name];
-	    if (is_callable($wrapper)) {
-	        return $wrapper($content);
-	    }
-	    return sprintf($wrapper, $content);
+		return $this->wrap('link', $link, $depth);
 	}
 	
 	private function item_attributes($item) {
@@ -154,6 +135,14 @@ class SubMenuWalker extends Walker {
 	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 	    return $attributes;
+	}
+	
+	private function item_intro($item) {
+	    $intro = get_post_complete($item->object_id)->intro;
+	    if (strlen($intro)) {
+    	    $intro = '<div class="intro">'.$intro.'</div>';
+    	    return $this->wrap('intro', $intro);
+	    }
 	}
 
 	/**
@@ -186,6 +175,21 @@ class SubMenuWalker extends Walker {
 	    } else {
 	        return $level == $this->levels_shown;
 	    }
+	}
+	
+	private function indent($depth) {
+	    return empty($depth) ? '' : str_repeat( "\t", $depth );
+	}
+	
+	private function wrap($name, $content, $depth = null) {
+	    if (empty($this->wrap[$name])) {
+	        return $content;
+	    }
+	    $wrapper = $this->wrap[$name];
+	    if (is_callable($wrapper)) {
+	        return $wrapper($content, $depth);
+	    }
+	    return sprintf($wrapper, $content);
 	}
 }
 
