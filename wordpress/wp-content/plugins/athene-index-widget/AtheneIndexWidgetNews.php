@@ -95,6 +95,13 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	    include('templates/widget-news.php');
   	  }
   	}
+  	
+  	function excerpt($text, $chars) {
+  	  if (substr($text, 0, $chars) == $text) {
+  	    return $text;
+  	  }
+  	  return preg_replace('/\s[^\s]*$/i','',substr($text, 0, $chars))."...";
+  	}
 
 }
   add_action('widgets_init', create_function('', 'return register_widget("AtheneIndexWidgetNews");'));

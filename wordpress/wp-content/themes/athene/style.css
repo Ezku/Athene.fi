@@ -239,6 +239,15 @@ blockquote {
   padding: 0.5em;
 }
 
+.widget-area .news-item .date {
+  color: #bbb;
+  margin: 0;
+}
+.widget-area .news-item .title {
+  margin: 0;
+}
+
+
 /* main sections (kilta, toiminta etc) in sitemap */
 #colophon ul.menu li {
   list-style-type: none;
