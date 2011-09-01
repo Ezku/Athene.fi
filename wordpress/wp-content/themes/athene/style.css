@@ -232,8 +232,8 @@ blockquote {
 /* widgets in index */
 #content .widget-area {
   float: left;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border: 1px solid rgba(0,0,0,0.3);
   margin: 0.5em;
   padding: 0.5em;
@@ -246,7 +246,9 @@ blockquote {
 .widget-area .news-item .title {
   margin: 0;
 }
-
+.widget-area .news-item .excerpt {
+  margin-bottom: 10px;
+}
 
 /* main sections (kilta, toiminta etc) in sitemap */
 #colophon ul.menu li {
