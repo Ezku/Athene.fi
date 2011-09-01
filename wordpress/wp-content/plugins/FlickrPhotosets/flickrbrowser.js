@@ -1,4 +1,5 @@
 var flickrbrowser = {
+  photosetClicked: false,
   getQueryString: function(method, params) {
     
     var paramsString = "&"
@@ -68,6 +69,7 @@ var flickrbrowser = {
   	  });
   	  
   	  if (flickrbrowser.explodeHash().photoset) {
+  	    flickrbrowser.photosetClicked = true;
   	    flickrbrowser.getPhotoset(flickrbrowser.explodeHash().photoset);
   	  }
 	  });
