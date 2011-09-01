@@ -96,11 +96,13 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	  }
   	}
   	
-  	function excerpt($text, $chars) {
-  	  if (substr($text, 0, $chars) == $text) {
+  	function excerpt($text, $chars,$more = "...") {
+  	  if (substr($text, 0, $chars+strlen($more)) == $text) {
   	    return $text;
   	  }
-  	  return preg_replace('/\s[^\s]*$/i','',substr($text, 0, $chars))."...";
+  	  // strip chars after $chars+1 (+1: in case char no $chars is whitespace),
+  	  // then strip potential incomplete word in the end
+  	  return preg_replace('/\s[^\s]*$/i','',substr($text, 0, $chars+1)).$more;
   	}
 
 }
