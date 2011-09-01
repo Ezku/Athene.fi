@@ -60,19 +60,17 @@
 	<div class="clear"></div>
 
     <?php if (!$no_small_submenu) { ?>
-    
 	    <nav class="container_16" id="subnavi-small" role="navigation">
-
-        <?php wp_nav_menu( array(
-            'theme_location' => 'primary',
-            'depth' => 0,
-            'walker' => new SubMenuWalker(
-                array(0,1,2)
-            )
-        ) ); ?>
-
-	</nav><!-- #subnavi-small -->
+            <?php wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'depth' => 0,
+                'walker' => new SubMenuWalker(
+                    array(1,2)
+                )
+            ) ); ?>
+    	</nav><!-- #subnavi-small -->
 	<?php } /* end if no small submenu */ ?>
+	
 	<div class="clear"></div>
 
 	<div id="main" class="clearfix">

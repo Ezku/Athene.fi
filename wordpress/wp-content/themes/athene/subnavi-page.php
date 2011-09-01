@@ -45,7 +45,7 @@ include("header.php"); ?>
 					          'theme_location' => 'primary',
 					          'depth' => 0,
 					          'walker' => new SubMenuWalker(
-					              array(1,2),
+					              array(1),
 					              true,
 					              array(
 					                  'link' => '<h4>%s</h4>',
