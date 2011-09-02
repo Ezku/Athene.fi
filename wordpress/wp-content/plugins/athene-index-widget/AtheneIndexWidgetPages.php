@@ -1,5 +1,5 @@
 <?php
-class AtheneIndexWidgetPages extends WP_Widget {
+class AtheneIndexWidgetPages extends AtheneIndexWidget {
   	function __construct() {
   		// widget actual processes
   		parent::__construct(false, $name = 'Athene Index Widget for Pages');

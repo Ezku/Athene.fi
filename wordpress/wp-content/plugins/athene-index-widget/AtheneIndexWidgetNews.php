@@ -1,5 +1,5 @@
 <?php
-class AtheneIndexWidgetNews extends WP_Widget {
+class AtheneIndexWidgetNews extends AtheneIndexWidget {
   	function __construct() {
   		// widget actual processes
   		parent::__construct(false, $name = 'Athene Index Widget for News');
@@ -95,16 +95,6 @@ class AtheneIndexWidgetNews extends WP_Widget {
   	    include('templates/widget-news.php');
   	  }
   	}
-  	
-  	function excerpt($text, $chars,$more = "...") {
-  	  if (substr($text, 0, $chars+strlen($more)) == $text) {
-  	    return $text;
-  	  }
-  	  // strip chars after $chars+1 (+1: in case char no $chars is whitespace),
-  	  // then strip potential incomplete word in the end
-  	  return preg_replace('/\s[^\s]*$/i','',substr($text, 0, $chars+1)).$more;
-  	}
-
 }
   add_action('widgets_init', create_function('', 'return register_widget("AtheneIndexWidgetNews");'));
 

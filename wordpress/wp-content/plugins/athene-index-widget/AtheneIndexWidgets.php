@@ -8,6 +8,7 @@ Version: 1.1
 Author URI: http://pkroger.org/
 */
 
+include('AtheneIndexWidget.php');
 include('AtheneIndexWidgetPages.php');
 include('AtheneIndexWidgetNews.php');
 include('AtheneIndexWidgetIlmo.php');

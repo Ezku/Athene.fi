@@ -3,7 +3,7 @@ include('simple_html_dom.php');
 define('DEFAULT_ILMOMASIINA_URL', 'http://www.athene.fi/ilmomasiina');
 define('DEFAULT_ILMOMASIINA_TITLE', 'Ilmomasiina');
 
-class AtheneIndexWidgetIlmo extends WP_Widget {
+class AtheneIndexWidgetIlmo extends AtheneIndexWidget {
   	function __construct() {
   		// widget actual processes
   		parent::__construct(false, $name = 'Athene Index Widget for Ilmomasiina');
@@ -129,19 +129,6 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	  }
   	  return $url;
   	}
-  	
-  	private function getTimeFormat($time, $timezone) {
-  	  $now = new DateTime("now", new DateTimeZone($timezone));
-  	  $timeDiff = $now->diff($time);
-  	  if ($timeDiff->d == 0 && $timeDiff->h == 0) {
-  	    return $timeDiff->i . "min päästä";
-  	  }
-  	  if ($timeDiff->d == 0) {
-  	    return $timeDiff->h . "h päästä";
-  	  }
-  	  return $time->format(get_option('date_format') . ' ' . get_option('time_format'));
-  	}
-
 }
   add_action('widgets_init', create_function('', 'return register_widget("AtheneIndexWidgetIlmo");'));
 
