@@ -158,7 +158,7 @@ var flickrbrowser = {
       	    jQuery("#photoset"+val.id + " img.primary").attr('src', flickrbrowser.getPhotoURL(data.photo, "thumbnail"));
       	  });
       	});
-      	
+      	jQuery("#flickr-widget").append('<p class="more"><a href="'+flickrbrowser.link_url+'">lisää...</a></p>')
       });
     }
   };
