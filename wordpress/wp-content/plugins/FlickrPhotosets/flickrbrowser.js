@@ -44,8 +44,17 @@ var flickrbrowser = {
   	        return;
   	      }
   	      var title = val.title._content;
+  	      var timestampStr;
+  	      var dateCreatedStr = flickrbrowser.formatDate(val.date_create);
+  	      var dateUpdatedStr = flickrbrowser.formatDate(val.date_update);
+  	      if (dateCreatedStr === dateUpdatedStr) {
+  	        timestampStr = dateCreatedStr;
+  	      } else {
+  	        timestampStr = dateCreatedStr+" (päivitetty "+dateUpdatedStr+")";
+  	      }
     	    jQuery("#flickrphotos").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
-    	      + "<div class=\"photosettitle\"><a href=\"#\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
+    	      + "<div class=\"photosettitle\"><a href=\"#\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 2em; margin-top: -1em;'>" + title 
+    	      + "<br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i></span><br /></a></div>"
     	      + "<div class=\"photos hide\"></div>"
     	      + "</div>");
     	    jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
@@ -141,6 +150,10 @@ var flickrbrowser = {
       } else {
         el.addClass('hide');
       }
+    },
+    formatDate : function(unixtime) {
+      var date = new Date(unixtime*1000);
+      return ""+date.getDate()+"."+(date.getMonth()+1)+"."+date.getFullYear()
     },
     showWidget: function() {
       var params = {user_id: flickrbrowser.user_id, per_page: 3, page: 1};
