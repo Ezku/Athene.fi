@@ -143,7 +143,7 @@ var flickrbrowser = {
       }
     },
     showWidget: function() {
-      var params = {user_id: flickrbrowser.user_id, per_page: 2, page: 1};
+      var params = {user_id: flickrbrowser.user_id, per_page: 3, page: 1};
       var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
       jQuery.getJSON(url, function(data) {
         jQuery('#flickr-widget').html('');

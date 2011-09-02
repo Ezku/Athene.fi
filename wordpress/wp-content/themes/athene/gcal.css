@@ -1,0 +1,16 @@
+.gce-list-event {
+  background: transparent !important;
+}
+
+.gce-list .gce-list-date {
+  color: #bbb;
+}
+.gce-list .gce-list-location {
+  font-style: italic;
+}
+
+.gce-list li {
+  list-style-type: none;
+  margin: 5px 0;
+}
+

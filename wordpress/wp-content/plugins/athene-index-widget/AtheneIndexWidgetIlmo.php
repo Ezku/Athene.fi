@@ -16,6 +16,10 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	    $title = DEFAULT_ILMOMASIINA_TITLE;
   	  }
   	  $source_url = $this->getURL($instance);
+  	  $timezone = $instance['timezone'];
+  	  if (empty($timezone)) {
+  	    $timezone = "Europe/London";
+  	  }
   	  $items = $instance['items'];
   	  if (empty($items)) {
   	    $items = 2;
@@ -33,6 +37,10 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
 	      <label for="<?php echo $this->get_field_id('items'); ?>">Items to show</label><br/>
   	    <input type="number" id="<?php echo $this->get_field_id('items'); ?>" name="<?php echo $this->get_field_name('items'); ?>" value="<?php echo $items; ?>">
   	  </p>
+  	  <p>
+	      <label for="<?php echo $this->get_field_id('timezone'); ?>">Timezone for parsing the event dates</label><br/>
+  	    <input type="text" id="<?php echo $this->get_field_id('timezone'); ?>" name="<?php echo $this->get_field_name('timezone'); ?>" value="<?php echo $timezone; ?>">
+  	  </p>
   	  <?php
   	}
 
@@ -44,6 +52,11 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	function widget($args, $instance) {
       $ilmomasiina_url = $this->getURL($instance);
       $title = $instance['title'];
+      $now = new DateTime();
+      $timezone = $instance['timezone'];
+      if (empty($timezone)) {
+  	    $timezone = "Europe/London";
+  	  }
       if (empty($title)) {
         $title = DEFAULT_ILMOMASIINA_TITLE;
       }
@@ -64,26 +77,43 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
         $state = $row->find('.open-close-state span');
         if (count($state) > 0) {
           $details['state'] = mb_convert_encoding($state[0]->outertext,'UTF-8', 'ISO-8859-15');
+          //$details['state'] = "signup-not-yet-open";
         }
         
         $opens = $row->find('.signup-opens');
         if (count($opens) > 0) {
           $details['opens'] = mb_convert_encoding($opens[0]->innertext,'UTF-8', 'ISO-8859-15');
+          //$details['opens'] = "03.09.11 00:15";
+          $details['opens'] = trim(str_replace(" klo ", " ", $details['opens']));
+          $details['opens'] = DateTime::createFromFormat("d.m.y G:i", $details['opens'], new DateTimeZone($timezone));
         }
         
         $closes = $row->find('.signup-closes');
         if (count($closes) > 0) {
           $details['closes'] = mb_convert_encoding($closes[0]->innertext,'UTF-8', 'ISO-8859-15');
+          $details['closes'] = trim(str_replace(" klo ", " ", $details['closes']));
+          $details['closes'] = DateTime::createFromFormat("d.m.y G:i", $details['closes'], new DateTimeZone($timezone));
         }
         
         $entries[] = $details;
       }
       ?>
       <h1><a href="<?php echo $ilmomasiina_url; ?>"><?php echo $title; ?></a></h1>
-      <ul>
+      <ul class="ilmo">
       <?php for($i=0; $i<min($items,count($entries)); $i++) { ?>
         <?php $entry = $entries[$i]; ?>
-        <li><a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?> (<?php echo $entry['state'] ?>)</a></li>
+        <li class="ilmo-entry">
+          <p class="title"><a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?></a></p>
+          <p class="state">
+            <?php echo $entry['state'] ?>
+            <?php if (strstr($entry['state'], 'signup-open')) { ?>
+              - sulkeutuu <?php echo $this->getTimeFormat($entry['closes'], $timezone); ?>
+            <?php } ?>
+            <?php if (strstr($entry['state'], 'signup-not-yet-open')) { ?>
+              - aukeaa <?php echo $this->getTimeFormat($entry['opens'], $timezone); ?>
+            <?php } ?>
+          </p>
+        </li>
       <?php } ?> 
       </ul>
       <?php
@@ -98,6 +128,18 @@ class AtheneIndexWidgetIlmo extends WP_Widget {
   	    $url .= '/';
   	  }
   	  return $url;
+  	}
+  	
+  	private function getTimeFormat($time, $timezone) {
+  	  $now = new DateTime("now", new DateTimeZone($timezone));
+  	  $timeDiff = $now->diff($time);
+  	  if ($timeDiff->d == 0 && $timeDiff->h == 0) {
+  	    return $timeDiff->i . "min päästä";
+  	  }
+  	  if ($timeDiff->d == 0) {
+  	    return $timeDiff->h . "h päästä";
+  	  }
+  	  return $time->format(get_option('date_format') . ' ' . get_option('time_format'));
   	}
 
 }

@@ -250,6 +250,28 @@ blockquote {
   margin-bottom: 10px;
 }
 
+.widget-area .photoset {
+  margin: 5px;
+}
+
+.widget-area #flickr-widget .more {
+  margin: 10px 60px;
+}
+
+.widget-area .ilmo .title {
+  margin: 0;
+}
+
+.widget-area .ilmo .state {
+  margin: 0;
+  color: #bbb;
+}
+
+.widget-area .ilmo-entry {
+  margin: 5px 0;
+  list-style-type: none;
+}
+
 /* main sections (kilta, toiminta etc) in sitemap */
 #colophon ul.menu li {
   list-style-type: none;
