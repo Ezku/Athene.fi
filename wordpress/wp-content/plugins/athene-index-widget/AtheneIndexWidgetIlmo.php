@@ -98,7 +98,7 @@ class AtheneIndexWidgetIlmo extends AtheneIndexWidget {
         $entries[] = $details;
       }
       ?>
-      <h1><a href="<?php echo $ilmomasiina_url; ?>"><?php echo $title; ?></a></h1>
+      <h2><a href="<?php echo $ilmomasiina_url; ?>"><?php echo $title; ?></a></h2>
       <ul class="ilmo">
       <?php for($i=0; $i<min($items,count($entries)); $i++) { ?>
         <?php $entry = $entries[$i]; ?>
