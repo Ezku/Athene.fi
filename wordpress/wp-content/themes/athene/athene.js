@@ -12,4 +12,5 @@ jQuery(document).ready(function() {
 	noisy('header#subnavi-small');
 	noisy('#main');
 	noisy('body');
+	noisy('#main .menu-item .intro');
 });

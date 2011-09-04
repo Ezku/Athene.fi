@@ -29,6 +29,59 @@ Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-
     font-style: normal;
 }
 
+/* = typography & web fonts
+-------------------------------------------------------------- */
+
+body {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 36px;
+}
+h2 {
+	font-size: 32px;
+	line-height: 36px;
+}
+h3 {
+	font-size: 28px;
+	line-height: 36px;
+}
+h4 {
+	font-size: 24px;
+	line-height: 36px;
+}
+h5 {
+	font-size: 20px;
+	line-height: 36px;
+}
+h6 {
+	font-size: 16px;
+	line-height: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, #access a {
+	font-family: "Museo Slab", Georgia, serif;
+	font-weight: normal;
+	letter-spacing: -0.0556em; /* 2px at 36px em */
+}
+
+#access a {
+	font-size: 26px;
+	line-height: 59px;
+	margin: 0;
+}
+address {
+	font-style: normal;
+}
+
+#footer-links li {
+	list-style-type: none;
+	margin: 0;
+}
+
 /* = Skinning
 -------------------------------------------------------------- */
 
@@ -98,60 +151,8 @@ h1, h2, h3 {
 	margin-left: -6px;
 }
 
-/* typography & web fonts */
-
-body {
-	font-size: 14px;
-	line-height: 18px;
-}
-
-h1 {
-	font-size: 36px;
-	line-height: 36px;
-}
-h2 {
-	font-size: 32px;
-	line-height: 36px;
-}
-h3 {
-	font-size: 28px;
-	line-height: 36px;
-}
-h4 {
-	font-size: 24px;
-	line-height: 36px;
-}
-h5 {
-	font-size: 20px;
-	line-height: 36px;
-}
-h6 {
-	font-size: 16px;
-	line-height: 18px;
-}
-
-h1, h2, h3, h4, h5, h6, #access a {
-	font-family: "Museo Slab", Georgia, serif;
-	font-weight: normal;
-	letter-spacing: -0.0556em; /* 2px at 36px em */
-}
-
-#access a {
-	font-size: 26px;
-	line-height: 59px;
-	margin: 0;
-}
-address {
-	font-style: normal;
-}
-
-#footer-links li {
-	list-style-type: none;
-	margin: 0;
-}
-
-
-/* spacing and layout */
+/* = spacing and layout
+-------------------------------------------------------------- */
 
 #access li {
 	margin: 0;
@@ -175,7 +176,8 @@ header#branding {
 	padding-bottom: 36px;
 }
 
-/* menus */
+/* = menus: subnavi-header
+-------------------------------------------------------------- */
 
 header nav li {
 	margin-left: 0;
@@ -187,6 +189,20 @@ header nav .sub-menu {
 	display: inline;
 	float: left;
 	width: 720px;
+}
+
+/* = menus: subnavi-content
+-------------------------------------------------------------- */
+
+#main .menu-item h4 {
+	margin-bottom: 0;
+	border-bottom: 1px solid #808D79;
+}
+#main .menu-item h4 a {
+	text-decoration: none;
+}
+#main .menu-item .intro {
+	background-color: #FFF;
 }
 
 /* TODO
@@ -213,7 +229,38 @@ header nav .sub-menu {
 }
 */
 
-/* poll */
+/* = sitemap
+-------------------------------------------------------------- */
+/* main sections (kilta, toiminta etc) */
+#colophon ul.menu li {
+  list-style-type: none;
+}
+
+/* main section links */
+#colophon ul.menu > li > a {
+  font-weight: bold;
+}
+
+/* intro text */
+#colophon ul.menu .intro {
+  display: none;
+}
+
+/* subpages */
+#colophon ul.menu li ul.sub-menu li.menu-item {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+/* = content: generic
+-------------------------------------------------------------- */
+
+blockquote {
+	margin-left: 40px;
+}
+
+/* = content: poll
+-------------------------------------------------------------- */
 
 .wp-polls-form p { /* poll question */
   margin-bottom: 0;
@@ -223,12 +270,10 @@ header nav .sub-menu {
   margin-left: 0;
 }
 
-/* content */
-blockquote {
-	margin-left: 40px;
-}
 
-/* widgets in index */
+/* = content: widgets
+-------------------------------------------------------------- */
+
 #content .widget-area {
   float: left;
   width: 250px;
@@ -268,26 +313,5 @@ blockquote {
 
 .widget-area .ilmo-entry {
   margin: 5px 0;
-  list-style-type: none;
-}
-
-/* main sections (kilta, toiminta etc) in sitemap */
-#colophon ul.menu li {
-  list-style-type: none;
-}
-
-/* main section links */
-#colophon ul.menu > li > a {
-  font-weight: bold;
-}
-
-/* intro text */
-#colophon ul.menu .intro {
-  display: none;
-}
-
-/* subpages */
-#colophon ul.menu li ul.sub-menu li.menu-item {
-  margin-left: 0;
   list-style-type: none;
 }

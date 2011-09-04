@@ -5,7 +5,7 @@
  */
 ?>
         <?php if (false): // disabled block ?>
-		<div id="secondary" class="grid_4 widget-area" role="complementary">
+		<div id="secondary" class="grid_6 omega widget-area" role="complementary">
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 				<aside id="search" class="widget widget_search">

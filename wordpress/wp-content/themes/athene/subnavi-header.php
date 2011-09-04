@@ -9,7 +9,7 @@
 		            ))->setWrappers(array(
 		                'link' => function($content, $depth) {
 		                    switch ($depth) {
-		                        case 0: return '<h2 class="grid_4 alpha">%s</h2>';
+		                        case 0: return '<h1 class="grid_4 alpha">%s</h1>';
 		                        default: return "<h5>%s</h5>";
 		                    }
 		                },
