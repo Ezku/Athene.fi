@@ -50,10 +50,11 @@ include("header.php"); ?>
 					                    'only_current_branch' => true
 					                ),
 					                array(
-					                    'link' => '<h4>%s</h4>',
-					                    'item' => function($content) use($next) {
-					                        return sprintf('<div class="grid_4%s">%s</div>', $next(), $content);
-					                    }
+					                    'link' => '<h4>%s</h4>'
+					                ),
+					                array(
+    		                            // Set level 0 items to grid
+    		                            1 => cycle(array(array('grid_4', 'alpha'), 'grid_4', 'grid_4', array('grid_4', 'omega')))
 					                )
 					            )
 					        )); ?>

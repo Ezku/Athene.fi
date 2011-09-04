@@ -172,19 +172,6 @@ header#branding {
 
 /* menus */
 
-#subnavi-small li.menu-item:first,
-#subnavi-large li.menu-item:first {
-  margin-left: 0;
-}
-
-#subnavi-small li.menu-item,
-#subnavi-large li.menu-item {
-  float: left;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 /* TODO
 #subnavi-small li.menu-item {
   width: 100px;
