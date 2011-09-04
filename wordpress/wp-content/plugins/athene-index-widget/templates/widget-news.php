@@ -19,7 +19,7 @@
           <?php echo $this->excerpt($news_item->post_content, 60); ?>
         </section>
       </article>
-    <?php endfor; ?>
+    <?php endforeach; ?>
     <p><a href="<?php echo get_permalink($instance['page']) ?>">lisää...</a></p>
     </div>
 </div>
