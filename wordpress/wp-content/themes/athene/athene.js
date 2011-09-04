@@ -1,5 +1,17 @@
 jQuery(document).ready(function() {
-	var noisy = function(e) {
+	// Apply background noise
+	(function(noisy) {
+		// Footer background
+		noisy('body, footer');
+		// Content area background
+		noisy('#page');
+		// Header background
+		noisy('header#branding');
+
+		// Content block backgrounds
+		noisy('#main .menu-item .intro');
+		noisy('.entry-content');
+	})(function(e) {
 		return jQuery(e).noisy({
 	 	    'intensity' : 5,
 		    'size' : 200,
@@ -7,15 +19,5 @@ jQuery(document).ready(function() {
 		    'fallback' : '',
 		    'monochrome' : true
 		});
-	};
-	// Footer background
-	noisy('body, footer');
-	// Content area background
-	noisy('#page');
-	// Header background
-	noisy('header#branding');
-	
-	// Content block backgrounds
-	noisy('#main .menu-item .intro');
-	noisy('.entry-content');
+	});
 });
