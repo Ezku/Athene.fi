@@ -115,10 +115,6 @@ footer, footer a {
 	color: #F3F4F0;
 }
 
-h1 a, h2 a, h3 a {
-	color: #1E2626;
-}
-
 h1, h2, h3 {
 	color: #1E2626;
 }
@@ -210,30 +206,6 @@ header nav a {
 	padding: 5px;
 }
 
-/* TODO
-#subnavi-small li.menu-item {
-  width: 100px;
-  height: 75px;
-  font-size: 10pt;
-}
-
-#subnavi-large li.menu-item {
-  width: 200px;
-  height: 150px;
-  font-size: 12pt;
-}
-*/
-
-/* TODO
-#subnavi-small li.menu-item .intro {
-  font-size: 8pt;
-}
-
-#subnavi-large li.menu-item .intro {
-  font-size: 10pt;
-}
-*/
-
 /* = sitemap
 -------------------------------------------------------------- */
 /* main sections (kilta, toiminta etc) */
@@ -272,13 +244,16 @@ header nav a {
 /* = content: widgets
 -------------------------------------------------------------- */
 
-#content .widget-area {
-  float: left;
-  width: 250px;
-  height: 250px;
-  border: 1px solid rgba(0,0,0,0.3);
-  margin: 0.5em;
-  padding: 0.5em;
+.widget .widget-header h2 {
+	margin-bottom: 0;
+	border-bottom: 1px solid #808D79;
+}
+.widget .widget-header h2 a {
+	text-decoration: none;
+}
+.widget .widget-content {
+	background-color: #FBFBFB;
+	padding: 5px;
 }
 
 .widget-area .news-item .date {
