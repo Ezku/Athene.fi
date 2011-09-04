@@ -1,4 +1,4 @@
-        <div class="clear"></div>
+
 	    <nav class="container_16" role="navigation">
             <?php wp_nav_menu( array(
                 'theme_location' => 'primary',
@@ -9,7 +9,7 @@
 		            ))->setWrappers(array(
 		                'link' => function($content, $depth) {
 		                    switch ($depth) {
-		                        case 0: return '<h1 class="grid_4 alpha">%s</h1>';
+		                        case 0: return '<h3 class="grid_4 alpha">%s</h3>';
 		                        default: return "<h5>%s</h5>";
 		                    }
 		                },
