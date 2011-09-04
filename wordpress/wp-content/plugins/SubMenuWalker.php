@@ -55,10 +55,31 @@ class SubMenuWalker extends Walker {
         2 => array()
     );
     
-    function __construct($options = array(), $wrap = array(), $depth_classes = array()) {
+    function __construct($options) {
         $this->options = $options + $this->options;
+    }
+    
+    public static function create(array $options)
+    {
+        return new static($options);
+    }
+    
+    public function setWrappers(array $wrap)
+    {
         $this->wrap = $wrap + $this->wrap;
+        return $this;
+    }
+    
+    public function setDepthClasses(array $depth_classes)
+    {
         $this->depth_classes = $depth_classes + $this->depth_classes;
+        return $this;
+    }
+    
+    public function setFormats(array $formats)
+    {
+        $this->format = $formats + $this->format;
+        return $this;
     }
     
 	/**
@@ -232,12 +253,12 @@ class SubMenuWalker extends Walker {
 	}
 	
 	private function wrap($name, $content, $depth = null) {
-	    if (empty($this->wrap[$name])) {
+	    if (!isset($this->wrap[$name])) {
 	        return $content;
 	    }
 	    $wrapper = $this->wrap[$name];
 	    if (is_callable($wrapper)) {
-	        return $wrapper($content, $depth);
+	        $wrapper = $wrapper($content, $depth);
 	    }
 	    return sprintf($wrapper, $content);
 	}

@@ -17,16 +17,13 @@
     		    wp_nav_menu( array(
     		        'theme_location' => 'primary',
     		        'depth' => 0,
-    		        'walker' => new SubMenuWalker(array(
+    		        'walker' => SubMenuWalker::create(array(
     		                'levels_shown' => array(0,1),
     		                'only_current_branch' => false
-    		            ),
-    		            array(),
-    		            array(
+    		            ))->setDepthClasses(array(
     		                // Set level 0 items to grid
-    		                0 => cycle(array(array('grid_3', 'alpha'), 'grid_3', 'grid_3', array('grid_3', 'omega')))
-    		            )
-		            )
+    		                0 => cycle(array('grid_3', 'alpha'), 'grid_3', 'grid_3', array('grid_3', 'omega'))
+    		            ))
   		        ) ); ?>
     		</div><!-- .sitemap -->
 
@@ -48,12 +45,14 @@
             </div>
 			
 			<address class="grid_6">
-			    <h4>Yhteystiedot</h4>
-				<p>
-				    <strong>Informaatioverkostojen kilta Athene ry</strong><br />
-				    PL 15400 (Konemiehentie 2)<br />
-					00076 AALTO
-				</p>
+			    <div>
+    			    <h4>Yhteystiedot</h4>
+    				<p>
+    				    <strong>Informaatioverkostojen kilta Athene ry</strong><br />
+    				    PL 15400 (Konemiehentie 2)<br />
+    					00076 AALTO
+    				</p>
+				</div>
 			</address>
 			
 			<div class="grid_4 omega">
@@ -72,7 +71,7 @@
 <?php wp_footer(); ?>
 
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/noisy/1.0/jquery.noisy.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/athene.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/athene.js"></script>
 
 
 </body>

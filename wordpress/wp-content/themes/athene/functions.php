@@ -86,7 +86,8 @@ function toolbox_widgets_init() {
 }
 add_action( 'init', 'toolbox_widgets_init' );
 
-function cycle(array $values) {
+function cycle(/* $values ... */) {
+    $values = func_get_args();
     return function() use(&$values) {
         $next = array_shift($values);
         $values[] = $next;

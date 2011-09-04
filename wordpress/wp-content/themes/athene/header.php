@@ -57,21 +57,11 @@
     		</nav><!-- #access -->
 		</div>
 	</header><!-- #branding -->
-	<div class="clear"></div>
 
     <?php if (!$no_small_submenu) { ?>
-	    <nav class="container_16" id="subnavi-small" role="navigation">
-            <?php wp_nav_menu( array(
-                'theme_location' => 'primary',
-                'depth' => 0,
-                'walker' => new SubMenuWalker(array(
-		            'levels_shown' => array(0,1,2),
-		            'only_current_branch' => true
-		        ))
-            ) ); ?>
-    	</nav><!-- #subnavi-small -->
-	<?php } /* end if no small submenu */ ?>
-	
-	<div class="clear"></div>
+    <header id="subnavi-small">
+            <?php include 'subnavi-header.php' ?>
+    </header>
+    <?php } ?>
 
 	<div id="main" class="clearfix">

@@ -47,6 +47,11 @@ header#branding {
 	background-color: #79B654;
 }
 
+header#subnavi-small {
+	/* Creamy yellow */
+	background-color: #F3F4F0;
+}
+
 body a {
 	/* Darker Athene green */
 	color: #75B251;
@@ -172,6 +177,18 @@ header#branding {
 
 /* menus */
 
+header nav li {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+header nav .sub-menu {
+	/* Emulate a 16-container 12-grid */
+	display: inline;
+	float: left;
+	width: 720px;
+}
+
 /* TODO
 #subnavi-small li.menu-item {
   width: 100px;
@@ -185,11 +202,6 @@ header#branding {
   font-size: 12pt;
 }
 */
-
-#subnavi-large li.menu-item .intro,
-#subnavi-small li.menu-item .intro {
-  display: block;
-}
 
 /* TODO
 #subnavi-small li.menu-item .intro {

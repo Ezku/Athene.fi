@@ -9,6 +9,7 @@ jQuery(document).ready(function() {
 		});
 	};
 	noisy('header#branding');
+	noisy('header#subnavi-small');
 	noisy('#main');
 	noisy('body');
 });

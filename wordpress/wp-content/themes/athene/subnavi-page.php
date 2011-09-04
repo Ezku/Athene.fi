@@ -38,49 +38,7 @@ include("header.php"); ?>
             		</div><!-- .subnavi-header -->
 
 					<div class="subnavi-content">
-                        <nav class="container_16" id="subnavi-large" role="navigation">
-    					    <?php
-    					    $next = cycle(array(' alpha', '', '', ' omega'));
-    					    wp_nav_menu( array(
-					            'theme_location' => 'primary',
-					            'depth' => 0,
-					            'walker' => new SubMenuWalker(
-					                array(
-					                    'levels_shown' => array(1),
-					                    'only_current_branch' => true
-					                ),
-					                array(
-					                    'link' => '<h4>%s</h4>'
-					                ),
-					                array(
-    		                            // Set level 0 items to grid
-    		                            1 => cycle(array(array('grid_4', 'alpha'), 'grid_4', 'grid_4', array('grid_4', 'omega')))
-					                )
-					            )
-					        )); ?>
-                        </nav>
-						<?php
-						/*
-						$subpages = get_pages(
-							'child_of='.$post->ID.
-							'&parent='.$post->ID.
-							'&hierarcial=0&sort_column=menu_order&sort_order=desc'
-						);
-
-						foreach($subpages as $subpage) {
-							$intro = $subpage->post_content;
-							$intro = apply_filters('the_content', $intro);
-						?>
-
-						<div class="grid_4 alpha subnavi-box">
-							<h2><a href="<?php echo get_page_link($subpage->ID) ?>"><?php echo $subpage->post_title ?></a></h2>
-							<div class="entry">
-								<?php echo $intro ?>
-
-							</div>
-						</div>
-						<?php } /* end foreach */ ?>
-
+					    <?php include 'subnavi-content.php' ?>
 					</div><!-- .subnavi-content -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
