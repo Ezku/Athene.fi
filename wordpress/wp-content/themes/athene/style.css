@@ -85,12 +85,12 @@ address {
 /* = Skinning
 -------------------------------------------------------------- */
 
-body {
+body, footer {
 	/* Dark gray with blue tint */
 	background-color: #1E2626;
 }
 
-#main {
+#page {
 	/* Creamy yellow */
 	background-color: #F3F4F0;
 }

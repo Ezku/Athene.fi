@@ -8,10 +8,14 @@ jQuery(document).ready(function() {
 		    'monochrome' : true
 		});
 	};
+	// Footer background
+	noisy('body, footer');
+	// Content area background
+	noisy('#page');
+	// Header background
 	noisy('header#branding');
-	noisy('header#subnavi-small');
-	noisy('#main');
-	noisy('body');
+	
+	// Content block backgrounds
 	noisy('#main .menu-item .intro');
 	noisy('.entry-content');
 });
