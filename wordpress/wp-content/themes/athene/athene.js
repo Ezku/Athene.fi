@@ -13,4 +13,5 @@ jQuery(document).ready(function() {
 	noisy('#main');
 	noisy('body');
 	noisy('#main .menu-item .intro');
+	noisy('.entry-content');
 });

@@ -1,5 +1,5 @@
-
-	    <nav class="container_16 clearfix" role="navigation">
+        <div class="clear"></div>
+	    <nav class="container_16" role="navigation">
             <?php wp_nav_menu( array(
                 'theme_location' => 'primary',
                 'depth' => 0,

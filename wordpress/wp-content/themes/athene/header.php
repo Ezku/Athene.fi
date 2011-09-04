@@ -53,14 +53,24 @@
     			<h1 class="section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
     			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
-    			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+    			<?php wp_nav_menu( array(
+    			    'theme_location' => 'primary',
+    			    'depth' => 1,
+    			    'walker' => SubMenuWalker::create(array(
+		                'levels_shown' => array(0),
+		                'only_current_branch' => false
+		            ))->setDepthClasses(array(
+		                0 => cycle(array('grid_3', 'alpha'), 'grid_3', 'grid_3', array('grid_3', 'omega'))
+		            ))
+
+    			) ); ?>
     		</nav><!-- #access -->
 		</div>
 	</header><!-- #branding -->
 
     <?php if (!$no_small_submenu) { ?>
     <header id="subnavi-small">
-            <?php include 'subnavi-header.php' ?>
+        <?php include 'subnavi-header.php' ?>
     </header>
     <?php } ?>
 

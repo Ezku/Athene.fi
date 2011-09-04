@@ -154,13 +154,8 @@ h1, h2, h3 {
 /* = spacing and layout
 -------------------------------------------------------------- */
 
-#access li {
-	margin: 0;
-}
-
 #access a {
 	padding: 0;
-	margin-right: 2em;
 }
 
 header#branding {
@@ -191,6 +186,14 @@ header nav .sub-menu {
 	width: 720px;
 }
 
+header nav h5 {
+	margin-bottom: 0;
+}
+
+header nav a {
+	text-decoration: none;
+}
+
 /* = menus: subnavi-content
 -------------------------------------------------------------- */
 
@@ -202,7 +205,8 @@ header nav .sub-menu {
 	text-decoration: none;
 }
 #main .menu-item .intro {
-	background-color: #FFF;
+	background-color: #FBFBFB;
+	padding: 5px;
 }
 
 /* TODO
@@ -250,13 +254,6 @@ header nav .sub-menu {
 #colophon ul.menu li ul.sub-menu li.menu-item {
   margin-left: 0;
   list-style-type: none;
-}
-
-/* = content: generic
--------------------------------------------------------------- */
-
-blockquote {
-	margin-left: 40px;
 }
 
 /* = content: poll
@@ -314,4 +311,25 @@ blockquote {
 .widget-area .ilmo-entry {
   margin: 5px 0;
   list-style-type: none;
+}
+
+
+/* = content: posts
+-------------------------------------------------------------- */
+.entry-header .entry-title {
+	margin-bottom: 0;
+}
+.entry-header {
+	border-bottom: 1px solid #1E2626;
+}
+.entry-content {
+	background-color: #FBFBFB;
+	padding: 5px;
+}
+
+/* = content: generic
+-------------------------------------------------------------- */
+
+blockquote {
+	margin-left: 40px;
 }

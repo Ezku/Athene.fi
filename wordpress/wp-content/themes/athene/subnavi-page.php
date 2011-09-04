@@ -18,11 +18,11 @@ include("header.php"); ?>
 		
 		            <div class="subnavi-header clearfix">
                 	    <div class="container_16">
-                			<header class="entry-header grid_4 alpha">
-                				<h1 class="entry-title"><?php the_title(); ?></h1>
+                			<header class="grid_4 alpha">
+                				<h1><?php the_title(); ?></h1>
                 			</header><!-- .entry-header -->
 
-                			<div class="entry-content">
+                			<section>
                 			    <div class="grid_8">
                 				    <h4 class="subheader"><?php the_content(); ?></h4>
                 				    <?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
@@ -33,7 +33,7 @@ include("header.php"); ?>
                 					    'after' => '</div>' )
                 				    ); ?>
                 				</div>
-                			</div><!-- .entry-content -->
+                			</section>
                 		</div>
             		</div><!-- .subnavi-header -->
 
