@@ -59,9 +59,10 @@
     			    'walker' => SubMenuWalker::create(array(
 		                'levels_shown' => array(0),
 		                'only_current_branch' => false
-		            ))->setDepthClasses(array(
+		            ))/* Looks like ass on everything except content pages.
+		            ->setDepthClasses(array(
 		                0 => cycle(array('grid_3', 'alpha'), 'grid_3', 'grid_3', array('grid_3', 'omega'))
-		            ))
+		            )) */
 
     			) ); ?>
     		</nav><!-- #access -->

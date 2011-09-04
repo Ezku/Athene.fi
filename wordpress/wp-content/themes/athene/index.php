@@ -9,13 +9,16 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" role="main">
 			  
-			  <?php for($i=1; $i<13; $i++) { ?>
-  			  <?php if ( is_active_sidebar( 'index-widget-'.$i ) ) : ?>
-      		<div class="widget-area" role="complementary">
-      			<?php dynamic_sidebar( 'index-widget-'.$i ); ?>
-      		</div><!-- .widget-area -->
-      		<?php endif; ?>
-    		<?php } ?>
+			    <div class="container_16 clearfix">
+			        <?php $gridClass = cycle('grid_4 alpha', 'grid_4', 'grid_4', 'grid_4 omega'); ?>
+    			    <?php for($i=1; $i<13; $i++) { ?>
+          			    <?php if ( is_active_sidebar( 'index-widget-'.$i ) ) : ?>
+              		        <div class="widget-area <?php echo $gridClass() ?>" role="complementary">
+              			    <?php dynamic_sidebar( 'index-widget-'.$i ); ?>
+              		        </div><!-- .widget-area -->
+              		    <?php endif; ?>
+        		    <?php } ?>
+    		    </div>
 
 				<?php /* Display navigation to next/previous pages when applicable */ ?>
 				<?php if ( $wp_query->max_num_pages > 1 ) : ?>

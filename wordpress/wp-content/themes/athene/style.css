@@ -156,6 +156,7 @@ h1, h2, h3 {
 
 #access a {
 	padding: 0;
+	padding-right: 2em;
 }
 
 header#branding {
