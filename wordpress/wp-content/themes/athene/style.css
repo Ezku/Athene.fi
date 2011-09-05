@@ -165,7 +165,7 @@ header#branding {
 }
 
 #main {
-	padding-bottom: 36px;
+	/*padding-bottom: 36px; causes white stripe below footer */
 }
 
 /* = menus: subnavi-header
