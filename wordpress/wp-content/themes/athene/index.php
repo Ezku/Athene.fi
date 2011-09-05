@@ -20,7 +20,7 @@ get_header(); ?>
       			        <?php echo $gridContainerStart() ?>
               		        <div class="widget-area <?php echo $gridClass() ?>" role="complementary">
               			    <?php dynamic_sidebar( 'index-widget-'.$i ); ?>
-              		        </div><!-- .widget-area -->
+              		        </div>
       			        <?php echo $gridContainerEnd() ?>
           		    <?php endif; ?>
     		    <?php endfor; ?>

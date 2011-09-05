@@ -229,6 +229,10 @@ header nav a {
   list-style-type: none;
 }
 
+#colophon {
+  margin-top: 2em;
+}
+
 /* = content: poll
 -------------------------------------------------------------- */
 
@@ -244,6 +248,7 @@ header nav a {
 /* = content: widgets
 -------------------------------------------------------------- */
 
+.widget_polls-widget .widget-title, /* for poll widget */
 .widget .widget-header h2 {
 	margin-bottom: 0;
 	border-bottom: 1px solid #808D79;
@@ -251,9 +256,12 @@ header nav a {
 .widget .widget-header h2 a {
 	text-decoration: none;
 }
+
+.widget_polls-widget .wp-polls, /* for polls widget */
 .widget .widget-content {
 	background-color: #FBFBFB;
 	padding: 5px;
+	height: 200px;
 }
 
 .widget-area .news-item .date {

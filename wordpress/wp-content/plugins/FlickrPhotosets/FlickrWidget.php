@@ -31,8 +31,11 @@ class FlickrPhotosetsWidget extends WP_Widget {
   		$options = get_option('flickr_photosets_options');
   		$link = get_permalink($instance['link_target'])
   		?>
-  		<h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
-  		<div id="flickr-widget" style="position: relative;">
+  		<div class="widget widget-flickr">
+  		<header class="widget-header">
+  		  <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
+  		</header>
+  		<div id="flickr-widget" class="widget-content" style="position: relative;">
   		  <div class="spinner" style="position: absolute; top: 50%; left: 50%; margin-left: -25px; margin-top: -25px; width: 50px;">
   		    loading...
   		  </div>
