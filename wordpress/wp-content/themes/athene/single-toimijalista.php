@@ -11,11 +11,15 @@ $layout = get_custom_field('layout');
 
 get_header(); ?>
 
-<div style="margin-right: 250px;">
+<div id="primary" class="container_16">
+	<div id="content" class="grid_13 alpha prefix_3" role="main">
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	
-
-	<h1><?php the_title(); ?></h1>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  	<header class="entry-header">
+  		<h1 class="entry-title"><?php the_title(); ?></h1>
+  	</header><!-- .entry-header -->
+  	<div class="entry-content">
 
 <?php endwhile; // end of the loop. ?>
 
@@ -41,6 +45,10 @@ if ($layout == LAYOUT_PHUKSIT) {
   include('valmistuneet.php');
 }
 ?>
-</div>
+  <div class="clearfix" />
+  </div>
+  </article>
+  </div> <!-- /#content -->
+</div> <!-- /#primary -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

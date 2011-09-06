@@ -183,6 +183,8 @@ header nav .sub-menu {
 	width: 720px;
 }
 
+header 
+
 header nav h5 {
 	margin-bottom: 0;
 }
@@ -204,6 +206,16 @@ header nav a {
 #main .menu-item .intro {
 	background-color: #FBFBFB;
 	padding: 5px;
+	min-height: 60px;
+}
+#main .menu-item .intro > p {
+  margin-bottom: 0;
+}
+#main .menu-item.alpha {
+  clear: both;
+}
+#main .menu-item {
+  
 }
 
 /* = sitemap

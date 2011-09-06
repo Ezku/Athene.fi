@@ -7,7 +7,7 @@
 get_header(); ?>
 
 		<div id="primary" class="container_16">
-			<div id="content" class="grid_10 alpha" role="main">
+			<div id="content" class="grid_13 alpha prefix_3" role="main">
 
 				<?php the_post(); ?>
 
