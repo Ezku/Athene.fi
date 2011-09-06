@@ -2,6 +2,8 @@
 $options = get_option('toimijalistat_options');
 $args['meta_key'] = 'vuosi';
 $args['meta_value'] = empty($wp_query->query_vars['vuosi']) ? $options['toimijat']['year'] : $wp_query->query_vars['vuosi'];
+$args['orderby'] = 'menu_order';
+$args['order'] = "ASC";
 $results = $Q->get_posts($args);
 ?>
 

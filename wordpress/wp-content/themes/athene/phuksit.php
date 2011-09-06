@@ -8,6 +8,8 @@ $options = get_option('toimijalistat_options');
 
 $args['meta_key'] = 'vuosi';
 $args['meta_value'] = $params['vuosi']; 
+$args['orderby'] = 'menu_order';
+$args['order'] = "ASC";
 
 $results = $Q->get_posts($args);
 
@@ -17,7 +19,9 @@ $isoQ->limit = 100;
 $isoArgs = array(
   "post_type" => 'ISO',
   "meta_key" => 'vuosi',
-  "meta_value" => $params['vuosi']
+  "meta_value" => $params['vuosi'],
+  'orderby' => 'menu_order',
+  'order' => "ASC"
 );
 $isos = $isoQ->get_posts($isoArgs);
 ?>
