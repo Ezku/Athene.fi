@@ -4,7 +4,7 @@ $params = array();
 $params['vuosi'] = $wp_query->query_vars['vuosi'] ? $wp_query->query_vars['vuosi'] : $defaults['vuosi'];
 $params['ryhma'] = $wp_query->query_vars['ryhma'] ? $wp_query->query_vars['ryhma'] : $defaults['ryhma'];
 
-$options = get_option('phuksiryhmat_options');
+$options = get_option('toimijalistat_options');
 
 $args['meta_key'] = 'vuosi';
 $args['meta_value'] = $params['vuosi']; 
@@ -22,8 +22,8 @@ $isoArgs = array(
 $isos = $isoQ->get_posts($isoArgs);
 ?>
 Phuksiryhmät 
-<?php for($i=1;$i<=$options['groups']; $i++) { ?>
-  <a href="<?php echo get_permalink() ?><?php echo $options['year'].'/'.$i ?>"><?php echo $i ?></a> 
+<?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++) { ?>
+  <a href="<?php echo get_permalink() ?><?php echo $options['phuksiryhmat']['year'].'/'.$i ?>"><?php echo $i ?></a> 
 <?php } ?>
 <h2>ISO-henkilöt</h2>
 <?php
