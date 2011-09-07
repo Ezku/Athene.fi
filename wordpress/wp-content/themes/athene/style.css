@@ -323,6 +323,16 @@ header nav a {
 	padding: 5px;
 }
 
+/* = content: news pages
+-------------------------------------------------------------- */
+.lcp_catlist li {
+  list-style-type: none;
+}
+
+.lcp_catlist li .date {
+  color: #bbb;
+}
+
 /* = content: generic
 -------------------------------------------------------------- */
 
