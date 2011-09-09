@@ -74,9 +74,9 @@ function toolbox_widgets_init() {
 	
 	for($i=1; $i<13;$i++) {
   	register_sidebar( array (
-  		'name' => __( 'Index widget '.$i, 'toolbox' ),
+  		'name' => __( 'Etusivun paikka '.$i, 'toolbox' ),
   		'id' => 'index-widget-'.$i,
-  		'description' => __( 'Index widget '.$i, 'toolbox' ),
+  		'description' => __( 'Etusivun paikka '.$i, 'toolbox' ),
   		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
   		'after_widget' => "</aside>",
   		'before_title' => '<h2 class="widget-title">',
