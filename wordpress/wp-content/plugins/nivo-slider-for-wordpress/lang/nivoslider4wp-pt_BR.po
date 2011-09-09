@@ -1,0 +1,605 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nivo-slider-for-wordpress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-20 20:47-0800\n"
+"PO-Revision-Date: 2011-07-20 20:49-0800\n"
+"Last-Translator: Marcelo Torres <falecom@marcelotorresweb.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: nivo-slider-for-wordpress\n"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:29
+msgid "Drag Markers To Pick A Color"
+msgstr "Arraste o marcador para escolher uma cor"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:88
+msgid "Nivo Slider For WordPress - Options"
+msgstr "Nivo Slider para WordPress - Opções"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:92
+msgid "options updated"
+msgstr "opções atualizadas"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:99
+msgid "Size of cut (will also be the size of the slider)"
+msgstr "Tamanho do recorte (será também o tamaho do slider)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:100
+msgid "If you have any photos uploaded have to cut out pictures again"
+msgstr "Caso tenha alguma imagem inserida terá que recortá-las novamente"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:101
+msgid "Width"
+msgstr "Largura"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:102
+msgid "Height"
+msgstr "Altura"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:103
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:191
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:203
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:262
+msgid "Save"
+msgstr "Salvar"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:106
+msgid "Nivo Slider Setting "
+msgstr "Configurações do Nivo Slider"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:107
+msgid "Theme"
+msgstr "Tema"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:109
+msgid "No theme"
+msgstr "Sem Tema"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:110
+msgid "default (White)"
+msgstr "Padrão (Branco)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:111
+msgid "Theme #2 (Black)"
+msgstr "Tema #2 (Preto)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:112
+msgid "Theme #3 (Gray)"
+msgstr "Tema #2 (Cinza)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:115
+msgid "Transition effect"
+msgstr "Efeito de transição"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:135
+msgid "Numbers cols for box animations"
+msgstr "Número de colunas para as animações do tipo \"box\""
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:146
+msgid "Numbers rows for box animations"
+msgstr "Número de linhas para as animações do tipo \"box\""
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:157
+msgid "Slide transition speed"
+msgstr "Velocidade da transição do slide"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:157
+msgid "(default 500ms)"
+msgstr "(padrão 500ms)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:158
+msgid "Pause time between the transitions"
+msgstr "Tempo de pausa entre as transições"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:158
+msgid "(default 3000ms)"
+msgstr "(padrão 3000ms)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:159
+msgid "Navigation arrows "
+msgstr "Setas de navegação"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:160
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:165
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:170
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:175
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:180
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:185
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:406
+msgid "Enable"
+msgstr "Habilitar"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:161
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:166
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:171
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:176
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:181
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:186
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:354
+msgid "Disable"
+msgstr "Desabilitar"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:164
+msgid "Show only the navigation arrows when mouse is on the slide "
+msgstr "Mostrar as setas de navegação somente quando o mouse estiver sobre o slide"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:169
+msgid "Show the navigation bullets "
+msgstr "Mostrar a navegação por \"bullets\""
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:174
+msgid "Use left & right on keyboard"
+msgstr "Usar esquerda & direita no teclado"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:179
+msgid "Stop animation while the mouse is on the slide "
+msgstr "Parar a animação enquando o mouse estiver sobre o slide"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:184
+msgid "Force manual transitions "
+msgstr "Forçar transição manual"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:188
+msgid "Background color caption"
+msgstr "Cor de fundo da legenda"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:189
+msgid "Text color caption"
+msgstr "Cor do texto da legenda"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:190
+msgid "Opacity background color caption "
+msgstr "Opacidade do fundo da legenda"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:190
+msgid "<em>Use scale of <strong>0.0</strong> to <strong>10.0</strong></em>"
+msgstr "<em>Use escala de <strong>0.0</strong> a <strong>10.0</strong></em>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:194
+msgid "Advanced Options"
+msgstr "Opções Avançadas"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:195
+msgid "Image quality"
+msgstr "Qualidade da Imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:195
+msgid "quality ranges from 0 (worst quality, smaller file) to 100 (best quality, biggest file). The default is 80. "
+msgstr "a qualidade varia de 0 (qualidade ruim, arquivo menor) até 100 (melhor qualidade, arquivo grande). O padrão é 80."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:196
+msgid "Insert JavaScript"
+msgstr "Inserir JavaScript no"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:201
+msgid "It is recommended to load the JavaScript in the <strong>footer</strong> because it allows a faster loading page, but the slider is loaded last. "
+msgstr "Recomenda-se carregar o JavaScript no <strong>footer</strong>, pois permite que uma página de carregamento mais rápido, porém o slider é carregado por último."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:209
+msgid "how use on templates"
+msgstr "Como usar no tema"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:210
+msgid "Place this: "
+msgstr "Coloque isso:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:210
+msgid "in your templates "
+msgstr "no seu tema"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:213
+msgid "Credits and Donation"
+msgstr "Créditos e Doações"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:215
+msgid "Developed by: "
+msgstr "Desenvolvido por:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:216
+msgid "Jquery Nivo Slider by: "
+msgstr "Jquery Nivo Slider por: "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:217
+msgid "JPicker Plugin by: "
+msgstr "JPicker Plugin por: "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:218
+msgid "This plugin has been helpful to you? How about making a donation and encourage me to develop other plugins? "
+msgstr "Este plugin foi útil para você? Que tal fazer uma doação e me incentivar a desenvolver outros plugins? "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:21
+msgid "Nivo Slider For WordPress - Add Image"
+msgstr "Nivo Slider For WordPress - Adicionar imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:111
+msgid "Sorry. Only JPG, GIF and PNG formats are supported"
+msgstr "Desculpe. Somente JPG, GIF e PNG são suportados"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:238
+msgid "Original image"
+msgstr "Imagem original"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:240
+msgid "Click and drag to select the crop area"
+msgstr "Clique e arraste para selecionar a área do recorte"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:244
+msgid "Slide preview"
+msgstr "Visualização no slide"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:248
+msgid "Image caption(optional)"
+msgstr "Legenda da imagem (opcional)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:250
+msgid "Image link, please use <strong>http://</strong>(optional)"
+msgstr "Link da imagem. Por favor use <strong>http://</strong> (opcional)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:267
+msgid "The dimensions of the slider (and the clipping of the image) are <strong>"
+msgstr "As dimensões do slider (e do recorte da imagem) estão em <strong>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:267
+msgid "</strong>width, per <strong>"
+msgstr "</strong>largura, por <strong>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:267
+msgid "</strong>height, to modify them go to the "
+msgstr "</strong>de altura, para modificá-las siga para a "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:267
+msgid "options page"
+msgstr "pagina de opções"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:270
+msgid "Add New image"
+msgstr "Adicionar nova imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:276
+msgid "Warning"
+msgstr "Aviso"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:277
+#, php-format
+msgid "The permissions to the directory <b>%s</b> are invalid. Set them to 777 to be able to upload files."
+msgstr "As permissões para o diretório <b>%s</ b> são inválidos. use permissão 777 para poder fazer upload dos arquivos."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:282
+msgid "File"
+msgstr "Arquivo"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:285
+msgid "Send picture and configure"
+msgstr "Enviar e configurar imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:295
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:303
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:374
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:382
+msgid "Order"
+msgstr "Ordem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:296
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:304
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:375
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:383
+msgid "Image"
+msgstr "Imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:297
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:305
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:376
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:384
+msgid "Caption and Link"
+msgstr "Legenda e link"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:298
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:377
+msgid "Action"
+msgstr "Ação"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:348
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:400
+msgid "Image Link to :"
+msgstr "Link da imagem para:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:352
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:404
+msgid "Edit"
+msgstr "Editar"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:353
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:405
+msgid "Remove"
+msgstr "Remover"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:364
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:416
+msgid "No images uploaded yet."
+msgstr "Nenhuma imagem inserida ainda."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:95
+msgid "Nivo Slider For WordPress"
+msgstr "Nivo Slider for WordPress - Opções"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:96
+msgid "Add/Edit image"
+msgstr "Adicionar/Editar imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:97
+msgid "Options"
+msgstr "Opções"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:143
+msgid "Nivo Slider for WordPress - Help > Add image"
+msgstr "Nivo Slider For WordPress - Ajuda > Adicionar imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:144
+msgid "Adding images:"
+msgstr "Adicionando imagem:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:145
+msgid "To add a new image on your slider, click in buttom <em>Add new image</em>, then select the desired image(are supported JPG, PNG and GIF) and then click the button <em>send and edit image"
+msgstr "Para adicionar uma nova imagem no seu slider, clique no botão <em>Adicionar nova imagem</em>, em seguida, selecione a imagem desejada (são suportados JPG, PNG e GIF) e clique no botão <em> enviar  e editar imagem"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:146
+msgid "Image setting:"
+msgstr "Configurações da imagem:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:147
+msgid "Once the image was sent, set the crop area and write caption below and the image link if you wish."
+msgstr "Depois que a imagem foi enviada, defina a área de recorte e escreva abaixo a legenda e no link da imagem, se desejar."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:148
+msgid "Image editing:"
+msgstr "Editando imagem:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:149
+msgid "To edit the image after you have set your settings, click in the link <em>edit</em> aside the column's caption."
+msgstr "Para editar a imagem depois de já definida suas configurações, clique no link <em>Editar</em> ao lado da coluna da legenda."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:150
+msgid "Excluding image:"
+msgstr "Excluindo imagem:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:151
+msgid "To delete the image, click in the link <em>Remove</em> aside the column's caption."
+msgstr "Para excluir a imagem, clique no link <em>Remover</em> ao lado da coluna da legenda."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:152
+msgid "Changing the display order of images:"
+msgstr "Alterando a ordem de apresentação das imagens:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:153
+msgid "To set the display order of images, click the line of the desired image and drag up or down until the order of images as you want."
+msgstr "Para definir a ordem de apresentação das imagens, clique na linha da imagem desejada e arraste para cima ou para baixo até a ordem das imagens ficar como deseja."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:160
+msgid "Nivo Slider for WordPress - Help > Options"
+msgstr "Nivo Slider para WordPress - Ajuda > Opções"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:161
+msgid "Size of the cut (it will also be the size of the slider):"
+msgstr "Tamanho do recorte (será também o tamaho do slider)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:162
+msgid "This option sets the width and height in pixels in the corresponding fields. This will be the dimensions of the slider and the clipping of the image after uploading the same."
+msgstr "Esta opção define a largura e altura em pixels nos campos correspondentes. Essa ser&aacute; as dimensõ;es do slider e do recorte da imagem após o upload da mesma."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:163
+msgid "Important: if you change these dimensions after you have already inserted some image, will have to cut out the images again, so that they fit the dimensions defined."
+msgstr "Importante: caso altere essas dimensões depois de já ter inserido alguma imagem, terá que recortar as imagens novamente, para que elas se adequarem as dimensões definidas."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:164
+msgid "Nivo Slider settings:"
+msgstr "Configurações do Nivo Slider:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:165
+msgid "Transition effects:"
+msgstr "Efeitos de transição"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:166
+msgid "Select one of the effects to change the transition between each image."
+msgstr "Selecione um dos efeitos para alterar a transi&ccedil;&atilde;o entre cada imagem."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:167
+msgid "Themes:"
+msgstr "Temas:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:168
+msgid "Select one of the themes available to change the way the slider is displayed. The themes are: The Theme, Default (theme with white elements), Theme # 2 (theme with black elements) and Theme # 3 (gray theme with elements)."
+msgstr "Selecione um dos temas disponivel para mudar o modo que é visualizado o slider. Os temas são: Sem Tema, Padrão (tema com elementos brancos), Tema #2 (tema com elementos pretos) e Tema #3 (tema com elementos cinza)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:169
+msgid "Speed the transition from slide:"
+msgstr "Velocidade da transição do slide:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:170
+msgid "Speed that will show the selected transition."
+msgstr "Velocidade em que será mostrada a transição escolhida."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:171
+msgid "Pause time between transitions:"
+msgstr "Tempo de pausa entre as transições:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:172
+msgid "Time that an image of the slider will be shown, happen until the transition to the next."
+msgstr "Tempo que uma imagem do slider ficará sendo mostrada, até que acontçaa a transção para a próxima."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:173
+msgid "Navigation arrows:"
+msgstr "Setas de navegação:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:174
+msgid "If this option is enabled, the use of arrows to advance or move back to the images on the slider will appear."
+msgstr "Se esta opção estiver habilitada, o uso das setas para avançar ou voltar a passagem das imagens no slider aparecerão."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:175
+msgid "Show navigation arrows only when the mouse is on the slide:"
+msgstr "Mostrar as setas de navegação somente quando o mouse estiver sobre o slide:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:176
+msgid "If this option is enabled, the navigation arrows will only appear when the mouse cursor is on the slider."
+msgstr "Se esta opção estiver habilitada, as setas de navegação s&oacute; irão aparecer quando o cursor do mouse estiver sobre o slider."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:177
+msgid "Show the navigation bullets:"
+msgstr "Mostrar navegação por \"bullets\""
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:178
+msgid "If this option is enabled, the user can move forward or backward through the images also utilize the bullets below the slider"
+msgstr "Se esta opção for ativada, o usuário pode avançar ou retroceder as imagens utilizando os bullets abaixo do slider"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:179
+msgid "Use left and right on the keyboard:"
+msgstr "Usar esquerda & direita no teclado:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:180
+msgid "If this option is enabled, the user can move forward or backward through the images of the slider left navigation arrows (&larr;) and right (&rarr;) on the keyboard."
+msgstr "Se esta op&ccedil;&atilde;o estiver habilitada, o usuário poderá avançar ou voltar as imagens do slider pelas setas de navegação esquerda (&larr;) e direita (&rarr;) do teclado."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:181
+msgid "Stop the animation while the mouse is on the slide:"
+msgstr "Parar a animação enquando o mouse estiver sobre o slide:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:182
+msgid "If this option is enabled, animation (caption and transition) will not happen while the mouse is on the slider."
+msgstr " a animação (transições e legenda) não irão acontecer enquanto o mouse estiver sobre do slider."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:183
+msgid "Force transition manual:"
+msgstr "Forçar transição manual:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:184
+msgid "If this option is enabled, the transition will not happen automatically."
+msgstr "Se esta opção estiver habilitada, as transições não acontecerão de forma automática."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:185
+msgid "Background color of the caption:"
+msgstr "Cor de fundo da legenda:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:186
+msgid "Changes the background color of the caption of every image of the slider. To change the color click the button next to the text field, and select the desired color in the color picker."
+msgstr "Altera a cor de fundo da legenda de todas as imagem do slider. Para alterar a cor clique no bot&atilde;o ao lado do campo de texto, e selecione a cor desejada no seletor de cor."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:187
+msgid "Text color of the caption:"
+msgstr "Cor do texto da legenda:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:188
+msgid "Changes the color of the caption text of all the image of the slider. To change the color click the button next to the text field, and select the desired color in the color picker."
+msgstr "Altera a cor do texto da legenda de todas as imagem do slider. Para alterar a cor clique no bot&atilde;o ao lado do campo de texto, e selecione a cor desejada no seletor de cor."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:189
+msgid "Opacity of the background caption:"
+msgstr "Opacidade do fundo da legenda:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:190
+msgid "Changes the background transparency of the caption of every image of the slider. Enter the desired value within a range from 0.0 to 10.0, eg 0.3."
+msgstr "Altera a transpar&ecirc;ncia do fundo da legenda de todas as imagem do slider. Digite o valor desejado dentro de uma escala de 0.0 &agrave; 10.0, por exemplo, 0.3."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:192
+msgid "Advanced Options:"
+msgstr "Opções avançadas"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:193
+msgid "Image quality:"
+msgstr "Qualidade da imagem:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:194
+msgid "Set value between 0 at 100 for define the quality of cut the images. Quality ranges from 0 (worst quality, smaller file) to 100 (best quality, biggest file). The default is 80."
+msgstr "Coloque um value entre 0 a 100 para definir a qualidade do recorte das imagens. A qualidade varia de 0 (qualidade ruim, arquivo menor) até 100 (melhor qualidade, arquivo grande). O padrão é 80."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:195
+msgid "Insert JavaScript:"
+msgstr "Inserir JavaScript:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:196
+msgid "Select the options head or footer for define where will loaded the scripts Jquery Plugin Nivo Slider. It is recommended to load the JavaScript in the <strong>footer</strong> because it allows a faster loading page, but the slider is loaded last."
+msgstr "Selecione uma das opções, head ou footer, para definir onde será carregado os scripts Jquery do Plugin Nivo Slider. Recomenda-se carregar o JavaScript no <strong>footer</strong>, pois permite que uma página de carregamento mais rápido, porém o slider é carregado por último."
+
+#~ msgid "Adding/Editing image:"
+#~ msgstr "Adicionar/Editar imagem"
+
+#~ msgid "Add/Manager image"
+#~ msgstr "Adicionar/editar imagem:"
+
+#~ msgid ""
+#~ "Nivo Slider for WordPress - Help > Add Images</h2><dl><dt><strong>Adding "
+#~ "images:</strong></dt><dd>To add a new image on your slider, click in "
+#~ "buttom <em>Add new image</em>, then select the desired image(are "
+#~ "supported JPG, PNG and GIF) and then click the button <em>send and edit "
+#~ "image</em>.</dd><dt><strong>Image setting:</strong></dt><dd>Once the "
+#~ "image was sent, set the crop area and write caption below and the image "
+#~ "link if you wish.</dd><dt><strong>Image editing:</strong></dt><dd>Para "
+#~ "editar a imagem depois de j&aacute; definida suas configura&ccedil;"
+#~ "&otilde;es, clique no link <em>Editar</em> ao lado da coluna da legenda.</"
+#~ "dd><dt><strong>Excluindo a imagem:</strong></dt><dd>Para excluir a "
+#~ "imagem, clique no link <em>Remover</em> ao lado da coluna da legenda.</"
+#~ "dd><dt><strong>Alterando a ordem de apresenta&ccedil;&atilde;o das "
+#~ "imagens:</strong></dt><dd>Para definir a ordem de apresenta&ccedil;"
+#~ "&atilde;o das imagens, clique na linha da imagem desejada e arraste para "
+#~ "cima ou para baixo at&eacute; a ordem das imagens ficar como deseja.</"
+#~ "dd></dl>"
+#~ msgstr "teste"
+
+#, fuzzy
+#~ msgid "Nivo Slider for WordPress - Ajuda > Adicionar images"
+#~ msgstr "Nivo Slider For WordPress - Adicionar imagem"
+
+#~ msgid "<em>Click in <strong>select</strong> for to change color.</em>"
+#~ msgstr "<em>Clique em <strong>select</strong> para mudar a cor.</em>"
+
+#~ msgid "Help & Credits"
+#~ msgstr "Ajuda & créditos"
+
+#~ msgid "Text"
+#~ msgstr "Texto"
+
+#~ msgid "Send and Set image"
+#~ msgstr "Enviar e configurar imagem"
+
+#~ msgid "Send File"
+#~ msgstr "enviar arquivo"
+
+#~ msgid "Nivo Slider for WordPress - Help & Credits"
+#~ msgstr "Nivo Slider for WordPress - Ajuda & Doação"
+
+#~ msgid "Slider"
+#~ msgstr "Slider"
+
+#~ msgid "Help & Donation"
+#~ msgstr "Ajuda & Doação"
+
+#~ msgid "Image Link(optional)"
+#~ msgstr "Link da imagem(opcional)"
+
+#~ msgid "Change Order"
+#~ msgstr "Mudar ordem"
+
+#~ msgid "px width, per "
+#~ msgstr "px de largura, por"
+
+#~ msgid "px height.</strong> To change these values go to"
+#~ msgstr "px de altura. </strong> Para alterar esses valores siga para"
+
+#~ msgid ""
+#~ "/wp-admin/admin.php?page=nivoslider4wp-options\">the options page</a>"
+#~ msgstr ""
+#~ "/wp-admin/admin.php?page=nivoslider4wp-options\">a pagina de opções</a>"
+
+#~ msgid "Size of crop"
+#~ msgstr "Tamanho do recorte"
+
+#~ msgid "Nivo Slider Setting Styles"
+#~ msgstr "Configuração de estilo do Nivo Slider"
+
+#~ msgid "Stop animation while hovering "
+#~ msgstr "Parar animação enquanto o mouse estiver sobre o slide"

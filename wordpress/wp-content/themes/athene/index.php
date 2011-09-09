@@ -11,6 +11,13 @@ get_header(); ?>
 			  <div class="container_16 clearfix">
 			    <h2 class="tagline"><?php echo get_bloginfo ( 'description' );  ?></h2>
 			  </div>
+			  <?php if ( is_active_sidebar( 'index-widget-wide' ) ) : ?>
+		        <div class="container_16 clearfix">
+      		        <div class="widget-area grid_16 alpha omega" role="complementary">
+      			    <?php dynamic_sidebar( 'index-widget-wide' ); ?>
+      		        </div>
+		        </div>
+  		    <?php endif; ?>
 		        <?php
 		        $gridContainerStart = cycle('<div class="container_16 clearfix">', '', '', '');
 		        $gridContainerEnd = cycle('', '', '', '</div>');

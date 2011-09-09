@@ -1,0 +1,470 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nivo-slider-for-wordpress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-21 13:45-0800\n"
+"PO-Revision-Date: 2011-07-20 20:52-0800\n"
+"Last-Translator: Marcelo Torres <falecom@marcelotorresweb.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:29
+msgid "Drag Markers To Pick A Color"
+msgstr "Húzza a jelölőket színválasztáshoz"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:79
+msgid "Nivo Slider For WordPress - Options"
+msgstr "Nivo Slider For WordPress - Beállítások"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:83
+msgid "options updated"
+msgstr "beállítások frissítve"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:90
+msgid "Size of cut (will also be the size of the slider)"
+msgstr "Vágás mérete (ez lesz a slider mérete is)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:91
+msgid "If you have any photos uploaded have to cut out pictures again"
+msgstr "Ha már van feltöltve kép, akkor újra ki kell vágni belőlük"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:92
+msgid "Width"
+msgstr "szélesség"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:93
+msgid "Height"
+msgstr "magasság"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:94
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:169
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:181
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:236
+msgid "Save"
+msgstr "Mentés"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:97
+msgid "Nivo Slider Setting "
+msgstr "Nivo Slider beállítás"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:98
+msgid "Transition effect"
+msgstr "Átmenet hatás"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:118
+msgid "Numbers cols for box animations"
+msgstr "Oszlopok száma dobozos animációnál"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:129
+msgid "Numbers rows for box animations"
+msgstr "Sorok száma oszlops animációnál"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:140
+msgid "Slide transition speed"
+msgstr "Átmenet sebessége"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:140
+msgid "(default 500ms)"
+msgstr "(alap 500ms)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:141
+msgid "Pause time between the transitions"
+msgstr "Szünet az átmenetek között"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:141
+msgid "(default 3000ms)"
+msgstr "(alap 3000ms)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:142
+msgid "Navigation arrows "
+msgstr "Navigációs nyilak"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:143
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:148
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:153
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:158
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:163
+msgid "Enable"
+msgstr "bekapcsol"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:144
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:149
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:154
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:159
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:164
+msgid "Disable"
+msgstr "kikapcsol"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:147
+msgid "Show only the navigation arrows when mouse is on the slide "
+msgstr "Csak akkor jelenjenek meg a nyilak, ha az egér a slider fölött van"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:152
+msgid "Use left & right on keyboard"
+msgstr "Jobb és bal nyíl használata a billentyűzeten"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:157
+msgid "Stop animation while the mouse is on the slide "
+msgstr "Animáció megállítása, amíg az egér a slide fölött van"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:162
+msgid "Force manual transitions "
+msgstr "Kézi átmenetek kényszerítése"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:166
+msgid "Background color caption"
+msgstr "Felirat háttérszíne"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:167
+msgid "Text color caption"
+msgstr "Felirat szövegszíne"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:168
+msgid "Opacity background color caption "
+msgstr "Felirat hátterének áttetszősége"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:168
+msgid "<em>Use scale of <strong>0.0</strong> to <strong>10.0</strong></em>"
+msgstr "<em>A skála <strong>0.0</strong>-tól <strong>10.0</strong>-ig tart.</em>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:172
+msgid "Advanced Options"
+msgstr "Haladó beállítások"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:173
+msgid "Image quality"
+msgstr "Képminőség"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:173
+msgid "quality ranges from 0 (worst quality, smaller file) to 100 (best quality, biggest file). The default is 80. "
+msgstr "A minőség 0-tól (legrosszabb minőség, legkisebb fájl) 100-ig (legjobb minőség, legnagyobb fájl) terjed. Az alap 80."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:174
+msgid "Insert JavaScript"
+msgstr "JavaScript beszúrása"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:179
+msgid "It is recommended to load the JavaScript in the <strong>footer</strong> because it allows a faster loading page, but the slider is loaded last. "
+msgstr "Javasolt a javaScriptet az oldal <strong>lábléc</stong>ébe rakni, mert így az oldal előbb betölt, viszont a slider töltődik be utoljára."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:187
+msgid "how use on templates"
+msgstr "hogyan használjunk sablonokban?"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:188
+msgid "Place this: "
+msgstr "Ezt tegye:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:188
+msgid "in your templates "
+msgstr "a sablonba"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:191
+msgid "Credits and Donation"
+msgstr "Névjegy és támogatás"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:193
+msgid "Developed by: "
+msgstr "Fejlesztette:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:194
+msgid "Jquery Nivo Slider by: "
+msgstr "Jquery Nivo Slider szerzője: "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:195
+msgid "JPicker Plugin by: "
+msgstr "JPicker Plugin szerzője: "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-option.php:196
+msgid "This plugin has been helpful to you? How about making a donation and encourage me to develop other plugins? "
+msgstr "Hasznos ez a beépülő? Akkor támogasson, hogy több hasznos beépülőt írhassak!"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:21
+msgid "Nivo Slider For WordPress - Add Image"
+msgstr "Nivo Slider For WordPress - Új kép"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:86
+msgid "Sorry. Only JPG, GIF and PNG formats are supported"
+msgstr "Bocsi, csak jpg, gif és png formátum a támogatott."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:212
+msgid "Original image"
+msgstr "Eredeti kép"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:214
+msgid "Click and drag to select the crop area"
+msgstr "Kattintson és húzza a vágási terület kijelöléséhez"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:218
+msgid "Slide preview"
+msgstr "Slide előnézet"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:222
+msgid "Image caption(optional)"
+msgstr "Képfelirat (opcionális)"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:224
+msgid "Image link, please use <strong>http://</strong>(optional)"
+msgstr "Kép link (opcionális), az elején legyen <strong>http://</strong>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:241
+msgid "The dimensions of the slider (and the clipping of the image) are <strong>"
+msgstr "A slider (és a kép vágási területének) méretei: szélesség(<strong>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:241
+msgid "</strong>width, per <strong>"
+msgstr "</strong>), magasság(<strong>"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:241
+msgid "</strong>height, to modify them go to the "
+msgstr "</strong>), módosításához menjen a "
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:241
+msgid "options page"
+msgstr "beállítások oldalra"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:244
+msgid "Add New image"
+msgstr "új kép hozzáadása"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:250
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:251
+#, php-format
+msgid "The permissions to the directory <b>%s</b> are invalid. Set them to 777 to be able to upload files."
+msgstr "A(z) <b>%s</b> könyvtár jogai nem megfelelőek. Legyen 777, hogy lehessen oda képket feltölteni."
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:256
+msgid "File"
+msgstr "Fájl"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:259
+msgid "Send picture and configure"
+msgstr "Kép küldése és beállítása"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:269
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:277
+msgid "Order"
+msgstr "Sorrend"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:270
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:278
+msgid "Image"
+msgstr "Kép"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:271
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:279
+msgid "Caption and Link"
+msgstr "Felirat és link"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:322
+msgid "Image Link to :"
+msgstr "Kép ide linkel:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:327
+msgid "Edit"
+msgstr "Szerkeszt"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:329
+msgid "Remove"
+msgstr "Töröl"
+
+#: nivo-slider-for-wordpress/nivoslider4wp-panel.php:342
+msgid "No images uploaded yet."
+msgstr "Még nincs kép feltöltve."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:32
+msgid "Nivo Slider For WordPress"
+msgstr "Nivo Slider For WordPress"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:33
+msgid "Add/Edit image"
+msgstr "Új kép"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:34
+msgid "Options"
+msgstr "Beállítások"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:77
+msgid "Nivo Slider for WordPress - Help > Add image"
+msgstr "Nivo Slider for WordPress - Súgó >Új kép"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:78
+msgid "Adding images:"
+msgstr "Képek hozzáadása:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:79
+msgid "To add a new image on your slider, click in buttom <em>Add new image</em>, then select the desired image(are supported JPG, PNG and GIF) and then click the button <em>send and edit image"
+msgstr "A sliderhez új kép hozzáadásához kattintson az <em>Új kép hozzáadása</em> gombra, majd válassza ki a kívánt képet (támogatott formátumok jpg, png és gif), végül kattintson a <em>kép küldése és beállítása</em> gombra"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:80
+msgid "Image setting:"
+msgstr "Kép beállítások:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:81
+msgid "Once the image was sent, set the crop area and write caption below and the image link if you wish."
+msgstr "Ha egy kép fel lett töltve, adja meg a vágási területet, a feliratot és a linket, ha szükség van rá."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:82
+msgid "Image editing:"
+msgstr "Kép szerkesztése:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:83
+msgid "To edit the image after you have set your settings, click in the link <em>edit</em> aside the column's caption."
+msgstr "A beállítások módosítása után a kép szerkesztéséhez kattintson a kép sorában a <em>szerkeszt</em> linkre."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:84
+msgid "Excluding image:"
+msgstr "Kép kizárása:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:85
+msgid "To delete the image, click in the link <em>Remove</em> aside the column's caption."
+msgstr "Kép törléséhez kattintson a sorában lévő <em>Töröl</em> feliratra."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:86
+msgid "Changing the display order of images:"
+msgstr "Képek sorrendjének módosítása:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:87
+msgid "To set the display order of images, click the line of the desired image and drag up or down until the order of images as you want."
+msgstr "A képek sorrendjének megadásához egyszerűen kattintson a rossz helyen lévő képre, majd húzz felfelé vagy lefelé a megfelelő helyre."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:94
+msgid "Nivo Slider for WordPress - Help > Options"
+msgstr "Nivo Slider for WordPress - Súgó > Beállítások"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:95
+msgid "Size of the cut (it will also be the size of the slider):"
+msgstr "A kivágás mérete (ez lesz a slider mérete is):"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:96
+msgid "This option sets the width and height in pixels in the corresponding fields. This will be the dimensions of the slider and the clipping of the image after uploading the same."
+msgstr "Itt adhatók meg a slider méretei pixelben. Ez lesz a slider és a kép vágási területének mérete is."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:97
+msgid "Important: if you change these dimensions after you have already inserted some image, will have to cut out the images again, so that they fit the dimensions defined."
+msgstr "Fontos: ha ezt képek feltöltése után módosítja, akkor a már feltöltött képeket újra méretre kell vágni, hogy illeszkedjenek az új méretű sliderbe."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:98
+msgid "Nivo Slider settings:"
+msgstr "Nivo Slider beállítások:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:99
+msgid "Transition effects:"
+msgstr "Átmenet hatások:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:100
+msgid "Select one of the effects to change the transition between each image."
+msgstr "Válasszon ki egy hatást a képek közti átmenethez."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:101
+msgid "Speed the transition from slide:"
+msgstr "Átmenet sebessége:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:102
+msgid "Speed that will show the selected transition."
+msgstr "Az átmenet hatásának sebessége, az animáció időtartama."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:103
+msgid "Pause time between transitions:"
+msgstr "Szünet az átmenetek között:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:104
+msgid "Time that an image of the slider will be shown, happen until the transition to the next."
+msgstr "Ennyi ideig jelenik meg egy kép, ezután kezdődik az átmenet a következő képre."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:105
+msgid "Navigation arrows:"
+msgstr "Navigációs nyilak:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:106
+msgid "If this option is enabled, the use of arrows to advance or move back to the images on the slider will appear."
+msgstr "Ha engedélyezve van, megjelennek a nyilak, melyek segítségével előre és hátra lehet lépkedni a képek között."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:107
+msgid "Show navigation arrows only when the mouse is on the slide:"
+msgstr "Csak akkor jelenjenek meg a nyilak, ha az egér a slider fölött van:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:108
+msgid "If this option is enabled, the navigation arrows will only appear when the mouse cursor is on the slider."
+msgstr "Ha egndélyezve van, akkor a nyilak csak akkor jelennek meg, ha az egérmutató a slider fölött van."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:109
+msgid "Use left and right on the keyboard:"
+msgstr "Jobb és bal nyíl használata a billentyűzeten:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:110
+msgid "If this option is enabled, the user can move forward or backward through the images of the slider left navigation arrows (&larr;) and right (&rarr;) on the keyboard."
+msgstr "Ha engedélyezve van, akkor az oldal látogatója a billentyűzet jobbra és balra nyilaival lépkedhet a képek között."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:111
+msgid "Stop the animation while the mouse is on the slide:"
+msgstr "Animáció megállítása, amíg az egér a slide fölött van:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:112
+msgid "If this option is enabled, animation (caption and transition) will not happen while the mouse is on the slider."
+msgstr "Ha engedélyezve van, akkor az átmenet nem kezdődik el, amíg az egér a slide fölött van."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:113
+msgid "Force transition manual:"
+msgstr "Kézi átmenetek kényszerítése:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:114
+msgid "If this option is enabled, the transition will not happen automatically."
+msgstr "Ha ez engedélyezve van, akkor nincs automatikus léptetés."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:115
+msgid "Background color of the caption:"
+msgstr "Felirat háttérszíne:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:116
+msgid "Changes the background color of the caption of every image of the slider. To change the color click the button next to the text field, and select the desired color in the color picker."
+msgstr "A kép feliratának háttérszíne. Módosításához kattintson a szövegdoboz mögött lévő színválasztó gombra."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:117
+msgid "Text color of the caption:"
+msgstr "Felirat szövegszíne:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:118
+msgid "Changes the color of the caption text of all the image of the slider. To change the color click the button next to the text field, and select the desired color in the color picker."
+msgstr "A felirat szövegének színe. Módosításához kattintson a szövegdoboz mögött lévő színválasztó gombra (ami lehet fehér is)."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:119
+msgid "Opacity of the background caption:"
+msgstr "Felirat hátterének áttetszősége:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:120
+msgid "Changes the background transparency of the caption of every image of the slider. Enter the desired value within a range from 0.0 to 10.0, eg 0.3."
+msgstr "Megadja a képek feliratának hátterének átlátszóságát. Érvényes intervallum: 0.0-tól 10.0-ig"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:122
+msgid "Advanced Options:"
+msgstr "Haladó beállítások:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:123
+msgid "Image quality:"
+msgstr "Képminőség:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:124
+msgid "Set value between 0 at 100 for define the quality of cut the images. Quality ranges from 0 (worst quality, smaller file) to 100 (best quality, biggest file). The default is 80."
+msgstr "Adjon meg egy értéket 0 és 100 között a kivágott kép minőségének megadásához. A kép minősége 0-tól (legrosszabb minőség, lekisebb fájl) 100-ig (legjobb minőség, legnagyobb fájl) terjed. Az alap 80."
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:125
+msgid "Insert JavaScript:"
+msgstr "JavaScript beszúrása:"
+
+#: nivo-slider-for-wordpress/nivoslider4wp.php:126
+msgid "Select the options head or footer for define where will loaded the scripts Jquery Plugin Nivo Slider. It is recommended to load the JavaScript in the <strong>footer</strong> because it allows a faster loading page, but the slider is loaded last."
+msgstr "Válassza ki, hogy a jQuery Nivo Slider beépülőhöz szükséges scriptek az oldal fejlécében vagy láblécében töltődjenek be. Javasolt a <strong>lábléc</strong>et választani, mert így gyorsabban betöltődik az oldal."
+

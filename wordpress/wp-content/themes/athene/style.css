@@ -339,3 +339,21 @@ header nav a {
 blockquote {
 	margin-left: 40px;
 }
+
+/* = content: photo slider
+-------------------------------------------------------------- */
+.nivoSlider {
+    position:relative;
+    height:200px; /* Change this to your images height */
+    background:url(images/loading.gif) no-repeat 50% 50%;
+}
+.nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+}
+.nivoSlider a {
+    border:0;
+    display:block;
+}

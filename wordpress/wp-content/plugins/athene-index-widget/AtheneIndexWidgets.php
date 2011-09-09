@@ -13,5 +13,6 @@ include('AtheneIndexWidgetPages.php');
 include('AtheneIndexWidgetNews.php');
 include('AtheneIndexWidgetIlmo.php');
 include('AthenizeEventsWidget.php');
+include('AtheneIndexWidgetCarousel.php');
 
 ?>

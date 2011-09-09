@@ -1,0 +1,44 @@
+.nivoslider4wp_box { margin:10px 0px;}
+table.disabled td{background-color:#ccc;}
+table.disabled caption{padding:15px;background-color:#ccc;-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
+#nivoslider4wp_addnew { display:none; }
+#nivoslider4wp_options small{margin:10px;}
+#nivoslider4wp_options input { width:70px;}
+#nivoslider4wp_options input.radiocheck{ width:30px;}
+#nivoslider4wp_options input.button-primary{margin:10px 0 0 10px;}
+#nivoslider4wp_options label, #nivoslider4wp_options p, #edit_form label{width:785px;display:block;padding:8px 10px;margin:3px 0;display:table;background-color:#FAFAFA;}
+#edit_form label{margin:20px 0 0 0;font-size:13px;display:block;}
+#edit_form input, #edit_form textarea{width:100%}
+#edit_form .button-primary{width:inherit}
+#edit_form a{float:left;margin:20px 0 0 20px;font-size:14px;text-decoration:none;}
+#nivoslider4wp_options fieldset , #nivoslider4wp_credits{width:795px;border:1px solid #E3E3E3;background-color:#fff;clear:both;margin:10px 0;padding:15px 0;display:table;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+#nivoslider4wp_credits{padding:0 0 15px 0;margin:0;}
+#nivoslider4wp_options legend , #nivoslider4wp_credits h3{font-weight:bold;width:795px;background: transparent url(../../../../wp-admin/images/menu-bits.gif);border:1px solid #E3E3E3;padding:5px;display:table;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
+#nivoslider4wp_credits h3{margin:0;font-size:13px}
+#nivoslider4wp_credits ul{margin:15px;}
+#nivoslider4wp_credits p{margin:15px;}
+
+#image { border:1px solid #888; }
+#preview { border:1px solid #888; }
+#crop_button { float:left; margin:20px 0px; }
+
+.order { margin:5px 0px; display:none; }
+.order_value { width: 30px; }
+
+.alert{background-color:#FFFFE0;border:1px solid #E6DB55;padding:5px;}
+.alignleft li{display:inline;float:left;}
+.nivoslider4wp_nav{padding:5px;text-decoration:none;line-height:30px;}
+
+.donation_button{float:left;margin:10px;}
+

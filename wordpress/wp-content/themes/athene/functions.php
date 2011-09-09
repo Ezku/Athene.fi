@@ -72,6 +72,16 @@ function toolbox_widgets_init() {
 		'after_title' => '</h1>',
 	) );	
 	
+	register_sidebar( array (
+		'name' => __( 'Etusivun leveä paikka ', 'toolbox' ),
+		'id' => 'index-widget-wide',
+		'description' => __( 'Etusivun leveä paikka ', 'toolbox' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	) );
+	
 	for($i=1; $i<13;$i++) {
   	register_sidebar( array (
   		'name' => __( 'Etusivun paikka '.$i, 'toolbox' ),
