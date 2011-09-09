@@ -8,7 +8,9 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-			  
+			  <div class="container_16 clearfix">
+			    <h2 class="tagline"><?php echo get_bloginfo ( 'description' );  ?></h2>
+			  </div>
 		        <?php
 		        $gridContainerStart = cycle('<div class="container_16 clearfix">', '', '', '');
 		        $gridContainerEnd = cycle('', '', '', '</div>');
