@@ -58,9 +58,9 @@
 			<div class="grid_4 omega">
 			    <h4>Athene muualla</h4>
 				<p>
-				    #purkusessio @ IRCnet<br />
-				    <a href="http://twitter.com/#!/athenekilta">athenekilta @ Twitter</a><br />
-				    <a href="https://www.facebook.com/athenekilta">athenekilta @ Facebook</a><br />
+				    <a href="http://twitter.com/#!/athenekilta"><img src="<?php bloginfo( 'template_directory' ); ?>/images/twitter.png" alt="athenekilta @ Twitter" /></a>
+				    <a href="https://www.facebook.com/athenekilta"><img src="<?php bloginfo( 'template_directory' ); ?>/images/facebook.png" alt="athenekilta @ Facebook" /></a>
+				    #purkusessio @ IRCnet
 				</p>
 			</div>
 		</div>
