@@ -67,37 +67,69 @@ class AtheneIndexWidgetIlmo extends AtheneIndexWidget {
       $entries = array();
       $ilmo = file_get_html($ilmomasiina_url);
       foreach($ilmo->find('tr.answer-row') as $row) {
+          $entries[] = $this->findEntryDetails($row, $ilmomasiina_url, $timezone);
+      }
+      include __DIR__ . '/templates/widget-ilmo.php';
+  	}
+  	
+  	private function findEntryDetails($row, $ilmomasiina_url, $timezone)
+  	{
         $details = array();
+        
         $name = $row->find('.signup-name a');
         if (count($name) > 0) {
-          $details['url'] = $ilmomasiina_url . mb_convert_encoding($name[0]->href,'UTF-8', 'ISO-8859-15');
-          $details['name'] = mb_convert_encoding($name[0]->innertext,'UTF-8', 'ISO-8859-15');
+          $details['url'] = $ilmomasiina_url . $this->utfToIso($name[0]->href);
+          $details['name'] = $this->utfToIso($name[0]->innertext);
         }
         
         $state = $row->find('.open-close-state span');
         if (count($state) > 0) {
-          $details['state'] = mb_convert_encoding($state[0]->outertext,'UTF-8', 'ISO-8859-15');
-          //$details['state'] = "signup-not-yet-open";
+          $details['state_string'] = $this->utfToIso($state[0]->outertext);
+          $details['is_open'] = strpos($state[0], 'signup-open') !== false;
+          $details['is_closed'] = strpos($state[0], 'signup-closed') !== false;
+          $details['is_not_yet_open'] = strpos($state[0], 'signup-not-yet-open') !== false; // for sake of completeness
+          
+          switch (true) {
+              case $details['is_open']: $details['state'] = 'open'; break;
+              case $details['is_closed']: $details['state'] = 'closed'; break;
+              case $details['is_not_yet_open']: $details['state'] = 'not_yet_open'; break;
+          }
         }
         
         $opens = $row->find('.signup-opens');
         if (count($opens) > 0) {
-          $details['opens'] = mb_convert_encoding($opens[0]->innertext,'UTF-8', 'ISO-8859-15');
+          $details['opens'] = $this->asDate($this->utfToIso($opens[0]->innertext), $timezone);
           //$details['opens'] = "03.09.11 00:15";
-          $details['opens'] = trim(str_replace(" klo ", " ", $details['opens']));
-          $details['opens'] = DateTime::createFromFormat("d.m.y G:i", $details['opens'], new DateTimeZone($timezone));
         }
         
         $closes = $row->find('.signup-closes');
         if (count($closes) > 0) {
-          $details['closes'] = mb_convert_encoding($closes[0]->innertext,'UTF-8', 'ISO-8859-15');
-          $details['closes'] = trim(str_replace(" klo ", " ", $details['closes']));
-          $details['closes'] = DateTime::createFromFormat("d.m.y G:i", $details['closes'], new DateTimeZone($timezone));
+          $details['closes'] = $this->asDate($this->utfToIso($closes[0]->innertext), $timezone);
         }
         
-        $entries[] = $details;
-      }
-      include __DIR__ . '/templates/widget-ilmo.php';
+        $details['relevant_date'] = $details['is_not_yet_open'] ? $details['opens'] : $details['closes'];
+        
+        return $details;
+  	}
+  	
+  	private function statusToString($entry)
+  	{
+  	    switch (true) {
+            case $entry['is_open']: return 'sulkeutuu';
+            case $entry['is_closed']: return 'sulkeutunut';
+            case $entry['is_not_yet_open']: return 'aukeaa';
+  	    }
+  	}
+  	
+  	private function asDate($string, $timezone)
+  	{
+        $date = trim(str_replace(" klo ", " ", $string));
+        return DateTime::createFromFormat("d.m.y G:i", $date, new DateTimeZone($timezone));
+  	}
+  	
+  	private function utfToIso($string)
+  	{
+  	    return mb_convert_encoding($string,'UTF-8', 'ISO-8859-15');
   	}
   	
   	private function getURL($instance) {
@@ -109,6 +141,11 @@ class AtheneIndexWidgetIlmo extends AtheneIndexWidget {
   	    $url .= '/';
   	  }
   	  return $url;
+  	}
+  	
+  	public function limit($items, $count)
+  	{
+  	    return new LimitIterator(new ArrayIterator($items), 0, $count);
   	}
 }
   add_action('widgets_init', create_function('', 'return register_widget("AtheneIndexWidgetIlmo");'));
