@@ -7,15 +7,14 @@
 get_header(); ?>
 
 		<div id="primary" class="container_16">
-			<div id="content" class="grid_13 alpha prefix_3" role="main">
-
+			<div id="content" class="grid_10 alpha" role="main">
 				<?php the_post(); ?>
-
 				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php comments_template( '', true ); ?>
-
 			</div><!-- #content -->
+			
+            <div id="comments" class="grid_6 omega">
+                <?php comments_template( '', true ); ?>
+            </div><!-- #comments -->
             
 			<?php get_sidebar(); ?>
 
