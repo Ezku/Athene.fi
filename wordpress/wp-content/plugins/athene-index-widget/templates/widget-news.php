@@ -9,7 +9,7 @@
         <?php foreach($news as $news_item): ?>
             <article class="news-item grid_4 alpha omega">
                 <section class="date grid_1 alpha">
-                    <h5><?php echo date('m.d.',strtotime($news_item->post_date)) ?></h5>
+                    <h5><?php echo date('d.m.',strtotime($news_item->post_date)) ?></h5>
                 </section>
                 <section class="content grid_3 omega">
                     <header class="title">

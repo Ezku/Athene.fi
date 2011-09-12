@@ -9,7 +9,7 @@
             <li class="ilmo-entry grid_4 alpha omega">
                 <article>
                     <section class="date grid_1 alpha">
-                        <h5><?php echo $entry['relevant_date']->format('m.d.') ?></h5>
+                        <h5><?php echo $entry['relevant_date']->format('d.m.') ?></h5>
                     </section>
                     <section class="content grid_3 omega">
                         <header class="title">
