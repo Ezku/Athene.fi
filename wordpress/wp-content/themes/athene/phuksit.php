@@ -25,10 +25,21 @@ $isoArgs = array(
 );
 $isos = $isoQ->get_posts($isoArgs);
 ?>
-Phuksiryhmät 
-<?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++) { ?>
-  <a href="<?php echo get_permalink() ?><?php echo $options['phuksiryhmat']['year'].'/'.$i ?>"><?php echo $i ?></a> 
-<?php } ?>
+<h3>Phuksiryhmät</h3>
+<?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
+    <a href="<?php echo get_permalink() ?><?php echo $options['phuksiryhmat']['year'].'/'.$i ?>"><?php echo $i ?></a> 
+<?php endfor; ?>
+<h3>Aiemmat vuodet</h3>
+<?php 
+if ($options['phuksiryhmat']['firstyear'] > 0):
+    for($j=$options['phuksiryhmat']['year']-1;$j>=$options['phuksiryhmat']['firstyear']; $j--):?>
+        <div class="year"> <?php echo $j ?>
+        <?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
+            <a href="<?php echo get_permalink() ?><?php echo $j.'/'.$i ?>"><?php echo $i ?></a> 
+        <?php endfor; ?>
+        </div>
+    <?php endfor; ?>
+<?php endif; ?>
 <h2>ISO-henkilöt</h2>
 <?php
 $count = 0;
@@ -36,7 +47,7 @@ foreach ($isos as $iso) {
   $post = get_post_complete($iso['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 
     $count++; ?>
-  <div style="float: left;">
+  <div class="toimija iso">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
   <?php if (custom_field_found('email')) print get_custom_field('email')."<br />"; ?>
@@ -58,7 +69,7 @@ foreach($results as $entry) {
   $post = get_post_complete($entry['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 
     $count++; ?>
-  <div style="float: left;">
+  <div class="toimija phuksi">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
   <?php if (custom_field_found('email')) print get_custom_field('email')."<br />"; ?>

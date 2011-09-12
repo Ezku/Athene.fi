@@ -6,9 +6,9 @@
 /*
 Plugin Name: Flickr Photosets
 Plugin URI: http://pkroger.org
-Description: Shows Flickr photosets from specified user chronologically.
+Description: Shows Flickr photosets from specified user chronologically. Also includes widget that shows newest albums.
 Author: Pyry Kröger
-Version: 1.0
+Version: 1.1 (12.9.2011)
 Author URI: http://pkroger.org/
 */
 

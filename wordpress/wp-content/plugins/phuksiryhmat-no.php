@@ -6,9 +6,9 @@
 /*
 Plugin Name: Toimijalistat query vars
 Plugin URI: http://pkroger.org
-Description: 
+Description: This plugin allows the use of extra query variables in pages such as Phuksit or Hallitus to specify the group or year to be shown. 
 Author: Pyry Kröger
-Version: 1.0
+Version: 1.0 (12.9.2011)
 Author URI: http://pkroger.org/
 */
 
@@ -65,10 +65,17 @@ function toimijalistat_plugin_setting_string() {
 		</td>
 	</tr>
 	<tr>
-		<th scope="row">Year shown</th>
+		<th scope="row">Latest Year</th>
 		<td>
 		  <input type="text" id="toimijalistat_year" name="toimijalistat_options[phuksiryhmat][year]" value="<?php echo $options['phuksiryhmat']['year'] ?>" id="" />
 		  <p>(For links, all years are accessible with proper URL)</p>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Earliest Year</th>
+		<td>
+		  <input type="text" id="toimijalistat_year" name="toimijalistat_options[phuksiryhmat][firstyear]" value="<?php echo $options['phuksiryhmat']['firstyear'] ?>" id="" />
+		  <p>(For links, all years are accessible with proper URL. Set to 0 to show only the current year)</p>
 		</td>
 	</tr>
 	<tr>
@@ -106,10 +113,17 @@ function toimijalistat_plugin_setting_string() {
 		</td>
 	</tr>
 	<tr>
-		<th scope="row">Year shown</th>
+		<th scope="row">Latest year</th>
 		<td>
 		  <input type="text" id="toimijalistat_year" name="toimijalistat_options[toimijat][year]" value="<?php echo $options['toimijat']['year'] ?>" id="" />
 		  <p>(For links, all years are accessible with proper URL)</p>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Earliest year</th>
+		<td>
+		  <input type="text" id="toimijalistat_year" name="toimijalistat_options[toimijat][firstyear]" value="<?php echo $options['toimijat']['firstyear'] ?>" id="" />
+		  <p>(For links, all years are accessible with proper URL. Set to 0 to show only the current year)</p>
 		</td>
 	</tr>
 	<?php

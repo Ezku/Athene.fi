@@ -9,7 +9,7 @@ Plugin Name: Submenu Walker
 Plugin URI: http://pkroger.org
 Description: Submenu Walker enables submenus and sitemaps for themes. Requires code changes in theme menu handling, namely specifying a new SubMenuWalker(). See source for details.
 Author: Pyry Kröger
-Version: 1.2
+Version: 1.2 (12.9.2011)
 Author URI: http://pkroger.org/
 */
 

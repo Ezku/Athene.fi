@@ -356,3 +356,11 @@ blockquote {
     border:0;
     display:block;
 }
+
+.toimija {
+  float: left; 
+  width: 230px; 
+  min-height: 200px;
+  text-align: center; 
+  margin: 25px 0;
+}
