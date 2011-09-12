@@ -29,12 +29,21 @@
 	/*conteudo que ora para dentro do <head>*/
 	function js_NivoSlider(){
 	?>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php echo get_option('siteurl') . '/wp-content/plugins/nivo-slider-for-wordpress/js/jquery.nivo.slider.pack.js';?>"></script>
+		<?php
+		/* 
+		 * load js files only if necessary using wp_enqueue_script
+		 * Added By Pyry Kröger (pkroger.org)
+		 */
+		 /* <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ 		  * <script type="text/javascript" src="<?php echo get_option('siteurl') . '/wp-content/plugins/nivo-slider-for-wordpress/js/jquery.nivo.slider.pack.js';?>"></script>
+ 		  */
+		 $in_footer = (get_option('nivoslider4wp_js') != 'head');
+		 wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js');
+		 wp_enqueue_script('jquery-nivo-slider', plugins_url('js/jquery.nivo.slider.pack.js', __FILE__), array('jquery'));
+		 wp_enqueue_script('jquery-nivo-slider-wp', plugins_url('js/nivoSlider4wp.js', __FILE__), array('jquery-nivo-slider'));
+		?>
 		<script type="text/javascript">
-		var $nv4wp = jQuery.noConflict();
-		$nv4wp(window).load(function() {
-			$nv4wp('#slider').nivoSlider({
+		    var nivoSlider4wp_opts = {
 				effect:'<?php echo get_option('nivoslider4wp_effect'); ?>',
 				slices:15, // For slice animations
 				boxCols: <?php echo get_option('nivoslider4wp_colsBox'); ?>, // For box animations
@@ -60,8 +69,7 @@
 				slideshowEnd: function(){}, // Triggers after all slides have been shown
 				lastSlide: function(){}, // Triggers when last slide is shown
 				afterLoad: function(){} // Triggers when slider has loaded
-			});
-		});
+			}
 		</script>
 		<?php
 		}
@@ -82,11 +90,15 @@
 	<?php
 	}
 	add_action('wp_head', 'css_NivoSlider');
+	add_action('wp_enqueue_scripts', 'js_NivoSlider');
+	/*
+	 * Changed by Pyry Kröger (pkroger.org) to always add action to head 
+	 * (and use wp_enqueue_script) to include script in footer if needed
 	if(get_option('nivoslider4wp_js') == 'head'){
-		add_action('wp_head', 'js_NivoSlider');
+		
 	}
 		else
 	{
 		add_action('wp_footer', 'js_NivoSlider');
-	}
+	} */
 ?>

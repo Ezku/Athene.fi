@@ -1,6 +1,5 @@
 jQuery(function() {
   flickrbrowser.getPhotosets();
-  
   jQuery(window).hashchange( function(){
     var hashParams = flickrbrowser.explodeHash();
     if (flickrbrowser.photosetClicked) { // do not trigger event when showing the photoset manually

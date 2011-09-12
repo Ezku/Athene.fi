@@ -124,7 +124,7 @@ function flickr_photosets_add_css_js($posts, $force = FALSE){
 		wp_enqueue_script('jquery-easing', plugins_url('fancybox/jquery.easing-1.3.pack.js', __FILE__), array('jquery'));
 		wp_enqueue_script('jquery-mousewheel', plugins_url('fancybox/jquery.mousewheel-3.0.4.pack.js', __FILE__), array('jquery'));
 		wp_enqueue_script('jquery-hashchange', plugins_url('jquery.ba-hashchange.min.js', __FILE__), array('jquery'));
-		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
+		wp_enqueue_script('jquery-fancybox', plugins_url('fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__), array('jquery', 'jquery-easing', 'jquery-mousewheel'));
 		wp_enqueue_script('flickr-browser', plugins_url('flickrbrowser.js', __FILE__), array('jquery-fancybox','jquery-hashchange'));
 		wp_enqueue_script('flickr-page', plugins_url('page.js', __FILE__), array('flickr-browser'));
 		wp_enqueue_style('flickr-photosets-external-css', get_bloginfo('template_url').'/flickr.css');

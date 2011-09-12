@@ -1,5 +1,6 @@
 var flickrbrowser = {
   photosetClicked: false,
+  debug: false,
   getQueryString: function(method, params) {
     
     var paramsString = "&"
@@ -18,7 +19,7 @@ var flickrbrowser = {
   	return url;
   },
   log: function(msg) {
-    if (window.console && typeof console.log == "function") {
+    if (flickrbrowser.debug && window.console && typeof console.log == "function") {
       console.log(msg);
     }
   },
@@ -102,7 +103,6 @@ var flickrbrowser = {
       el.html("");
       el.append(photosetString);
       
-      flickrbrowser.log(el.find("div a"));
       el.find("div a").fancybox({
 				'transitionIn'		: 'none',
 				'transitionOut'		: 'none',
