@@ -38,9 +38,9 @@
  		  * <script type="text/javascript" src="<?php echo get_option('siteurl') . '/wp-content/plugins/nivo-slider-for-wordpress/js/jquery.nivo.slider.pack.js';?>"></script>
  		  */
 		 $in_footer = (get_option('nivoslider4wp_js') != 'head');
-		 wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js');
-		 wp_enqueue_script('jquery-nivo-slider', plugins_url('js/jquery.nivo.slider.pack.js', __FILE__), array('jquery'));
-		 wp_enqueue_script('jquery-nivo-slider-wp', plugins_url('js/nivoSlider4wp.js', __FILE__), array('jquery-nivo-slider'));
+		 wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js', array(), false, $in_footer);
+		 wp_enqueue_script('jquery-nivo-slider', plugins_url('js/jquery.nivo.slider.pack.js', __FILE__), array('jquery'), false, $in_footer);
+		 wp_enqueue_script('jquery-nivo-slider-wp', plugins_url('js/nivoSlider4wp.js', __FILE__), array('jquery-nivo-slider'), false, $in_footer);
 		?>
 		<script type="text/javascript">
 		    var nivoSlider4wp_opts = {
