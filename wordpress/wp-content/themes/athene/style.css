@@ -260,13 +260,14 @@ header nav a {
 /* = content: widgets
 -------------------------------------------------------------- */
 
+.widget .widget-header h2 a {
+	text-decoration: none;
+}
+
 .widget_polls-widget .widget-title, /* for poll widget */
 .widget .widget-header h2 {
 	margin-bottom: 0;
 	border-bottom: 1px solid #808D79;
-}
-.widget .widget-header h2 a {
-	text-decoration: none;
 }
 
 .widget_polls-widget .wp-polls, /* for polls widget */
@@ -275,37 +276,54 @@ header nav a {
 	padding: 0.5em;
 }
 
-.widget-area .news-item .date {
+/* lists of dates and associated content */
+.widget .date-indexed section {
+	display: inline;
+	float: left;
+}
+.widget .date-indexed .date {
   color: #bbb;
   margin: 0;
+	margin-right: 10px;
+	width: 40px;
 }
-.widget-area .news-item .title {
+.widget .date-indexed .date h5 {
+	margin-bottom: 0;
+}
+.widget .date-indexed .content {
+	margin-left: 10px;
+	width: 146px;
+}
+.widget .date-indexed .title {
   margin: 0;
 }
-.widget-area .news-item .excerpt {
+.widget .date-indexed .excerpt, .widget .date-indexed .status {
   margin-bottom: 10px;
 }
 
+/* ilmomasiina widget */
+.widget .ilmo-entry {
+  margin: 0;
+  list-style-type: none;
+}
+.widget .ilmo-entry.closed .date {
+	text-decoration: line-through;
+}
+.widget .ilmo-entry .status {
+  color: #bbb;
+}
+.widget .ilmo-entry.open .status {
+  color: #1E2626;
+}
+
+
+/* images */
 .widget-area .photoset {
   margin: 5px;
 }
 
 .widget-area #flickr-widget .more {
   margin: 10px 60px;
-}
-
-.widget-area .ilmo .title {
-  margin: 0;
-}
-
-.widget-area .ilmo .state {
-  margin: 0;
-  color: #bbb;
-}
-
-.widget-area .ilmo-entry {
-  margin: 5px 0;
-  list-style-type: none;
 }
 
 

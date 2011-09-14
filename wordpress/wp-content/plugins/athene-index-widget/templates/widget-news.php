@@ -7,11 +7,11 @@
     </header>
     <div class="widget-content">
         <?php foreach($news as $news_item): ?>
-            <article class="news-item grid_4 alpha omega">
-                <section class="date grid_1 alpha">
+            <article class="news-item date-indexed clearfix">
+                <section class="date">
                     <h5><?php echo date('d.m.',strtotime($news_item->post_date)) ?></h5>
                 </section>
-                <section class="content grid_3 omega">
+                <section class="content">
                     <header class="title">
                         <a href="<?php echo get_permalink($news_item->ID) ?>"><?php echo $news_item->post_title ?></a>
                     </header>

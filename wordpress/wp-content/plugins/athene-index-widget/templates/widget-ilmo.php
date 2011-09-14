@@ -5,13 +5,12 @@
     <div class="widget-content">
         <ul class="ilmo clearfix">
         <?php foreach ($this->limit($entries, $items) as $entry): ?>
-            <?php /* FIXME: Horrible, horrible grid hack */ ?>
-            <li class="ilmo-entry grid_4 alpha omega">
-                <article>
-                    <section class="date grid_1 alpha">
+            <li class="ilmo-entry <?php echo $entry['state'] ?>">
+                <article class="date-indexed clearfix">
+                    <section class="date">
                         <h5><?php echo $entry['relevant_date']->format('d.m.') ?></h5>
                     </section>
-                    <section class="content grid_3 omega">
+                    <section class="content">
                         <header class="title">
                             <a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?></a>
                         </header>
