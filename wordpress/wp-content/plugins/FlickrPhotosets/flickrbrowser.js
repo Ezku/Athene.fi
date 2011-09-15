@@ -1,6 +1,6 @@
 var flickrbrowser = {
   photosetClicked: false,
-  debug: false,
+  debug: true,
   getQueryString: function(method, params) {
     
     var paramsString = "&"
@@ -22,6 +22,9 @@ var flickrbrowser = {
     if (flickrbrowser.debug && window.console && typeof console.log == "function") {
       console.log(msg);
     }
+  },
+  getDate: function(seconds) {
+    return new Date(parseInt(seconds)*1000);
   },
   getPhotosets: function(attrs) {
     var params = {user_id: flickrbrowser.user_id};
@@ -53,10 +56,17 @@ var flickrbrowser = {
   	      } else {
   	        timestampStr = dateCreatedStr+" (päivitetty "+dateUpdatedStr+")";
   	      }
-    	    jQuery("#flickrphotos").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
-    	      + "<div class=\"photosettitle\"><a href=\"#\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 2em; margin-top: -1em;'>" + title 
-    	      + "<br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i></span><br /></a></div>"
-    	      + "<div class=\"photos hide\"></div>"
+    	    jQuery("#flickrphotos").append(
+    	        "<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
+    	        + "<div class=\"photosettitle\">"
+    	            + "<a href=\"#\" style='display: block; position: relative;'>"
+    	                + "<img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' />"
+    	                + "<span style='margin: 0 5px; position: absolute; top: 50%; height: 2em; margin-top: -1em;'>"
+    	                    + title + "<br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i>"
+    	                + "</span><br />"
+    	            + "</a>"
+    	        + "</div>"
+    	        + "<div class=\"photos hide\"></div>"
     	      + "</div>");
     	    jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
     	      flickrbrowser.log(data);
@@ -162,10 +172,26 @@ var flickrbrowser = {
         jQuery('#flickr-widget').html('');
         var output = '<ul>';
         jQuery.each(data.photosets.photoset, function(i, val) {
-      	  var title = val.title._content;
-      	  jQuery("#flickr-widget").append("<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
-      	    + "<div class=\"photosettitle\"><a href=\""+flickrbrowser.link_url+"#photoset="+val.id+"\" style='display: block; position: relative;'><img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px' /><span style='margin: 0 5px; position: absolute; top: 50%; height: 1em; margin-top: -0.5em;'>" + title + "</span></a></div>"
-      	    + "<div class=\"photos hide\"></div>"
+            flickrbrowser.log(val);
+      	    var title = val.title._content;
+      	    var date = flickrbrowser.getDate(val.date_update);
+      	    jQuery("#flickr-widget").append(
+      	      "<div id=\"photoset"+val.id+"\" class=\"photoset date-indexed\" data-photoset-id=\"" + val.id + "\">"
+      	      //dates
+      	      /*+ '<section class="date">'
+      	        + '<h5>'
+      	            + date.getDate()
+      	            + '.'
+      	            + (date.getMonth()+1)
+      	            + '.'
+      	        +'</h5>'
+      	      + '</section>'*/
+      	      + "<div class=\"photosettitle\">"
+      	        + "<a href=\""+flickrbrowser.link_url+"#photoset="+val.id+"\" style='min-height: 50px; display: block;'>"
+      	            + "<img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px; float: left; margin-right: 5px;' />"
+      	            + "<span style='margin: 0; height: 50px; display: table-cell; vertical-align: middle;'>" + title + "</span>"
+      	        + "</a>"+
+      	        "</div>"
       	    + "</div>");
       	  jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
       	    jQuery("#photoset"+val.id + " img.primary").attr('src', flickrbrowser.getPhotoURL(data.photo, "thumbnail"));
