@@ -11,6 +11,7 @@ jQuery(document).ready(function() {
 		// Content block backgrounds
 		noisy('#main .menu-item .intro');
 		noisy('.entry-content');
+		noisy('.widget-content, .gce-widget-list');
 	})(function(e) {
 		return jQuery(e).noisy({
 	 	    'intensity' : 5,
