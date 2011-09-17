@@ -157,6 +157,9 @@ h1, h2, h3 {
 #main .container_16 {
 	margin-bottom: 2em;
 }
+#main hgroup.container_16 {
+	margin-bottom: 0;
+}
 
 #access a {
 	padding: 0;
