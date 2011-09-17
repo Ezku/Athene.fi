@@ -297,6 +297,7 @@ header nav a {
 }
 .widget .date-indexed .date h5 {
 	margin-bottom: 0;
+	line-height: 1.0;
 }
 .widget .date-indexed .content {
 	margin-left: 10px;

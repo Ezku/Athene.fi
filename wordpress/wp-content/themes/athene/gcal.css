@@ -1,3 +1,4 @@
+/* calendar event list */
 .gce-list-event {
   background: transparent !important;
 }
@@ -14,3 +15,33 @@
   margin: 5px 0;
 }
 
+/* calendar widget */
+.widget_gce_widget .widget-title {
+	margin-bottom: 0;
+	border-bottom: 1px solid #808D79;
+}
+.widget_gce_widget .gce-widget-list {
+	background-color: #FBFBFB;
+	padding: 0.5em;
+}
+.widget_gce_widget .gce-list .gce-list-title {
+	font-family: "Museo Slab", Georgia, serif;
+	font-weight: normal;
+	letter-spacing: -0.0556em;
+	font-size: 20px;
+	line-height: 1.0;
+	color: #BBB;
+
+	float: left;
+	width: 40px;
+	margin-right: 10px;
+}
+.widget_gce_widget .gce-list ul {
+	float: left;
+	width: 146px;
+	margin: 0;
+	margin-left: 10px;
+}
+.widget_gce_widget .gce-list li {
+	margin: 0;
+}

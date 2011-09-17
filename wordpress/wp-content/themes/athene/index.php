@@ -15,7 +15,7 @@ get_header(); ?>
 			  <?php if ( is_active_sidebar( 'index-widget-wide' ) ) : ?>
 		        <div class="container_16 clearfix">
       		        <div class="widget-area grid_16 alpha omega" role="complementary">
-      			    <?php dynamic_sidebar( 'index-widget-wide' ); ?>
+      			        <?php dynamic_sidebar( 'index-widget-wide' ); ?>
       		        </div>
 		        </div>
   		    <?php endif; ?>
