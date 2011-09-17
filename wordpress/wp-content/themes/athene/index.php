@@ -10,7 +10,7 @@ get_header(); ?>
 			<div id="content" role="main">
 			  <hgroup class="container_16 clearfix">
 		          <h2 class="grid_8 alpha tagline">Informaatioverkostojen kilta</h2>
-		          <h4 class="grid_8 omega subheader">Aalto-yliopisto</h4>
+		          <h4 class="grid_8 omega subheader">Aalto School of Science <small>(and Magic)</small></h4>
 			  </hgroup>
 			  <?php if ( is_active_sidebar( 'index-widget-wide' ) ) : ?>
 		        <div class="container_16 clearfix">

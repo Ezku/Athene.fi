@@ -82,6 +82,10 @@ address {
 	margin: 0;
 }
 
+small {
+	font-size: 0.8em;
+}
+
 /* = Skinning
 -------------------------------------------------------------- */
 
@@ -149,6 +153,10 @@ h1, h2, h3 {
 
 /* = spacing and layout
 -------------------------------------------------------------- */
+
+#main .container_16 {
+	margin-bottom: 2em;
+}
 
 #access a {
 	padding: 0;
