@@ -27,12 +27,6 @@ get_header(); ?>
                     $args = array(
                       "post_type" => get_custom_field('tyyppi')
                     );
-                    /*
-                    print "<pre>";
-                    print_r($_GET);
-                    print "</pre>";
-                    print "<pre>Ryhma: ".$wp_query->query_vars['ryhma']."</pre>";
-                    */
                     if ($layout == LAYOUT_PHUKSIT) {
                       include('toimijalista/phuksit.php');
                     } else if ($layout == LAYOUT_TOIMIJAT) {
