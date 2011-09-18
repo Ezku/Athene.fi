@@ -21,9 +21,9 @@ foreach($results as $entry):
   <div class="toimija">
   <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
   <?php print get_custom_field('nimi'); ?><br />
-  <?php if (custom_field_found('virka')) print get_custom_field('virka')."<br />"; ?>
-  <?php if (custom_field_found('puhelin') && get_custom_field('puhelin') != "") print get_custom_field('puhelin')."<br />"; ?>
-  <?php if (custom_field_found('email')) print get_custom_field('email')."<br />"; ?>
+  <?php if (custom_field_found('virka') && get_custom_field('virka') != "")      print get_custom_field('virka')."<br />"; ?>
+  <?php if (custom_field_found('puhelin') && get_custom_field('puhelin') != "")  print get_custom_field('puhelin')."<br />"; ?>
+  <?php if (custom_field_found('email') && get_custom_field('email') != "")      print get_custom_field('email')."<br />"; ?>
   </div>
 <?php
 endforeach;

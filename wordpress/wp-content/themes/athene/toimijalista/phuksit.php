@@ -1,19 +1,15 @@
 <?php
+
+// get query vars
 $defaults = array('vuosi' => date('Y'), 'ryhma' => '1');
 $params = array();
 $params['vuosi'] = $wp_query->query_vars['vuosi'] ? $wp_query->query_vars['vuosi'] : $defaults['vuosi'];
 $params['ryhma'] = $wp_query->query_vars['ryhma'] ? $wp_query->query_vars['ryhma'] : $defaults['ryhma'];
 
-$options = get_option('toimijalistat_options');
+// Fetch people in this group
 
-$args['meta_key'] = 'vuosi';
-$args['meta_value'] = $params['vuosi']; 
-$args['orderby'] = 'menu_order';
-$args['order'] = "ASC";
-
-$results = $Q->get_posts($args);
-
-$isoQ = new GetPostsQuery();
+// Fetch ISOs for this group
+$isoQ = new GetPostsQuery(); // create a new query obj - the existing one is used for phuksit
 $isoQ->set_output_type(ARRAY_A);
 $isoQ->limit = 100;
 $isoArgs = array(
@@ -24,7 +20,20 @@ $isoArgs = array(
   'order' => "ASC"
 );
 $isos = $isoQ->get_posts($isoArgs);
+// endof ISOs
+
+// fetch phuksis
+$options = get_option('toimijalistat_options');
+
+$args['meta_key'] = 'vuosi';
+$args['meta_value'] = $params['vuosi']; 
+$args['orderby'] = 'menu_order';
+$args['order'] = "ASC";
+
+$results = $Q->get_posts($args);
+// endof phuksis
 ?>
+<?php // show links to other groups and years ?>
 <h3>Phuksiryhmät</h3>
 <?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
     <a href="<?php echo get_permalink() ?><?php echo $options['phuksiryhmat']['year'].'/'.$i ?>"><?php echo $i ?></a> 
@@ -40,6 +49,8 @@ if ($options['phuksiryhmat']['firstyear'] > 0):
         </div>
     <?php endfor; ?>
 <?php endif; ?>
+
+<?php // show the actual content ?>
 <h2>ISO-henkilöt</h2>
 <?php
 $count = 0;
