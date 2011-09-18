@@ -16,11 +16,11 @@ $results = $Q->get_posts($args);
 <?php } ?>
 <?php
 $gridClass = cycle('grid_6 alpha', 'grid_6 omega');
-$gridContainerStart = cycle('<div class="container_12 clearfix">', '');
+$gridContainerStart = cycle('<div class="container_8 clearfix">', '');
 $gridContainerEnd = cycle('', '</div>');
 foreach($results as $entry):
   $post = get_post_complete($entry['ID']);
-  echo $gridContainerStart();
+  //echo $gridContainerStart();
   ?>
   <div class="toimija <?php echo $gridClass() ?>">
       <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px; float: left;" />
@@ -32,7 +32,7 @@ foreach($results as $entry):
       </div>
   </div>
 <?php
-    echo $gridContainerEnd();
+    //echo $gridContainerEnd();
 endforeach;
 if (count($results) == 0): ?>
     <p>Ei toimihenkilöitä tälle vuodelle.</p>
