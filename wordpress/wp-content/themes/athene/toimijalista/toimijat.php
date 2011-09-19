@@ -14,9 +14,11 @@ $results = $Q->get_posts($args);
     <?php endfor; ?>
     </div>
 <?php } ?>
+
+
 <?php
 $gridClass = cycle('grid_6 alpha', 'grid_6 omega');
-$gridContainerStart = cycle('<div class="container_12 clearfix">', '');
+$gridContainerStart = cycle('<div class="clearfix">', '');
 $gridContainerEnd = cycle('', '</div>');
 foreach($results as $entry):
   $post = get_post_complete($entry['ID']);
