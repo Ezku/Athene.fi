@@ -30,9 +30,11 @@ $args['meta_value'] = $params['vuosi'];
 $args['orderby'] = 'menu_order';
 $args['order'] = "ASC";
 
-$results = $Q->get_posts($args);
+$phuksis = $Q->get_posts($args);
 // endof phuksis
 ?>
+
+
 <?php // show links to other groups and years ?>
 <h3>Phuksiryhmät</h3>
 <?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
@@ -50,20 +52,41 @@ if ($options['phuksiryhmat']['firstyear'] > 0):
     <?php endfor; ?>
 <?php endif; ?>
 
+
+
 <?php // show the actual content ?>
 <h2>ISO-henkilöt</h2>
 <?php
 $count = 0;
+$gridClass = cycle('grid_6 alpha', 'grid_6 omega');
+$gridContainerStart = cycle('<div class="clearfix">', '');
+$gridContainerEnd = cycle('', '</div>');
 foreach ($isos as $iso) {
   $post = get_post_complete($iso['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 
     $count++; ?>
-  <div class="toimija iso">
-  <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
-  <?php print get_custom_field('nimi'); ?><br />
-  <?php if (custom_field_found('email')) print get_custom_field('email')."<br />"; ?>
-  <?php if (custom_field_found('puhelin')) print get_custom_field('puhelin')."<br />"; ?>
-  </div>
+    <?php echo $gridContainerStart() ?>
+    <div class="toimija iso <?php echo $gridClass() ?>">
+        <p class="field photo">
+              <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" />
+        </p>
+        <?php if (custom_field_found('nimi')): ?> 
+            <p class="field name">
+                <?php print get_custom_field('nimi'); ?>
+            </p>
+        <?php endif; ?>
+        <?php if (custom_field_found('puhelin')): ?> 
+            <p class="field phone">
+                <?php print get_custom_field('puhelin'); ?>
+            </p>
+        <?php endif; ?>
+        <?php if (custom_field_found('email')): ?> 
+            <p class="field email">
+                <?php print get_custom_field('email'); ?>
+            </p>
+        <?php endif; ?>
+    </div>
+    <?php echo $gridContainerEnd() ?>
   <?php
   }
 }
@@ -73,19 +96,40 @@ if ($count == 0) {
     <?php
 }
 ?>
+
+
 <h2 style="clear: left;">Phuksit</h2>
 <?php
 $count = 0;
-foreach($results as $entry) {
-  $post = get_post_complete($entry['ID']);
+$gridClass = cycle('grid_3 alpha', 'grid_3', 'grid_3', 'grid_3 omega');
+$gridContainerStart = cycle('<div class="clearfix">', '', '', '');
+$gridContainerEnd = cycle('', '', '', '</div>');
+foreach($phuksis as $phuksi) {
+  $post = get_post_complete($phuksi['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 
     $count++; ?>
-  <div class="toimija phuksi">
-  <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" /><br />
-  <?php print get_custom_field('nimi'); ?><br />
-  <?php if (custom_field_found('email')) print get_custom_field('email')."<br />"; ?>
-  <?php if (custom_field_found('puhelin')) print get_custom_field('puhelin')."<br />"; ?>
+    <?php echo $gridContainerStart() ?>
+  <div class="toimija phuksi <?php echo $gridClass() ?>">
+      <p class="field photo">
+          <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" />
+      </p>
+      <?php if (custom_field_found('nimi')): ?> 
+          <p class="field name">
+              <?php print get_custom_field('nimi'); ?>
+          </p>
+      <?php endif; ?>
+      <?php if (custom_field_found('puhelin')): ?> 
+          <p class="field phone">
+              <?php print get_custom_field('puhelin'); ?>
+          </p>
+      <?php endif; ?>
+      <?php if (custom_field_found('email')): ?> 
+          <p class="field email">
+              <?php print get_custom_field('email'); ?>
+          </p>
+      <?php endif; ?>
   </div>
+  <?php echo $gridContainerEnd() ?>
 <?php
 }
 }

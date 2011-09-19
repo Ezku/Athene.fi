@@ -27,10 +27,26 @@ foreach($results as $entry):
   <div class="toimija <?php echo $gridClass() ?>">
       <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px; float: left;" />
       <div class="info" style="margin-left: 110px;">
-          <?php print get_custom_field('nimi'); ?><br />
-          <?php if (custom_field_found('virka') && get_custom_field('virka') != "")      print get_custom_field('virka')."<br />"; ?>
-          <?php if (custom_field_found('puhelin') && get_custom_field('puhelin') != "")  print get_custom_field('puhelin')."<br />"; ?>
-          <?php if (custom_field_found('email') && get_custom_field('email') != "")      print get_custom_field('email')."<br />"; ?>
+          <?php if (custom_field_found('virka')): ?> 
+              <p class="field title">
+                  <?php print get_custom_field('virka'); ?>
+              </p>
+          <?php endif; ?>
+          <?php if (custom_field_found('nimi')): ?> 
+                <p class="field name">
+                    <?php print get_custom_field('nimi'); ?>
+                </p>
+          <?php endif; ?>
+          <?php if (custom_field_found('puhelin')): ?> 
+              <p class="field phone">
+                  <?php print get_custom_field('puhelin'); ?>
+              </p>
+          <?php endif; ?>
+          <?php if (custom_field_found('email')): ?> 
+              <p class="field email">
+                  <?php print get_custom_field('email'); ?>
+              </p>
+          <?php endif; ?>
       </div>
   </div>
 <?php

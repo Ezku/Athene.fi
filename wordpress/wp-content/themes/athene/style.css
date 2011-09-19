@@ -394,3 +394,11 @@ blockquote {
   text-align: center; */
   margin: 25px 0;
 }
+
+.toimija .field {
+    margin: 0;
+}
+
+.toimija .field.title {
+    font-weight: bold;
+}
