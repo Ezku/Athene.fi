@@ -66,11 +66,11 @@ foreach ($isos as $iso) {
   </div>
   <?php
   }
-  if ($count == 0) {
+}
+if ($count == 0) {
     ?> 
     <p>Ei isoja tälle ryhmälle</p>
     <?php
-  }
 }
 ?>
 <h2 style="clear: left;">Phuksit</h2>
