@@ -391,8 +391,8 @@ blockquote {
   /*float: left; 
   width: 230px; 
   min-height: 200px;
-  text-align: center; */
-  margin: 25px 0;
+  text-align: center; 
+  margin: 25px 0;*/
 }
 
 .toimija .field {
@@ -401,4 +401,16 @@ blockquote {
 
 .toimija .field.title {
     font-weight: bold;
+}
+
+/* hacks for person list grids */
+
+.toimija.grid_3.alpha,
+.toimija.grid_3.omega {
+    width: 150px;
+}
+
+.toimija.grid_6.alpha,
+.toimija.grid_6.omega {
+    width: 330px;
 }
