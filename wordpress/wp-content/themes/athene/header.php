@@ -35,6 +35,7 @@
 <!--[if lt IE 9]>
 <script src="<?php bloginfo( 'template_directory' ); ?>/html5.js" type="text/javascript"></script>
 <![endif]-->
+<link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ) ?>/images/athene.ico" type="image/x-icon" />
 
 <?php wp_head(); ?>
 </head>
