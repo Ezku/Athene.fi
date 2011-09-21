@@ -1,0 +1,15 @@
+# Translation of 3.2.x in Finnish (Athene variant)
+# This file is distributed under the same license as the 3.2.x package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2011-09-20 15:15:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: 3.2.x\n"
+
+#: wp-includes/general-template.php:592
+msgid "Page not found"
+msgstr "Sivua ei löydy"
