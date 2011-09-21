@@ -196,10 +196,22 @@ class SubMenuWalker extends Walker {
 	}
 	
 	private function item_intro($item) {
-	    $intro = get_post_complete($item->object_id)->intro;
+	    // Gets the custom "intro" field from the item
+	    $intro = trim(get_post_complete($item->object_id)->intro);
+
+	    if (empty($intro)) {
+	        // Fallback to menu item description
+	        $intro = trim($item->description);
+	    }
+
+	    if (empty($intro) && $item->object == "category") {
+	        // Fallback to description from category, if this is a category
+	        $intro = trim(get_category($item->object_id)->description);
+	    }
+
 	    if (strlen($intro)) {
 	        $intro = $this->format('intro', $intro);
-    	    return $this->wrap('intro', $intro);
+	        return $this->wrap('intro', $intro);
 	    }
 	}
 
