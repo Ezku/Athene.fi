@@ -6,9 +6,9 @@
 *
 * This class has similar functionality (and arguments) to the WordPress
 * get_posts() function, but this class does things that were simply not
-* possible using the built-in WP function.  In particular, paginating
-* results was not possible using the built-in function because WP did
-* not make a "count_results" function available (?). 
+* possible using the built-in WP functions, including automatically fetching 
+* custom fields, far more powerful (and sensible) search criteria, 
+* and the pagination of results. 
 * 
 * I've constructed a custom MySQL query that does the searching because I ran into
 * weird and whacky restrictions with the WP db API functions; this lets me
@@ -17,7 +17,7 @@
 TODO: Nonces for search forms.
 
 wp_create_nonce('cctm_delete_field')
-$nonce = self::_get_value($_GET, '_wpnonce');
+$nonce = self::get_value($_GET, '_wpnonce');
 if (! wp_verify_nonce($nonce, 'cctm_delete_field') ) {
 	die( __('Invalid request.', CCTM_TXTDOMAIN ) );
 }
@@ -31,7 +31,10 @@ class GetPostsQuery
 	// any of the custom fields' content.
 	const colon_separator = '::::';
 	const comma_separator = ',,,,';
-	// Used to check that the group_concat is getting everything.
+	// We append this to the end of concatenated results to ensure that the MySQL 
+	// GROUP_CONCAT() function is getting everything.  If the 'group_concat_max_len'
+	// setting is too small, the caboose won't be at the end of the concatenated data,
+	// and then we'll know the results are borked.
 	const caboose = '$$$$'; 
 	
 	private $P; // stores the Pagination object.
@@ -42,7 +45,13 @@ class GetPostsQuery
 	
 	// Goes to true if orderby is set to a value not in the $wp_posts_columns array
 	private $sort_by_meta_flag = false;
-		
+
+	// Goes to true if orderby is set to 'random'
+	private $sort_by_random = false;
+	
+	// Goes to true if the date_column is set to something not in wp_posts
+	private $custom_field_date_flag = false;
+			
 	// Set in the controller. If set to true, some helpful debugging msgs are printed.
 	public $debug = false; 
 
@@ -96,6 +105,7 @@ class GetPostsQuery
 	// For date searches (greater than, less than)
 	private $date_cols = array('post_date','post_date_gmt','post_modified','post_modified_gmt');
 	
+	
 	//! Defaults
 	// args and defaults for get_posts()
 	public static $defaults = array(
@@ -103,9 +113,9 @@ class GetPostsQuery
 		'offset' 		=> null,  
 		'orderby'		=> 'ID', // valid column (?) cannot be a metadata column
 		'order'			=> 'DESC', // ASC or DESC
-		// include: comma-sparated string or array of IDs. Any posts you want to include. This shrinks the "pool" of resources available: all other search parameters will only search against the IDs listed, so this paramters is probably best suited to be used by itself alone. If you want to always return a list of IDs in addition to results returned by other search parameters, use the "append" parameter instead.
-		'include'		=> '', 
-		'exclude'		=> '', // comma-sparated string or array of IDs. Any posts you want to include.
+		// include: comma-sparated string or array of IDs. Any posts you want to include. This shrinks the "pool" of resources available: all other search parameters will only search against the IDs listed, so this paramter is probably best suited to be used by itself alone. If you want to always return a list of IDs in addition to results returned by other search parameters, use the "append" parameter instead.
+		'include'		=> '', // see above: usually this parameter is used by itself.
+		'exclude'		=> '', // comma-sparated string or array of IDs. Any posts you want to exclude from search results.
 		'append'		=> '', // comma-sparated string or array of IDs. Any posts you always want to include *in addition* to any search criteria. (This uses the 'OR' criteria)
 		
 		// used to search custom fields
@@ -113,25 +123,39 @@ class GetPostsQuery
 		'meta_value'	=> '',    
 		
 		// Direct searches (mostly by direct column matches)
-		'post_type'		=> '',	// comma-sparated string or array
-		'omit_post_type'	=> 'revision', // comma-sparated string or array
-		'post_mime_type' => '', // comma-sparated string or array
-		'post_parent'	=> '',	// comma-sparated string or array 
-		'post_status' 	=> 'publish',	// comma-sparated string or array
-		'post_title'	=> '', // for exact match
-		'author'		=> '', // search by author's display name
-		'post_date'		=> '', // matches YYYY-MM-DD.
-		'post_modified'	=> '', // matches YYYY-MM-DD.
-		'yearmonth'		=> '', // yyyymm
+		'post_type'			=> '',			// comma-sparated string or array
+		'omit_post_type'	=> 'revision',	// comma-sparated string or array
+		'post_mime_type' 	=> '', 			// comma-sparated string or array
+		'post_parent'		=> '',			// comma-sparated string or array 
+		'post_status' 		=> 'publish',	// comma-sparated string or array
+		'post_title'		=> '', 			// for exact match
+		'author'			=> '', 			// search by author's display name
+		'post_date'			=> '',			// matches YYYY-MM-DD.
+		'post_modified'		=> '', 			// matches YYYY-MM-DD.
+		'yearmonth'			=> '', 			// yyyymm
 		
 		// Date searches: set the date_column to change the column used to filter the dates.
-		'date_min'		=> '', 	// YYYY-MM-DD (optionally include the time)
-		'date_max'		=> '',	// YYYY-MM-DD (optionally include the time)
+		'date_min'		=> '', 				// YYYY-MM-DD (optionally include the time)
+		'date_max'		=> '',				// YYYY-MM-DD (optionally include the time)
+		
+		// Specify the desired date format to be used in the output of the following date collumns:
+		// post_date, post_date_gmt, post_modified, post_modified_gmt
+		// The default is the standard MySQL YYYY-MM-DD.
+		// Internally, the native YYYY-MM-DD is used.
+		// 'mm/dd/yy'
+		// 'yyyy-mm-dd'
+ 		// 'yy-mm-dd'
+		// 'd M, y'
+		// 'd MM, y'
+		// 'DD, d MM, yy'
+		// 'day' d 'of' MM 'in the year' yy
+		'date_format'	=> null,
 		
 		// Search by Taxonomies
 		'taxonomy'		=> null, 	// category, post_tag (tag), or any custom taxonomy
-		'taxonomy_term'	=> null,	// comma-separated string or array
-		'taxonomy_slug'	=> null,	// comma-separated string or array 
+		'taxonomy_term'	=> null,	// comma-separated string or array. "term" is usually English
+		'taxonomy_slug'	=> null,	// comma-separated string or array. "slug" is usually lowercase, URL friendly ver. of "term"
+		'taxonomy_depth' => 1,		// how deep do we go? http://code.google.com/p/wordpress-summarize-posts/issues/detail?id=21
 		
 		// uses LIKE %matching%
 		'search_term'	=> '', // Don't use this with the above search stuff 
@@ -147,12 +171,16 @@ class GetPostsQuery
 		
 	);
 
+	// Accessed by the set_default function, this affects field values when the recordset is 
+	// normalized.
+	private static $custom_default_values = array();
+
 	public $cnt; // number of search results
 	public $SQL; // store the query here for debugging.
 
 	//------------------------------------------------------------------------------
 	/**
-	* Dynamically handle getting of custom post types.
+	* Dynamically handle getting of custom post types. ??? <--- WHAT IS THIS???
 	*/
 	public function __call($name, $args)
 	{
@@ -197,47 +225,40 @@ class GetPostsQuery
 	
 	//------------------------------------------------------------------------------
 	/**
-	* 
+	 * 
+	 */
+	public function __isset($var)
+	{
+		return isset($this->args[$var]);
+	}
+	
+	//------------------------------------------------------------------------------
+	/**
+	* Used for debugging, this prints out the active search criteria and SQL query.
+	* It is triggered when a user prints the GetPostsQuery object, e.g.
+	* $Q = new GetPostsQuery();
+	* print $Q;
 	*/
 	public function __toString() 
 	{
-		return sprintf(
-			'<div class="summarize-posts-summary">
-				<h1>Summarize Posts</h1>
-				
-				<h2>%s</h2>
-					<div class="summarize-post-arguments">%s</div>
-
-				<h2>%s</h2>
-					<div class="summarize-post-output_type">%s</div>
-					
-				<h2>%s</h2>
-					<div class="summarize-posts-query"><textarea rows="20" cols="80">%s</textarea></div>
-					
-				<h2>%s</h2>
-					<div class="summarize-posts-errors">%s</div>
-				
-				<h2>%s</h2>
-					<div class="summarize-posts-shortcode"><textarea rows="3" cols="80">%s</textarea></div>
-					
-				<h2>%s</h2>
-					<div class="summarize-posts-results"><textarea rows="20" cols="80">%s</textarea></div>
-			</div>'
-			, __('Arguments')
-			, $this->format_args()
-			, __('Output Type')
-			, $this->output_type
-			, __('Raw Database Query')
-			, $this->SQL
-			, __('Errors')
-			, $this->format_errors()
-			, __('Comparable Shorcode')
-			, $this->get_comparable_shortcode()
-			, __('Results')
-			, print_r( $this->get_posts(), true)
-		);
+		return $this->debug();
 	}
 
+	//------------------------------------------------------------------------------
+	/**
+	 * Not quite "unset" in the traditional sense... this reverts back to the default
+	 * values where applicable.
+	 */
+	public function __unset($var) 
+	{
+		if ( isset(self::$defaults[$var]) ) {
+			$this->args[$var] = self::$defaults[$var];
+		}
+		else {
+			unset($this->args[$var]);
+		}	
+	}
+	
 	//------------------------------------------------------------------------------
 	/**
 	* Validate and set parameters
@@ -266,7 +287,11 @@ class GetPostsQuery
 					}
 					break;
 				case 'orderby':
-					if ( !in_array( $val, $this->wp_posts_columns) )
+					if ($val == 'random') {
+						$this->sort_by_random = true;
+						$this->args['order'] = ''; // blank this out
+					}
+					elseif ( !in_array( $val, $this->wp_posts_columns) )
 					{
 						$this->sort_by_meta_flag = true;
 						$this->args[$var] = $val;
@@ -287,6 +312,7 @@ class GetPostsQuery
 				// Dates
 				case 'post_modified':
 				case 'post_date':
+				case 'date':
 					// if it's a date
 					if ( !empty($val) && !$this->_is_date($val) )
 					{
@@ -294,7 +320,7 @@ class GetPostsQuery
 					}
 					else
 					{
-						$this->args[$var] = $val;
+						$this->args['post_date'] = $val;
 					}				
 					break;
 				// Datetimes
@@ -308,6 +334,28 @@ class GetPostsQuery
 					else
 					{
 						$this->args[$var] = $val;
+					}
+					break;
+				// Date formats, some short-hand (see http://php.net/manual/en/function.date.php)
+				case 'date_format':
+					switch($val) {
+						case '1': // e.g. March 10, 2011, 5:16 pm
+							$this->args['date_format'] = 'F j, Y, g:i a';
+							break;
+						case '2': // e.g. 10 March, 2011
+							$this->args['date_format'] = 'j F, Y';
+							break;
+						case '3': // e.g. Thursday March 10th, 2011
+							$this->args['date_format'] = 'l F jS, Y';
+							break;
+						case '4': // e.g. 3/30/11
+							$this->args['date_format'] = 'n/j/y';
+							break;
+						case '5': // e.g. 3/30/2011
+							$this->args['date_format'] = 'n/j/Y';
+							break;
+						default:
+							$this->args['date_format'] = $val;	
 					}
 					break;
 				// Post Types
@@ -331,79 +379,143 @@ class GetPostsQuery
 					
 				// Taxonomies
 				case 'taxonomy':
+					// die('--->'.$val);
 					if ( taxonomy_exists($val) )
 					{
-						$this->args[$var] = $val;
+						$this->args['taxonomy'] = $val;
 					}
 					else 
 					{
-						$this->args[$var] = null;
+						$this->args['taxonomy'] = null;
 					}
 					break;
 				// The category_description() function adds <p> tags to the value.
 				case 'taxonomy_term':
-					$this->args[$var] = $this->_comma_separated_to_array($val,'no_tags');
+					$this->args['taxonomy_term'] = $this->_comma_separated_to_array($val,'no_tags');
 					break;
 				case 'taxonomy_slug':
-					$this->args[$var] = $this->_comma_separated_to_array($val,'alpha');
-					// print $val;
-					
-					//print_r($this->_comma_separated_to_array($val,'alpha')); exit;
+					$this->args['taxonomy_slug'] = $this->_comma_separated_to_array($val,'alpha');
+					break;
+				case 'taxonomy_depth':
+					$this->args['taxonomy_depth'] =(int) $val;
 					break;
 				case 'search_columns':
-					$this->args[$var] = $this->_comma_separated_to_array($val,'search_columns');
+					$this->args['search_columns'] = $this->_comma_separated_to_array($val,'search_columns');
 					break;
 				
 				// And or Or
 				case 'join_rule':
 					if ( in_array($val, array('AND', 'OR')) )
 					{
-						$this->args[$var] = $val;
+						$this->args['join_rule'] = $val;
 					}
 					else
 					{
-						$this->errors[] = __('Invalid parameter for join_rule.');
+						$this->errors[] = __('Invalid parameter for join_rule.', SummarizePosts::txtdomain);
 					}
 					break;
 				// match rule...
 				case 'match_rule':
 					if ( in_array($val, array('contains','starts_with','ends_with')) )
 					{
-						$this->args[$var] = $val;
+						$this->args['match_rule'] = $val;
 					}
 					else
 					{
-						$this->errors[] = __('Invalid parameter for match_rule.');
+						$this->errors[] = __('Invalid parameter for match_rule.', SummarizePosts::txtdomain);
 					}
 					break;
 				case 'date_column':
-					// ??? how to do searches for a custom date field
+					// Simple case: user specifies a column from wp_posts
 					if ( in_array($val, $this->date_cols) )
 					{
-						$this->args[$var] = $val;
+						$this->args['date_column'] = $val;
 					}
+					// You can't do a date sort on a built-in wp_posts column other than the ones id'd in $this->date_cols
+					elseif ( in_array($val, $this->wp_posts_columns))
+					{
+						$this->errors[] = __('Invalid date column.', SummarizePosts::txtdomain);
+					}
+					// Otherwise, we're in custom-field land
 					else
 					{
-						$this->errors[] = __('Invalid date column.');
+						$this->custom_field_date_flag = true;
+						$this->args['date_column'] = $val;
 					}
 					
 					break;
 				case 'paginate':
 					$this->args[$var] = (bool) $val;
 					break;
+				// If you're here, it's assumed that you're trying to filter on a custom field
 				default:
 					$this->args[$var] = $val;
 			}
 			
 		}
-		else
-		{
-			$this->errors[] = __('Invalid input parameter:') . $var;
+		else {
+			$this->errors[] = __('Invalid input parameter:', SummarizePosts::txtdomain ) . $var;
 		}
     }
     
     
 	//! Private Functions
+	//------------------------------------------------------------------------------
+	/**
+	 * If the user is doing a taxonomy-based search and they need to retrieve 
+	 * hierarchical data, then we follow the rabit hole down n levels as 
+	 * defined by taxonomy_depth, then we append the results to the $this->args['taxonomy_term']
+	 * argument.
+	 *
+	 * See http://code.google.com/p/wordpress-summarize-posts/issues/detail?id=21
+	 *
+	 * @param	array	taxonomy_terms that we want to follow down for their children terms
+	 * @return array	inital taxonomy_terms and their children (to the nth degree as def'd by taxonomy_depth) 
+	 */
+	private function _append_children_taxonomies($all_terms_array) {
+		
+		global $wpdb;
+
+		// We start with the parent terms...
+		$parent_terms_array = $all_terms_array;
+		
+		for ( $i= 1; $i <= $this->args['taxonomy_depth']; $i++ ) {
+			$terms = ''; 
+			foreach ($parent_terms_array as &$t)
+			{
+				$t = $wpdb->prepare('%s', $t);
+			}
+			
+			$terms = '('. implode(',',$parent_terms_array) . ')';
+		
+			$query = $wpdb->prepare("SELECT {$wpdb->terms}.name
+				FROM 
+				{$wpdb->terms} JOIN {$wpdb->term_taxonomy} ON {$wpdb->terms}.term_id={$wpdb->term_taxonomy}.term_id
+				WHERE 
+				{$wpdb->term_taxonomy}.parent IN (
+					SELECT {$wpdb->terms}.term_id 
+					FROM {$wpdb->terms} 
+					JOIN {$wpdb->term_taxonomy} ON {$wpdb->terms}.term_id={$wpdb->term_taxonomy}.term_id
+					WHERE wp_terms.name IN $terms
+					AND {$wpdb->term_taxonomy}.taxonomy=%s
+				)", $this->args['taxonomy']);
+				
+			$results = $wpdb->get_results( $query, ARRAY_A );
+			
+			if ( empty($restuls) ) {
+				break; // if there are no results, then we've traced this out.
+			}
+			
+			$parent_terms_array = array(); // <-- reset this thing for the next iteration
+			foreach($results as $r) {
+				$all_terms_array[] = $r['name']; // append
+				$parent_terms_array[] = $r['name']; // and set this for the next generation
+			}
+		}
+		
+		return array_unique($all_terms_array);
+					
+	}
 	
 	//------------------------------------------------------------------------------
 	/**
@@ -433,6 +545,7 @@ class GetPostsQuery
 		foreach ($output as $i => $item)
 		{
 			$output[$i] = trim($item);
+			$item = trim($item);
 			switch ($type)
 			{
 				case 'integer':
@@ -459,10 +572,12 @@ class GetPostsQuery
 					}
 					break;
 				case 'search_columns':
-					if ( !in_array($item, $this->wp_posts_columns ) )
+					// Taking this on: http://code.google.com/p/wordpress-summarize-posts/issues/detail?id=27
+					if ( !preg_match('/[a-z_0-9]/i', $item) )
 					{
-						$this->errors[] = __('Invalid search_column:') . $item;
+						$this->errors[] = __('Invalid column name. Column names may only contain alphanumeric characters and underscores: ') . $item;
 					}
+
 					break;
 				case 'no_tags':
 					$output[$i] = strip_tags($item);
@@ -482,7 +597,46 @@ class GetPostsQuery
 		global $wpdb;
 		$results = $wpdb->get_results( 'SELECT FOUND_ROWS() as cnt', OBJECT );
 		return $results[0]->cnt;
-	}	
+	}
+	
+	//------------------------------------------------------------------------------
+	/**
+	 * Change the date of results (depending on whether or not the 'date_format' 
+	 * option was set. 
+	 *
+	 * @param	mixed	result set
+	 * @return	mixed 	result set
+	 */
+	private function _date_format($results) {
+		if ( $this->args['date_format']) {
+			
+			$date_cols = $this->date_cols;
+			if (!in_array($this->args['date_column'], $this->date_cols)) {
+				$date_cols[] = $this->args['date_column'];
+			}
+
+			foreach($results as &$r) {
+				foreach ($date_cols as $key) {
+					
+					if ( $this->output_type == OBJECT ) {
+						if (isset($r->$key) && !empty($r->$key)) {
+							$date = date_create($r->$key);
+							$r->$key = date_format($date, $this->args['date_format']);
+						}
+					}
+					else {
+						if (isset($r[$key]) && !empty($r[$key])) {
+							$date = date_create($r[$key]);
+							$r[$key] = date_format($date, $this->args['date_format']);						
+						}
+					}
+				}
+			}
+		}
+		
+		return $results;
+	}
+	
 	//------------------------------------------------------------------------------
 	/**
 	Ensure a valid date. 0000-00-00 or '' qualify as valid; if you need to ensure a REAL
@@ -499,8 +653,8 @@ class GetPostsQuery
 	*/
 	private function _is_date( $date )
     {
-		list( $y, $d, $m ) = explode('-', $date );
-		
+		list( $y, $m, $d ) = explode('-', $date );
+
 		if ( is_numeric($m) && is_numeric($d) && is_numeric($y) && checkdate( $m, $d, $y ) )
         {
         	return true;
@@ -517,11 +671,18 @@ class GetPostsQuery
 	* @param	string	
 	* @return	boolean
 	*/
-	private function _is_datetime( $datetime, $raw_args=null)
+	private function _is_datetime( $datetime )
 	{
-		list ($date, $time) = explode(' ', $datetime);
+		$date = null;
+		$time = null;
+		if (strpos($datetime, ' ')) {
+			list ($date, $time) = explode(' ', $datetime);
+		}
+		// Time was omitted
+		else {
+			$date = $datetime; 
+		}
 		
-		//print $date . '<<<<'; exit;
 		if ( !$this->_is_date($date) )
 		{
 			return false;
@@ -534,15 +695,71 @@ class GetPostsQuery
 		$time_format = 'H:i:s';
 		$unixtime = strtotime($time);
 		$converted_time =  date($time_format, $unixtime);
-		//print $converted_time . '<-----------'; exit;
-		if ( $converted_time != $time )
-		{
+
+		if ( $converted_time != $time ) {
 			 return false;		
 		}
 		
 		return true;
 
 	}	
+
+	//------------------------------------------------------------------------------
+	/**
+	 * This makes each record in the recordset have the same attributes.  This helps
+	 * us avoid "Undefined property" or "Undefined index" notices. This function pools
+	 * ALL available attributes and ensures that each record in the recordset has the 
+	 * same attributes.  Any missing attributes are added as an empty string.
+	 *
+	 * @param	mixed	recordset (an array of objects or array of arrays)
+	 * @return	mixed	recordset (an array of objects or array of arrays)
+	 */
+	private function _normalize_recordset($records) {
+		// Default values will force an attribute, even if the attribute doesn't exist in the recordset	
+		$unique_attributes = array_keys(self::$custom_default_values);
+
+		// Get unique attributes
+		foreach($records as $r) {
+			$unique_attributes = array_merge( array_keys( (array) $r), $unique_attributes);	
+		}
+		$unique_attributes = array_unique($unique_attributes);
+
+		// Ensure that each record has the same attributes
+		foreach($records as &$r) {
+			foreach($unique_attributes as $a) {			
+				if ( $this->output_type == OBJECT ) {
+					if (!isset($r->$a)) {
+						$r->$a = '';
+					}
+				}
+				else {
+					if (!isset($r[$a])) {
+						$r[$a] = '';
+					}					
+				}
+			}
+		}
+		
+		// Set any default values
+		if (!empty(self::$custom_default_values)) {
+			foreach (self::$custom_default_values as $key => $value) {
+				foreach ($records as &$r) {
+					if ( $this->output_type == OBJECT ) {
+						if (empty($r->$key)) {
+							$r->$key = $value;
+						}
+					}
+					else {
+						if (empty($r[$key])) {
+							$r[$key] = $value;
+						}					
+					}	
+				}
+			}
+		}	
+		
+		return $records;
+	}
 	
 	//! SQL
 	/*------------------------------------------------------------------------------	
@@ -553,6 +770,7 @@ class GetPostsQuery
 		query_distinct_yearmonth()
 	
 	INPUT:
+		none; this relies on the values set in class variables
 		$select
 		$limit
 		$use_offset
@@ -569,67 +787,7 @@ class GetPostsQuery
 	You can't use the WP query_posts() function here because the global $wp_the_query
 	isn't defined yet.  get_posts() works, however, but its format is kinda whack.  
 	Jeezus H. Christ. Crufty ill-defined API functions.
-	http://shibashake.com/wordpress-theme/wordpress-query_posts-and-get_posts
-
-
-
-SELECT 
-wp_posts.*
-, parent.ID as 'parent_ID'
-, parent.post_title as 'parent_post_title'
-, author.display_name as 'author'
-, thumbnail.ID as 'thumbnail_id'
-, thumbnail.post_content as 'thumbnail_src'
-, metatable.metadata
-
-FROM wp_posts wp_posts
-LEFT JOIN wp_posts parent ON wp_posts.ID=parent.post_parent
-LEFT JOIN wp_users author ON wp_posts.post_author=author.ID
-LEFT JOIN wp_term_relationships ON wp_posts.ID=wp_term_relationships.object_id 
-LEFT JOIN wp_term_taxonomy ON wp_term_taxonomy.term_taxonomy_id=wp_term_relationships.term_taxonomy_id
-LEFT JOIN wp_terms ON wp_terms.term_id=wp_term_taxonomy.term_id
-LEFT JOIN wp_postmeta thumb_join ON wp_posts.ID=thumb_join.post_id
-	AND thumb_join.meta_key='_thumbnail_id'
-LEFT JOIN wp_posts thumbnail ON thumbnail.ID=thumb_join.meta_key
-LEFT JOIN wp_postmeta ON wp_posts.ID=wp_postmeta.post_id
--- a big mess of metadata here:
-LEFT JOIN
-(
-	SELECT
-	wp_postmeta.post_id, 
-	GROUP_CONCAT( CONCAT(wp_postmeta.meta_key,'<!--COLON-->', wp_postmeta.meta_value) SEPARATOR '<!--COMMA-->') as metadata
-	FROM wp_postmeta
-	GROUP BY wp_postmeta.post_id
-) metatable ON wp_posts.ID=metatable.post_id
-WHERE
-1
-AND wp_posts.post_type != 'revision'
-
--- AND wp_posts.post_title = 'About'
--- AND DATE_FORMAT(wp_posts.post_modified, '%Y%m') = '201102'
--- AND wp_postmeta.meta_key = 'yarn'
--- AND wp_postmeta.meta_value = 'nada'
--- AND author.display_name = 'fireproofsocks'
--- AND DATE(wp_posts.post_date) = '2010-11-13'
--- AND DATE(wp_posts.post_modified) = '2010-11-13'
--- AND wp_term_taxonomy.taxonomy='post_tag'
--- AND wp_terms.name='star wars'
--- AND wp_terms.slug='uncategorized'
-AND (
-	wp_posts.post_title LIKE '%elcom%'
-	OR
-	wp_posts.post_content LIKE '%elcom%'
-	OR 
-	wp_postmeta.meta_value LIKE '%elcom%'
-)
-
-AND wp_posts.post_modified >= '2010-11-13'
-AND wp_posts.post_modified <= '2011-02-15'
-GROUP BY wp_posts.ID
-ORDER BY wp_posts.ID DESC
-LIMIT 10 
-OFFSET 0
-	
+	http://shibashake.com/wordpress-theme/wordpress-query_posts-and-get_posts	
 	------------------------------------------------------------------------------*/
 	private function _get_sql()
 	{
@@ -644,7 +802,7 @@ OFFSET 0
 			, parent.post_excerpt as 'parent_excerpt'
 			, author.display_name as 'author'
 			, thumbnail.ID as 'thumbnail_id'
-			, thumbnail.post_content as 'thumbnail_src'
+			, thumbnail.guid as 'thumbnail_src'
 			, metatable.metadata
 			
 			[+select_metasortcolumn+]
@@ -657,7 +815,7 @@ OFFSET 0
 			LEFT JOIN {$wpdb->terms} ON {$wpdb->terms}.term_id={$wpdb->term_taxonomy}.term_id
 			LEFT JOIN {$wpdb->postmeta} thumb_join ON {$wpdb->posts}.ID=thumb_join.post_id
 				AND thumb_join.meta_key='_thumbnail_id'
-			LEFT JOIN {$wpdb->posts} thumbnail ON thumbnail.ID=thumb_join.meta_key
+			LEFT JOIN {$wpdb->posts} thumbnail ON thumbnail.ID=thumb_join.meta_value
 			LEFT JOIN {$wpdb->postmeta} ON wp_posts.ID={$wpdb->postmeta}.post_id
 			LEFT JOIN
 			(
@@ -691,7 +849,7 @@ OFFSET 0
 			[+taxonomy_slug+]
 			
 			[+search+]	
-			
+			[+exact_date+]
 			[+date_min+]
 			[+date_max+]
 			)
@@ -725,14 +883,30 @@ OFFSET 0
 		$hash['taxonomy'] = $this->_sql_filter($wpdb->term_taxonomy,'taxonomy','=', $this->args['taxonomy']);
 		$hash['taxonomy_term'] = $this->_sql_filter($wpdb->terms,'name','IN', $this->args['taxonomy_term']);
 		$hash['taxonomy_slug'] = $this->_sql_filter($wpdb->terms,'slug','IN', $this->args['taxonomy_slug']);
-			
-		$hash['date_min'] = $this->_sql_filter($wpdb->posts, $this->date_column,'>=', $this->args['date_min']);
-		$hash['date_max'] = $this->_sql_filter($wpdb->posts, $this->date_column,'<=', $this->args['date_max']);
+		
+		if ($this->custom_field_date_flag) {
+			$hash['exact_date'] = $this->_sql_custom_date_filter($this->args['post_date']);
+			$hash['date_min'] = $this->_sql_custom_date_filter($this->args['date_min'], '>=');
+			$hash['date_max'] = $this->_sql_custom_date_filter($this->args['date_max'], '<=');
+		}
+		else { 
+			$hash['exact_date'] = $this->_sql_filter($wpdb->posts, $this->date_column,'=', $this->args['post_date']);
+			$hash['date_min'] = $this->_sql_filter($wpdb->posts, $this->date_column,'>=', $this->args['date_min']);
+			$hash['date_max'] = $this->_sql_filter($wpdb->posts, $this->date_column,'<=', $this->args['date_max']);
+//			die($hash['date_min']);  
+		}
 			
 		$hash['search'] = $this->_sql_search();
 		
 		// Custom handling for sorting on custom fields
-		if ($this->sort_by_meta_flag)
+		// http://code.google.com/p/wordpress-summarize-posts/issues/detail?id=12
+		if ($this->sort_by_random) {
+			$hash['orderby'] = 'RAND()';
+			$hash['select_metasortcolumn'] = '';
+			$hash['join_for_metasortcolumn'] = '';
+		}
+		// See http://code.google.com/p/wordpress-summarize-posts/issues/detail?id=20
+		elseif ($this->sort_by_meta_flag)
 		{
 			$hash['orderby'] = 'metasortcolumn';
 			$hash['select_metasortcolumn'] = ', orderbymeta.meta_value as metasortcolumn';
@@ -757,9 +931,9 @@ OFFSET 0
 		$this->SQL = self::parse($this->SQL, $hash);
 		// Strip whitespace
 		$this->SQL  = preg_replace('/\s\s+/', ' ', $this->SQL );
+
 		return $this->SQL;
-		// $results = $wpdb->get_results( $this->SQL, ARRAY_A );
-		//return $results;
+
 	}
 
 	//------------------------------------------------------------------------------
@@ -798,11 +972,27 @@ OFFSET 0
 		}
 	}
 	
-
+	//------------------------------------------------------------------------------
+	/**
+	 * Used when the date_column is set to something that's a custom field
+	 */
+	private function _sql_custom_date_filter($date_value, $operation='=')
+	{
+		global $wpdb;
+		if ($date_value)
+		{
+			$query = " AND ({$wpdb->postmeta}.meta_key = %s AND {$wpdb->postmeta}.meta_value $operation %s)";
+			return $wpdb->prepare( $query, $this->args['date_column'], $date_value );
+		}
+		else
+		{
+			return '';
+		}
+	}
 	
 	//------------------------------------------------------------------------------
 	/**
-	* SQL filter to handle multiple filters.
+	* Generic SQL filter generator to handle multiple filters.
 	* 
 	* @param	string	$table name (verbatim, including any prefixes)
 	* @param	string	$column name
@@ -842,7 +1032,7 @@ OFFSET 0
 	}
 
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query's LIMIT/OFFSET clause
+	OUTPUT: string to be used in the main SQL query's LIMIT/OFFSET clause.
 	$limit should be passed in as $this->results_per_page; (like when you're selecting
 	rows) or as zero (like when you're counting rows).
 	------------------------------------------------------------------------------*/
@@ -860,7 +1050,7 @@ OFFSET 0
 
 
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query's LIMIT/OFFSET clause
+	OUTPUT: string to be used in the main SQL query's LIMIT/OFFSET clause
 	------------------------------------------------------------------------------*/
 	private function _sql_offset()
 	{
@@ -875,7 +1065,7 @@ OFFSET 0
 	}
 	
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query's WHERE clause.
+	OUTPUT: string to be used in the main SQL query's WHERE clause.
 	Construct the part of the query for searching by mime type
 	------------------------------------------------------------------------------*/
 	private function _sql_filter_post_mime_type()
@@ -893,7 +1083,8 @@ OFFSET 0
 	}
 	
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query's WHERE clause.
+	This function handles the criteria for searching based on a search term.
+	OUTPUT: string to be used in the main SQL query's WHERE clause.
 	Construct the part of the query for searching by name.
 	
 				AND (
@@ -919,17 +1110,42 @@ OFFSET 0
 		$criteria = array();
 		foreach ( $this->args['search_columns'] as $c )
 		{
-			switch ($this->args['match_rule'])
-			{
-				case 'contains':
-					$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", '%'.$this->args['search_term'].'%');
-					break;
-				case 'starts_with':
-					$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", '%'.$this->args['search_term']);
-					break;
-				case 'ends_with':
-					$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", $this->args['search_term'].'%');
-					break;
+			// For standard columns in the wp_posts table
+			if ( in_array($c, $this->wp_posts_columns ) )
+			{				
+				switch ($this->args['match_rule'])
+				{
+					case 'contains':
+						$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", '%'.$this->args['search_term'].'%');
+						break;
+					case 'starts_with':
+						$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", '%'.$this->args['search_term']);
+						break;
+					case 'ends_with':
+						$criteria[] = $wpdb->prepare("{$wpdb->posts}.$c LIKE %s", $this->args['search_term'].'%');
+						break;
+				}
+			}
+			// For custom field "columns" in the wp_postmeta table
+			else {
+				switch ($this->args['match_rule'])
+				{
+					case 'contains':
+						$criteria[] = $wpdb->prepare("{$wpdb->postmeta}.meta_key = %s AND {$wpdb->postmeta}.meta_value LIKE %s"
+							, $c
+							, '%'.$this->args['search_term'].'%');
+						break;
+					case 'starts_with':
+						$criteria[] = $wpdb->prepare("{$wpdb->postmeta}.meta_key = %s AND {$wpdb->postmeta}.meta_value LIKE %s"
+							, $c
+							, '%'.$this->args['search_term']);
+						break;
+					case 'ends_with':
+						$criteria[] = $wpdb->prepare("{$wpdb->postmeta}.meta_key = %s AND {$wpdb->postmeta}.meta_value LIKE %s"
+							,$c
+							, $this->args['search_term'].'%');
+						break;
+				}			
 			}
 		}
 		
@@ -941,7 +1157,7 @@ OFFSET 0
 
 	
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query.  This function is called 
+	OUTPUT: string to be used in the main SQL query.  This function is called 
 	in distinction to the _sql_select_columns() when the purpose of the query is
 	to count available rows (e.g. for paginating results).
 	------------------------------------------------------------------------------*/
@@ -952,7 +1168,7 @@ OFFSET 0
 	
 	/*------------------------------------------------------------------------------
 	Which columns do we normally return? 
-	OUTPUT: string to be used in *the* main SQL query: this string defines which
+	OUTPUT: string to be used in the main SQL query: this string defines which
 	columns we will select.
 	------------------------------------------------------------------------------*/
 	private function _sql_select_columns()
@@ -966,7 +1182,7 @@ OFFSET 0
 	
 	
 	/*------------------------------------------------------------------------------
-	OUTPUT: string to be used in *the* main SQL query.  This function is called 
+	OUTPUT: string to be used in the main SQL query.  This function is called 
 	in distinction to the _sql_select_columns() when the purpose of the query is
 	to return distinct year-months of posts for the purposes of offering the user
 	simple date-based groups of posts. 
@@ -992,11 +1208,10 @@ OFFSET 0
 	
 	//------------------------------------------------------------------------------
 	/**
-	* 
-		AND wp_postmeta.meta_key = 'yarn'
-		AND wp_postmeta.meta_value = 'nada'
-
-	*/
+	 * Used to search for custom fields.
+	 *	AND wp_postmeta.meta_key = 'yarn'
+	 *	AND wp_postmeta.meta_value = 'nada'
+	 */
 	private function _sql_meta()
 	{
 		global $wpdb;
@@ -1020,35 +1235,61 @@ OFFSET 0
 			return $this->_sql_filter($wpdb->postmeta,'meta_value','=', $this->args['meta_value']);
 		}
 	}
-
+	
+	//! Public Functions
 	//------------------------------------------------------------------------------
 	/**
-	* See http://codex.wordpress.org/Function_Reference/wp_insert_post
-	*/
-	private function _log_post($post)
-	{
-		$my_post = array(
-			'post_title' => 'My post',
-			'post_content' => 'This is my post.',
-			'post_status' => 'draft',
-			'post_type'	=> 'summarize_post_log',
-			'post_author' => 1,
-		);
+	 * Debugging messages.  Same as printing the GetPostsQuery instance.
+	 */
+	public function debug() {
+		if ( empty($this->SQL) ) {
+			$this->SQL = $this->_get_sql();
+		}
 		
-		// Insert the post into the database
-		wp_insert_post( $my_post );
+		return sprintf(
+			'<div class="summarize-posts-summary">
+				<h1>Summarize Posts</h1>
+
+				<h2>%s</h2>
+					<div class="summarize-posts-errors">%s</div>
+
+				<h2>%s</h2>
+				<p>%s</p>
+					<div class="summarize-post-arguments">%s</div>
+
+				<h2>%s</h2>
+					<div class="summarize-post-output_type">%s</div>
+					
+				<h2>%s</h2>
+					<div class="summarize-posts-query"><textarea rows="20" cols="80">%s</textarea></div>
+									
+				<h2>%s</h2>
+					<div class="summarize-posts-shortcode"><textarea rows="3" cols="80">%s</textarea></div>
+					
+				<h2>%s</h2>
+					<div class="summarize-posts-results"><textarea rows="20" cols="80">%s</textarea></div>
+			</div>'
+			, __('Errors', SummarizePosts::txtdomain)
+			, $this->get_errors()
+			, __('Arguments', SummarizePosts::txtdomain)
+			, __('For more information on how to use this function, see the documentation for the <a href="http://code.google.com/p/wordpress-summarize-posts/wiki/get_posts">GetPostsQuery::get_posts()</a> function.', SummarizePosts::txtdomain)
+			, $this->get_args()
+			, __('Output Type', SummarizePosts::txtdomain)
+			, $this->output_type
+			, __('Raw Database Query', SummarizePosts::txtdomain)
+			, $this->SQL
+			, __('Comparable Shortcode', SummarizePosts::txtdomain)
+			, $this->get_comparable_shortcode()
+			, __('Results', SummarizePosts::txtdomain)
+			, print_r( $this->get_posts(), true)
+		);
 	}
 	
-	
-
-
-	//! Public Functions
-
 	//------------------------------------------------------------------------------
 	/**
 	* Prints a formatted version of filtered input arguments. 
 	*/
-	public function format_args()
+	public function get_args()
 	{
 		$output = '<ul class="summarize-posts-argument-list">'."\n";
 		#print_r($this->args); exit;
@@ -1080,36 +1321,11 @@ OFFSET 0
 		return $output;
 	}
 	
-	
-	//------------------------------------------------------------------------------
-	/**
-	* Format any errors in an unordered list, or returns a message saying there were no errors.
-	*/
-	public function format_errors()
-	{
-
-		if ($this->errors)
-		{
-			$output = '';
-			$items = '';
-			foreach ($this->errors as $e)
-			{
-				$items .= '<li>'.$e.'</li>' ."\n";
-			}
-			$output = '<ul>'."\n".$items.'</ul>'."\n";
-			return $output;
-		}
-		else
-		{
-			return __('There were no errors.');
-		}	
-		
-	}
 
 	//------------------------------------------------------------------------------
 	/**
-	* Returns a string of a comparable shortcode for the query entered.
-	*/
+	 * Returns a string of a comparable shortcode for the query entered.
+	 */
 	public function get_comparable_shortcode()
 	{
 		$args = array();
@@ -1136,17 +1352,40 @@ OFFSET 0
 	
 	//------------------------------------------------------------------------------
 	/**
-	* http://www.webcheatsheet.com/PHP/get_current_page_url.php
-	* This uses wp_kses() to reduce risk of some a-hole 
-	*/
+	 * http://www.webcheatsheet.com/PHP/get_current_page_url.php
+	 * This uses wp_kses() to reduce risk of some a-hole 
+	 */
 	static function get_current_page_url() 
 	{
-		//print_r($_SERVER); exit;
 		if ( isset($_SERVER['REQUEST_URI']) ) 
 		{
 			$_SERVER['REQUEST_URI'] = preg_replace('/&?offset=[0-9]*/','', $_SERVER['REQUEST_URI']);
 		}
 		return wp_kses($_SERVER['REQUEST_URI'], '');
+	}
+
+	//------------------------------------------------------------------------------
+	/**
+	* Format any errors in an unordered list, or returns a message saying there were no errors.
+	*/
+	public function get_errors()
+	{
+
+		if ($this->errors)
+		{
+			$output = '';
+			$items = '';
+			foreach ($this->errors as $e)
+			{
+				$items .= '<li>'.$e.'</li>' ."\n";
+			}
+			$output = '<ul>'."\n".$items.'</ul>'."\n";
+			return $output;
+		}
+		else
+		{
+			return __('There were no errors.');
+		}			
 	}
 	
 	//------------------------------------------------------------------------------
@@ -1159,25 +1398,41 @@ OFFSET 0
 		return $this->pagination_links;
 	}
 
-	/*------------------------------------------------------------------------------
-	This is the main event here (i.e. function).
-		
-	------------------------------------------------------------------------------*/
+	//------------------------------------------------------------------------------
+	/**
+	 * This is the main event, where all the action leads.  This is what generates 
+	 * database query and actually gets the results from the database, cousins to
+	 * the other querying functions:
+	 * 		count_posts()
+	 * 		query_distinct_yearmonth()
+	 */
 	public function get_posts($args=array())
 	{
 		global $wpdb;
-		
+		// Get info from the Shortcode (if called that way).
 		$tmp = shortcode_atts( $this->args, $args );
 
 		foreach ( $tmp as $k => $v )
 		{
 			$this->__set($k, $v);
 		}
+		// only kicks in when pagination is active: this is so the URL can override 
+		// specific bits of the query, e.g. the OFFSET parameter.
+		$this->_override_args_with_url_params(); 
 
-		$this->_override_args_with_url_params(); // only kicks in when pagination is active
+		// if we are doing hierarchical queries, we need to trace down all the components before 
+		// we do our query!
 
+		if ( $this->args['taxonomy']
+			&& ($this->args['taxonomy_term'] || $this->args['taxonomy_slug'])
+			&& $this->args['taxonomy_depth'] > 1) {
+			$this->args['taxonomy_term'] = $this->_append_children_taxonomies($this->args['taxonomy_term']);
+		}
+		
+		
 		// ARRAY_A or OBJECT
 		$results = $wpdb->get_results( $this->_get_sql(), $this->output_type );
+				
 		if ( $this->args['paginate'] )
 		{
 			$this->found_rows = $this->_count_posts();
@@ -1212,7 +1467,7 @@ OFFSET 0
 						$r->metadata = preg_replace("/$caboose$/", '', $r->metadata, -1, $count );
 						if (!$count)
 						{
-							$this->errors[] = __('There was a problem accessing custom fields. Try increasing the group_concat_max_len setting in the Summarize-Posts settings page.');
+							$this->errors[] = __('There was a problem accessing custom fields. Try increasing the group_concat_max_len setting in the Summarize-Posts settings page.', SummarizePosts::txtdomain);
 						}
 						else
 						{
@@ -1234,7 +1489,7 @@ OFFSET 0
 				$r->content 		= $r->post_content;
 				//$r['the_author']	->= get_the_author(); // only works inside the !@#%! loop
 				$r->title 			= $r->post_title;
-				$r->date			= $r->post_date;
+//				$r->date			= $r->post_date;
 				$r->excerpt			= $r->post_excerpt;
 				$r->mime_type 		= $r->post_mime_type;
 				$r->modified		= $r->post_modified;
@@ -1260,7 +1515,7 @@ OFFSET 0
 						$r['metadata'] = preg_replace("/$caboose$/", '', $r['metadata'], -1, $count );
 						if (!$count)
 						{
-							$this->errors[] = __('There was a problem accessing custom fields. Try increasing the group_concat_max_len setting.');
+							$this->errors[] = __('There was a problem accessing custom fields. Try increasing the group_concat_max_len setting.', SummarizePosts::txtdomain);
 						}
 						else
 						{
@@ -1283,7 +1538,7 @@ OFFSET 0
 				$r['content'] 		= $r['post_content'];
 				//$r['the_author']	= get_the_author(); // only works inside the !@#%! loop
 				$r['title'] 		= $r['post_title'];
-				$r['date']			= $r['post_date'];
+				// $r['date']			= $r['post_date'];
 				$r['excerpt']		= $r['post_excerpt'];
 				$r['mime_type'] 	= $r['post_mime_type'];
 				$r['modified']		= $r['post_modified'];
@@ -1292,10 +1547,23 @@ OFFSET 0
 			}
 		}
 
+		$results = $this->_normalize_recordset($results);
+
+		// Optionally adjust date format (depends on the 'date_format' option)
+		$results = $this->_date_format($results);
+		
 		return $results;
 
 	}
 
+	//------------------------------------------------------------------------------
+	/**
+	 * Gets the raw SQL query
+	 * @return string
+	 */
+	public function get_sql() {
+		return $this->SQL;
+	}
 	//------------------------------------------------------------------------------
 	/**
 	SYNOPSIS: a simple parsing function for basic templating.
@@ -1324,22 +1592,28 @@ OFFSET 0
 
 	//------------------------------------------------------------------------------
 	/**
-	* This sets a default value for any field.  This kicks in only if the field is empty.
-	*/
+	 * This sets a default value for any field.  This should kick in only if the 
+	 * field is empty when we normalize the recordset in the _normalize_recordset
+	 * function
+	 *
+	 * @param	string	$fieldname name of the field whose default value you want to set
+	 * @param	string	the value to set the attribute to
+	 */
 	public function set_default($fieldname, $value)
 	{
-	
+		self::$custom_default_values[(string)$fieldname] = (string) $value;
 	}
 
 	//------------------------------------------------------------------------------
 	/**
-	* 
-	*/
+	 * Sets how we return our record set: either as an array of objects or as an 
+	 * array of associative arrays. 
+	 */
 	public function set_output_type($output_type)
 	{
 		if ( $output_type != OBJECT && $output_type != ARRAY_A )
 		{
-			$this->errors[] = __('Invalid output type');
+			$this->errors[] = __('Invalid output type. Output type must be either OBJECT or ARRAY_A.', SummarizePosts::txtdomain);
 		}
 		else
 		{

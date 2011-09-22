@@ -1,7 +1,10 @@
 <?php
 /**
+ * The template for displaying 404 pages (Not Found).
+ *
  * @package WordPress
  * @subpackage Toolbox
+ * @since Toolbox 0.1
  */
 
 get_header(); ?>
@@ -11,7 +14,7 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'toolbox' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Well this is somewhat embarrassing, isn&rsquo;t it?', 'toolbox' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
@@ -24,11 +27,12 @@ get_header(); ?>
 					<div class="widget">
 						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'toolbox' ); ?></h2>
 						<ul>
-						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
+						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 						</ul>
 					</div>
 
 					<?php
+					/* translators: %1$s: smilie */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'toolbox' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>

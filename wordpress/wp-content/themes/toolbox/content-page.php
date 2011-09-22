@@ -1,7 +1,10 @@
 <?php
 /**
+ * The template used for displaying page content in page.php
+ *
  * @package WordPress
  * @subpackage Toolbox
+ * @since Toolbox 1.0
  */
 ?>
 

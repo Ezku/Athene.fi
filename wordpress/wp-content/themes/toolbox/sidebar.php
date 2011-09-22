@@ -1,7 +1,10 @@
 <?php
 /**
+ * The Sidebar containing the main widget areas.
+ *
  * @package WordPress
  * @subpackage Toolbox
+ * @since Toolbox 0.1
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

@@ -3,11 +3,17 @@
 * SummarizePosts
 *
 * Handles the 'summarize-posts' shortcode and related template tags.
-* Placeholders must be lowercase
+* Placeholders must be lowercase.  This acts as a front-end to the 
+* powerful GetPostsQuery class.
 */
 class SummarizePosts
 {
 	const name 			= 'Summarize Posts';
+	const version 		= '0.7';
+	// See http://php.net/manual/en/function.version-compare.php
+	// any string not found in this list < dev < alpha =a < beta = b < RC = rc < # < pl = p
+	const version_meta 	= 'dev'; // dev, rc (release candidate), pl (public release)
+
 	const wp_req_ver 	= '3.1';
 	const php_req_ver 	= '5.2.6';
 	const mysql_req_ver	= '5.0.0';
@@ -24,6 +30,12 @@ class SummarizePosts
 	public static $options; 
 	
 	// This goes to true if we were unable to increase the group_concat_max_len MySQL variable.
+	// If true, this means we have to run an additional query for EACH post returned in order to
+	// get that post's meta-data (i.e. to get that post's custom fields).  It's generally much
+	// faster if we don't have to do that, but the crazy complicated MySQL query that grabs it 
+	// all in one go does not work on all servers because it requires a beefy setting for the 
+	// 'group_concat_max_len' variable, or the ability to set it manually before we do our big
+	// query.
 	public static $manually_select_postmeta = false;
 	
 	const txtdomain 	= 'summarize-posts';
@@ -46,7 +58,7 @@ class SummarizePosts
 	//! Private functions
 	//------------------------------------------------------------------------------
 	/**
-	* 
+	* Get the template (tpl) to format each search result.
 	* @param	string	$content
 	* @param	array	$args associative array
 	*/
@@ -77,6 +89,7 @@ class SummarizePosts
 		else
 		{
 			$content = html_entity_decode($content); 
+			// fix the quotes back to normal 
 			$content = str_replace(array('&#8221;','&#8220;'), '"', $content );
 			$content = str_replace(array('&#8216;','&#8217;'), "'", $content );		
 		}
@@ -122,6 +135,8 @@ class SummarizePosts
 	*/
 	public static function get_admin_page()
 	{
+		$msg = '';
+		
 		if ( !empty($_POST) && check_admin_referer('summarize_posts_options_update','summarize_posts_admin_nonce') )
 		{
 			$new_values = array();

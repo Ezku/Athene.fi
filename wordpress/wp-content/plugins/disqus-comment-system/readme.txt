@@ -3,7 +3,7 @@ Contributors: disqus, alexkingorg, crowdfavorite
 Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, disqus
 Requires at least: 2.8
 Tested up to: 3.1.2
-Stable tag: 2.66
+Stable tag: 2.67
 
 The Disqus comment system replaces your WordPress comment system with your comments hosted and powered by Disqus.
 
@@ -43,7 +43,7 @@ The Disqus for WordPress plugin seamlessly integrates using the Disqus API and b
    of WordPress
 
   * Maintain the directory structure of the archive (all extracted files
-    should exist in 'wp-content/plugins/disqus/'
+    should exist in 'wp-content/plugins/disqus-comment-system/'
 
 2. From your blog administration, click on Comments to change settings
    (WordPress 2.0 users can find the settings under Options > Disqus.)
@@ -52,15 +52,17 @@ The Disqus for WordPress plugin seamlessly integrates using the Disqus API and b
 
 Go to [http://disqus.com/help/wordpress](http://disqus.com/help/wordpress)
 
-== Upgrading ==
-
-(If you were using legacy mode you will need to re-install the plugin completely)
-
-Replace the old plugin with the new plugin (the plugin must stay in
-the disqus directory). If the old plugin directory was 'disqus-comment-system'
-you should remove it, and the new plugin should be stored in 'disqus'.
-
 == Changes ==
+
+2.67
+
+* Bumped synchronization timer delays to 5 minutes.
+* wp-cli.php now requires php_sapi_name to be set to 'cli' for execution.
+* Fixed a bug with imported comments not storing the correct relative date.
+* Added a lock for dsq_sync_forum, which can be overriden in the command line script
+  with the --force tag.
+* dsq_sync_forum will now handle all pending post metadata updates (formerly a separate
+  cron task, dsq_sync_post).
 
 2.66
 

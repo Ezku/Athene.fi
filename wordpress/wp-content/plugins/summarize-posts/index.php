@@ -4,7 +4,7 @@ Plugin Name: Summarize Posts
 Plugin URI:  http://www.fireproofsocks.com/
 Description: Summarize posts offers a complete rewrite of the built-in get_posts/query_posts/WP_Query methods for retrieving posts, and its functions are exposed both to your theme files and to your posts via shortcode tags. You can search by taxonomy terms, post title, status, or just about any other criteria you can think of. You can also paginate the results and format them in a flexible and tokenized matter.
 Author: Everett Griffiths
-Version: 0.6
+Version: 0.7
 Author URI: http://www.fireproofsocks.com/
 
 http://www.smashingmagazine.com/2009/02/02/mastering-wordpress-shortcodes

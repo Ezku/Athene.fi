@@ -4,13 +4,13 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: 
 Requires at least: 3.0.1
 Tested up to: 3.1.4
-Stable tag: 0.6
+Stable tag: 0.7
 
 Offers highly flexible alternatives to WordPress' built-in get_posts() function, including the ability to paginate results.
 
 == Description ==
 
-Summarize posts offers an improved alternative to the built-in WordPress `get_posts()`, `query_posts()`, and `WP_Query` methods for retrieving posts. The new functions are exposed both to your theme files and to your posts via shortcode tags. You can search by taxonomy terms, post title, status, or just about any other criteria you can think of. You can also paginate the results and format them in a flexible and tokenized matter. These functions are loop-agnostic: they can be used inside or outside of the loop.
+Summarize posts offers a better-architected and more flexible alternative to the built-in WordPress `get_posts()`, `query_posts()`, and `WP_Query` methods for retrieving posts. The new functions are exposed both to your theme files and to your posts via shortcode tags. You can search by taxonomy terms, post title, status, or just about any other criteria you can think of. You can also paginate the results and format them in a flexible and tokenized matter. These functions are loop-agnostic: they can be used inside or outside of the loop.
 
 You can easily search by taxonomy term, you can easily sort results by custom fields, and you can paginate results.
 
@@ -71,7 +71,7 @@ There are some debugging options available.  If you are using the GetPostsQuery 
 $Q->post_title = 'My Title';
 $results = $Q->get_posts();
 
-print $Q; // <-- this prints debugging information`
+print $Q->debug(); // <-- this prints debugging information`
 
 You can also trigger this same information from a shortcode by using the 'help' attribute, e.g.
 `[summarize_posts help="1"]`
@@ -126,6 +126,17 @@ foreach ($results as $r) {
 
 == Changelog ==
 
+= 0.7 =
+
+Lots of fixes and improvements! More documentation added to the [Wiki](http://code.google.com/p/wordpress-summarize-posts/w/list) and a new logo!
+
+* Repaired ability to sort on custom fields
+* Implemented ability to manipulate the date format
+* Implemented ability to use custom fields in date filters (date_min, date_max)
+* Better debugging messages
+* Implementation of the set_default() method.  
+* Support for searches on hierarchical taxonomies.
+
 = 0.6 =
 
 * Fixed issue with specifying a taxonomy.
@@ -155,12 +166,12 @@ These requirements are tested during WordPress initialization; the plugin will n
 This plugin was written to help offer a simpler way to summarize posts of all kinds. There are other similar plugins available, but none of them offered the control in selecting posts or in formatting the results that I wanted.
 
 
-== Future TO-DO == 
-
-* Add help links to wiki.
-
 
 == Upgrade Notice ==
+
+= 0.7 =
+
+Fixes lots of bugs, adds support for hierarchical taxonomy searches, date formatting, and date range searches on custom fields.
 
 = 0.5 =
 

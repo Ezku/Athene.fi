@@ -4,6 +4,14 @@
  */
 error_reporting(E_ALL | E_STRICT);
 
+var_dump($_SERVER);
+
+
+if (php_sapi_name() != 'cli' && !empty($_SERVER['REMOTE_ADDR'])) {
+    // Don't execute for web requests
+    die("This script must be run from CLI.");
+}
+
 if (!isset($argv)) {
     $argv = array();
 }
