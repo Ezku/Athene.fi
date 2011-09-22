@@ -313,6 +313,12 @@ header nav a {
   margin-bottom: 10px;
 }
 
+.widget a.no-decoration {
+    text-decoration: none;
+    font-weight: normal;
+    color: black;
+}
+
 /* ilmomasiina widget */
 .widget .ilmo-entry {
   margin: 0;
