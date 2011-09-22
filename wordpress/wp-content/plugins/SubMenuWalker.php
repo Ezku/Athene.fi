@@ -42,7 +42,7 @@ class SubMenuWalker extends Walker {
         'lvl_end' => "%s</ul>\n",
         'el_start' => '%s<li%s>',
         'link' => '<a%s>%s</a>',
-        'intro' => '<div class="intro">%s</div>',
+        'intro' => '<a class="no-decoration" %s><div class="intro">%s</div></a>',
         'el_end' => "</li>\n",
     );
     
@@ -210,7 +210,10 @@ class SubMenuWalker extends Walker {
 	    }
 
 	    if (strlen($intro)) {
-	        $intro = $this->format('intro', $intro);
+	        $intro = $this->format('intro', 
+	            $this->item_attributes($item), 
+	            $intro);
+	            
 	        return $this->wrap('intro', $intro);
 	    }
 	}

@@ -313,13 +313,15 @@ header nav a {
   margin-bottom: 10px;
 }
 
-.widget a.no-decoration {
+.widget a.no-decoration,
+.menu a.no-decoration {
     text-decoration: none;
     font-weight: normal;
     color: black;
 }
 
-.widget a.no-decoration header {
+.widget a.no-decoration header,
+.menu a.no-decoration header {
     color: #75B251;
     text-decoration: underline; /* is this what we want? */
 }
