@@ -39,6 +39,12 @@ function get_field($name) {
 </table>
 
 <table>
+    <tr>
+        <th>Nimi</th>
+        <th>Pääaine</th>
+        <th>Diplomityön aihe</th>
+        <th>Päivämäärä</th>
+    </tr>
 <?php
 $class = cycle("odd", "even");
 foreach($graduates as $entry) { ?>
