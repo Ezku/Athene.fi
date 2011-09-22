@@ -315,9 +315,9 @@ header nav a {
 
 .widget a.no-decoration,
 .menu a.no-decoration {
-    text-decoration: none;
-    font-weight: normal;
-    color: black;
+    text-decoration: inherit;
+    font-weight: inherit;
+    color: inherit;
 }
 
 .widget a.no-decoration header,
