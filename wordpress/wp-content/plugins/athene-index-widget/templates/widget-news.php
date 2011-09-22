@@ -7,19 +7,21 @@
     </header>
     <div class="widget-content">
         <?php foreach($news as $news_item): ?>
+            <a class="no-decoration" href="<?php echo get_permalink($news_item->ID) ?>">
             <article class="news-item date-indexed clearfix">
                 <section class="date">
                     <h5><?php echo date('d.m.',strtotime($news_item->post_date)) ?></h5>
                 </section>
                 <section class="content">
                     <header class="title">
-                        <a href="<?php echo get_permalink($news_item->ID) ?>"><?php echo $news_item->post_title ?></a>
+                        <?php echo $news_item->post_title ?>
                     </header>
                     <section class="excerpt">
                         <?php echo $this->excerpt($news_item->post_content, 60); ?>
                     </section>
                 </section>
             </article>
+            </a>
         <?php endforeach; ?>
         <p><a href="<?php echo get_permalink($instance['page']) ?>">
             lisää...

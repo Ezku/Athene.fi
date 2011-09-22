@@ -319,6 +319,11 @@ header nav a {
     color: black;
 }
 
+.widget a.no-decoration header {
+    color: #75B251;
+    text-decoration: underline; /* is this what we want? */
+}
+
 /* ilmomasiina widget */
 .widget .ilmo-entry {
   margin: 0;
