@@ -314,10 +314,15 @@ header nav a {
 }
 
 .widget a.no-decoration,
-.menu a.no-decoration {
+.menu a.no-decoration,
+.menu .no-decoration a {
     text-decoration: inherit;
     font-weight: inherit;
     color: inherit;
+}
+
+asfd {
+    
 }
 
 .widget a.no-decoration header,
