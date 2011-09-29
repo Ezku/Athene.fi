@@ -68,6 +68,11 @@ h1, h2, h3, h4, h5, h6, #access a {
 	letter-spacing: -0.0556em; /* 2px at 36px em */
 }
 
+th {
+    font-weight: bold;
+    color: #75B251;
+}
+
 #access a {
 	font-size: 26px;
 	line-height: 59px;
@@ -321,10 +326,6 @@ header nav a {
     color: inherit;
 }
 
-asfd {
-    
-}
-
 .widget a.no-decoration header,
 .menu a.no-decoration header {
     color: #75B251;
@@ -432,4 +433,24 @@ blockquote {
 .toimija.grid_6.alpha,
 .toimija.grid_6.omega {
     width: 330px;
+}
+
+/* alumni lists */
+
+#alumni-numbers td,
+#alumni-list td {
+    padding: 2px 5px;
+}
+
+#alumni-list td {
+    vertical-align: middle;
+    height: 40px;
+}
+
+#alumni-list tr.odd {
+    
+}
+
+#alumni-list tr.even {
+    background-color: rgba(0,0,0,0.05);
 }

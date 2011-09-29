@@ -28,7 +28,7 @@ function get_field($name) {
 
 ?>
 
-<table>
+<table id="alumni-numbers">
 <tr><th>Pääaine</th><th>Valmistuneita</th></tr>
 <?php $class = cycle("odd", "even"); ?>
 <?php foreach($majors as $major => $number): ?>
@@ -38,7 +38,7 @@ function get_field($name) {
 <?php endforeach; ?>
 </table>
 
-<table>
+<table id="alumni-list">
     <tr>
         <th>Nimi</th>
         <th>Pääaine</th>
