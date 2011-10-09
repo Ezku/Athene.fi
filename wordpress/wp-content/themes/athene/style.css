@@ -94,7 +94,7 @@ small {
 /* = Skinning
 -------------------------------------------------------------- */
 
-body, footer {
+body, footer#colophon {
 	/* Dark gray with blue tint */
 	background-color: #1E2626;
 }

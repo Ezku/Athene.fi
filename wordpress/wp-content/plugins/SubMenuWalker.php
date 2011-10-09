@@ -231,10 +231,8 @@ class SubMenuWalker extends Walker {
 	}
 	
 	private function toBeShown($level) {
-	    if ($this->showCurrentBranchOnly()) {
-	        if (!$this->isItemOnCurrentBranch()) {
-	            return false;
-	        }
+	    if ($this->showCurrentBranchOnly() && !$this->isItemOnCurrentBranch()) {
+	        return false;
 	    }
 	    
 	    $levels = $this->levelsToShow();

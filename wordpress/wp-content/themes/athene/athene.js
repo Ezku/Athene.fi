@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 	// Apply background noise
 	(function(noisy) {
 		// Footer background
-		noisy('body, footer');
+		noisy('body, footer#colophon');
 		// Content area background
 		noisy('#page');
 		// Header background
