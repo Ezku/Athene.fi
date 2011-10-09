@@ -178,7 +178,6 @@ class PostSelector
 	------------------------------------------------------------------------------*/
 	private function _format_attachment_result($r)
 	{
-
 		if (preg_match('/^image.*/', $r['post_mime_type']) ) {
 			list($src, $w, $h) = wp_get_attachment_image_src( $r['post_id'], 'thumbnail');
 

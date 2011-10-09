@@ -5,13 +5,13 @@
 * Implements an field that stores a reference to a media item (i.e. any attachment post)
 *
 */
-class CCTM_media extends FormElement
+class CCTM_media extends CCTMFormElement
 {
 	/** 
 	* The $props array acts as a template which defines the properties for each instance of this type of field.
 	* When added to a post_type, an instance of this data structure is stored in the array of custom_fields. 
 	* Some properties are required of all fields (see below), some are automatically generated (see below), but
-	* each type of custom field (i.e. each class that extends FormElement) can have whatever properties it needs
+	* each type of custom field (i.e. each class that extends CCTMFormElement) can have whatever properties it needs
 	* in order to work, e.g. a dropdown field uses an 'options' property to define a list of possible values.
 	* 
 	* 
@@ -48,14 +48,6 @@ class CCTM_media extends FormElement
 	*/
 	public function get_name() {
 		return __('Media',CCTM_TXTDOMAIN);	
-	}
-	
-	//------------------------------------------------------------------------------
-	/**
-	* Used to drive a thickbox pop-up when a user clicks "See Example"
-	*/
-	public function get_example_image() {
-		return '';
 	}
 	
 	//------------------------------------------------------------------------------
@@ -201,7 +193,7 @@ class CCTM_media extends FormElement
 			 	<label for="description" class="'.self::label_css_class.'">'
 			 		.__('Description', CCTM_TXTDOMAIN) .'</label>
 			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'
-			 		. htmlentities($def['description']).'</textarea>
+			 		. htmlspecialchars($def['description']).'</textarea>
 			 	' . $this->get_translation('description').'
 			 	</div>';
 

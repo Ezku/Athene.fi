@@ -5,14 +5,14 @@
 * Implements an HTML text input.
 *
 */
-class CCTM_checkbox extends FormElement
+class CCTM_checkbox extends CCTMFormElement
 {
 
 	/** 
 	* The $props array acts as a template which defines the properties for each instance of this type of field.
 	* When added to a post_type, an instance of this data structure is stored in the array of custom_fields. 
 	* Some properties are required of all fields (see below), some are automatically generated (see below), but
-	* each type of custom field (i.e. each class that extends FormElement) can have whatever properties it needs
+	* each type of custom field (i.e. each class that extends CCTMFormElement) can have whatever properties it needs
 	* in order to work, e.g. a dropdown field uses an 'options' property to define a list of possible values.
 	* 
 	* 
@@ -38,6 +38,7 @@ class CCTM_checkbox extends FormElement
 		'unchecked_value' => '0',
 		'class' => '',
 		'extra'	=> '',
+		'is_checked' => '',
 		// 'type'	=> '', // auto-populated: the name of the class, minus the CCTM_ prefix.
 		// 'sort_param' => '', // handled automatically
 	);
@@ -50,14 +51,6 @@ class CCTM_checkbox extends FormElement
 	*/
 	public function get_name() {
 		return __('Checkbox',CCTM_TXTDOMAIN);	
-	}
-	
-	//------------------------------------------------------------------------------
-	/**
-	* Used to drive a thickbox pop-up when a user clicks "See Example"
-	*/
-	public function get_example_image() {
-		return '';
 	}
 	
 	//------------------------------------------------------------------------------
@@ -128,39 +121,31 @@ class CCTM_checkbox extends FormElement
 	 */
 	public function get_edit_field_instance($current_value) {
 
-		$is_checked = '';
+		$this->props['is_checked'] = '';
 		if ($current_value == $this->checked_value) {
-			$is_checked = 'checked="checked"';
+			$this->props['is_checked'] = 'checked="checked"';
 		}
-
-		$output = sprintf(' 
-			<input type="checkbox" name="%s" class="%s" id="%s" value="%s" %s %s/>
-			'
-			, $this->get_field_name()
-			, $this->get_field_class($this->name, 'checkbox') . ' ' . $this->class
-			, $this->get_field_id()
-			, $this->checked_value
-			, $this->extra
-			, $is_checked
-		);
-
-		$output .= $this->wrap_label();
-		$output .= $this->wrap_description($this->props['description']);
 		
-		return $this->wrap_outer($output);
+		$fieldtpl = $this->get_field_tpl();
+		$wrappertpl = $this->get_wrapper_tpl();
+
+		// Populate the values (i.e. properties) of this field
+		$this->props['name'] 				= $this->get_field_name();
+		$this->props['id'] 					= $this->get_field_id();
+		$this->props['class'] 				= $this->get_field_class($this->name, 'checkbox', $this->class);
+		$this->props['value']				= htmlspecialchars($this->checked_value);
+		
+		$this->props['help'] = $this->get_all_placeholders(); // <-- must be immediately prior to parse
+		$this->props['content'] = CCTM::parse($fieldtpl, $this->props);
+		$this->props['help'] = $this->get_all_placeholders(); // <-- must be immediately prior to parse
+		return CCTM::parse($wrappertpl, $this->props);
+		
 	}
 
 
 	//------------------------------------------------------------------------------
 	/**
-	 *
-	 *
-	 * @param unknown $current_values
-			<style>
-			input.cctm_error { 
-				background: #fed; border: 1px solid red;
-			}
-			</style>
+	 * @param	mixed	current definition array
 	 */
 	public function get_edit_field_definition($def) {
 		$is_checked = '';
@@ -232,13 +217,26 @@ class CCTM_checkbox extends FormElement
 			 	<label for="description" class="'.self::label_css_class.'">'
 			 		.__('Description', CCTM_TXTDOMAIN) .'</label>
 			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'
-			 		. htmlentities($def['description'])
+			 		. htmlspecialchars($def['description'])
 			 	.'</textarea>
 			 	' . $this->get_translation('description').'
 			 	</div>';
 		return $out;
 	}
-	
+
+	//------------------------------------------------------------------------------
+	/**
+	 * Handle the "checked by default" option
+	 */
+	public function save_definition_filter($posted_data) {
+		$posted_data = parent::save_definition_filter($posted_data);
+
+	 	if (!isset($posted_data['checked_by_default'])) {
+			$posted_data['checked_by_default'] = 0; // set it 	 	
+	 	}
+
+		return $posted_data;
+	}	
 	//------------------------------------------------------------------------------
 	/**
 	 * Here we do some smoothing of the checkbox warts... normally if the box is not
@@ -253,7 +251,7 @@ class CCTM_checkbox extends FormElement
 	 * @return	string	whatever value you want to store in the wp_postmeta table where meta_key = $field_name	
 	 */
 	public function save_post_filter($posted_data, $field_name) {
-		if ( isset($posted_data[ FormElement::post_name_prefix . $field_name ]) ) {
+		if ( isset($posted_data[ CCTMFormElement::post_name_prefix . $field_name ]) ) {
 			return $this->checked_value;
 		}
 		else {

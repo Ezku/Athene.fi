@@ -12,7 +12,7 @@ get_header(); ?>
 		<div id="primary" class="image-attachment">
 			<div id="content" role="main">
 
-			<?php the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
@@ -68,7 +68,7 @@ get_header(); ?>
 										$next_attachment_url = wp_get_attachment_url();
 									}
 								?>
-								
+
 								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
 								$attachment_size = apply_filters( 'toolbox_attachment_size', 1200 );
 								echo wp_get_attachment_image( $post->ID, array( $attachment_size, $attachment_size ) ); // filterable image width with, essentially, no limit for image height.
@@ -102,6 +102,8 @@ get_header(); ?>
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 				<?php comments_template(); ?>
+
+			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->

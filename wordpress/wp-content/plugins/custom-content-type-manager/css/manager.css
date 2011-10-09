@@ -46,6 +46,11 @@ label.cctm_checkbox_label
 	display: inline;
 }
 
+label.cctm_radio_label
+{
+	display: inline;
+}
+
 .cctm_element_wrapper {
 	margin-top: 10px;
 }
@@ -56,11 +61,14 @@ label.cctm_checkbox_label
 
 /* Used when you view a Custom Post Types sample Templates: 
 Custom Post Types --> View Sample Templates (for any post type) */
-.sample_code_textarea {
+textarea.sample_code_textarea {
 	border: 1px solid black;
 	background-color: lightyellow; 
+	width: 100%; 
+	margin: 0; 
+	padding: 0; 
+	border-width: 0; 
 }
-
 
 /* This is the button used in the manager to choose a new image, and we 
 only display it when the custom field is an IMAGE or other MEDIA. The button is
@@ -157,4 +165,74 @@ span.custom_field_description {
 
 span.custom_field_icon {
 	padding: 10px;
+}
+
+
+.cctm_header_text {
+	color: #cecece;
+	font-size: 23px;
+	line-height: 29px;
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+}
+
+.cctm_page_title {
+	display: block;
+	margin-top: -10px;
+	color: #464646;
+	font-size: 18px;
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+}
+
+.cctm_version {
+	font-size: 10px;
+	font-style: italic;
+	padding-left: 30px;
+}
+
+.cctm_field_type_header {
+	margin-top: 3px;
+}
+
+#cctm_nav {
+	margin-bottom:8px;
+}
+
+/* Main nav links @ top of each CCTM page*/
+#cctm_mainmenu {
+	/* background-color: #cecece; */
+	border-bottom: 1px solid gray;
+	margin-top: -21px;
+	margin-bottom: 10px;
+	padding-left: 200px;
+	line-height: 200%;
+}
+
+#cctm_mainmenu a {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 6px;
+	padding-top: 3px;
+	text-decoration: none;
+}
+
+a.cctm_tab {
+	border: 1px solid gray;
+	background-color: #ededed;
+}
+
+a.cctm_active {
+	border-bottom: 1px solid white;
+	background-color: white;
+}
+
+/* Formats rows of data, e.g. in the import definition */
+td.cctm_data {
+	height: 25px;
+}
+
+tr.cctm_evenrow {
+	background-color: #cecece;
+}
+tr.cctm_oddrow {
+	background-color: #f8f8f8;
 }

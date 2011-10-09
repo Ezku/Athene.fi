@@ -6,14 +6,14 @@
 * http://blog.meta100.com/post/600571131/mcolorpicker
 *
 */
-class CCTM_colorselector extends FormElement
+class CCTM_colorselector extends CCTMFormElement
 {
 
 	/** 
 	* The $props array acts as a template which defines the properties for each instance of this type of field.
 	* When added to a post_type, an instance of this data structure is stored in the array of custom_fields. 
 	* Some properties are required of all fields (see below), some are automatically generated (see below), but
-	* each type of custom field (i.e. each class that extends FormElement) can have whatever properties it needs
+	* each type of custom field (i.e. each class that extends CCTMFormElement) can have whatever properties it needs
 	* in order to work, e.g. a dropdown field uses an 'options' property to define a list of possible values.
 	* 
 	* 
@@ -36,9 +36,16 @@ class CCTM_colorselector extends FormElement
 		'extra'	=> '',
 		'default_value' => '',
 		// 'type'	=> '', // auto-populated: the name of the class, minus the CCTM_ prefix.
-		// 'sort_param' => '', // handled automatically
 	);
 
+	//------------------------------------------------------------------------------
+	/**
+	 * Add some necessary Javascript
+	 */
+	public function admin_init() {
+		wp_enqueue_script( 'jquery-mcolorpicker', CCTM_URL . '/js/mColorPicker.js', 'jquery-ui-core');
+	}
+	
 	//------------------------------------------------------------------------------
 	/**
 	* This function provides a name for this type of field. This should return plain
@@ -47,14 +54,6 @@ class CCTM_colorselector extends FormElement
 	*/
 	public function get_name() {
 		return __('Color Picker',CCTM_TXTDOMAIN);	
-	}
-	
-	//------------------------------------------------------------------------------
-	/**
-	* Used to drive a thickbox pop-up when a user clicks "See Example"
-	*/
-	public function get_example_image() {
-		return '';
 	}
 	
 	//------------------------------------------------------------------------------
@@ -89,22 +88,29 @@ class CCTM_colorselector extends FormElement
 			<textarea name="[+name+]" class="cctm_textarea" id="[+name+]" [+extra+]>[+value+]</textarea>
 	 */
 	public function get_edit_field_instance($current_value) {
-		# print_r($this->props); exit;
-		$output = sprintf('
-			%s
-			<input type="color" name="%s" class="%s" id="%s" value="%s" data-hex="true" %s/>
-			'
-			, $this->wrap_label()
-			, $this->get_field_name()
-			, $this->get_field_class($this->name, 'text') . ' ' . $this->class
-			, $this->get_field_id()
-			, $current_value
-			, $this->extra
-		);
 		
-		$output .= $this->wrap_description($this->props['description']);
+		$fieldtpl = $this->get_field_tpl();
+		$wrappertpl = $this->get_wrapper_tpl();
+
+		// Populate the values (i.e. properties) of this field
+		$this->props['id'] 					= $this->get_field_id();
+		$this->props['class'] 				= $this->get_field_class($this->name, 'text', $this->class);
+		$this->props['value']				= htmlspecialchars( html_entity_decode($current_value) );
+		$this->props['name'] 				= $this->get_field_name(); // will be named my_field[] if 'is_repeatable' is checked.
+		$this->props['instance_id']			= $this->get_instance_id();
+		// $this->is_repeatable = 1; // testing
+				
+		if ($this->is_repeatable) {
+			$this->props['add_button'] = '<span class="button" onclick="javascript:add_instance();">Click</span>'; 
+			$this->props['delete_button'] = '<span class="button" onclick="javascript:remove_html(\''.$this->get_instance_id().'\');">Delete</span>';
+			$this->i = $this->i + 1; // increment the instance 
+		}
 		
-		return $this->wrap_outer($output);
+		$this->props['help'] = $this->get_all_placeholders(); // <-- must be immediately prior to parse
+		$this->props['content'] = CCTM::parse($fieldtpl, $this->props);
+		$this->props['help'] = $this->get_all_placeholders(); // <-- must be immediately prior to parse
+		return CCTM::parse($wrappertpl, $this->props);
+
 	}
 
 	//------------------------------------------------------------------------------
@@ -162,7 +168,7 @@ class CCTM_colorselector extends FormElement
 		$out .= '<div class="'.self::wrapper_css_class .'" id="description_wrapper">
 			 	<label for="description" class="'.self::label_css_class.'">'
 			 		.__('Description', CCTM_TXTDOMAIN) .'</label>
-			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'.htmlentities($def['description']).'</textarea>
+			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'.htmlspecialchars($def['description']).'</textarea>
 			 	' . $this->get_translation('description').'
 			 	</div>';
 		return $out;

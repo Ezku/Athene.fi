@@ -3,24 +3,25 @@ Contributors: fireproofsocks
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=355ULXBFXYL8N
 Tags: cms, content management, custom post types, custom content types, custom fields, images, image fields, ecommerce, modx
 Requires at least: 3.0.1
-Tested up to: 3.2
-Stable tag: 0.9.3.3
+Tested up to: 3.2.1
+Stable tag: 0.9.4.2
+Version: 0.9.4.2-pl
 
-Create custom content types (aka post types), standardize custom fields for each type, including dropdowns and images. Gives WP CMS functionality.
+Create custom content types, standardize custom fields for each type, including dropdowns and images. Gives WP CMS functionality.
 
 == Description ==
 
-http://www.youtube.com/watch?v=rDPPfO69BxU
-
-This plugin was written in part for the book [WordPress 3 Plugin Development Essentials](http://www.packtpub.com/wordpress-3-plugin-development-essentials/book), published by Packt.
+http://www.youtube.com/watch?v=xmr1bOndP1g
 
 The Custom Content Type Manager plugin allows users to create custom content types (also known as post types) and standardize custom fields for each, including dropdowns, checkboxes, and images. This gives WordPress CMS functionality making it easier to use WP for eCommerce or content-driven sites.
 
 This plugin also lets you export and import those content definitions, making it easy to ensure a similar structure between multiple sites.
 
+If you are upgrading to version 0.9.4, please see the Wiki page on [Upgrading to version 0.9.4](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/Upgrading094)!
+
 Check the site for a [full list of features](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/Features).
 
-Please note that this plugin is still in development and I won't consider it stable until version 1.0! I try to make my code clean and functional, but there are no guarantees!  If you need certain features developed *hire me*.  Please be willing to [file bugs](http://code.google.com/p/wordpress-custom-content-type-manager/issues/list)!
+This plugin was written in part for the book [WordPress 3 Plugin Development Essentials](http://www.packtpub.com/wordpress-3-plugin-development-essentials/book), published by Packt.
 
 = Links =
 
@@ -28,15 +29,17 @@ Please use the following links for support and discussion:
 
 * Please sign up for the CCTM [Mailing List](http://eepurl.com/dlfHg)
 * Participate in the [Forum](http://wordpress.org/tags/custom-content-type-manager?forum_id=10)
-* File [Bug reports](http://code.google.com/p/wordpress-custom-content-type-manager/issues/list)
+* File [Bug reports](http://code.google.com/p/wordpress-custom-content-type-manager/issues/list) or make feature requests.
 * Read the [Official documentation](http://code.google.com/p/wordpress-custom-content-type-manager/)
 
 == Installation ==
 
-This plugin uses the standard installation procedure, but here is a typical use-case verbosely for the record:
+This plugin uses the standard installation procedure: install the plugin's folder inside of `wp-content/plugins` (make sure the folder is named *custom-content-type-manager*).
+
+Here is a typical use-case verbosely for the record:
 
 1. If you are upgrading from version 0.8.7 or before, you must *completely* uninstall and remove the previous version! This will not delete any of your content, but you should take some notes about the exact names of your content types before doing this.  Sorry, I know it's a pain, but I had to correct for limitations in the data structure.  See [this Wiki page](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/DeletePostType) for more information.
-1. Install this plugin using the traditional WordPress plugin installation, or upload this plugin's folder to the `/wp-content/plugins/` directory.
+1. Install this plugin using the traditional WordPress plugin installation, or upload this plugin's folder to the `/wp-content/plugins/` directory (ensure that the directory is named *custom-content-type-manager*).
 1. Activate the plugin through the 'Plugins' menu in the WordPress manager.
 1. Upon activation you can adjust the plugin settings by clicking the newly created "Custom Content Types" menu item, or click this plugin's "Settings" link on the Plugins page.
 1. After clicking the Settings link, you will see a list of content types -- there are two built-in types listed: post and page. To test this plugin, try adding a new content type named "movie" by clicking the "Add Custom Content Type" button at the top of the page.
@@ -60,17 +63,73 @@ Please see the online [FAQ](http://code.google.com/p/wordpress-custom-content-ty
 == Screenshots ==
 
 1. After activating this plugin, you can create custom content types (post types) by using the configuration page for this plugin. Click the "Custom Content Types" link under the Settings menu or click this plugin's "Settings" shortcut link in on the Plugin administration page.
-2. You can create a new content type by clicking the button at the top of the settings page.
+2. You can list all defined content types (a.k.a. post-types) by clicking on the "Custom Content Types" menu item.
 3. There are a lot of options available when you create a new content type, only some of them are pictured.
-4. You can define new custom fields by clicking on the "Manage Custom Fields" link for any content type.
+4. You can define many different types of custom fields by clicking on the "Custom Content Types --> Custom Fields" link.
 5. Clicking the "activate" link for any content type will cause its fields to be standardized and it will show up in the administration menus.
-6. Once you have defined custom fields for a content type and you have activated that content type, those custom fields will show up when you edit a new post. Here's what the custom fields look like when I create a new "Movie" post.
+6. Once you have defined custom fields and associated them with one or more content types, those custom fields will show up when you create or edit a new post. 
 
 == Changelog ==
 
-You can always checkout the most recent version of the code by going to your wp-content/plugins directory and executing the following command from the command-line:
+You can always checkout the most recent version of the code at 
+
+	http://wpcctm.com/cctm-dev.zip 
+	
+or by going to your wp-content/plugins directory and executing the following command from the command-line:
 
 	svn checkout http://plugins.svn.wordpress.org/custom-content-type-manager/trunk custom-content-type-manager 
+
+= 0.9.4.2 =
+
+* Added support for "Right Now" dashboard widget. [Issue 200](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=200)
+* Fixed issues with Categories and Archives: [Issue 202](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=202)
+	
+= 0.9.4.1 =
+
+* Fixed [Issue 196](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=196): Wrong link to plugin's settings from the Plugin's page.
+* Fixed [Issue 197](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=197): I had forgotten to uncomment lines that cleaned up field definitions after merging fields.
+* Added support for duplication of custom fields: [Issue 174](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=174)
+* Added support for duplication of post types: [Issue 173](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=173)
+
+= 0.9.4 =
+
+This is a major release:
+
+* Fixed [Issue 187](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=187) that affected dropdowns and multi-selects: values were not trimmed before comparison, causing the current value to be unselected.
+* Fixed [Issue 88](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=88) that prevented certain UTF8 characters (e.g. Polish) from being saved correctly in multi-select fields.
+* Updated Output Filter functionality. See [Output Filters](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/OutputFilters) in the wiki or [Issue 162](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=162) and [Issue 183](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=183) in the bug tracker.
+* Added "Wrapper" and "Default" output filters. See [Wrapper](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/wrapper_OutputFilter) and [Default](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/default_OutputFilter) in the wiki.
+* Custom Fields can now implement their own settings page. [Issue 161](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=161)
+* Improved help pages on the [project Wiki](http://code.google.com/p/wordpress-custom-content-type-manager/w/list).
+* Improved import/export of CCTM definitions.
+* Settings page added to give control to the users. See [Issue 72](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=72).
+* New menu icons! See [Issue 30](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=30).
+* Large menu icon now displayed when you edit or create a post type [Issue 136](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=136).
+* Fixed 2 issues [Issue 52](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=52) and [Issue 180](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=180) that caused wp_insert_post() to fail in different circumstances.
+* Implemented [Feature 178](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=178): submenus added to the post_type menus.
+* Fixed [Issue 168](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=168) that was preventing the admin user from unchecking "Rewrite with Permalink Front"
+* Now CCTM is compatible with the Gravity Forms plugin per [Issue 155](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=155)
+* General cleanup of the plugin's directory structure; general move towards MVC organization of all files.
+* Finally added some appropriate images to the footer of the admin pages.
+* Now HTML/JavaScript values can be stored correctly in text fields. See [Issue 152](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=152).
+* Implemented more advanced dropdown and multi-select options where users can now optionally store distinct values and labels for each option. See [Issue 150](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=150).
+* Revisited [Issue 146](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=146), discovered WordPress is adding slashes to $_POST, $_GET, $_COOKIE, and $_SERVER arrays (see [this article](http://kovshenin.com/archives/wordpress-and-magic-quotes/).  WHY IS WORDPRESS DOING THIS???
+* Fixed some lingering PHP notices in date.php (whoops).
+* Added method for Custom Field PHP classes to let each field add JS/CSS to the manager via the "admin_init" function. See [Issue 71](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=71).
+* Cleaned up PHP notices when creating a "Date" custom field.
+* Added checks for incompatible plugins [Issue 122](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=122)
+* Fixed [Issue 145](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=145) so you can now include HTML in default values for text and checkbox fields.
+* Added support for clean custom field un-installation:[Issue 145](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=145).
+* Fixed [Issue 144](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=144) so now you can define content types (i.e. post_types) that use numerical names.
+* Fixed [Issue 143](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=143) that prevented proper searching on the front-end.
+* Fixed [Issue 142](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=142) custom post types can now be ordered correctly using the "Order" attribute.
+* Fixed [Issue 139](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=139) that affected editing the names of custom fields -- a new field was created if the name was changed.
+* Fixed [Issue 138](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=138) that affected WYSIWYG custom fields that failed if a content type's main Content block was not active.
+* Implemented [Feature 126](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=126) so that bug reporting is easier: system info is generated for you to cut and paste into the bug report.
+* Fixed [Issue 114](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=114) where custom hierarchies were limited to only 5 items.
+* Fixed [Issue 115](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=115) where the "View Item" label was receiving incorrect values.
+* Fixed [Issue 121](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=121) where Array output filters returned empty string if no options were checked.
+* Fixed [Issue 123](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=123) so that names of custom fields are no longer limited to 20 characters: they now are limited to 255, the maximum possible length given the database column definition (VARCHAR 255).
 	
 = 0.9.3.3 =
 * Fixed [Issue 112](http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=112) custom page templates were being ignored.
@@ -202,6 +261,13 @@ If you are eager to see a particular feature implemented in a future release, pl
 And if you REALLY want some of these features implemented, you can hire me to complete portions of your project or make a [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=355ULXBFXYL8N).  Many of the surges in development in this plugin were instigated by projects that required this plugin's use.
 
 == Upgrade Notice ==
+
+= 0.9.4.1 =
+
+Fixes minor bugs with the 0.9.4 release: cleanup after merging custom fields. Also a couple new features: duplication of defs, radio buttons!
+
+= 0.9.4 =
+Major release! Please see the upgrade notes: [Upgrading to version 0.9.4](http://code.google.com/p/wordpress-custom-content-type-manager/wiki/Upgrading094)
 
 = 0.9.3.3 =
 Corrects yet another glitch where custom page templates were being ignored.

@@ -4,7 +4,7 @@ http://stackoverflow.com/questions/168455/how-do-you-post-to-an-iframe
 But there was a bug on that page... the src URL of the iFrame and the action URL
 of the form must be the same.
 ------------------------------------------------------------------------------*/
-require_once( realpath('../../../').'/wp-config.php' );
+@include_once( realpath('../../../').'/wp-load.php' );
 ?>
 <form id="file-form" enctype="multipart/form-data" action="<?php print CCTM_URL; ?>/upload_form_handler.php" method="post" target="cctm_upload_iframe">	
 	<?php wp_nonce_field('client-file-upload'); ?>

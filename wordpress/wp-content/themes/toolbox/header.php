@@ -65,7 +65,7 @@
 		</hgroup>
 
 		<nav id="access" role="navigation">
-			<h1 class="assistive-text"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
+			<h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'toolbox' ); ?></h1>
 			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'toolbox' ); ?>"><?php _e( 'Skip to content', 'toolbox' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

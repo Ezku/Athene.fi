@@ -49,10 +49,9 @@ representing a thumbnail of the selected media item, e.g.
 
 	<div id="myMediaField_preview"><img src="..." /></div>
 ------------------------------------------------------------------------------*/
-
 // To tie into WP, we come in through the backdoor, by including the config.
-require_once( realpath('../../../').'/wp-config.php' );
-require_once( realpath('../../../').'/wp-admin/includes/post.php'); // TO-DO: what if the wp-admin dir changes?
+@include_once( realpath('../../../').'/wp-load.php' );
+@include_once( realpath('../../../').'/wp-admin/includes/post.php'); // TO-DO: what if the wp-admin dir changes?
 $this_dir = dirname(__FILE__);
 include_once($this_dir.'/includes/constants.php');
 include_once($this_dir.'/includes/PostSelector.php');

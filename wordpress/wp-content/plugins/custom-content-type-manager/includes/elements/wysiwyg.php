@@ -5,14 +5,14 @@
 * Implements an WYSIWYG textarea input (a textarea with formatting controls).
 *
 */
-class CCTM_wysiwyg extends FormElement
+class CCTM_wysiwyg extends CCTMFormElement
 {
 
 	/** 
 	* The $props array acts as a template which defines the properties for each instance of this type of field.
 	* When added to a post_type, an instance of this data structure is stored in the array of custom_fields. 
 	* Some properties are required of all fields (see below), some are automatically generated (see below), but
-	* each type of custom field (i.e. each class that extends FormElement) can have whatever properties it needs
+	* each type of custom field (i.e. each class that extends CCTMFormElement) can have whatever properties it needs
 	* in order to work, e.g. a dropdown field uses an 'options' property to define a list of possible values.
 	* 
 	* 
@@ -32,7 +32,7 @@ class CCTM_wysiwyg extends FormElement
 		'name' => '',
 		'description' => '',
 		'class' => '',
-		'extra'	=> '',
+		'extra'	=> 'cols="80" rows="10"',
 		'default_value' => '',
 		// 'type'	=> '', // auto-populated: the name of the class, minus the CCTM_ prefix.
 		// 'sort_param' => '', // handled automatically
@@ -45,15 +45,7 @@ class CCTM_wysiwyg extends FormElement
 	* @return	string
 	*/
 	public function get_name() {
-		return __('Text',CCTM_TXTDOMAIN);	
-	}
-	
-	//------------------------------------------------------------------------------
-	/**
-	* Used to drive a thickbox pop-up when a user clicks "See Example"
-	*/
-	public function get_example_image() {
-		return '';
+		return __('WYSIWYG',CCTM_TXTDOMAIN);	
 	}
 	
 	//------------------------------------------------------------------------------
@@ -64,7 +56,7 @@ class CCTM_wysiwyg extends FormElement
 	* @return	string text description
 	*/
 	public function get_description() {
-		return __('WYSIWYG fields implement a <textarea> element with formatting controls. 
+		return __('What-you-see-is-what-you-get (WYSIWYG) fields implement a <textarea> element with formatting controls. 
 			"Extra" parameters, e.g. "cols" can be specified in the definition, however a minimum size is required to make room for the formatting controls.',CCTM_TXTDOMAIN);
 	}
 	
@@ -89,10 +81,72 @@ class CCTM_wysiwyg extends FormElement
 			<textarea name="[+name+]" class="cctm_textarea" id="[+name+]" [+extra+]>[+value+]</textarea>
 	 */
 	public function get_edit_field_instance($current_value) {
-		# print_r($this->props); exit;
-		$output = sprintf('
+		
+		// print "Here------->".$current_value; exit;
+		// See Issue http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=138
+		// See http://keighl.com/2010/04/switching-visualhtml-modes-with-tinymce/
+		ob_start();
+		wp_tiny_mce(false, // true makes the editor "teeny"
+		    array(
+		    "editor_selector" => $this->get_field_name(),
+		    "height" => 150,
+		    )
+		  );
+		$output = ob_get_contents();
+		ob_end_clean();
+
+		$output .= sprintf('
+			<script type="text/javascript">
+				jQuery( document ).ready( function() {
+					jQuery( "%s" ).addClass( "mceEditor" );
+					if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
+						tinyMCE.execCommand( "mceAddControl", false, "%s" );
+					}
+				});
+			</script>		
+			<p align="right">
+			  <a class="button" onclick="javascript:show_rtf_view(\'%s\');">Visual</a>
+			  <a class="button" onclick="javascript:show_html_view(\'%s\');">HTML</a>
+			</p>
 			%s
-			<textarea name="%s" class="%s" id="%s" %s>%s</textarea>
+			<textarea name="%s" class="%s " id="%s" %s>%s</textarea>
+
+			<br />
+			'
+			, $this->get_field_name()
+			, $this->get_field_name()
+
+			, $this->get_field_id()
+			, $this->get_field_id()
+			, $this->wrap_label()
+			, $this->get_field_name()
+			// They all must have the same class name.
+			// See http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=171
+			, 'cctm_wysiwyg' // $this->get_field_class($this->name, 'wysiwyg') . ' ' . $this->class
+			, $this->get_field_id()
+			, $this->extra
+			, $current_value
+		);
+		
+		$output .= $this->wrap_description($this->props['description']);
+		
+		return $this->wrap_outer($output);
+	}
+
+/*
+		ob_start();
+		wp_tiny_mce(false, // true makes the editor "teeny"
+		    array(
+		    "editor_selector" => $this->get_field_name(),
+		    "height" => 150
+		    )
+		  );
+		$output = ob_get_contents();
+		ob_end_clean();
+
+		$output .= sprintf('
+			%s
+			<textarea name="%s" class="%s " id="%s" %s>%s</textarea>
 			<script type="text/javascript">
 				jQuery( document ).ready( function() {
 					jQuery( "%s" ).addClass( "mceEditor" );
@@ -104,7 +158,7 @@ class CCTM_wysiwyg extends FormElement
 			'
 			, $this->wrap_label()
 			, $this->get_field_name()
-			, $this->get_field_class($this->name, 'text') . ' ' . $this->class
+			, $this->get_field_class($this->name, 'wysiwyg') . ' ' . $this->class
 			, $this->get_field_id()
 			, $this->extra
 			, $current_value
@@ -116,6 +170,9 @@ class CCTM_wysiwyg extends FormElement
 		
 		return $this->wrap_outer($output);
 	}
+*/
+
+
 
 	//------------------------------------------------------------------------------
 	/**
@@ -171,7 +228,7 @@ class CCTM_wysiwyg extends FormElement
 		$out .= '<div class="'.self::wrapper_css_class .'" id="description_wrapper">
 			 	<label for="description" class="'.self::label_css_class.'">'
 			 		.__('Description', CCTM_TXTDOMAIN) .'</label>
-			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'.htmlentities($def['description']).'</textarea>
+			 	<textarea name="description" class="'.$this->get_field_class('description','textarea').'" id="description" rows="5" cols="60">'.htmlspecialchars($def['description']).'</textarea>
 			 	' . $this->get_translation('description').'
 			 	</div>';
 		return $out;
@@ -183,9 +240,9 @@ class CCTM_wysiwyg extends FormElement
 	 * it is saved to the database. Data validation and filtering should happen here,
 	 * although it's difficult to enforce any validation errors.
 	 *
-	 * Note that the field name in the $_POST array is prefixed by FormElement::post_name_prefix,
+	 * Note that the field name in the $_POST array is prefixed by CCTMFormElement::post_name_prefix,
 	 * e.g. the value for you 'my_field' custom field is stored in $_POST['cctm_my_field']
-	 * (where FormElement::post_name_prefix = 'cctm_').
+	 * (where CCTMFormElement::post_name_prefix = 'cctm_').
 	 *
 	 * Output should be whatever string value you want to store in the wp_postmeta table
 	 * for the post in question. This function will be called after the post/page has
@@ -196,7 +253,7 @@ class CCTM_wysiwyg extends FormElement
 	 * @return	string	whatever value you want to store in the wp_postmeta table where meta_key = $field_name	
 	 */
 	public function save_post_filter($posted_data, $field_name) {
-		$value = trim($posted_data[ FormElement::post_name_prefix . $field_name ]);
+		$value = $posted_data[ CCTMFormElement::post_name_prefix . $field_name ];
 		return wpautop( $value ); // Auto-paragraphs for any WYSIWYG
 	}
 

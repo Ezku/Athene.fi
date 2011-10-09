@@ -3,9 +3,11 @@
 Plugin Name: Custom Content Type Manager
 Description: Allows users to create custom content types (also known as post types) and standardize custom fields for each content type, including dropdowns, checkboxes, and images. This gives WordPress CMS functionality making it easier to use WP for eCommerce or content-driven sites.
 Author: Everett Griffiths
-Version: 0.9.3.3
+Version: 0.9.4.2-pl
 Author URI: http://www.fireproofsocks.com/
 Plugin URI: http://code.google.com/p/wordpress-custom-content-type-manager/
+
+To see the full version name, see the readme.txt file or includes/CCTM.php.
 
 See also Related plugins listed here:
 http://code.google.com/p/wordpress-custom-content-type-manager/wiki/SeeAlso
@@ -30,7 +32,7 @@ $function_names_used = array('get_custom_field','get_custom_field_meta','get_cus
 	,'get_relation','get_unique_values_this_custom_field','print_custom_field','print_custom_field_meta'
 	,'uninstall_cctm');
 $class_names_used = array('CCTM', 'ImportExport'
-	,'StandardizedCustomFields','CCTMtests','PostSelector');
+	,'StandardizedCustomFields','CCTMtests','PostSelector','CCTMFormElement');
 // Not class constants: constants declared via define():
 $constants_used = array('CCTM_PATH','CCTM_URL');
 

@@ -47,10 +47,10 @@ function toolbox_setup() {
 	 * If you're building a theme based on toolbox, use a find and replace
 	 * to change 'toolbox' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'toolbox', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'toolbox', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
@@ -132,7 +132,7 @@ function toolbox_content_nav( $nav_id ) {
 
 	?>
 	<nav id="<?php echo $nav_id; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'toolbox' ); ?></h1>
+		<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'toolbox' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -171,7 +171,14 @@ if ( ! function_exists( 'toolbox_comment' ) ) :
 function toolbox_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
-		case '' :
+		case 'pingback' :
+		case 'trackback' :
+	?>
+	<li class="post pingback">
+		<p><?php _e( 'Pingback:', 'toolbox' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'toolbox' ), ' ' ); ?></p>
+	<?php
+			break;
+		default :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
@@ -205,13 +212,6 @@ function toolbox_comment( $comment, $args, $depth ) {
 
 	<?php
 			break;
-		case 'pingback' :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'toolbox' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'toolbox' ), ' ' ); ?></p>
-	<?php
-			break;
 	endswitch;
 }
 endif; // ends check for toolbox_comment()
@@ -230,7 +230,7 @@ function toolbox_posted_on() {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		sprintf( esc_attr__( 'View all posts by %s', 'toolbox' ), get_the_author() ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'toolbox' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 }
@@ -289,6 +289,20 @@ function toolbox_category_transient_flusher() {
 }
 add_action( 'edit_category', 'toolbox_category_transient_flusher' );
 add_action( 'save_post', 'toolbox_category_transient_flusher' );
+
+/**
+ * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+ */
+function toolbox_enhanced_image_navigation( $url ) {
+	global $post;
+
+	if ( wp_attachment_is_image( $post->ID ) )
+		$url = $url . '#main';
+
+	return $url;
+}
+add_filter( 'attachment_link', 'toolbox_enhanced_image_navigation' );
+
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.

@@ -1,0 +1,1 @@
+<input type="radio" name="[+name+]" class="[+class+]" id="[+id+]"  value="[+value+]" [+extra+]/> [+label+]

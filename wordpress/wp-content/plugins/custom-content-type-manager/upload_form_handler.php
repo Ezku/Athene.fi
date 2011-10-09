@@ -7,9 +7,7 @@ the upload form is iFramed in a thickbox, we can't submit the page directly,
 else we lose the thickbox. The solution is to post the data to an iFrame that
 includes this page.
 ------------------------------------------------------------------------------*/
-require_once( realpath('../../../').'/wp-config.php' );
-require_once('../../../wp-admin/admin.php');
-
+@include_once( realpath('../../../').'/wp-load.php' );
 if ( !empty($_POST) && !empty($_FILES) )// && isset($_POST['async-upload']) && !empty($_FILES) )
 {
 

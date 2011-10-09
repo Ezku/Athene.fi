@@ -68,61 +68,74 @@ function get_all_fields_of_type($type, $prefix='')
 
 //------------------------------------------------------------------------------
 /**
-SYNOPSIS: Used inside theme files, e.g. single.php or single-my_post_type.php
-where you need to print out the value of a specific custom field.
-
-WordPress allows for multiple rows in wp_postmeta to share the same meta_key for 
-a single post; the CCTM plugin expects all meta_key's for a given post_id to be 
-unique.  To deal with the possibility that the user has created multiple custom 
-fields that share the same name for a single post (e.g. created manually with the 
-CCTM plugin disabled), this prints the 1st instance of the meta_key identified by 
-$fieldname associated with the current post. See get_post_meta() for more details.
-
-INPUT: 
-	$fieldname (str) the name of the custom field as defined inside the 
-		Manage Custom Fields area for a particular content type.
-	$options mixed can be used to specify additional arguments
-	
-OUTPUT:
-	The contents of that custom field for the current post.
-
-See also 	
-http://codex.wordpress.org/Function_Reference/get_post_custom_values
-*/
-function get_custom_field($fieldname, $options=null)
+ * SYNOPSIS: Used inside theme files, e.g. single.php or single-my_post_type.php
+ * where you need to print out the value of a specific custom field.
+ * 
+ * WordPress allows for multiple rows in wp_postmeta to share the same meta_key for 
+ * a single post; the CCTM plugin expects all meta_key's for a given post_id to be 
+ * unique.  To deal with the possibility that the user has created multiple custom 
+ * fields that share the same name for a single post (e.g. created manually with the 
+ * CCTM plugin disabled), this prints the 1st instance of the meta_key identified by 
+ * $fieldname associated with the current post. See get_post_meta() for more details.
+ *
+ * See also 	
+ * http://codex.wordpress.org/Function_Reference/get_post_custom_values
+ *
+ * @param	string the name of the custom field (exists in wp_postmeta).
+ * 		Optionally this string can be in the format of 'fieldname:output_filter'
+ * @param	mixed	can be used to specify additional arguments
+ * @return	mixed	The contents of the custom field, processed through output filters
+ */
+function get_custom_field($raw_fieldname, $options=null)
 {
-	// print_r(CCTM::$data); exit;
-	
 	global $post;
-	// print_r(CCTM::$data[$post->post_type]['custom_fields']); exit;
-	if ( !isset(CCTM::$data[$post->post_type]['custom_fields'][$fieldname]) ) {
-		return sprintf( __('The %s field is not defined as a custom field.', CCTM_TXTDOMAIN), $fieldname );
+	$options_array = func_get_args();
+	
+	// Extract any output filters.
+	$input_array = explode(':',$raw_fieldname);	
+	$fieldname = array_shift($input_array);
+	
+	// We need the custom field definition for 2 reasons:
+	// 1. To find the default Output Filter
+	// 2. To find any default value (if the field is not defined)
+	if ( !isset(CCTM::$data['custom_field_defs'][$fieldname]) ) {
+		// return get_post_meta($post->ID, $fieldname, true); // ???
+		return sprintf( __('The %s field is not defined as a custom field.', CCTM_TXTDOMAIN), $fieldname ); // ! TODO: just return the fieldname?
 	}
 	
-	$field_type = CCTM::$data[$post->post_type]['custom_fields'][$fieldname]['type'];
-	CCTM::include_form_element_class($field_type); // This will die on errors
-		
-	$field_type_name = CCTM::FormElement_classname_prefix.$field_type;
-	$FieldObj = new $field_type_name(); // Instantiate the field element
-	$FieldObj->props = CCTM::$data[$post->post_type]['custom_fields'][$fieldname];
-
+	
+	// Get default output filter
+	if (empty($input_array)){
+		if (isset(CCTM::$data['custom_field_defs'][$fieldname]['output_filter']) 
+			&& !empty(CCTM::$data['custom_field_defs'][$fieldname]['output_filter'])) {
+			$input_array[] = CCTM::$data['custom_field_defs'][$fieldname]['output_filter'];
+		}
+	}
+	// Raw value from the db
 	$value = get_post_meta($post->ID, $fieldname, true);
 
- 	// This is what will push out the default value if the value is not set.
- 	// but it breaks if you actually want NO value (e.g. no image)
-	//if ( empty($value) && isset(CCTM::$data[$post->post_type]['custom_fields'][$fieldname]['default_value']) ) {
-	//	$value = CCTM::$data[$post->post_type]['custom_fields'][$fieldname]['default_value'];
-	//}
-
-	$value = $FieldObj->output_filter($value, $options);
-
-	if ( empty($value) ) {
-		return '';
+	// Default value?
+	if ( empty($value) && isset(CCTM::$data['custom_field_defs'][$fieldname]['default_value'])) {
+		$value = CCTM::$data['custom_field_defs'][$fieldname]['default_value'];
 	}
-	else {
-		return $value;
+
+	// Pass thru Output Filters
+	$i = 1;
+	foreach($input_array as $outputfilter) {
+
+		if (isset($options_array[$i])) {
+			$options = $options_array[$i];
+		}
+		else {
+			$options = null;
+		}
+		
+		$value = CCTM::filter($value, $outputfilter, $options);
+
+		$i++;
 	}
-	
+
+	return $value;	
 }
 
 //------------------------------------------------------------------------------
@@ -134,25 +147,13 @@ function get_custom_field($fieldname, $options=null)
 *
 * @param	string	$fieldname	The name of the custom field
 * @param	string	$item		The name of the definition item that you want
-* @param	string	$post_type	Optional.  Default is read from the global $post.
 * @return	mixed	Usually a string, but some items are arrays (e.g. options)
 */
-function get_custom_field_meta($fieldname, $item, $post_type=null)
-{
-	if (!$post_type)
-	{
-		global $post;
-		$post_type = $post->post_type;
-		if (!$post_type)
-		{
-			return __('Could not determine the post_type.',CCTM_TXTDOMAIN);
-		}
-	}
-
+function get_custom_field_meta($fieldname, $item) {
 	$data = get_option( CCTM::db_key, array() );
 	
-	if ( $data[$post_type]['custom_fields'][$fieldname] ) {
-		return $data[$post_type]['custom_fields'][$fieldname];
+	if ( $data['custom_field_defs'][$fieldname] ) {
+		return $data['custom_field_defs'][$fieldname];
 	}
 	else {
 		return sprintf( __('Invalid field name: %s', CCTM_TXTDOMAIN), $fieldname );
