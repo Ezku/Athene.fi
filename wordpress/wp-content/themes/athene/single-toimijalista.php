@@ -18,6 +18,7 @@ function toimijalista_get_template($layouts, $layout, $section = NULL) {
 }
 
 $layout = get_custom_field('layout');
+$perma_url = get_permalink();
 
 get_header(); ?>
 

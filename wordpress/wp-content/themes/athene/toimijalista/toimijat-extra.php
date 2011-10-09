@@ -3,7 +3,14 @@
 <?php if ($options['toimijat']['firstyear'] > 0) { ?>
     <div>
     <?php for($i=$options['toimijat']['year']; $i>=$options['toimijat']['firstyear']; $i--): ?>
-        <p><a href="<?php echo get_permalink() ?><?php echo $i ?>"><?php echo $i ?></a></p>
+        <?php
+            if ($args['meta_value'] == $i) {
+                $class = 'selected';
+            } else {
+                $class = '';
+            }
+        ?>
+        <p><a class="<?php echo $class ?>" href="<?php echo $perma_url ?><?php echo $i ?>"><?php echo $i ?></a></p>
     <?php endfor; ?>
     </div>
 <?php } ?>
