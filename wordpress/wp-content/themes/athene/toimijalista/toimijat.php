@@ -7,17 +7,9 @@ $args['order'] = "ASC";
 $results = $Q->get_posts($args);
 ?>
 
-<?php if ($options['toimijat']['firstyear'] > 0) { ?>
-    <div>
-    <?php for($i=$options['toimijat']['year']; $i>=$options['toimijat']['firstyear']; $i--): ?>
-        <a href="<?php echo get_permalink() ?><?php echo $i ?>"><?php echo $i ?></a>
-    <?php endfor; ?>
-    </div>
-<?php } ?>
-
 
 <?php
-$gridClass = cycle('grid_6 alpha', 'grid_6 omega');
+$gridClass = cycle('grid_5 alpha', 'grid_5 omega');
 $gridContainerStart = cycle('<div class="clearfix">', '');
 $gridContainerEnd = cycle('', '</div>');
 foreach($results as $entry):

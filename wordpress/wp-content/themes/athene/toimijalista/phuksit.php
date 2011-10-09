@@ -35,32 +35,14 @@ $phuksis = $Q->get_posts($args);
 ?>
 
 
-<?php // show links to other groups and years ?>
-<h3>Phuksiryhmät</h3>
-<?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
-    <a href="<?php echo get_permalink() ?><?php echo $options['phuksiryhmat']['year'].'/'.$i ?>"><?php echo $i ?></a> 
-<?php endfor; ?>
-<h3>Aiemmat vuodet</h3>
-<?php 
-if ($options['phuksiryhmat']['firstyear'] > 0):
-    for($j=$options['phuksiryhmat']['year']-1;$j>=$options['phuksiryhmat']['firstyear']; $j--):?>
-        <div class="year"> <?php echo $j ?>
-        <?php for($i=1;$i<=$options['phuksiryhmat']['groups']; $i++): ?>
-            <a href="<?php echo get_permalink() ?><?php echo $j.'/'.$i ?>"><?php echo $i ?></a> 
-        <?php endfor; ?>
-        </div>
-    <?php endfor; ?>
-<?php endif; ?>
-
-
 
 <?php // show the actual content ?>
 <h2>ISO-henkilöt</h2>
 <?php
 $count = 0;
-$gridClass = cycle('grid_6 alpha', 'grid_6 omega');
-$gridContainerStart = cycle('<div class="clearfix">', '');
-$gridContainerEnd = cycle('', '</div>');
+$gridClass = cycle('grid_3 alpha', 'grid_3', 'grid_3 omega');
+$gridContainerStart = cycle('<div class="clearfix">', '', '');
+$gridContainerEnd = cycle('', '', '</div>');
 foreach ($isos as $iso) {
   $post = get_post_complete($iso['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 
@@ -101,9 +83,9 @@ if ($count == 0) {
 <h2 style="clear: left;">Phuksit</h2>
 <?php
 $count = 0;
-$gridClass = cycle('grid_3 alpha', 'grid_3', 'grid_3', 'grid_3 omega');
-$gridContainerStart = cycle('<div class="clearfix">', '', '', '');
-$gridContainerEnd = cycle('', '', '', '</div>');
+$gridClass = cycle('grid_3 alpha', 'grid_3', 'grid_3 omega');
+$gridContainerStart = cycle('<div class="clearfix">', '', '');
+$gridContainerEnd = cycle( '', '', '</div>');
 foreach($phuksis as $phuksi) {
   $post = get_post_complete($phuksi['ID']);
   if (get_custom_field('ryhma') == $params['ryhma']) { 

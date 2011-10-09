@@ -3,8 +3,18 @@ define(LAYOUT_TOIMIJAT, "Toimijat");
 define(LAYOUT_PHUKSIT, "Phuksit");
 define(LAYOUT_VALMISTUNEET, "Valmistuneet");
 
+$layouts = array(
+    LAYOUT_TOIMIJAT => "toimijat",
+    LAYOUT_PHUKSIT => "phuksit",
+    LAYOUT_VALMISTUNEET => "valmistuneet"
+);
+
 function custom_field_found($field) { // yep, bubble gum found
   return get_custom_field($field) != "The ".$field." field is not defined as a custom field.";
+}
+
+function toimijalista_get_template($layouts, $layout, $section = NULL) {
+    return 'toimijalista/'.$layouts[$layout].($section == NULL ? '' : '-'.$section).'.php';
 }
 
 $layout = get_custom_field('layout');
@@ -12,7 +22,7 @@ $layout = get_custom_field('layout');
 get_header(); ?>
 
 <div id="primary" class="container_16">
-	<div id="content" class="grid_12 alpha prefix_4" role="main">
+	<div id="content" class="grid_10 alpha" role="main">
         <?php while ( have_posts() ) : the_post(); ?>
 	
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,13 +37,9 @@ get_header(); ?>
                     $args = array(
                       "post_type" => get_custom_field('tyyppi')
                     );
-                    if ($layout == LAYOUT_PHUKSIT) {
-                      include('toimijalista/phuksit.php');
-                    } else if ($layout == LAYOUT_TOIMIJAT) {
-                      include('toimijalista/toimijat.php');
-                    } else { // $layout == LAYOUT_VALMISTUNEET
-                      $results = $Q->get_posts($args);
-                      include('toimijalista/valmistuneet.php');
+                    if (array_key_exists($layout, $layouts)) {
+                        //include('toimijalista/'.$layout.'.php');
+                        include(toimijalista_get_template($layouts, $layout));
                     }
                     ?>
                     
@@ -43,6 +49,15 @@ get_header(); ?>
 
         <?php endwhile; // end of the loop. ?>
     </div> <!-- /#content -->
+    <div id="extra" class="grid_6 omega">
+        <?php 
+        if (array_key_exists($layout, $layouts)) {
+            //include('toimijalista/'.$layout.'.php');
+            
+            include(toimijalista_get_template($layouts, $layout, 'extra'));
+        }
+        ?>
+    </div><!-- #extra -->
 </div> <!-- /#primary -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

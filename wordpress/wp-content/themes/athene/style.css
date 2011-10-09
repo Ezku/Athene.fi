@@ -430,9 +430,9 @@ blockquote {
     width: 150px;
 }
 
-.toimija.grid_6.alpha,
-.toimija.grid_6.omega {
-    width: 330px;
+.toimija.grid_5.alpha,
+.toimija.grid_5.omega {
+    width: 270px;
 }
 
 /* alumni lists */
