@@ -61,6 +61,7 @@ foreach ($this->catlist->get_categories_posts() as $single):
     //Show comments:
     //$lcp_display_output .= $this->get_comments($single);
 
+    $lcp_display_output .= '<header>';
     //Show date:
     $lcp_display_output .= ' ' . $this->get_date($single, 'p', 'date');
 
@@ -72,18 +73,20 @@ foreach ($this->catlist->get_categories_posts() as $single):
 
     //Post Thumbnail
     $lcp_display_output .= $this->get_thumbnail($single);
+    
+    $lcp_display_output .= '</header>';
 
     /**
      * Post content - Example of how to use tag and class parameters:
      * This will produce:<p class="lcp_content">The content</p>
      */
-    $lcp_display_output .= $this->get_content($single, 'p', 'lcp_content');
+    $lcp_display_output .= $this->get_content($single, 'section', 'lcp_content');
 
     /**
      * Post content - Example of how to use tag and class parameters:
      * This will produce:<div class="lcp_excerpt">The content</div>
      */
-    $lcp_display_output .= $this->get_excerpt($single, 'div', 'lcp_excerpt');
+    $lcp_display_output .= $this->get_excerpt($single, 'section', 'lcp_excerpt');
 
     //Close li tag
     $lcp_display_output .= '</li>';
