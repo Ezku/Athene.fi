@@ -213,10 +213,6 @@ header#branding {
 	padding-top: 18px;
 }
 
-#main {
-	/*padding-bottom: 36px; causes white stripe below footer */
-}
-
 /* = menus: subnavi-header
 -------------------------------------------------------------- */
 
@@ -245,25 +241,25 @@ header nav a {
 /* = menus: subnavi-content
 -------------------------------------------------------------- */
 
-#main .menu-item h4 {
+#content .menu-item h4 {
 	margin-bottom: 0;
 	border-bottom: 1px solid #808D79;
 }
-#main .menu-item h4 a {
+#content .menu-item h4 a {
 	text-decoration: none;
 }
-#main .menu-item .intro {
+#content .menu-item .intro {
 	background-color: #FBFBFB;
 	padding: 0.5em;
 	min-height: 60px;
 }
-#main .menu-item .intro > p {
+#content .menu-item .intro > p {
   margin-bottom: 0;
 }
-#main .menu-item.alpha {
+#content .menu-item.alpha {
   clear: both;
 }
-#main .menu-item {
+#content .menu-item {
   margin-bottom: 2em;
 }
 
