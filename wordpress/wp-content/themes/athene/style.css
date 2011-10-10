@@ -504,6 +504,9 @@ blockquote {
     display:block;
 }
 
+/* = content: person listings
+-------------------------------------------------------------- */
+
 .toimija {
   /*float: left; 
   width: 230px; 
@@ -551,4 +554,15 @@ blockquote {
 
 #alumni-list tr.even {
     background-color: rgba(0,0,0,0.05);
+}
+
+/* = commenting (based on Disqus)
+-------------------------------------------------------------- */
+#dsq-content h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+#dsq-reply h3 {
+  font-size: 28px;
 }
