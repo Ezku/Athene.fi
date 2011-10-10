@@ -31,13 +31,14 @@ class FlickrPhotosetsWidget extends WP_Widget {
   		$options = get_option('flickr_photosets_options');
   		$link = get_permalink($instance['link_target'])
   		?>
+  		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickr.css" type="text/css" media="screen" charset="utf-8" />
   		<div class="widget widget-flickr">
   		<header class="widget-header">
   		  <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
   		</header>
   		<div id="flickr-widget" class="widget-content" style="position: relative;">
-  		  <div class="spinner" style="position: absolute; top: 50%; left: 50%; margin-left: -25px; margin-top: -25px; width: 50px;">
-  		    loading...
+  		  <div class="spinner">
+  		    
   		  </div>
   		</div>
   		<script type="text/javascript" charset="utf-8" src="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickrbrowser.js"></script>
