@@ -28,13 +28,13 @@ function flickr_photosets_show( $attrs ) {
       flickrbrowser.user_id = "'.$options['username'].'";
     </script>
     <div id="flickrphotos">
+      <div class="spinner">
+      </div>
     </div>
     <div class="flickrlink">
       <p>Kaikki kuvat löytyvät myös <a href="http://www.flickr.com/photos/'.$options['username'].'/sets/">Flickr-palvelusta</a>.</p>
     </div>
-    <div id="spinner">
-      loading....
-    </div>
+    
   ';
 	return $output;
 }

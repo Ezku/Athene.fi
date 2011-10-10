@@ -5,16 +5,43 @@
   margin: 10px 0;
 }
 .photosettitle:hover {
-  background-color: #ded;
+  background-color: #eee;
 }
 .photoset.active {
-  background-color: #ded;
+  background-color: #eee;
 }
 .photo {
   margin: 5px;
 }
-#spinner {
+.spinner {
 }
 
 .hide {
+}
+
+.flickr-photoset {
+    text-decoration: none;
+}
+
+.flickr-photoset-title {
+    font-family: "Museo Slab", Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.flickr-photoset-info {
+    margin-left: 10px;
+}
+
+.flickr-photoset-details {
+    color: #666;
+}
+
+.flickr-link {
+    display: block;
+    padding: 5px 10px 10px;
+}
+
+.photoset .photos {
+    margin: 5px 0 0 -5px;
 }

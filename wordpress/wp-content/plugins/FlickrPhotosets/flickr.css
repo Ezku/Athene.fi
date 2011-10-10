@@ -12,13 +12,26 @@
 .photo {
   float: left;
 }
-#spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin: -50px -50px 0 0;
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  padding: 10px;
+  background-image: url('spinner.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.flickr-photoset {
+    display: block;
+    position: relative;
+}
+
+.flickr-photoset-info {
+    position: absolute; 
+    top: 50%; 
+    height: 2.5em; 
+    margin-top: -1.25em;
 }
 
 .hide {
