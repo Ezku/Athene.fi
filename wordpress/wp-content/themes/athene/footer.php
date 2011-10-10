@@ -57,10 +57,14 @@
 			
 			<div class="grid_4 omega">
 			    <h4>Athene muualla</h4>
-				<p>
-				    <a href="http://twitter.com/#!/athenekilta"><img src="<?php bloginfo( 'template_directory' ); ?>/images/twitter.png" alt="athenekilta @ Twitter" /></a>
-				    <a href="https://www.facebook.com/athenekilta"><img src="<?php bloginfo( 'template_directory' ); ?>/images/facebook.png" alt="athenekilta @ Facebook" /></a>
-				    #purkusessio @ IRCnet
+				<p class="social">
+				    <a href="http://twitter.com/athenekilta" title="athenekilta @ Twitter" id="twitter">
+				        <span>athenekilta @ Twitter</span>
+				    </a>
+				    <a href="https://www.facebook.com/athenekilta" title="Athene @ Facebook" id="facebook">
+				        <span>athenekilta @ Facebook</span>
+				    </a>
+				    <div>#purkusessio @ IRCnet</div>
 				</p>
 			</div>
 		</div>

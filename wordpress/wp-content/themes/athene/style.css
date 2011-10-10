@@ -261,6 +261,36 @@ header nav a {
   margin-top: 2em;
 }
 
+/* social */
+.social a, .social div {
+  float: left;
+}
+
+a#twitter, a#facebook {
+  background-position: top;
+  background-repeat: no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}
+
+a#twitter:hover, a#facebook:hover {
+  background-position: bottom;
+}
+
+a#twitter {
+  background-image: url(images/twitter.png);
+}
+
+a#facebook {
+  background-image: url(images/facebook.png);
+}
+
+a#twitter span, a#facebook span {
+  display: none;
+}
+
 /* = content: poll
 -------------------------------------------------------------- */
 
