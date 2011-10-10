@@ -13,7 +13,16 @@ get_header(); ?>
 			</div><!-- #content -->
 			
             <div id="comments" class="grid_6 omega">
-                <?php comments_template( '', true ); ?>
+                <?php if (comments_open()): ?>
+                    <?php comments_template( '', true ); ?>
+                <?php else: ?> 
+                    <?php if (is_active_sidebar( 'sidebar-1' )): ?>
+        			        <?php dynamic_sidebar( 'sidebar-1' ); ?>
+                    <?php endif; ?>
+                    <?php if (is_active_sidebar( 'sidebar-2' )): ?>
+        			        <?php dynamic_sidebar( 'sidebar-2' ); ?>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div><!-- #comments -->
             
 			<?php get_sidebar(); ?>

@@ -35,10 +35,10 @@ var flickrbrowser = {
     
     var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
     
-    flickrbrowser.showSpinner(true);
+    flickrbrowser.showSpinner('#flickrphotos', true);
     jQuery.getJSON(url,function(data){
       flickrbrowser.log(data);
-  	  flickrbrowser.showSpinner(false);
+  	  flickrbrowser.showSpinner('#flickrphotos', false);
   	  jQuery("#flickrphotos").html("");
   	  if (data.stat === "fail") {
   	    jQuery("#flickrphotos").html("Error fetching photosets: "+data.message);
@@ -59,14 +59,17 @@ var flickrbrowser = {
     	    jQuery("#flickrphotos").append(
     	        "<div id=\"photoset"+val.id+"\" class=\"photoset\" data-photoset-id=\"" + val.id + "\">"
     	        + "<div class=\"photosettitle\">"
-    	            + "<a href=\"#\" style='display: block; position: relative;'>"
+    	            + "<a href=\"#\" class='flickr-photoset'>"
     	                + "<img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' />"
-    	                + "<span style='margin: 0 5px; position: absolute; top: 50%; height: 2em; margin-top: -1em;'>"
-    	                    + title + "<br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i>"
+    	                + "<span class='flickr-photoset-info' style=''>"
+    	                    +'<span class="flickr-photoset-title">'+ title + "</span><br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i>"
     	                + "</span><br />"
     	            + "</a>"
     	        + "</div>"
-    	        + "<div class=\"photos hide\"></div>"
+    	        + "<div class=\"photos hide\">"
+    	            + "<div class=\"spinner\">"
+                    + "</div>"
+    	        + "</div>"
     	      + "</div>");
     	    jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
     	      flickrbrowser.log(data);
@@ -97,15 +100,20 @@ var flickrbrowser = {
   getPhotoset: function(id, el) {
     flickrbrowser.setHash({photoset: id});
     var url = flickrbrowser.getQueryString("flickr.photosets.getPhotos", {photoset_id: id});
-    flickrbrowser.showSpinner(true);
+    flickrbrowser.showSpinner('#photoset'+id, true);
     jQuery.getJSON(url,function(data){
-      flickrbrowser.showSpinner(false);
+      flickrbrowser.showSpinner('#photoset'+id, false);
       var photosetString = "";
       jQuery.each(data.photoset.photo, function(index, photo) {
         var photoURLt = flickrbrowser.getPhotoURL(photo, "thumbnail");
         var photoURL = flickrbrowser.getPhotoURL(photo, "large");
-        photosetString += "<div class=\"photo\"><a rel=\"photoset"+id+"\" title=\""+photo.title+"\" href=\""+photoURL+"\"><img src=\""+ photoURLt +"\" alt=\"\" /></a></div>";
+        photosetString += 
+            '<div class="photo">'+
+                '<a rel="photoset'+id+'" title="'+photo.title+'" href="'+photoURL+'"><img src="'+ photoURLt +'" alt="" /></a>'+
+            '</div>';
       });
+      photosetString += '<div style="clear: both;"></div>';
+      photosetString += '<a class="flickr-link" href="http://www.flickr.com/photos/'+flickrbrowser.user_id+'/sets/'+id+'">Albumi Flickr-palvelussa</a>';
       photosetString += '<div style="clear: both;"></div>';
       if (!el) {
         el = jQuery('#photoset'+id + " .photos");
@@ -132,14 +140,14 @@ var flickrbrowser = {
     return "http://farm"+opts.farm+".static.flickr.com/"+opts.server+"/"+opts.id+"_"+opts.secret+"_"+sizes[size]+".jpg"
   },
   setHash: function(params) {
-    var paramString = "";
+    var paramString = "!";
     jQuery.each(params, function(index, value) {
       paramString += index+"="+value+"&";
     });
     document.location.hash = paramString;
   },
   explodeHash: function() {
-    var hashParams = document.location.hash.substring(1).split("&");
+    var hashParams = document.location.hash.substring(2).split("&");
     var processedParams = {};
     jQuery.each(hashParams, function(i, param) {
       var keyValue = param.split("=");
@@ -153,8 +161,8 @@ var flickrbrowser = {
       
       return processedParams;
     },
-    showSpinner: function(flag) {
-      var el = jQuery('#spinner');
+    showSpinner: function(section, flag) {
+      var el = jQuery(section + ' .spinner');
       if (flag) {
         el.removeClass('hide');
       } else {

@@ -56,6 +56,7 @@ function toolbox_widgets_init() {
 	register_sidebar( array (
 		'name' => __( 'Sidebar 1', 'toolbox' ),
 		'id' => 'sidebar-1',
+		'description' => 'Näytetään tavallisilla sivuilla, jos kommentit eivät ole käytössä',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',
@@ -65,7 +66,7 @@ function toolbox_widgets_init() {
 	register_sidebar( array (
 		'name' => __( 'Sidebar 2', 'toolbox' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional second sidebar area', 'toolbox' ),
+		'description' => 'Näytetään tavallisilla sivuilla, jos kommentit eivät ole käytössä',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',
