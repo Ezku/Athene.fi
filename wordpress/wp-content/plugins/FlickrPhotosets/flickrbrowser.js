@@ -62,7 +62,7 @@ var flickrbrowser = {
     	            + "<a href=\"#\" class='flickr-photoset'>"
     	                + "<img class=\"primary\" src=\"\" alt=\"\" style='height: 75px; width: 75px' />"
     	                + "<span class='flickr-photoset-info' style=''>"
-    	                    +'<span class="flickr-photoset-title">'+ title + "</span><br/><i>"+val.photos+" kuvaa - "+timestampStr+"</i>"
+    	                    +'<span class="flickr-photoset-title">'+ title + "</span><br/><span class=\"flickr-photoset-details\"><i>"+val.photos+" kuvaa - "+timestampStr+"</i></span>"
     	                + "</span><br />"
     	            + "</a>"
     	        + "</div>"

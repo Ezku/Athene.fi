@@ -33,6 +33,10 @@
     margin-left: 10px;
 }
 
+.flickr-photoset-details {
+    color: #666;
+}
+
 .flickr-link {
     display: block;
     padding: 5px 10px 10px;
