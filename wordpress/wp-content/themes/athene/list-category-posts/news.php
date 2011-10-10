@@ -54,19 +54,22 @@ $lcp_display_output .= '<ul class="lcp_catlist">';
 foreach ($this->catlist->get_categories_posts() as $single):
     //Start a List Item for each post:
     $lcp_display_output .= "<li>";
+    
+    $lcp_display_output .= '<header>';
 
     //Show the title and link to the post:
-    $lcp_display_output .= $this->get_post_title($single);
+    $lcp_display_output .= '<h3 style="margin-bottom: 0;">';
+    $lcp_display_output .= $this->get_post_title($single, 'h3', 'post-title');
+    $lcp_display_output .= '</h3>';
 
     //Show comments:
     //$lcp_display_output .= $this->get_comments($single);
 
-    $lcp_display_output .= '<header>';
     //Show date:
-    $lcp_display_output .= ' ' . $this->get_date($single, 'p', 'date');
+    $lcp_display_output .= ' ' . $this->get_date($single, 'date', 'date');
 
     //Show author
-    $lcp_display_output .= $this->get_author($single);
+    //$lcp_display_output .= $this->get_author($single);
 
     //Custom fields:
     $lcp_display_output .= $this->get_custom_fields($this->params['customfield_display'], $single->ID);

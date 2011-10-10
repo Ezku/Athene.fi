@@ -379,6 +379,8 @@ header nav a {
 
 .lcp_catlist li .date {
   color: #bbb;
+  position: relative;
+  top: -4px;
 }
 
 /* = content: generic
