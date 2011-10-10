@@ -226,10 +226,9 @@ class SubMenuWalker extends Walker {
 	 * @param int $depth Depth of page.
 	 */
 	function end_el(&$output, $item, $depth) {
-		if (!$this->toBeShown($depth)) { // To match with function start_el
-			return;
+		if ($this->toBeShown($depth)) { // To match with function start_el
+			$output .= $this->format('el_end');
 		}
-		$output .= $this->format('el_end');
 		array_pop($this->current_menu_stack);
 	}
 	
