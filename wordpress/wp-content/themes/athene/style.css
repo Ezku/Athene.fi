@@ -153,11 +153,11 @@ h1, h2, h3 {
 }
 #access .current-menu-item a, #access .current-menu-ancestor a {
 	color: #1E2626;
-	text-shadow: 1px 1px #F9FAF5;
+	text-shadow: -1px -1px #AABCA3;
 }
 #access .current-menu-item a:hover, #access .current-menu-ancestor a:hover {
-	color: #444C1E;
-	text-shadow: 1px 1px #DEEB84;
+	color: #394646;
+	text-shadow: -1px -1px #AABCA3;
 }
 
 #subnavi-small li > a {
@@ -193,7 +193,7 @@ h1, h2, h3 {
 -------------------------------------------------------------- */
 
 #main .container_16 {
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 #main hgroup.container_16 {
 	margin-bottom: 0;
@@ -264,7 +264,7 @@ header nav a {
   clear: both;
 }
 #main .menu-item {
-  
+  margin-bottom: 2em;
 }
 
 /* = sitemap
