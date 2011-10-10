@@ -5,6 +5,7 @@
     <div class="widget-content">
         <ul class="ilmo clearfix">
         <?php foreach ($this->limit($entries, $items) as $entry): ?>
+            <a href="<?php echo $entry['url'] ?>" class="no-decoration">
             <li class="ilmo-entry <?php echo $entry['state'] ?>">
                 <article class="date-indexed clearfix">
                     <section class="date">
@@ -12,7 +13,7 @@
                     </section>
                     <section class="content">
                         <header class="title">
-                            <a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?></a>
+                            <?php echo $entry['name'] ?>
                         </header>
                         <section class="status">
                             <?php echo ucfirst($this->statusToString($entry)) ?>
@@ -21,6 +22,7 @@
                     </section>
                 </article>
             </li>
+            </a>
         <?php endforeach; ?> 
         </ul>
     </div>
