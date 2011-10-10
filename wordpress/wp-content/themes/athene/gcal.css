@@ -62,10 +62,14 @@
 }
 
 .gcal-event h3 {
-    margin-bottom: 5px;
+    margin-bottom: 0;
 }
 
 .gcal-event .date,
 .gcal-event .location {
     color: #666;
+}
+
+.gcal-event .description {
+    margin-top: 5px;
 }
