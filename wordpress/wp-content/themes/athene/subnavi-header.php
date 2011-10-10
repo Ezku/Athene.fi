@@ -10,7 +10,7 @@
 		                'link' => function($content, $depth) {
 		                    switch ($depth) {
 		                        case 0: return '<h3 class="grid_4 alpha no-decoration">%s</h3>';
-		                        default: return "<h5>%s</h5>";
+		                        default: return "%s";
 		                    }
 		                },
 		                'intro' => ''

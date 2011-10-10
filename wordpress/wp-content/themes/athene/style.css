@@ -62,7 +62,7 @@ h6 {
 	line-height: 18px;
 }
 
-h1, h2, h3, h4, h5, h6, #access a {
+h1, h2, h3, h4, h5, h6, #access a, #subnavi-small a {
 	font-family: "Museo Slab", Georgia, serif;
 	font-weight: normal;
 	letter-spacing: -0.0556em; /* 2px at 36px em */
@@ -158,6 +158,21 @@ h1, h2, h3 {
 #access .current-menu-item a:hover, #access .current-menu-ancestor a:hover {
 	color: #444C1E;
 	text-shadow: 1px 1px #DEEB84;
+}
+
+#subnavi-small li > a {
+  display: block;
+	font-size: 20px;
+	line-height: 24px;
+	padding-bottom: 14px;
+}
+
+#subnavi-small li.current-menu-item > a, #subnavi-small li.current-menu-ancestor > a {
+	color: #1E2619;
+}
+
+#subnavi-small li.current-menu-item > a:hover, #subnavi-small li.current-menu-ancestor > a:hover {
+	color: #445838;
 }
 
 /* image replacement for logo */
