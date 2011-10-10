@@ -119,9 +119,19 @@ body a {
 	color: #75B251;
 }
 
+body a:hover {
+	/* Greenish dark gray */
+	color: #445838;
+}
+
 footer, footer a {
 	/* Creamy yellow */
 	color: #F3F4F0;
+}
+
+footer a:hover {
+  /* Darker Athene green */
+	color: #75B251;
 }
 
 h1, h2, h3 {
@@ -140,6 +150,14 @@ h1, h2, h3 {
 #access a:hover {
 	color: #CEE572;
 	text-shadow: 1px 1px #151A1A;
+}
+#access .current-menu-item a, #access .current-menu-ancestor a {
+	color: #1E2626;
+	text-shadow: 1px 1px #F9FAF5;
+}
+#access .current-menu-item a:hover, #access .current-menu-ancestor a:hover {
+	color: #444C1E;
+	text-shadow: 1px 1px #DEEB84;
 }
 
 /* image replacement for logo */
@@ -236,14 +254,24 @@ header nav a {
 
 /* = sitemap
 -------------------------------------------------------------- */
-/* main sections (kilta, toiminta etc) */
-#colophon ul.menu li {
+#colophon ul.menu li, #footer-links ul li {
   list-style-type: none;
+  margin-top: 3px;
 }
 
-/* main section links */
-#colophon ul.menu > li > a {
+/* link styling */
+#colophon a {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+#colophon ul.sub-menu a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#colophon a:hover, #colophon ul.sub-menu a:hover {
+  text-decoration: underline;
 }
 
 /* intro text */
