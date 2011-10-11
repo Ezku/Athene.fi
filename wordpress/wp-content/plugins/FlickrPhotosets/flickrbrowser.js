@@ -1,6 +1,6 @@
 var flickrbrowser = {
   photosetClicked: false,
-  debug: true,
+  debug: false,
   getQueryString: function(method, params) {
     
     var paramsString = "&"
@@ -178,7 +178,6 @@ var flickrbrowser = {
       var url = flickrbrowser.getQueryString("flickr.photosets.getList", params);
       jQuery.getJSON(url, function(data) {
         jQuery('#flickr-widget').html('');
-        var output = '<ul>';
         jQuery.each(data.photosets.photoset, function(i, val) {
             flickrbrowser.log(val);
       	    var title = val.title._content;

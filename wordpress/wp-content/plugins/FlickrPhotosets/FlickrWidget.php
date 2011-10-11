@@ -33,25 +33,25 @@ class FlickrPhotosetsWidget extends WP_Widget {
   		?>
   		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickr.css" type="text/css" media="screen" charset="utf-8" />
   		<div class="widget widget-flickr">
-  		<header class="widget-header">
-  		  <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
-  		</header>
-  		<div id="flickr-widget" class="widget-content" style="position: relative;">
-  		  <div class="spinner">
-  		    
-  		  </div>
-  		</div>
-  		<script type="text/javascript" charset="utf-8" src="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickrbrowser.js"></script>
-  		<script type="text/javascript" charset="utf-8">
-        flickrbrowser.api_key = "<?php echo $options['apikey'] ?>";
-        flickrbrowser.user_id = "<?php echo $options['username'] ?>";
-        flickrbrowser.link_url = "<?php echo $link ?>";
-        
-        jQuery(function() {
-          flickrbrowser.showWidget();
-        });
-      </script>
-      <?php
+      		<header class="widget-header">
+      		    <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
+      		</header>
+  		    <div id="flickr-widget" class="widget-content" style="position: relative;">
+  		        <div class="spinner">
+  		        </div>
+  		    </div>
+  		    <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickrbrowser.js"></script>
+  		    <script type="text/javascript">
+                flickrbrowser.api_key = "<?php echo $options['apikey'] ?>";
+                flickrbrowser.user_id = "<?php echo $options['username'] ?>";
+                flickrbrowser.link_url = "<?php echo $link ?>";
+                
+                jQuery(function() {
+                    flickrbrowser.showWidget();
+                });
+            </script>
+        </div>
+    <?php
   	}
 
 }
