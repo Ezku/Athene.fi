@@ -31,7 +31,7 @@ class FlickrPhotosetsWidget extends WP_Widget {
   		$options = get_option('flickr_photosets_options');
   		$link = get_permalink($instance['link_target'])
   		?>
-  		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickr.css" type="text/css" media="screen" charset="utf-8" />
+  		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickr.css" type="text/css" media="screen" />
   		<div class="widget widget-flickr">
       		<header class="widget-header">
       		    <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
