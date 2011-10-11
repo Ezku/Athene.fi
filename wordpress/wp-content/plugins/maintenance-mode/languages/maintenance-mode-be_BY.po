@@ -1,0 +1,421 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance Mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-27 18:38+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Michael <michael dot woehrer at gmail dot com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ../.\n"
+
+#: .././inc.swg-plugin-framework.php:81
+msgid "Settings"
+msgstr "Налады"
+
+#: .././inc.swg-plugin-framework.php:90
+msgid "Plugin"
+msgstr "Убудова"
+
+#: .././inc.swg-plugin-framework.php:92
+msgid "Plugin's Homepage"
+msgstr "Хатняя старонка ўбудовы"
+
+#: .././inc.swg-plugin-framework.php:93
+msgid "WordPress Support"
+msgstr "Падтрымка WordPress "
+
+#: .././inc.swg-plugin-framework.php:94
+msgid "Other Plugins I've Written"
+msgstr "Іншыя ўбудовы, напісаныя мной"
+
+#: .././inc.swg-plugin-framework.php:97
+msgid "Do you like this plugin?"
+msgstr "Вам падабаецца гэта ўбудова?"
+
+#: .././inc.swg-plugin-framework.php:98
+msgid "I spend a lot of time on the plugins I've written for WordPress. Any donation would be highly appreciated."
+msgstr "Я правёў шмат гадзіны над напісаннем убудовы для WordPress. Ахвяраванні вітаюцца."
+
+#: .././inc.swg-plugin-framework.php:100
+msgid "Donate via PayPal"
+msgstr "Ахвяраваць праз PayPal"
+
+#: .././inc.swg-plugin-framework.php:101
+msgid "My Amazon Wish List"
+msgstr "Мой Amazon Wish List"
+
+#: .././inc.swg-plugin-framework.php:119
+msgid "The activated plugin"
+msgstr "Актываваная ўбудова"
+
+#: .././inc.swg-plugin-framework.php:120
+msgid "is not compatible with your installed WordPress"
+msgstr "не сумяшчальны з дадзенай версіяй WorpPress"
+
+#: .././inc.swg-plugin-framework.php:121
+msgid "WordPress version"
+msgstr "версія WordPress"
+
+#: .././inc.swg-plugin-framework.php:121
+msgid "or higher is required when using this plugin, please deactivate it."
+msgstr "ці вышэй рэкамендуецца для выкарыстання, калі ласка, адключыце яго. "
+
+#: .././inc.swg-plugin-framework.php:363
+msgid "You do not have permission to modify the options"
+msgstr "Вы не маеце траўні рацыю для змены гэтай опцыі"
+
+#: .././inc.swg-plugin-framework.php:385
+msgid "Settings deleted/reset."
+msgstr "Налады выдалення/скіду."
+
+#: .././inc.swg-plugin-framework.php:387
+msgid "Settings saved."
+msgstr "Налады захаваны."
+
+#: .././inc.swg-plugin-framework.php:424
+msgid "Plugin Settings"
+msgstr "Налады ўбудовы"
+
+#: .././inc.swg-plugin-framework.php:437
+msgid "Save Changes"
+msgstr "Налады захаваны"
+
+#: .././inc.swg-plugin-framework.php:438
+msgid "Do you really want to delete/reset the plugin settings?"
+msgstr "Вы сапраўды жадаеце выдаліць/збіць налады ўбудовы?"
+
+#: .././inc.swg-plugin-framework.php:438
+msgid "Delete/Reset Settings"
+msgstr "Настрока выдаленні/збіць налады"
+
+#: .././maintenance-mode.php:52
+#: .././maintenance-mode.php:65
+#, fuzzy
+msgid "The Maintenance Mode is active."
+msgstr "Рэжым Maintenance актываваны. Не забудзьцеся"
+
+#: .././maintenance-mode.php:63
+msgid "Please don't forget to"
+msgstr ""
+
+#: .././maintenance-mode.php:63
+msgid "deactivate"
+msgstr "дэактываваць"
+
+#: .././maintenance-mode.php:63
+msgid "it as soon as you are done."
+msgstr "перад тым, як завяршыць."
+
+#: .././maintenance-mode.php:269
+msgid "Activate/Deactivate Maintenance Mode"
+msgstr "Актываваць/дэактываваць рэжым Maintenance"
+
+#: .././maintenance-mode.php:274
+msgid "Activated"
+msgstr "Актываваны"
+
+#: .././maintenance-mode.php:277
+msgid "Deactivated"
+msgstr "Дэактываваны"
+
+#: .././maintenance-mode.php:282
+msgid "Save"
+msgstr ""
+
+#: .././maintenance-mode.php:286
+msgid "Backtime"
+msgstr ""
+
+#: .././maintenance-mode.php:287
+msgid "days"
+msgstr ""
+
+#: .././maintenance-mode.php:288
+msgid "hours"
+msgstr ""
+
+#: .././maintenance-mode.php:289
+msgid "mins"
+msgstr ""
+
+#: .././maintenance-mode.php:290
+msgid "Please enter the estimated time you will need for the maintenance. The placeholders <strong>[date]</strong>, <strong>[time]</strong>, <strong>[days]</strong>, <strong>[hours]</strong>, and <strong>[minutes]</strong> are calculated based on these fields."
+msgstr ""
+
+#: .././maintenance-mode.php:291
+msgid "Please note that the maintenance mode will never be deactivated automatically."
+msgstr ""
+
+#: .././maintenance-mode.php:297
+#: .././maintenance-mode.php:304
+msgid "Message"
+msgstr "Паведамленне"
+
+#: .././maintenance-mode.php:300
+msgid "Title"
+msgstr "Загаловак"
+
+#: .././maintenance-mode.php:306
+#, fuzzy
+msgid "Use HTML only, no PHP allowed. You can use the following placeholders: <strong>[blogurl]</strong> (your blog URL), <strong>[blogtitle]</strong> (title of your blog)"
+msgstr "Выкарыстоўваць толькі HTML, без PHP. Вы можаце выкарыстоўваць <strong>[blogurl]</strong>, <strong>[blogtitle]</strong> і <strong>[backtime]</strong> як якары."
+
+#: .././maintenance-mode.php:308
+msgid "Furthermore, the following placeholders are calculated based on the value you entered or changed above in the field «Backtime»."
+msgstr ""
+
+#: .././maintenance-mode.php:310
+msgid "<strong>[date]</strong> and <strong>[time]</strong> (when maintenance is supposed to be finished, e.g. «05/12/2010» / «3:45PM»)"
+msgstr ""
+
+#: .././maintenance-mode.php:312
+msgid "<strong>[days]</strong>, <strong>[hours]</strong>, and <strong>[minutes]</strong>: (number of days/hours/mins until the maintenance is supposed to be finished)"
+msgstr ""
+
+#: .././maintenance-mode.php:314
+msgid "Placeholder <strong>[until]</strong>: You can setup this placeholder in the following fields. The reason for these fields is to display a different message when the «Backtime» is exceeded to not confuse your visitors."
+msgstr ""
+
+#: .././maintenance-mode.php:316
+msgid "Placeholder [until]"
+msgstr ""
+
+#: .././maintenance-mode.php:319
+msgid "Placeholder [until] if time is exceeded"
+msgstr ""
+
+#: .././maintenance-mode.php:327
+msgid "Splash Page Theme"
+msgstr ""
+
+#: .././maintenance-mode.php:330
+msgid "Default Theme"
+msgstr ""
+
+#: .././maintenance-mode.php:331
+#, fuzzy
+msgid "WordPress Login Theme"
+msgstr "версія WordPress"
+
+#: .././maintenance-mode.php:332
+msgid "Use 503.php from theme folder"
+msgstr ""
+
+#: .././maintenance-mode.php:335
+msgid "Select the theme for the maintenance mode splash page (check out the screenshots in the plugin directory for a preview)."
+msgstr ""
+
+#: .././maintenance-mode.php:336
+#, fuzzy
+msgid "If you select &laquo;<em>Use 503.php from theme folder</em>&raquo;, the plugin will use the file '503.php' from the current theme directory for the splash page. If there is no '503.php', it will use the default theme."
+msgstr "З гэтай функцыяй актывацыі ўбудова будзе выкарыстоўваць файл '503.php' з бягучага каталога тэма галоўнай старонкі замест гэтага выкарыстоўваць 'maintenance-mode_site.php' from the plugin directory; Калі не будзе '503.php',ён будзе выкарыстоўваць па змаўчанні файл 'maintenance-mode_site.php'."
+
+#: .././maintenance-mode.php:337
+msgid "So this option will help using a customized splash page without the fear of losing this page when updating the plugin."
+msgstr "Так што гэта опцыя дапаможа выкарыстаннем персанальнай старонкі воплеск без страху страціць гэту старонку пры абнаўленні ўбудоў."
+
+#: .././maintenance-mode.php:338
+msgid "Please note that you can't use WordPress theme functions (e.g. <em>get_sidebar()</em>, etc.) in the '503.php'."
+msgstr "Звернеце ўвагу, што вы не можаце выкарыстоўваць функцыі WordPress тэмы (э.зн. <em>get_sidebar()</em>, і т. д.) у '503.php'."
+
+#: .././maintenance-mode.php:340
+msgid "You have designed a beautiful splash page theme you want to share? Please go ahead and <a href=\"http://sw-guide.de/kontakt/\">drop me a line</a>."
+msgstr ""
+
+#: .././maintenance-mode.php:344
+msgid "Access to blog front-end and administration (back-end)"
+msgstr ""
+
+#: .././maintenance-mode.php:346
+msgid "By default, only logged in administrators (more exactly: users with the"
+msgstr ""
+
+#: .././maintenance-mode.php:347
+#: .././maintenance-mode.php:363
+msgid "capability"
+msgstr ""
+
+#: .././maintenance-mode.php:348
+msgid "«manage_options») do have full access to the blog's front-end and will not see any splash page when the maintenance mode is activated. You can change this here:"
+msgstr ""
+
+#: .././maintenance-mode.php:351
+msgid "Access to blog front-end with capability (role)"
+msgstr ""
+
+#: .././maintenance-mode.php:353
+msgid "- No Access - (always display splash page)"
+msgstr ""
+
+#: .././maintenance-mode.php:354
+#: .././maintenance-mode.php:369
+msgid "«manage_options» (Administrator)"
+msgstr ""
+
+#: .././maintenance-mode.php:355
+#: .././maintenance-mode.php:370
+msgid "«manage_categories» (Editor)"
+msgstr ""
+
+#: .././maintenance-mode.php:356
+#: .././maintenance-mode.php:371
+msgid "«publish_posts» (Author)"
+msgstr ""
+
+#: .././maintenance-mode.php:357
+#: .././maintenance-mode.php:372
+msgid "«edit_posts» (Contributor)"
+msgstr ""
+
+#: .././maintenance-mode.php:358
+#: .././maintenance-mode.php:373
+msgid "«read» (Subscriber)"
+msgstr ""
+
+#: .././maintenance-mode.php:362
+msgid "By default, anyone who is logged in to the blog (more exactly: users with the"
+msgstr ""
+
+#: .././maintenance-mode.php:364
+msgid "«read») does have access to the WordPress administration (back-end) when the maintenance mode is activated. You can restrict this here:"
+msgstr ""
+
+#: .././maintenance-mode.php:367
+#, fuzzy
+msgid "Access to administration/back-end with capability (role)"
+msgstr "(Доступ да адміністрацыі адмоўлена адміністратарам)"
+
+#: .././maintenance-mode.php:377
+msgid "Paths to be still accessable"
+msgstr "Даступныя шляхі"
+
+#: .././maintenance-mode.php:379
+#, fuzzy
+msgid "Enter paths that shall be excluded and still be accessable. Separate multiple paths with line breaks.<br />Example: If you want to exclude <em>http://site.com/about/</em>, then enter <em>/about/</em>.<br />Hint: If you want to exclude the home page, enter <em>[HOME]</em>."
+msgstr "Увядзіце шляхоў, якія павінны быць выключаны і па-ранейшаму будуць даступныя. Асобныя некалькі шляхоў, у новым радку.<br />Прыклад: Калі вы жадаеце выключыць <em>http://site.com/about/,</em> а затым увядзіце <em>/about/</em>"
+
+#: .././maintenance-mode.php:385
+msgid "Enable feeds"
+msgstr ""
+
+#: .././maintenance-mode.php:389
+msgid "Enable trackbacks"
+msgstr ""
+
+#: .././maintenance-mode.php:393
+msgid "Enable XML-RPC publishing"
+msgstr ""
+
+#: .././maintenance-mode.php:398
+msgid "Miscellaneous"
+msgstr ""
+
+#: .././maintenance-mode.php:401
+msgid "Apply HTTP header '503 Service Unavailable' and 'Retry-After &lt;backtime&gt;' to Maintenance Mode splash page"
+msgstr "Ужыць HTTP header '503 Service Unavailable' і 'Retry-After &lt;backtime&gt;' у Maintenance Mode splash старонку"
+
+#: .././maintenance-mode.php:591
+msgid "(Access to administration denied by administrator)"
+msgstr "(Доступ да адміністрацыі адмоўлена адміністратарам)"
+
+#: .././maintenance-mode.php:593
+msgid "Administration"
+msgstr ""
+
+#: .././maintenance-mode.php:595
+msgid "Log Out"
+msgstr ""
+
+#: .././maintenance-mode.php:597
+msgid "Log In"
+msgstr ""
+
+#: .././maintenance-mode_theme_wordpress.php:44
+msgid "Powered by WordPress"
+msgstr ""
+
+#: .././maintenance-mode_theme_wordpress.php:60
+msgid "Home Page"
+msgstr ""
+
+#~ msgid "Use 503.php"
+#~ msgstr "Выкарыстоўвайце 503.php"
+#~ msgid "Use 503.php from within the theme directory for the splash page"
+#~ msgstr "Исп. 503.phpв рамках тэмы дырэкторыя для галоўнай старонкі"
+#~ msgid "Backtime and HTTP header"
+#~ msgstr "Backtime і HTTP загалоўкі"
+#~ msgid "Backtime in minutes"
+#~ msgstr "Backtime у хвілінах"
+#~ msgid ""
+#~ "A special HTML header for feed and trackback will be applied (&laquo;503 "
+#~ "Service Unavailable&raquo;) including 'retry after x minutes'. Enter here "
+#~ "the approximate time in minutes to retry. Also, by using the placeholder "
+#~ "<strong>[backtime]</strong> above, the time in minutes be displayed to "
+#~ "the visitors as well."
+#~ msgstr ""
+#~ "Адмысловы загаловак HTML для падачы і архіва будзе ўжывацца (&laquo;503 "
+#~ "Service Unavailable&raquo;) уключаючы паўтор пасля x мін. Увядзіце тут "
+#~ "прыблізны час у хвілінах для паўтору. Акрамя таго, з дапамогай "
+#~ "запаўняльніка <strong>[backtime]</strong> вышэй, час у хвілінах будзе "
+#~ "адлюстроўвацца для наведвальнікаў, а таксама."
+#~ msgid "Permissions"
+#~ msgstr "Дазволы"
+#~ msgid "How to permit blog editors to see the blog's front-end"
+#~ msgstr "Як дазваляць блог рэдактараў, каб убачыць перад блога на канец"
+#~ msgid ""
+#~ "As soon as you activate the maintenance mode, a splash page is being "
+#~ "added to your blog that informs visitors about your blog maintenance. "
+#~ "Logged in administrators get full access to the blog including the front-"
+#~ "end and will not see any splash page.<br />This plugin adds the "
+#~ "capability 'access_on_maintenance' to the role 'Administrator'. If users "
+#~ "with a specific role, for instance 'Editor', should get full access to "
+#~ "the blog as well, use an appropriate plugin like"
+#~ msgstr ""
+#~ "Як толькі вы актывуеце рэжым абслугоўвання, копіі старонкі дадаецца ў "
+#~ "свой блог, які інфармуе наведвальнікаў пра ваш блог абслугоўвання. "
+#~ "Зарэгістраваны адміністратары атрымліваюць поўны доступ да блога, "
+#~ "уключаючы пярэдняга плану і не ўбачыце воплеск старонцы. <br/>Гэта "
+#~ "ўбудова дадае магчымасцяў &quot;access_on_maintenance на ролю  "
+#~ "'адміністратара '. Калі карыстач з пэўнай ролі, напрыклад,  'Рэдактар ', "
+#~ "павінны атрымаць поўны доступ да блог, а таксама, выкарыстоўваючы "
+#~ "адпаведная ўбудова, як"
+#~ msgid ""
+#~ "and grant the capability 'Access On Maintenance' for the role 'Editor' or "
+#~ "for any other role of your choice. <br />Check out"
+#~ msgstr ""
+#~ "і  'Доступ на ўтрыманне' для ролі 'рэдактар' ці для любой іншай ролі па "
+#~ "сваім выбары.<br />Праверце"
+#~ msgid "for further information."
+#~ msgstr "для далейшай інфармацыі."
+#~ msgid ""
+#~ "How to deny non-administrators to access the blog's back-end (in addition "
+#~ "to not see the front-end)"
+#~ msgstr ""
+#~ "Як адмовіць, не якія з'яўляюцца адміністратарамі для доступу назад блога "
+#~ "канец (у дадатак да не бачу пярэдняга плану)"
+#~ msgid ""
+#~ "By activating the following option, you can prevent users that do not "
+#~ "have the capability 'access_on_maintenance' from being able to access the "
+#~ "back-end (the WordPress' administration) too. This plugin adds the "
+#~ "capability 'access_on_maintenance' to the role 'Administrator', so any "
+#~ "other roles (like editors, authors, etc.) will not have access to the "
+#~ "back-end after activating the following option."
+#~ msgstr ""
+#~ "Пры актывацыі наступны варыянт, можна забараніць карыстачам, якія не "
+#~ "маюць магчымасці 'access_on_maintenance' ад таго, каб атрымаць доступ да "
+#~ "фонавых (адміністраванне WordPress) таксама. Гэта ўбудова дадае "
+#~ "магчымасць 'access_on_maintenance' у правіла 'Administrator', таму любыя "
+#~ "іншыя ролі (напрыклад, рэдактараў, аўтараў і г.д.) не будуць мець доступ "
+#~ "да фонавых пасля актывацыі наступны варыянт."
+#~ msgid "Deny non-administrators to access the blog's back-end"
+#~ msgstr ""
+#~ "Забараніць, не якія з'яўляюцца адміністратарамі для доступу назад блога "
+#~ "на канец"
+

@@ -1,0 +1,421 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance Mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-27 18:46+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Elvis <main@fweb.org.ru>\n"
+"Language-Team: Elvis <main@fweb.org.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ../.\n"
+
+#: .././inc.swg-plugin-framework.php:81
+msgid "Settings"
+msgstr "Настройки"
+
+#: .././inc.swg-plugin-framework.php:90
+msgid "Plugin"
+msgstr "Плагин"
+
+#: .././inc.swg-plugin-framework.php:92
+msgid "Plugin's Homepage"
+msgstr "Страница плагина"
+
+#: .././inc.swg-plugin-framework.php:93
+msgid "WordPress Support"
+msgstr "Поддержка плагина"
+
+#: .././inc.swg-plugin-framework.php:94
+msgid "Other Plugins I've Written"
+msgstr "Другие плагины автора"
+
+#: .././inc.swg-plugin-framework.php:97
+msgid "Do you like this plugin?"
+msgstr "Понравился данный плагин?"
+
+#: .././inc.swg-plugin-framework.php:98
+msgid "I spend a lot of time on the plugins I've written for WordPress. Any donation would be highly appreciated."
+msgstr "Автор тратит много свободного времени каждый день на создание новых и поддержку старых плагинов для WordPress. Любое Ваше пожертвование поможет ему продолжать работу!"
+
+#: .././inc.swg-plugin-framework.php:100
+msgid "Donate via PayPal"
+msgstr "Пожертвовать через PayPal"
+
+#: .././inc.swg-plugin-framework.php:101
+msgid "My Amazon Wish List"
+msgstr "Список желаний на Amazon"
+
+#: .././inc.swg-plugin-framework.php:119
+msgid "The activated plugin"
+msgstr "Активные плагины"
+
+#: .././inc.swg-plugin-framework.php:120
+msgid "is not compatible with your installed WordPress"
+msgstr "не совместимы с Вашей текущей версией WordPress"
+
+#: .././inc.swg-plugin-framework.php:121
+msgid "WordPress version"
+msgstr "Версия WordPress"
+
+#: .././inc.swg-plugin-framework.php:121
+msgid "or higher is required when using this plugin, please deactivate it."
+msgstr "или выше необходима для работы данного плагина, пожалуйста, деактивируйте плагин."
+
+#: .././inc.swg-plugin-framework.php:363
+msgid "You do not have permission to modify the options"
+msgstr "У Вас нет прав для редактирования данной страницы"
+
+#: .././inc.swg-plugin-framework.php:385
+msgid "Settings deleted/reset."
+msgstr "Настройки удалены/сброшены"
+
+#: .././inc.swg-plugin-framework.php:387
+msgid "Settings saved."
+msgstr "Настройки успешно сохранены"
+
+#: .././inc.swg-plugin-framework.php:424
+msgid "Plugin Settings"
+msgstr "Настройки плагина"
+
+#: .././inc.swg-plugin-framework.php:437
+msgid "Save Changes"
+msgstr "Сохранить"
+
+#: .././inc.swg-plugin-framework.php:438
+msgid "Do you really want to delete/reset the plugin settings?"
+msgstr "Вы действительно хотите удалить/сбросить текущие настройки?"
+
+#: .././inc.swg-plugin-framework.php:438
+msgid "Delete/Reset Settings"
+msgstr "Удалить/Сбросить настройки"
+
+#: .././maintenance-mode.php:52
+#: .././maintenance-mode.php:65
+msgid "The Maintenance Mode is active."
+msgstr "Режим технического обслуживания включен."
+
+#: .././maintenance-mode.php:63
+msgid "Please don't forget to"
+msgstr "Главное не забудьте"
+
+#: .././maintenance-mode.php:63
+msgid "deactivate"
+msgstr "отключить"
+
+#: .././maintenance-mode.php:63
+msgid "it as soon as you are done."
+msgstr "как только закончите работы."
+
+#: .././maintenance-mode.php:269
+msgid "Activate/Deactivate Maintenance Mode"
+msgstr "Включить/Отключить режим техобслуживания блога"
+
+#: .././maintenance-mode.php:274
+msgid "Activated"
+msgstr "Включить"
+
+#: .././maintenance-mode.php:277
+msgid "Deactivated"
+msgstr "Отключить"
+
+#: .././maintenance-mode.php:282
+msgid "Save"
+msgstr "Сохранить"
+
+#: .././maintenance-mode.php:286
+msgid "Backtime"
+msgstr "Осталось"
+
+#: .././maintenance-mode.php:287
+msgid "days"
+msgstr "дней"
+
+#: .././maintenance-mode.php:288
+msgid "hours"
+msgstr "часов"
+
+#: .././maintenance-mode.php:289
+msgid "mins"
+msgstr "минут"
+
+#: .././maintenance-mode.php:290
+msgid "Please enter the estimated time you will need for the maintenance. The placeholders <strong>[date]</strong>, <strong>[time]</strong>, <strong>[days]</strong>, <strong>[hours]</strong>, and <strong>[minutes]</strong> are calculated based on these fields."
+msgstr "Введите в поля выше примерное время, необходимое для проведения Вашего технического обслуживания блога. Используемые в тексте сообщения о техобслуживании параметры <strong>[date]</strong>, <strong>[time]</strong>, <strong>[days]</strong>, <strong>[hours]</strong>, и <strong>[minutes]</strong> выводятся из значений, указанных выше."
+
+#: .././maintenance-mode.php:291
+msgid "Please note that the maintenance mode will never be deactivated automatically."
+msgstr "Помните, режим техобслуживания не отключается автоматически (только РУЧНОЕ отключение)."
+
+#: .././maintenance-mode.php:297
+#: .././maintenance-mode.php:304
+msgid "Message"
+msgstr "Сообщение"
+
+#: .././maintenance-mode.php:300
+msgid "Title"
+msgstr "Заголовок"
+
+#: .././maintenance-mode.php:306
+msgid "Use HTML only, no PHP allowed. You can use the following placeholders: <strong>[blogurl]</strong> (your blog URL), <strong>[blogtitle]</strong> (title of your blog)"
+msgstr "Разрешены только HTML-теги, никакого PHP! Можно использовать стандартные комбинации: <strong>[blogurl]</strong> (адрес блога) и <strong>[blogtitle]</strong> (заголовок блога)."
+
+#: .././maintenance-mode.php:308
+msgid "Furthermore, the following placeholders are calculated based on the value you entered or changed above in the field «Backtime»."
+msgstr "Указанные ниже пункты основаны на значениях поля &laquo;Осталось&raquo; и меняются только при их ручном редактировании."
+
+#: .././maintenance-mode.php:310
+msgid "<strong>[date]</strong> and <strong>[time]</strong> (when maintenance is supposed to be finished, e.g. «05/12/2010» / «3:45PM»)"
+msgstr "<strong>[date]</strong> и <strong>[time]</strong> (высчитывает время, когда техобслуживание должно закончиться, например: «05/12/2010» / «3:45PM»)"
+
+#: .././maintenance-mode.php:312
+msgid "<strong>[days]</strong>, <strong>[hours]</strong>, and <strong>[minutes]</strong>: (number of days/hours/mins until the maintenance is supposed to be finished)"
+msgstr "<strong>[days]</strong>, <strong>[hours]</strong>, и <strong>[minutes]</strong> (время продолжительности техобслуживания в днях/часах/минутах, соответственно)"
+
+#: .././maintenance-mode.php:314
+msgid "Placeholder <strong>[until]</strong>: You can setup this placeholder in the following fields. The reason for these fields is to display a different message when the «Backtime» is exceeded to not confuse your visitors."
+msgstr "Заголовок <strong>[until]</strong>: Вы можете настроить заголовки в полях ниже. Это будет полезно, если Вы не успели отключить режим техобслуживания, а заданное ранее время уже истекло."
+
+#: .././maintenance-mode.php:316
+msgid "Placeholder [until]"
+msgstr "Заголовок [until]"
+
+#: .././maintenance-mode.php:319
+msgid "Placeholder [until] if time is exceeded"
+msgstr "Заголовок [until] если время истекло"
+
+#: .././maintenance-mode.php:327
+msgid "Splash Page Theme"
+msgstr "Настройка внешнего вида страницы техобслуживания"
+
+#: .././maintenance-mode.php:330
+msgid "Default Theme"
+msgstr "тема по умолчанию"
+
+#: .././maintenance-mode.php:331
+msgid "WordPress Login Theme"
+msgstr "стандартная страница входа WordPress"
+
+#: .././maintenance-mode.php:332
+msgid "Use 503.php from theme folder"
+msgstr "использовать страницу 503.php из папки текущей темы"
+
+#: .././maintenance-mode.php:335
+msgid "Select the theme for the maintenance mode splash page (check out the screenshots in the plugin directory for a preview)."
+msgstr "Выберите стиль оформления для своей страницы техобслуживания (можно посмотреть примеры на скриншотах в папке плагина)."
+
+#: .././maintenance-mode.php:336
+msgid "If you select &laquo;<em>Use 503.php from theme folder</em>&raquo;, the plugin will use the file '503.php' from the current theme directory for the splash page. If there is no '503.php', it will use the default theme."
+msgstr "Если опция активна, автоматически будет использована страница '503.php' из папки текущей темы, вместо 'maintenance-mode_site.php' из файлов плагина. Если же в Вашей теме оформления нет '503.php', то по умолчанию пользователи увидят страницу 'maintenance-mode_site.php'."
+
+#: .././maintenance-mode.php:337
+msgid "So this option will help using a customized splash page without the fear of losing this page when updating the plugin."
+msgstr "Эта опция позволит Вам изменять вид страницы техобслуживания. Во время обновления плагина она не будет стерта или изменена."
+
+#: .././maintenance-mode.php:338
+msgid "Please note that you can't use WordPress theme functions (e.g. <em>get_sidebar()</em>, etc.) in the '503.php'."
+msgstr "Помните, Вы не можете использовать стандартные функции тем оформления WordPress (такие как <em>get_sidebar()</em> и другие) при создании файла '503.php'."
+
+#: .././maintenance-mode.php:340
+msgid "You have designed a beautiful splash page theme you want to share? Please go ahead and <a href=\"http://sw-guide.de/kontakt/\">drop me a line</a>."
+msgstr "Вы создали красивый и оригинальный внешний вид для страницы  &laquo;<em>Техническое обслуживание</em>&raquo; и хотите им поделиться? Пожалуйста, <a href=\"http://sw-guide.de/kontakt/\">напишите автору</a>."
+
+#: .././maintenance-mode.php:344
+msgid "Access to blog front-end and administration (back-end)"
+msgstr "Доступ к внешней части блога и к функциям управления"
+
+#: .././maintenance-mode.php:346
+msgid "By default, only logged in administrators (more exactly: users with the"
+msgstr "По умолчанию, только администратор (если точнее: пользователь с"
+
+#: .././maintenance-mode.php:347
+#: .././maintenance-mode.php:363
+msgid "capability"
+msgstr "правами"
+
+#: .././maintenance-mode.php:348
+msgid "«manage_options») do have full access to the blog's front-end and will not see any splash page when the maintenance mode is activated. You can change this here:"
+msgstr "«управление_блогом») имеет полный доступ к управлению блогом. Администратор не видит страницу техобслуживания если режим включен. Вы можете изменить эти настройки ниже"
+
+#: .././maintenance-mode.php:351
+msgid "Access to blog front-end with capability (role)"
+msgstr "Доступ к полному управлению блогом (по ролям)"
+
+#: .././maintenance-mode.php:353
+msgid "- No Access - (always display splash page)"
+msgstr "- Нет доступа - (всегда отображать страницу техобслуживания)"
+
+#: .././maintenance-mode.php:354
+#: .././maintenance-mode.php:369
+msgid "«manage_options» (Administrator)"
+msgstr "«управление_блогом» (Администратор)"
+
+#: .././maintenance-mode.php:355
+#: .././maintenance-mode.php:370
+msgid "«manage_categories» (Editor)"
+msgstr "«управление_материалами» (Редактор)"
+
+#: .././maintenance-mode.php:356
+#: .././maintenance-mode.php:371
+msgid "«publish_posts» (Author)"
+msgstr "«публикация_записей» (Автор)"
+
+#: .././maintenance-mode.php:357
+#: .././maintenance-mode.php:372
+msgid "«edit_posts» (Contributor)"
+msgstr "«правка_записи» (Участник)"
+
+#: .././maintenance-mode.php:358
+#: .././maintenance-mode.php:373
+msgid "«read» (Subscriber)"
+msgstr "«чтение» (Подписчик)"
+
+#: .././maintenance-mode.php:362
+msgid "By default, anyone who is logged in to the blog (more exactly: users with the"
+msgstr "По умолчанию, любой, кто вошел в свой аккаунт на блоге (если точнее: пользователь с"
+
+#: .././maintenance-mode.php:364
+msgid "«read») does have access to the WordPress administration (back-end) when the maintenance mode is activated. You can restrict this here:"
+msgstr "«чтение» и выше) имеет ограниченный доступ к функция WordPress, когда техобслуживание включено. Вы можете изменить эти настройки ниже"
+
+#: .././maintenance-mode.php:367
+msgid "Access to administration/back-end with capability (role)"
+msgstr "Доступ к частичному управлению блогом (по ролям)"
+
+#: .././maintenance-mode.php:377
+msgid "Paths to be still accessable"
+msgstr "Доступные в режиме техобслуживания страницы"
+
+#: .././maintenance-mode.php:379
+msgid "Enter paths that shall be excluded and still be accessable. Separate multiple paths with line breaks.<br />Example: If you want to exclude <em>http://site.com/about/</em>, then enter <em>/about/</em>.<br />Hint: If you want to exclude the home page, enter <em>[HOME]</em>."
+msgstr "Введите ниже адреса тех страниц сайта, которые будут доступны в режиме технического обслуживания. Каждый новый адрес в списке должен начинаться с новой строки.<br />Пример: Если Вы хотите оставить доступной страницу <em>http://ваш.сайт/about/</em>, то добавьте строчку <em>/about/</em>."
+
+#: .././maintenance-mode.php:385
+msgid "Enable feeds"
+msgstr "Включить ленту RSS"
+
+#: .././maintenance-mode.php:389
+msgid "Enable trackbacks"
+msgstr "Включить обратные ссылки (trackback)"
+
+#: .././maintenance-mode.php:393
+msgid "Enable XML-RPC publishing"
+msgstr "Включить публикацию через XML-RPC"
+
+#: .././maintenance-mode.php:398
+msgid "Miscellaneous"
+msgstr "Другие настройки"
+
+#: .././maintenance-mode.php:401
+msgid "Apply HTTP header '503 Service Unavailable' and 'Retry-After &lt;backtime&gt;' to Maintenance Mode splash page"
+msgstr "Добавить код HTTP 503 (Сервис Недоступен) к заголовкам страниц и текст 'попробуйте зайти позже &lt;оставшееся_время&gt;' на страницу техобслуживания"
+
+#: .././maintenance-mode.php:591
+msgid "(Access to administration denied by administrator)"
+msgstr "(доступ запрещен Администратором)"
+
+#: .././maintenance-mode.php:593
+msgid "Administration"
+msgstr "Администрирование"
+
+#: .././maintenance-mode.php:595
+msgid "Log Out"
+msgstr "Выйти"
+
+#: .././maintenance-mode.php:597
+msgid "Log In"
+msgstr "Войти"
+
+#: .././maintenance-mode_theme_wordpress.php:44
+msgid "Powered by WordPress"
+msgstr "Работает на WordPress"
+
+#: .././maintenance-mode_theme_wordpress.php:60
+msgid "Home Page"
+msgstr "Домашняя страница"
+
+#~ msgid "Use 503.php"
+#~ msgstr "Использовать код 503 (503.php)"
+
+#~ msgid "Use 503.php from within the theme directory for the splash page"
+#~ msgstr ""
+#~ "Использовать '503.php' из папки темы оформления для создания страницы "
+#~ "ошибки"
+
+#~ msgid "Backtime and HTTP header"
+#~ msgstr "Обратный отсчет и заголовок HTTP"
+
+#~ msgid "Backtime in minutes"
+#~ msgstr "Обратный отсчет в минутах"
+
+#~ msgid ""
+#~ "A special HTML header for feed and trackback will be applied (&laquo;503 "
+#~ "Service Unavailable&raquo;) including 'retry after x minutes'. Enter here "
+#~ "the approximate time in minutes to retry. Also, by using the placeholder "
+#~ "<strong>[backtime]</strong> above, the time in minutes be displayed to "
+#~ "the visitors as well."
+#~ msgstr ""
+#~ "При просмотре обратных ссылок и фидов будет использован особый заголовок "
+#~ "(&laquo;503 Service Unavailable&raquo;), включая строчку 'попробуйте "
+#~ "обновить страницу черех X минут'. В этом поле Вы можете задать "
+#~ "определенное кол-во минут. Также, можно использовать тег <strong>"
+#~ "[backtime]</strong>."
+
+#~ msgid "Permissions"
+#~ msgstr "Доступ"
+
+#~ msgid "How to permit blog editors to see the blog's front-end"
+#~ msgstr "Как разрешить авторам/редакторам доступ к управлению материалами"
+
+#~ msgid ""
+#~ "As soon as you activate the maintenance mode, a splash page is being "
+#~ "added to your blog that informs visitors about your blog maintenance. "
+#~ "Logged in administrators get full access to the blog including the front-"
+#~ "end and will not see any splash page.<br />This plugin adds the "
+#~ "capability 'access_on_maintenance' to the role 'Administrator'. If users "
+#~ "with a specific role, for instance 'Editor', should get full access to "
+#~ "the blog as well, use an appropriate plugin like"
+#~ msgstr ""
+#~ "Как только Вы активируете данный режим, вместо привычной главной страницы "
+#~ "все пользователи увидят чистый лист с информацией о проходящих работах и "
+#~ "примерную дату запуска блога. Чтобы получить полный доступ к управлению "
+#~ "сайтом, Вам нужно просто зайти под аккаунтом Администратора.<br />Только "
+#~ "Администратор может отключить сообщение о работах на блоге. Если Вы "
+#~ "хотите позволить и другим группам пользователей, например редактору, "
+#~ "получить полный доступ к управлению сайтом, используйте плагины"
+
+#~ msgid ""
+#~ "and grant the capability 'Access On Maintenance' for the role 'Editor' or "
+#~ "for any other role of your choice. <br />Check out"
+#~ msgstr ""
+#~ "и установите доступ для соответствующих групп пользователей. <br />Читайте"
+
+#~ msgid "for further information."
+#~ msgstr "для справки."
+
+#~ msgid ""
+#~ "How to deny non-administrators to access the blog's back-end (in addition "
+#~ "to not see the front-end)"
+#~ msgstr "Как запретить доступ для простых пользователей к блогу"
+
+#~ msgid ""
+#~ "By activating the following option, you can prevent users that do not "
+#~ "have the capability 'access_on_maintenance' from being able to access the "
+#~ "back-end (the WordPress' administration) too. This plugin adds the "
+#~ "capability 'access_on_maintenance' to the role 'Administrator', so any "
+#~ "other roles (like editors, authors, etc.) will not have access to the "
+#~ "back-end after activating the following option."
+#~ msgstr ""
+#~ "Активируя данную опцию, Вы можете запретить доступ пользователей к "
+#~ "управлению блогом (т.е. доступ в личную или администраторскую панель). "
+#~ "Только Администратор может получать дсотуп к панеле управления."
+
+#~ msgid "Deny non-administrators to access the blog's back-end"
+#~ msgstr "Запретить доступ для всех пользователей, кроме Администратора"
