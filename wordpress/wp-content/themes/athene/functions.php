@@ -102,6 +102,9 @@ function cycle(/* $values ... */) {
     return function() use(&$values) {
         $next = array_shift($values);
         $values[] = $next;
+        if (is_callable($next)) {
+            return $next();
+        }
         return $next;
     };
 }
