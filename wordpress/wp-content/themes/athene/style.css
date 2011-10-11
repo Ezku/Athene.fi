@@ -345,6 +345,11 @@ a#twitter span, a#facebook span {
 /* = content: widgets
 -------------------------------------------------------------- */
 
+.widget,
+.menu a.no-decoration .intro {
+  color: #333; /* Base text color for widgets */
+}
+
 .widget .widget-header h2 a {
 	text-decoration: none;
 }
@@ -372,6 +377,11 @@ a#twitter span, a#facebook span {
 	margin-right: 10px;
 	width: 40px;
 }
+
+.widget a:hover .date-indexed .date {
+  color: #999;
+}
+
 .widget .date-indexed .date h5 {
 	margin-bottom: 0;
 	line-height: 1.0;
@@ -397,8 +407,22 @@ a#twitter span, a#facebook span {
 
 .widget a.no-decoration header,
 .menu a.no-decoration header {
-    color: #75B251;
-    text-decoration: underline; /* is this what we want? */
+    color: #75B251; /* same as "body a" */
+    text-decoration: underline;
+}
+
+.widget a.no-decoration:hover header,
+.menu a.no-decoration:hover header {
+    color: #445838; /* same as "body a:hover" */
+    text-decoration: underline;
+}
+
+/* Hilighting the widget body text */
+.widget a.no-decoration:hover section.excerpt,
+.widget a.no-decoration:hover section.content,
+.widget a.no-decoration:hover .page-intro,
+.menu a.no-decoration:hover .intro {
+    color: #000;
 }
 
 /* ilmomasiina widget */
@@ -413,7 +437,10 @@ a#twitter span, a#facebook span {
   color: #bbb;
 }
 .widget .ilmo-entry.open .status {
-  color: #1E2626;
+  color: #333;
+}
+.widget a.no-decoration:hover .ilmo-entry .status {
+  color: #000;
 }
 
 
@@ -477,6 +504,9 @@ blockquote {
     display:block;
 }
 
+/* = content: person listings
+-------------------------------------------------------------- */
+
 .toimija {
   /*float: left; 
   width: 230px; 
@@ -524,4 +554,15 @@ blockquote {
 
 #alumni-list tr.even {
     background-color: rgba(0,0,0,0.05);
+}
+
+/* = commenting (based on Disqus)
+-------------------------------------------------------------- */
+#dsq-content h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+#dsq-reply h3 {
+  font-size: 28px;
 }

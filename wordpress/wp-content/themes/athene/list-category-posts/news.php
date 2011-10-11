@@ -66,7 +66,7 @@ foreach ($this->catlist->get_categories_posts() as $single):
     //$lcp_display_output .= $this->get_comments($single);
 
     //Show date:
-    $lcp_display_output .= ' ' . $this->get_date($single, 'date', 'date');
+    $lcp_display_output .= ' ' . $this->get_date($single, 'time', 'date');
 
     //Show author
     //$lcp_display_output .= $this->get_author($single);

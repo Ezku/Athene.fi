@@ -43,7 +43,7 @@ class SubMenuWalker extends Walker {
         'el_start' => '%s<li%s>',
         'link' => '<a%s>%s</a>',
         'intro' => '<a class="no-decoration" %s><div class="intro">%s</div></a>',
-        'el_end' => "</li>\n",
+        'el_end' => "</li>\n"
     );
     
     /**
@@ -223,10 +223,12 @@ class SubMenuWalker extends Walker {
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @param object $item Page data object. Not used.
-	 * @param int $depth Depth of page. Not Used.
+	 * @param int $depth Depth of page.
 	 */
 	function end_el(&$output, $item, $depth) {
-		$output .= $this->format('el_end');
+		if ($this->toBeShown($depth)) { // To match with function start_el
+			$output .= $this->format('el_end');
+		}
 		array_pop($this->current_menu_stack);
 	}
 	
