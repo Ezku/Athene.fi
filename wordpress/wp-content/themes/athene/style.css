@@ -536,6 +536,24 @@ blockquote {
     width: 270px;
 }
 
+.phuksit_group {
+    color: #999;
+}
+
+/* phuksit sidebar - selected */
+#extra div.selected span {
+    padding: 2px 5px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+#extra div.phuksit-details a {
+    text-decoration: none;
+}
+
+#extra a.selected {
+    font-weight: bold;
+}
+
 /* alumni lists */
 
 #alumni-numbers td,

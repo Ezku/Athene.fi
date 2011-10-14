@@ -34,9 +34,13 @@ $phuksis = $Q->get_posts($args);
 // endof phuksis
 ?>
 
-
-
 <?php // show the actual content ?>
+<p class="phuksit_group">
+    Ryhmä <?php echo $params['ryhma'] ?>
+    <?php if ($params['vuosi'] != $options['phuksiryhmat']['year']): ?>
+        vuodelta <?php echo $params['vuosi'] ?>
+    <?php endif; ?>
+</p>
 <h2>ISO-henkilöt</h2>
 <?php
 $count = 0;
