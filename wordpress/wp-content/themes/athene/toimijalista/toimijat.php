@@ -17,7 +17,8 @@ foreach($results as $entry):
   echo $gridContainerStart();
   ?>
   <div class="toimija <?php echo $gridClass() ?>">
-      <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px; float: left;" />
+      <?php $img = wp_get_attachment_image_src(get_custom_field('kuva'), 'medium'); ?>
+      <img src="<?php print $img[0]; ?>" alt="" style="width: 100px; float: left" />
       <div class="info" style="margin-left: 110px;">
           <?php if (custom_field_found('virka')): ?> 
               <p class="field title">
