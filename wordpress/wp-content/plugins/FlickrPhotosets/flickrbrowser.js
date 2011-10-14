@@ -194,7 +194,7 @@ var flickrbrowser = {
       	        +'</h5>'
       	      + '</section>'*/
       	      + "<div class=\"photosettitle\">"
-      	        + "<a href=\""+flickrbrowser.link_url+"#photoset="+val.id+"\" style='min-height: 50px; display: block;'>"
+      	        + "<a href=\""+flickrbrowser.link_url+"#!photoset="+val.id+"\" style='min-height: 50px; display: block;'>"
       	            + "<img class=\"primary\" src=\"\" alt=\"\" style='height: 50px; width: 50px; float: left; margin-right: 5px;' />"
       	            + "<span style='margin: 0; height: 50px; display: table-cell; vertical-align: middle;'>" + title + "</span>"
       	        + "</a>"+
