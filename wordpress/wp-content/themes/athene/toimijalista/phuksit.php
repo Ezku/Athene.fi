@@ -55,9 +55,7 @@ foreach ($isos as $iso) {
     <div class="toimija iso <?php echo $gridClass() ?>">
         <p class="field photo">
             <?php $img = wp_get_attachment_image_src(get_custom_field('kuva')); ?>
-            <?php $image_id = get_custom_field('kuva'); ?>
-            <!--<?php print wp_get_attachment_image($image_id, 'full'); ?>-->
-            <img src="<?php print $img['url']; ?>" alt="" style="width: 100px;" />
+            <img src="<?php print $img[0]; ?>" alt="" style="width: 100px;" />
         </p>
         <?php if (custom_field_found('nimi')): ?> 
             <p class="field name">
@@ -100,7 +98,8 @@ foreach($phuksis as $phuksi) {
     <?php echo $gridContainerStart() ?>
   <div class="toimija phuksi <?php echo $gridClass() ?>">
       <p class="field photo">
-          <img src="<?php print get_custom_field('kuva'); ?>" alt="" style="width: 100px;" />
+          <?php $img = wp_get_attachment_image_src(get_custom_field('kuva')); ?>
+          <img src="<?php print $img[0]; ?>" alt="" style="width: 100px;" />
       </p>
       <?php if (custom_field_found('nimi')): ?> 
           <p class="field name">
