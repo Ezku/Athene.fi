@@ -37,6 +37,13 @@ foreach ($data as $post_type => &$def) {
 
 //! 2. Migrate Data Structure
 $new_data = array();
+// And pop in some of the anticipated new nodes in the structure
+$new_data['flash'] = array();
+$new_data['locks'] = array();
+$new_data['warnings'] = array();
+$new_data['post_type_defs'] = array();
+$new_data['custom_field_defs'] = array();
+$new_data['cctm_installation_timestamp'] = time(); // it's not REAL, but it's close
 $new_data['export_info'] = array(
 	'title' 		=> 'CCTM Site',
 	'author' 		=> get_option('admin_email',''),
@@ -131,11 +138,7 @@ foreach ($data as $post_type => $def) {
 
 $new_data['post_type_defs'] = $data;
 
-// And pop in some of the anticipated new nodes in the structure
-$new_data['flash'] = array();
-$new_data['locks'] = array();
-$new_data['warnings'] = array();
-$new_data['cctm_installation_timestamp'] = time(); // it's not REAL, but it's close
+
 
 update_option( self::db_key, $new_data ); // stick it in the db
 self::$data = $new_data; // and stick it in memory just to be sure

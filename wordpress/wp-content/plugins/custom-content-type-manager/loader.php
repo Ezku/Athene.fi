@@ -1,4 +1,5 @@
-<?php if ( ! defined('WP_CONTENT_DIR')) exit('No direct script access allowed');
+<?php 
+if ( ! defined('WP_CONTENT_DIR')) exit('No direct script access allowed');
 /**
 * This file (loader.php) is called only when we've checked for any potential 
 * conflicts with function names, class names, or constant names. With so many WP 
@@ -14,24 +15,31 @@ I know it's not a very good idea to encode to HTML Characters, but it's the only
 Run tests only upon activation
 http://codex.wordpress.org/Function_Reference/register_activation_hook
 */
-// Required Files
+// Always Required Files
 include_once('includes/constants.php'); // needed before anything else
 include_once('includes/CCTM.php');
-include_once('includes/StandardizedCustomFields.php');
-include_once('includes/functions.php');
-include_once('tests/CCTMtests.php');
 
-// Run Tests (add new tests to the CCCTMtests class as req'd)
-// If there are errors, CCTMtests::$errors will get populated.
-CCTMtests::wp_version_gt(CCTM::wp_req_ver);
-CCTMtests::php_version_gt(CCTM::php_req_ver);
-CCTMtests::mysql_version_gt(CCTM::mysql_req_ver);
-CCTMtests::incompatible_plugins( array('Magic Fields','Custom Post Type UI','CMS Press') );
+// Admin-only files
+if( is_admin()) {
+	include_once('includes/StandardizedCustomFields.php');
+	include_once('tests/CCTMtests.php');
+	
+	// Run Tests (add new tests to the CCCTMtests class as req'd)
+	// If there are errors, CCTMtests::$errors will get populated.
+	CCTMtests::wp_version_gt(CCTM::wp_req_ver);
+	CCTMtests::php_version_gt(CCTM::php_req_ver);
+	CCTMtests::mysql_version_gt(CCTM::mysql_req_ver);
+	CCTMtests::incompatible_plugins( array('Magic Fields','Custom Post Type UI','CMS Press') );
+}
+// Front-end Only files
+else {
+	include_once('includes/functions.php');
+}
 
 // Get admin ready, print any CCTMtests::$errors in the admin dashboard
 add_action( 'admin_notices', 'CCTM::print_notices');
 
-if ( empty(CCTMtests::$errors) )
+if ( empty(CCTM::$errors) )
 {
 	// Load up the CCTM data from wp_options, populates CCTM::$data
 	CCTM::load_data();
@@ -79,4 +87,5 @@ if ( empty(CCTMtests::$errors) )
 	add_action( 'right_now_content_table_end' , 'CCTM::right_now_widget' );
 }
 
+//print_r(wp_upload_dir()); exit;
 /*EOF*/

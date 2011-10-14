@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 //------------------------------------------------------------------------------
 /**
  * Manage custom fields for the given $post_type.
@@ -9,7 +11,7 @@
 $data 				= array();
 $data['page_title']	= sprintf( __('Custom Fields for %s', CCTM_TXTDOMAIN), "<em>$post_type</em>");
 $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/FieldAssociations';
-$data['menu'] 		= ''; // sprintf('<a href="?page=cctm&a=list_post_types" class="button">%s</a>', __('Back', CCTM_TXTDOMAIN) );
+$data['menu'] 		= sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm&a=list_custom_field_types" class="button">%s</a>', __('Create Custom Field', CCTM_TXTDOMAIN) );
 $data['msg']		= CCTM::get_flash();
 
 
@@ -55,7 +57,7 @@ $all_custom_fields_cnt = count($all_custom_fields);
 
 if (!$all_custom_fields_cnt) {
 	$data['msg'] .= sprintf('<div class="updated"><p>%s</p></div>'
-		, __('There are no custom fields defined yet. <a href="?page=cctm_fields">Define custom fields</a>.', CCTM_TXTDOMAIN));
+		, __('There are no custom fields defined yet. <a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_custom_field_types">Define custom fields</a>.', CCTM_TXTDOMAIN));
 }
 elseif (!$active_custom_fields_cnt ) {
 	$data['msg'] .= sprintf('<div class="updated"><p>%s</p></div>'

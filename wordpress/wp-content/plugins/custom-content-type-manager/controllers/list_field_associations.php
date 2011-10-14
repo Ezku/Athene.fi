@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 //------------------------------------------------------------------------------
 /**
  * Manage post_types for the given $field_name.  This is one of two controllers

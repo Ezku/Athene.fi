@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 /*------------------------------------------------------------------------------
 * Edit a custom field.  
 *
@@ -19,7 +21,7 @@ $data = array();
 $data['page_title'] = sprintf(__('Edit Custom Field: %s', CCTM_TXTDOMAIN), $field_name );
 $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/SupportedCustomFields';
 $data['msg'] = '';
-$data['menu'] = sprintf('<a href="?page=cctm_fields&a=list_custom_fields" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
+$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_custom_fields" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
 $data['submit'] = __('Save', CCTM_TXTDOMAIN);
 $data['action_name']  = 'custom_content_type_mgr_edit_custom_field';
 $data['nonce_name']  = 'custom_content_type_mgr_edit_custom_field_nonce';

@@ -120,7 +120,7 @@ function get_custom_field($raw_fieldname, $options=null)
 	}
 
 	// Pass thru Output Filters
-	$i = 1;
+	$i = 1; // <-- skip 0 b/c that's the $raw_fieldname in the $options_array
 	foreach($input_array as $outputfilter) {
 
 		if (isset($options_array[$i])) {
@@ -178,9 +178,9 @@ function get_custom_image($fieldname)
 //------------------------------------------------------------------------------
 /**
 Retrieves a complete post object, including all meta fields.
-Ah... get_post_custom() will treat each custom field as an array, because in WP
+Note: get_post_custom() will treat each custom field as an array, because in WP
 you can tie multiple rows of data to the same fieldname (which can cause some
-architectural related headaches).
+architectural headaches).
 
 At the end of this, I want a post object that can work like this:
 
@@ -218,7 +218,7 @@ function get_post_complete($id)
 	return $complete_post;	
 }
 
-
+//------------------------------------------------------------------------------
 /**
 Returns an array of post "complete" objects (including all custom fields)
 where the custom fieldname = $fieldname and the value of that field is $value.
@@ -359,7 +359,7 @@ function print_custom_field($fieldname, $extra=null)
 */
 function print_custom_field_meta($fieldname, $item, $post_type=null)
 {
-	print get_custom_field_meta($fieldname, $item, $post_type);
+	print call_user_func_array('get_custom_field_meta', func_get_args());
 }
 
 /*EOF*/

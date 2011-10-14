@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 /*------------------------------------------------------------------------------
 Create a new post type
 ------------------------------------------------------------------------------*/
@@ -6,7 +8,7 @@ $data=array();
 $data['page_title'] = __('Create Custom Content Type', CCTM_TXTDOMAIN);
 $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/CreatePostType';
 $data['msg'] = '';
-$data['menu'] = sprintf('<a href="?page=cctm" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
+$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
 $data['edit_warning'] = ''; // only used when you edit a post_type, not delete.
 
 // Variables for our template

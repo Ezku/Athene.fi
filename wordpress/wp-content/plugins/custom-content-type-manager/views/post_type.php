@@ -90,6 +90,7 @@ just want to make sure that the form is presented uncorrupted.
 		<li><a href="#menu-tab"><?php _e('Menu', CCTM_TXTDOMAIN); ?></a></li>
 		<li><a href="#urls-tab"><?php _e('URLs', CCTM_TXTDOMAIN); ?></a></li>
 		<li><a href="#advanced-tab"><?php _e('Advanced', CCTM_TXTDOMAIN); ?></a></li>
+		<li><a href="#taxonomies-tab"><?php _e('Taxonomies', CCTM_TXTDOMAIN); ?></a></li>
 	</ul>
 
 	<div style="clear:both;"></div>	
@@ -385,7 +386,6 @@ just want to make sure that the form is presented uncorrupted.
 				$post_types = get_post_types($args);
 				//print_r($data['post_type']s); exit;
 				foreach ( $post_types as $pt => $v ) {
-
 					$is_checked = '';
 					if ( isset($data['def']['cctm_hierarchical_post_types']) ) {
 						if ( is_array($data['def']['cctm_hierarchical_post_types']) && in_array( $pt, $data['def']['cctm_hierarchical_post_types']) ) {
@@ -506,10 +506,16 @@ just want to make sure that the form is presented uncorrupted.
 <fieldset>
 		
 		<!--!Public: check/uncheck all shortcut -->
-		<input type="checkbox" id="public" class="checkall" />
-		<label for="public" class="cctm_label cctm_checkbox_label" id="cctm_label_public"><?php _e('Public', CCTM_TXTDOMAIN); ?></label>
+		<input type="checkbox" id="public_checkall" class="checkall" />
+		<label for="public_checkall" class="cctm_label cctm_checkbox_label" id="cctm_label_public_checkall"><?php _e('Public', CCTM_TXTDOMAIN); ?></label>
 
 	<div style="margin-left: 30px;">
+		<!--!Public-->
+		<div class="cctm_element_wrapper" id="custom_field_wrapper_public">
+			<input type="checkbox" name="public" class="cctm_checkbox" id="public" value="1" <?php print CCTM::is_checked($data['def']['public']); ?>/> 
+			<label for="public" class="cctm_label cctm_checkbox_label" id="cctm_label_public"><?php _e('Public', CCTM_TXTDOMAIN); ?></label>
+			<span class="cctm_description"><?php _e('Set the public attribute verbosely so WordPress behaves as you would expect it to. See <a href="http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=212">Issue 212</a> in the bug tracker.', CCTM_TXTDOMAIN); ?></span>
+		</div>		
 		<!--!Show UI -->
 		<div class="cctm_element_wrapper" id="custom_field_wrapper_show_ui">
 			<input type="checkbox" name="show_ui" class="cctm_checkbox" id="show_ui" value="1" <?php print CCTM::is_checked($data['def']['show_ui']); ?>/> 
@@ -599,28 +605,68 @@ just want to make sure that the form is presented uncorrupted.
 			</label>
 			<span class="cctm_description"><?php _e('If enabled, posts will be listed in archive lists (e.g. by month).', CCTM_TXTDOMAIN); ?></span>
 		</div>
-	
-		<hr />
-		
-		<h3><?php _e('Taxonomies', CCTM_TXTDOMAIN); ?></h3>
-		
-		<p><?php _e('Taxonomies offer ways to classify data as an aid to searching.', CCTM_TXTDOMAIN); ?></p>
-		
-		<div class="cctm_element_wrapper" id="custom_field_wrapper_taxonomy_categories">			
-			<input type="checkbox" name="taxonomies[]" class="cctm_checkbox" id="taxonomy_categories" value="category" <?php print CCTM::is_checked($data['def']['taxonomies'], 'category'); ?> /> 
-			<label for="taxonomy_categories" class="cctm_label cctm_checkbox_label" id="cctm_label_taxonomies[]"><?php _e('Enable Categories', CCTM_TXTDOMAIN); ?></label>
-			<span class="cctm_description"><?php _e('Hierarchical based classification.', CCTM_TXTDOMAIN); ?></span>
+
+
+		<!--!Custom Order By -->		
+		<div class="cctm_element_wrapper" id="custom_field_wrapper_custom_orderby">
+			<label for="custom_orderby" class="cctm_label cctm_text_label" id="cctm_label_custom_orderby">
+				<?php _e('Order By', CCTM_TXTDOMAIN); ?>
+			</label>
+			<select name="custom_orderby" class="cctm_dropdown" id="custom_orderby">
+				<option value=""><?php _e('Default', CCTM_TXTDOMAIN); ?></option>
+				<option value="ID" <?php 			print CCTM::is_selected('ID',$data['def']['custom_orderby']); ?>>ID</option>
+				<option value="post_author" <?php 	print CCTM::is_selected('post_author',$data['def']['custom_orderby']); ?>>post_author</option>
+				<option value="post_date" <?php 	print CCTM::is_selected('post_date',$data['def']['custom_orderby']); ?>>post_date</option>
+				<option value="post_content" <?php 	print CCTM::is_selected('post_content',$data['def']['custom_orderby']); ?>>post_content</option>
+				<option value="post_title" <?php 	print CCTM::is_selected('post_title',$data['def']['custom_orderby']); ?>>post_title</option>
+				<option value="post_excerpt" <?php 	print CCTM::is_selected('post_excerpt',$data['def']['custom_orderby']); ?>>post_excerpt</option>
+				<option value="post_status" <?php 	print CCTM::is_selected('post_status',$data['def']['custom_orderby']); ?>>post_status</option>
+				<option value="post_modified" <?php print CCTM::is_selected('post_modified',$data['def']['custom_orderby']); ?>>post_modified</option>
+				<option value="post_parent" <?php 	print CCTM::is_selected('post_parent',$data['def']['custom_orderby']); ?>>post_parent</option>
+				<option value="menu_order" <?php 	print CCTM::is_selected('menu_order',$data['def']['custom_orderby']); ?>>menu_order</option>
+				<option value="post_type" <?php 	print CCTM::is_selected('post_type',$data['def']['custom_orderby']); ?>>post_type</option>
+				<option value="comment_count" <?php 	print CCTM::is_selected('comment_count',$data['def']['custom_orderby']); ?>>comment_count</option>
+			</select>
+			<span class="cctm_description"><?php _e('How do you want your posts to sort?', CCTM_TXTDOMAIN); ?></span>
 		</div>
+
+
 		
-		
-		<div class="cctm_element_wrapper" id="custom_field_wrapper_taxonomy_tags">			
-			<input type="checkbox" name="taxonomies[]" class="cctm_checkbox" id="taxonomy_tags" value="post_tag"  <?php print CCTM::is_checked($data['def']['taxonomies'], 'post_tag'); ?>/> 
-			<label for="taxonomy_tags" class="cctm_label cctm_checkbox_label" id="cctm_label_taxonomies[]"><?php _e('Enable Tags', CCTM_TXTDOMAIN); ?></label>
-			<span class="cctm_description"><?php _e('Simple word associations.', CCTM_TXTDOMAIN); ?></span>
+		<!--!Custom order -->
+		<div class="cctm_element_wrapper" id="custom_field_wrapper_custom_order">		
+			<label for="custom_order" class="cctm_label cctm_text_label" id="cctm_label_custom_order"><?php _e('Sort Order', CCTM_TXTDOMAIN); ?></label>
+			<select name="custom_order" class="cctm_dropdown" id="custom_order">
+				<option value="ASC" <?php print CCTM::is_selected('ASC',$data['def']['custom_order']); ?>><?php _e('ASC'); ?></option>
+				<option value="DESC" <?php print CCTM::is_selected('DESC',$data['def']['custom_order']); ?>><?php _e('DESC'); ?></option>
+			</select>
+			<span class="cctm_description"><?php _e('If you specify a custom <code>Order By</code>, this setting will determine if your posts sort in ascending or descending order.', CCTM_TXTDOMAIN); ?></span>
 		</div>
-		
-		<p><?php _e("Currently, this plugin only allows you to use default taxonomies with your content types. We recommend using momo360modena's <a href='http://wordpress.org/extend/plugins/simple-taxonomy/'>Simple Taxonomy</a> plugin to create custom taxonomies.", CCTM_TXTDOMAIN); ?></p>
+
+			
 	</div>
+
+	<!-- ================================================================================================ -->
+	<div id="taxonomies-tab">
+			<h3><?php _e('Taxonomies', CCTM_TXTDOMAIN); ?></h3>
+			
+			<p><?php _e('Taxonomies offer ways to classify data as an aid to searching.', CCTM_TXTDOMAIN); ?></p>
+			<p><?php _e("Currently, this plugin only allows you to use default taxonomies with your content types. We recommend using momo360modena's <a href='http://wordpress.org/extend/plugins/simple-taxonomy/'>Simple Taxonomy</a> plugin to create custom taxonomies.", CCTM_TXTDOMAIN); ?></p>
+						
+			<div class="cctm_element_wrapper" id="custom_field_wrapper_taxonomy_categories">			
+				<input type="checkbox" name="taxonomies[]" class="cctm_checkbox" id="taxonomy_categories" value="category" <?php print CCTM::is_checked($data['def']['taxonomies'], 'category'); ?> /> 
+				<label for="taxonomy_categories" class="cctm_label cctm_checkbox_label" id="cctm_label_taxonomies[]"><?php _e('Enable Categories', CCTM_TXTDOMAIN); ?></label>
+				<span class="cctm_description"><?php _e('Hierarchical based classification.', CCTM_TXTDOMAIN); ?></span>
+			</div>
+			
+			
+			<div class="cctm_element_wrapper" id="custom_field_wrapper_taxonomy_tags">			
+				<input type="checkbox" name="taxonomies[]" class="cctm_checkbox" id="taxonomy_tags" value="post_tag"  <?php print CCTM::is_checked($data['def']['taxonomies'], 'post_tag'); ?>/> 
+				<label for="taxonomy_tags" class="cctm_label cctm_checkbox_label" id="cctm_label_taxonomies[]"><?php _e('Enable Tags', CCTM_TXTDOMAIN); ?></label>
+				<span class="cctm_description"><?php _e('Simple word associations.', CCTM_TXTDOMAIN); ?></span>
+			</div>
+	</div>
+
+
 </div>
 
 

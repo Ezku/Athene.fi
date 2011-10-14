@@ -5,6 +5,7 @@ But there was a bug on that page... the src URL of the iFrame and the action URL
 of the form must be the same.
 ------------------------------------------------------------------------------*/
 @include_once( realpath('../../../').'/wp-load.php' );
+include_once('includes/constants.php');
 ?>
 <form id="file-form" enctype="multipart/form-data" action="<?php print CCTM_URL; ?>/upload_form_handler.php" method="post" target="cctm_upload_iframe">	
 	<?php wp_nonce_field('client-file-upload'); ?>

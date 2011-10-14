@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 /*------------------------------------------------------------------------------
 Deactivate a post type. This will remove custom post types from the WP menus;
 deactivation stops custom fields from being standardized in built-in and custom

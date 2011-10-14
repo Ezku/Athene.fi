@@ -34,6 +34,11 @@ class ImportExport {
 	 */
 	public static function activate_def($filename) {
 		$upload_dir = wp_upload_dir();
+		if (isset($upload_dir['error']) && !empty($upload_dir['error'])) {
+			CCTM::$errors['json_decode_error'] =  __('WordPress issued the following error: ', CCTM_TXTDOMAIN) .$upload_dir['error'];	
+			return false;
+		}
+		
 		$dir = $upload_dir['basedir'] .'/'.CCTM::base_storage_dir . '/' . CCTM::def_dir .'/';
 
 		$data = ImportExport::load_def_file($dir.$filename);
@@ -98,9 +103,15 @@ class ImportExport {
 			CCTM::$errors['no_definitions_defined'] = __('Please specify at least one definition.', CCTM_TXTDOMAIN);
 			return false;
 		}
+
+		$upload_dir = wp_upload_dir();
+		if (isset($upload_dir['error']) && !empty($upload_dir['error'])) {
+			CCTM::$errors['directory_does_not_exist'] =  __('WordPress issued the following error: ', CCTM_TXTDOMAIN) .$upload_dir['error'];	
+			return false;
+		}
 		
 		foreach ($defs as $d) {
-			$upload_dir = wp_upload_dir();
+			
 			$dir = $upload_dir['basedir'] .'/'.CCTM::base_storage_dir . '/' . CCTM::def_dir;
 
 			$file = $dir.'/'.$d;
@@ -166,6 +177,10 @@ class ImportExport {
 
 		// Where our library is...
 		$upload_dir = wp_upload_dir();
+		if (isset($upload_dir['error']) && !empty($upload_dir['error'])) {
+			CCTM::$errors['directory_does_not_exist'] =  __('WordPress issued the following error: ', CCTM_TXTDOMAIN) .$upload_dir['error'];	
+			return false;
+		}		
 		$dir = $upload_dir['basedir'] .'/'.CCTM::base_storage_dir . '/' . CCTM::def_dir;
 		
 		$target_file = $dir.'/'.$download_title;
@@ -205,9 +220,15 @@ class ImportExport {
 	 * @return	mixed	array of filenames (no path included).
 	 */
 	public static function get_defs() {
-		$upload_dir = wp_upload_dir();
-		$dir = $upload_dir['basedir'] .'/'.CCTM::base_storage_dir . '/' . CCTM::def_dir .'/';
 		$available_defs = array();
+		
+		$upload_dir = wp_upload_dir();
+		if (isset($upload_dir['error']) && !empty($upload_dir['error'])) {
+			CCTM::$errors['json_decode_error'] =  __('WordPress issued the following error: ', CCTM_TXTDOMAIN) .$upload_dir['error'];	
+			return $available_defs;
+		}
+				
+		$dir = $upload_dir['basedir'] .'/'.CCTM::base_storage_dir . '/' . CCTM::def_dir .'/';
 		
 		if ($handle = opendir($dir)) {
 			while (false !== ($file = readdir($handle))) {
@@ -218,7 +239,7 @@ class ImportExport {
 			}
 			closedir($handle);
 		}
-		return 	$available_defs;
+		return $available_defs;
 	} 
 
 	//------------------------------------------------------------------------------

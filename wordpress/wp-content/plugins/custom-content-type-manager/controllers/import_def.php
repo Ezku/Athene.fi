@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 /*------------------------------------------------------------------------------
 Export a content type definition to a .json file
 ------------------------------------------------------------------------------*/
@@ -7,8 +9,8 @@ require_once(CCTM_PATH . '/includes/ImportExport.php');
 $data 				= array();
 $data['page_title']	= __('Import Definition', CCTM_TXTDOMAIN);
 $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/Import';
-$data['menu'] 		= sprintf('<a href="?page=cctm_tools&a=tools" title="%s" class="button">%s</a>', __('Back'), __('Back')) . ' '.
-						sprintf('<a href="?page=cctm_tools&a=export_def" title="%s" class="button">%s</a>',__('Export'), __('Export'));
+$data['menu'] 		= sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_tools&a=tools" title="%s" class="button">%s</a>', __('Back'), __('Back')) . ' '.
+						sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_tools&a=export_def" title="%s" class="button">%s</a>',__('Export'), __('Export'));
 $data['msg']		= CCTM::get_flash();
 $data['content'] = '';
 
@@ -41,7 +43,7 @@ if ( !empty($_POST) ) { // && check_admin_referer($data['action_name'], $data['n
 		if (wp_verify_nonce($nonce, 'cctm_upload_def') ) {
 
 			// A little cleanup before we sanitize
-			unset($_POST[ $data['nonce_name'] ]);
+			unset($_POST['cctm_nonce']);
 			unset($_POST['_wp_http_referer']);
 
 			// Start Checking stuff....

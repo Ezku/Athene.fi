@@ -1,4 +1,5 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
 /*------------------------------------------------------------------------------
 Shown after a user clicks "Report a Bug": this is intended to make bug reporting
 more effective by displaying summarized info to the user so they can copy

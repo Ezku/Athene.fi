@@ -6,10 +6,7 @@ When you add a dropdown custom field, does the JS fire to let you create options
 When you deselect the dropdown as the field type, do the options clear?
 ------------------------------------------------------------------------------*/
 class CCTMtests
-{
-	public static $errors = array(); // Any errors thrown.
-//	public static $warnings = array();
-	
+{	
 	//------------------------------------------------------------------------------
 	/**
 	 * @param	array	list of names of incompatible plugins
@@ -64,7 +61,7 @@ class CCTMtests
 			$exit_msg .= ' ';
 			$exit_msg .= __('Talk to your system administrator about upgrading.', CCTM_TXTDOMAIN);	
 
-			self::$errors[] = $exit_msg;
+			CCTM::$errors[] = $exit_msg;
 		}
 	}
 
@@ -104,7 +101,7 @@ class CCTMtests
 				{
 					if (version_compare($all_plugins_reindexed[$name]['Version'],$version,'<'))
 					{
-						self::$errors[] = sprintf( __('%1$s requires version %$2% of the %3$s plugin.', CCTM_TXTDOMAIN )
+						CCTM::$errors[] = sprintf( __('%1$s requires version %$2% of the %3$s plugin.', CCTM_TXTDOMAIN )
 							, CCTM::name
 							, $version
 							, $name );			
@@ -123,7 +120,7 @@ class CCTMtests
 					__('The %1$s plugin is not installed.', CCTM_TXTDOMAIN)
 					, $name
 				);
-				self::$errors[] = $msg;
+				CCTM::$errors[] = $msg;
 			}
 		}
 	}
@@ -135,7 +132,7 @@ class CCTMtests
 		
 		if (version_compare($wp_version,$ver,'<'))
 		{
-			self::$errors[] = sprintf( __('%1$s requires WordPress %2$s or newer. <a href="http://codex.wordpress.org/Upgrading_WordPress">Please update!</a>', CCTM_TXTDOMAIN)
+			CCTM::$errors[] = sprintf( __('%1$s requires WordPress %2$s or newer. <a href="http://codex.wordpress.org/Upgrading_WordPress">Please update!</a>', CCTM_TXTDOMAIN)
 			, CCTM::name
 			, $ver );
 		}
@@ -152,7 +149,7 @@ class CCTMtests
 				,  CCTM::name
 				, $ver );
 			$exit_msg .= __('Talk to your system administrator about upgrading.', CCTM_TXTDOMAIN);	
-			self::$errors[] = $exit_msg;
+			CCTM::$errors[] = $exit_msg;
 		}
 	}
 	
@@ -181,7 +178,7 @@ class CCTMtests
 				);
 				
 				$msg .= __('Talk to your system administrator about reconfiguring PHP.', CCTM_TXTDOMAIN);
-				self::$errors[] = $msg;
+				CCTM::$errors[] = $msg;
 			}
 		}
 	

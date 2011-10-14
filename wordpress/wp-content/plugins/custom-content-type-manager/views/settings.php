@@ -6,7 +6,7 @@
 			<label for="delete_posts" class="cctm_label cctm_checkbox_label" id="cctm_label_delete_posts">
 				<?php _e('Delete Posts', CCTM_TXTDOMAIN); ?>
 			</label>
-			<span class="cctm_description"><?php _e('Check this option if you want to delete posts when you delete a content type.', CCTM_TXTDOMAIN); ?></span>			
+			<span class="cctm_description"><?php _e('Check this option if you want to delete posts when you delete a post-type definition.', CCTM_TXTDOMAIN); ?></span>			
 		</div>
 
 		<!--!Delete Custom Fields -->		
@@ -46,7 +46,7 @@
 			<label for="show_custom_fields_menu" class="cctm_label cctm_checkbox_label" id="cctm_label_show_custom_fields_menu">
 				<?php _e('Show Custom Fields Menu', CCTM_TXTDOMAIN); ?>
 			</label>
-			<span class="cctm_description"><?php _e('Check this option if you want a "Custom Fields" menu item to appear under each post type.', CCTM_TXTDOMAIN); ?></span>			
+			<span class="cctm_description"><?php _e('Check this option if you want a "Custom Fields" menu item to appear under each post-type.', CCTM_TXTDOMAIN); ?></span>			
 		</div>
 		
 		<!--!Settings Menu -->		
@@ -55,7 +55,7 @@
 			<label for="show_settings_menu" class="cctm_label cctm_checkbox_label" id="cctm_label_show_settings_menu">
 				<?php _e('Show Settings Menu', CCTM_TXTDOMAIN); ?>
 			</label>
-			<span class="cctm_description"><?php _e('Check this option if you want a "Settings" menu item to appear under each custom post type.', CCTM_TXTDOMAIN); ?></span>			
+			<span class="cctm_description"><?php _e('Check this option if you want a "Settings" menu item to appear under each custom post-type.', CCTM_TXTDOMAIN); ?></span>			
 		</div>
 	
 		<!--!Show foreign post types -->		
@@ -66,6 +66,15 @@
 			</label>
 			<span class="cctm_description"><?php _e("Check this box if you want to display any post-types registered with some other plugin. You won't be able to edit them, but you'll know they are there.", CCTM_TXTDOMAIN); ?></span>
 		</div>
+
+		<!--!Cache Directory Scans -->		
+		<div class="cctm_element_wrapper" id="custom_field_wrapper_cache_directory_scans">
+			<input type="checkbox" name="cache_directory_scans" class="cctm_checkbox" id="cache_directory_scans" value="1" <?php print $data['settings']['cache_directory_scans']; ?>/>
+			<label for="cache_directory_scans" class="cctm_label cctm_checkbox_label" id="cctm_label_cache_directory_scans">
+				<?php _e('Cache Directory Scans', CCTM_TXTDOMAIN); ?>
+			</label>
+			<span class="cctm_description"><?php _e("Usually you want the results of directory scans to be cached for faster performance, but in some server setups (e.g. when two sites connect to the same database), you may need to disable this.", CCTM_TXTDOMAIN); ?></span>
+		</div>		
 		
 		<!--!Custom Field settings links -->
 		<?php print $data['custom_fields_settings_links']; ?>

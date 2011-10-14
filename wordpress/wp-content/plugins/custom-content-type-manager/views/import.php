@@ -24,9 +24,19 @@ name="_cctm_nonce" value="'. wp_create_nonce('cctm_create_update_post')
 <h2><?php _e('Manage Library', CCTM_TXTDOMAIN); ?></h2>
 
 
-<p><?php printf( __('You can import an existing %s definition file from your computer or choose one from your uploads directory: %s. You probably will only use this when you are first setting up your site.', CCTM_TXTDOMAIN)
+<p><?php 
+$upload_dir = wp_upload_dir();
+$upload_dir_str = 'wp-content/uploads';
+// it might come back something like 
+// Array ( [error] => Unable to create directory /path/to/wp-content/uploads/2011/10. Is its parent directory writable by the server? )
+if (isset($upload_dir['basedir'])) {
+	$upload_dir_str = $upload_dir['basedir'];
+}
+
+
+printf( __('You can import an existing %s definition file from your computer or choose one from your uploads directory: %s. You probably will only use this when you are first setting up your site.', CCTM_TXTDOMAIN)
 	, '<code>.cctm.json</code>'
-	, '<code>wp-content/'.self::base_storage_dir .'/'.self::def_dir.'</code>'
+	, '<code>'.$upload_dir_str.'/'.self::base_storage_dir .'/'.self::def_dir.'</code>'
 	); ?></p>
 
 <h3><?php _e('Definitions on File', CCTM_TXTDOMAIN); ?></h3>

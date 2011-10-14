@@ -112,18 +112,18 @@ class StandardizedCustomFields
 		
 		
 		// customize if selected
-		if (isset(CCTM::$data[$post_type]['hierarchical'])
-			&& CCTM::$data[$post_type]['hierarchical'] 
-			&& CCTM::$data[$post_type]['cctm_hierarchical_custom']) {
+		if (isset(CCTM::$data['post_type_defs'][$post_type]['hierarchical'])
+			&& CCTM::$data['post_type_defs'][$post_type]['hierarchical'] 
+			&& CCTM::$data['post_type_defs'][$post_type]['cctm_hierarchical_custom']) {
 			// filter by additional parameters
-			if ( CCTM::$data[$post_type]['cctm_hierarchical_includes_drafts'] ) {
+			if ( CCTM::$data['post_type_defs'][$post_type]['cctm_hierarchical_includes_drafts'] ) {
 				$args['post_status'] = 'publish,draft,pending';	
 			}
 			else {
 				$args['post_status'] = 'publish';
 			}
 			
-			$args['post_type'] = CCTM::$data[$post_type]['cctm_hierarchical_post_types'];
+			$args['post_type'] = CCTM::$data['post_type_defs'][$post_type]['cctm_hierarchical_post_types'];
 			// We gotta ensure ALL posts are returned.
 			// See http://code.google.com/p/wordpress-custom-content-type-manager/issues/detail?id=114
 			$args['numberposts'] = -1;

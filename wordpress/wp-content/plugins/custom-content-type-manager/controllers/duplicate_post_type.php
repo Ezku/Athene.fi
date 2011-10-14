@@ -1,24 +1,11 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 //------------------------------------------------------------------------------
 /**
 * Duplicate an existing post type. 
 * @param string $post_type
 */
-
-// We can't edit built-in post types -- gotta edit this for when we change the post_type name
-/*
-if (!self::_is_existing_post_type($post_type, false ) ) {
-	if (!empty($_POST) && isset($_POST['original_post_type_name'])) {
-		if (!self::_is_existing_post_type($post_type, false ) ) {
-		
-		}
-	}
-	die('post_type does not exist:' . $post_type);
-	self::format_errors();
-	return;
-}
-*/
-
 // Variables for our template
 $data = array();
 $d = array();
@@ -49,7 +36,7 @@ else {
 	$data['msg'] = sprintf('<div class="error"><p>%s</p></div>', __('Unrecognized post_type.', CCTM_TXTDOMAIN));
 	$data['page_title']  = __('Unrecognized Content type');
 	$data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/CreatePostType';
-	$data['menu'] = sprintf('<a href="?page=cctm" title="%s" class="button">%s</a>', __('Back'), __('Back'));
+	$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm" title="%s" class="button">%s</a>', __('Back'), __('Back'));
 	$data['content'] = '';
 	print CCTM::load_view('templates/default.php', $data);
 	return;
@@ -62,7 +49,7 @@ $data['page_title']  = __('Duplicate Content Type: ') . $post_type;
 $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/CreatePostType';
 $fields   = '';
 $data['msg'] = '';
-$data['menu'] = sprintf('<a href="?page=cctm" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
+$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm" title="%s" class="button">%s</a>', __('Cancel'), __('Cancel'));
 
 $d['action_name'] = 'custom_content_type_mgr_edit_content_type';
 $d['nonce_name'] = 'custom_content_type_mgr_edit_content_type_nonce';

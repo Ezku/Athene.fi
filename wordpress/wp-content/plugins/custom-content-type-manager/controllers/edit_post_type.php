@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 //------------------------------------------------------------------------------
 /**
 * Manager Page -- called by page_main_controller()
@@ -38,7 +40,7 @@ else {
 	$data['msg'] = sprintf('<div class="error"><p>%s</p></div>', __('Unrecognized post_type.', CCTM_TXTDOMAIN));
 	$data['page_title']  = __('Unrecognized Content type');
 	$data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/CreatePostType';
-	$data['menu'] = sprintf('<a href="?page=cctm" title="%s" class="button">%s</a>', __('Back'), __('Back'));
+	$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm" title="%s" class="button">%s</a>', __('Back'), __('Back'));
 	$data['content'] = '';
 	print CCTM::load_view('templates/default.php', $data);
 	return;

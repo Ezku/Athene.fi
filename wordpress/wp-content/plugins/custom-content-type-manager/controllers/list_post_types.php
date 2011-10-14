@@ -1,10 +1,12 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
 /*------------------------------------------------------------------------------
 Lists all defined post types
 ------------------------------------------------------------------------------*/
 $data 				= array();
 $data['page_title']	= __('List Content Types', CCTM_TXTDOMAIN);
-$data['menu'] 		= sprintf('<a href="?page=cctm&a=create_post_type" class="button">%s</a>', __('Create Content Type', CCTM_TXTDOMAIN) );
+$data['menu'] 		= sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm&a=create_post_type" class="button">%s</a>', __('Create Content Type', CCTM_TXTDOMAIN) );
 $data['msg']		= CCTM::get_flash();
 
 $customized_post_types =  array();

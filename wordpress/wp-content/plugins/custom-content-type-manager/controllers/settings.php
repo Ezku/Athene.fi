@@ -1,4 +1,7 @@
 <?php
+if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
+if (!current_user_can('administrator')) exit('Admins only.');
+
 /*------------------------------------------------------------------------------
 Settings Page
 ------------------------------------------------------------------------------*/
@@ -24,6 +27,7 @@ if ( !empty($_POST) && check_admin_referer($data['action_name'], $data['nonce_na
 	self::$data['settings']['show_custom_fields_menu']	= (int) CCTM::get_value($_POST, 'show_custom_fields_menu', 0);
 	self::$data['settings']['show_settings_menu'] 		= (int) CCTM::get_value($_POST, 'show_settings_menu', 0);
 	self::$data['settings']['show_foreign_post_types'] 	= (int) CCTM::get_value($_POST, 'show_foreign_post_types', 0);
+	self::$data['settings']['cache_directory_scans'] 	= (int) CCTM::get_value($_POST, 'cache_directory_scans', 0);
 	update_option( self::db_key, self::$data );
 
 	$data['msg'] = '<div class="updated"><p>'
@@ -33,22 +37,25 @@ if ( !empty($_POST) && check_admin_referer($data['action_name'], $data['nonce_na
 	print '<script type="text/javascript">window.location.replace("?page=cctm_settings");</script>';
 	return;
 }
-// print "<pre>"; print_r(self::$data['settings']); print "</pre>"; // exit; 
-//! Defaults for checkboxes
-$data['settings'] = array(
-	'delete_posts' => 0
-	, 'delete_custom_fields' => 0
-	, 'add_custom_fields' => 0
-	, 'update_custom_fields' => 0
- 	, 'show_custom_fields_menu' => 1
- 	, 'show_settings_menu' => 1
- 	, 'show_foreign_post_types' => 1
- 	
+
+// Use Defaults by default...
+$data['settings'] = CCTM::$default_settings;
+
+// list all checkboxes here
+$checkboxes = array(
+	'delete_posts' 
+	, 'delete_custom_fields'
+	, 'add_custom_fields'
+	, 'update_custom_fields'
+ 	, 'show_custom_fields_menu'
+ 	, 'show_settings_menu'
+ 	, 'show_foreign_post_types'
+ 	, 'cache_directory_scans'
 );
 
 // this only works for checkboxes...
-foreach ( $data['settings'] as $k => $v) {
-	if (isset(self::$data['settings'][$k]) && self::$data['settings'][$k]) {
+foreach ( $checkboxes as $k) {
+	if (self::get_setting($k)) {
 		$data['settings'][$k] = ' checked="checked"';
 	}
 }
