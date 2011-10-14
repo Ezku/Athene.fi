@@ -66,9 +66,9 @@ var flickrbrowser = {
     	                + "</span><br />"
     	            + "</a>"
     	        + "</div>"
+    	        + "<div class=\"spinner hide\">"
+                + "</div>"
     	        + "<div class=\"photos hide\">"
-    	            + "<div class=\"spinner\">"
-                    + "</div>"
     	        + "</div>"
     	      + "</div>");
     	    jQuery.getJSON(flickrbrowser.getQueryString("flickr.photos.getInfo",{photo_id:val.primary}), function(data) {
@@ -91,11 +91,20 @@ var flickrbrowser = {
   	    e.preventDefault();
   	  });
   	  
-  	  if (flickrbrowser.explodeHash().photoset) {
+  	  var hashParams = flickrbrowser.explodeHash();
+  	  if (hashParams.photoset) {
   	    flickrbrowser.photosetClicked = true;
-  	    flickrbrowser.getPhotoset(flickrbrowser.explodeHash().photoset);
+  	    flickrbrowser.getPhotoset(hashParams.photoset);
+  	    flickrbrowser.scrollTo('#photoset'+hashParams.photoset);
   	  }
 	  });
+  },
+  scrollTo: function(selector) {
+      if(typeof jQuery.scrollTo == 'function') {
+          jQuery.scrollTo(selector);
+      } else {
+          flickrbrowser.log('WARN: scrollTo function does not exist');
+      }
   },
   getPhotoset: function(id, el) {
     flickrbrowser.setHash({photoset: id});
