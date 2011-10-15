@@ -13,6 +13,7 @@ abstract class AtheneIndexWidget extends WP_Widget {
 	}
 	
 	protected function excerpt($text, $chars,$more = "...") {
+	  $text = strip_tags($text);
 	  if (substr($text, 0, $chars+strlen($more)) == $text) {
 	    return $text;
 	  }
