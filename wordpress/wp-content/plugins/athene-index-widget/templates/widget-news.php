@@ -17,7 +17,7 @@
                         <?php echo $news_item->post_title ?>
                     </header>
                     <section class="excerpt">
-                        <?php echo $this->excerpt($news_item->post_content, 60); ?>
+                        <?php echo $this->excerpt(empty($news_item->post_excerpt) ? $news_item->post_content : $news_item->post_excerpt, 60); ?>
                     </section>
                 </section>
             </article>
