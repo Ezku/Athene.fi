@@ -87,5 +87,4 @@ if ( empty(CCTM::$errors) )
 	add_action( 'right_now_content_table_end' , 'CCTM::right_now_widget' );
 }
 
-//print_r(wp_upload_dir()); exit;
 /*EOF*/
