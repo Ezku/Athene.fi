@@ -22,7 +22,7 @@
     		                'only_current_branch' => false
     		            ))->setDepthClasses(array(
     		                // Set level 0 items to grid
-    		                0 => cycle(array('grid_3', 'alpha'), 'grid_3', 'grid_3', array('grid_3', 'omega'))
+    		                0 => cycle(array('grid_2', 'alpha'), 'grid_2', 'grid_2', array('grid_2', 'omega'))
     		            ))
   		        ) ); ?>
     		</div><!-- .sitemap -->
