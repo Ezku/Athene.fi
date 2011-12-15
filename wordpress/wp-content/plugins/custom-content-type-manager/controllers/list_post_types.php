@@ -123,7 +123,7 @@ foreach ( $displayable_types as $post_type ) {
 }
 
 // Flag foreign post types
-if (isset(self::$data['settings']['show_foreign_post_types']) && self::$data['settings']['show_foreign_post_types']) {
+if (CCTM::get_setting('show_foreign_post_types')) {
 	$registered_post_types = get_post_types();
 	$cctm_post_types = array_keys(self::$data['post_type_defs']);
 	$other_post_types = array_diff($registered_post_types, $cctm_post_types);

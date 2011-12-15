@@ -5,20 +5,24 @@ if (!current_user_can('administrator')) exit('Admins only.');
 /**
  * Manage custom fields for the given $post_type.
  *
- * @param string $post_type
- * @param boolen $reset true only if we've just reset all custom fields
+ * @param string  $post_type
+ * @param boolen  $reset     true only if we've just reset all custom fields
+ * @package
  */
-$data 				= array();
-$data['page_title']	= sprintf( __('Custom Fields for %s', CCTM_TXTDOMAIN), "<em>$post_type</em>");
-$data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/FieldAssociations';
-$data['menu'] 		= sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm&a=list_custom_field_types" class="button">%s</a>', __('Create Custom Field', CCTM_TXTDOMAIN) );
-$data['msg']		= CCTM::get_flash();
+
+
+$data     = array();
+$data['page_title'] = sprintf( __('Custom Fields for %s', CCTM_TXTDOMAIN), "<em>$post_type</em>");
+$data['help']   = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/FieldAssociations';
+$data['menu']   = sprintf('<a href="'.get_admin_url(false, 'admin.php').'?page=cctm&a=list_custom_field_types&pt=%s" class="button">%s</a>', $post_type, __('Create Custom Field for this Post Type', CCTM_TXTDOMAIN) )
+	. ' '.sprintf('<a href="'.get_admin_url(false, 'admin.php').'?page=cctm&a=template_single&pt=%s" class="button">%s</a>', $post_type, __('View Sample Template', CCTM_TXTDOMAIN) ) ;
+$data['msg']  = CCTM::get_flash();
 
 
 // Validate post type
 if (!self::_is_existing_post_type($post_type) ) {
 	$msg_id = 'invalid_post_type';
-	include('error.php');
+	include 'error.php';
 	return;
 }
 
@@ -31,7 +35,7 @@ if (!empty($_POST) && check_admin_referer($data['action_name'], $data['nonce_nam
 
 	self::$data['post_type_defs'][$post_type]['custom_fields'] = array();
 	if (!empty($_POST['custom_fields']) && is_array($_POST['custom_fields'])) {
-		self::$data['post_type_defs'][$post_type]['custom_fields'] = $_POST['custom_fields'];	
+		self::$data['post_type_defs'][$post_type]['custom_fields'] = $_POST['custom_fields'];
 	}
 
 	update_option( self::db_key, self::$data );
@@ -39,7 +43,7 @@ if (!empty($_POST) && check_admin_referer($data['action_name'], $data['nonce_nam
 	$data['msg'] = sprintf('<div class="updated"><p>%s</p></div>', $x);
 	self::set_flash($data['msg']);
 	include CCTM_PATH . '/controllers/list_post_types.php';
-	return;	
+	return;
 }
 
 // Active custom fields are those that are associated with THIS post_type
@@ -57,7 +61,7 @@ $all_custom_fields_cnt = count($all_custom_fields);
 
 if (!$all_custom_fields_cnt) {
 	$data['msg'] .= sprintf('<div class="updated"><p>%s</p></div>'
-		, __('There are no custom fields defined yet. <a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_custom_field_types">Define custom fields</a>.', CCTM_TXTDOMAIN));
+		, __('There are no custom fields defined yet. <a href="'.get_admin_url(false, 'admin.php').'?page=cctm_fields&a=list_custom_field_types">Define custom fields</a>.', CCTM_TXTDOMAIN));
 }
 elseif (!$active_custom_fields_cnt ) {
 	$data['msg'] .= sprintf('<div class="updated"><p>%s</p></div>'
@@ -73,14 +77,20 @@ foreach ($active_custom_fields as $cf) {
 		continue;
 	}
 	$d = self::$data['custom_field_defs'][$cf];
-	$icon_src = self::get_custom_icons_src_dir() . $d['type'].'.png';
 
-	if ( !CCTM::is_valid_img($icon_src) ) {
-		$icon_src = self::get_custom_icons_src_dir() . 'default.png';
+	$field_type_name = CCTM::classname_prefix.$d['type'];
+	self::include_form_element_class($d['type']);
+	$FieldObj = new $field_type_name();
+	$d['icon'] = $FieldObj->get_icon();
+
+	// $icon_src = self::get_custom_icons_src_dir() . $d['type'].'.png';
+
+	if ( !CCTM::is_valid_img($d['icon']) ) {
+		$d['icon'] = self::get_custom_icons_src_dir() . 'default.png';
 	}
 
-	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $icon_src);
-	
+	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $d['icon']);
+
 	$d['class'] = '';
 	$d['is_checked'] = ' checked="checked"';
 	$d['edit_field_link'] = sprintf(
@@ -91,7 +101,7 @@ foreach ($active_custom_fields as $cf) {
 		, __('Edit this custom field', CCTM_TXTDOMAIN)
 		, __('Edit', CCTM_TXTDOMAIN)
 	);
-	
+
 	$data['content'] .= CCTM::load_view('tr_pt_custom_field.php', $d);
 }
 // Separator
@@ -101,13 +111,17 @@ $data['content'] .= '<tr class="no-sort"><td colspan="4" style="background-color
 $remaining_custom_fields = array_diff($all_custom_fields, $active_custom_fields);
 foreach ($remaining_custom_fields as $cf) {
 	$d = self::$data['custom_field_defs'][$cf];
-	$icon_src = self::get_custom_icons_src_dir() . $d['type'].'.png';
 
-	if ( !CCTM::is_valid_img($icon_src) ) {
-		$icon_src = self::get_custom_icons_src_dir() . 'default.png';
+	$field_type_name = CCTM::classname_prefix.$d['type'];
+	self::include_form_element_class($d['type']);
+	$FieldObj = new $field_type_name();
+	$d['icon'] = $FieldObj->get_icon();
+
+	if ( !CCTM::is_valid_img($d['icon']) ) {
+		$d['icon'] = self::get_custom_icons_src_dir() . 'default.png';
 	}
 
-	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $icon_src);
+	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $d['icon']);
 	$d['class'] = ''; // ' no-sort';
 	$d['is_checked'] = '';
 

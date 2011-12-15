@@ -12,11 +12,20 @@ $data['help'] = 'http://code.google.com/p/wordpress-custom-content-type-manager/
 $data['msg'] = self::get_flash();
 $data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_custom_fields" class="button">%s</a>', __('Back', CCTM_TXTDOMAIN) );
 $data['fields'] = '';
+$data['content'] = '';
 
-$elements = CCTM::get_available_custom_field_types();
+// You can optionally create the field for a given post_type
+if(!empty($post_type)) {
+	$data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_post_types" class="button">%s</a>', __('Back', CCTM_TXTDOMAIN) );
+	$data['content'] .= '<p>'. sprintf(__('Create a custom field for the %s post_type', CCTM_TXTDOMAIN), "<em>$post_type</em>").'</p>';
+}
+
+$elements = CCTM::get_available_custom_field_types(true);
+
 foreach ( $elements as $field_type => $file ) {
 	if ( CCTM::include_form_element_class($field_type) ) {
 		$d = array();
+		
 		$field_type_name = CCTM::classname_prefix.$field_type;
 		$FieldObj = new $field_type_name();
 		
@@ -25,6 +34,8 @@ foreach ( $elements as $field_type => $file ) {
 		$d['description']	= $FieldObj->get_description();
 		$d['url'] 			= $FieldObj->get_url();
 		$d['type'] 			= $field_type;
+		$d['post_type']		= $post_type;
+		
 		$data['fields'] .= CCTM::load_view('tr_custom_field_type.php',$d);	
 	}
 	else {
@@ -36,7 +47,7 @@ foreach ( $elements as $field_type => $file ) {
 
 }
 
-$data['content'] = CCTM::load_view('custom_field_types.php', $data);
+$data['content'] .= CCTM::load_view('custom_field_types.php', $data);
 print CCTM::load_view('templates/default.php', $data);
 
 /*EOF*/

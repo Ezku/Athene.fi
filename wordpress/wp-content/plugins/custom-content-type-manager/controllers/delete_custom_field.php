@@ -25,6 +25,20 @@ if (!array_key_exists($field_name, self::$data['custom_field_defs'])) {
 // If properly submitted, Proceed with deleting the post type
 if ( !empty($_POST) && check_admin_referer($data['action_name'], $data['nonce_name']) ) {
 	unset(self::$data['custom_field_defs'][$field_name]); 
+	// remove any references to this field from the post_type data.
+	$defs = self::get_post_type_defs();
+	foreach ($defs as $pt => $d ) {
+		if (isset($d['custom_fields']) && in_array($field_name, $d['custom_fields'])) {
+			$defs[$pt]['custom_fields'] = array(); // reset, so we can rebuild it w/o the field
+			foreach ($d['custom_fields'] as $cf) {
+				if ($cf != $field_name) {
+					$defs[$pt]['custom_fields'][] = $cf;
+				}
+			}
+		}
+	}
+	self::$data['post_type_defs'] = $defs;
+	
 	update_option( self::db_key, self::$data );
 	
 	// Optionally delete rows from wp_postmeta

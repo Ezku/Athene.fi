@@ -3,7 +3,7 @@
 Plugin Name: List category posts
 Plugin URI: http://picandocodigo.net/programacion/wordpress/list-category-posts-wordpress-plugin-english/
 Description: List Category Posts allows you to list posts from a category into a post/page using the [catlist] shortcode. This shortcode accepts a category name or id, the order in which you want the posts to display, and the number of posts to display. You can use [catlist] as many times as needed with different arguments. Usage: [catlist argument1=value1 argument2=value2].
-Version: 0.19.1
+Version: 0.22.2
 Author: Fernando Briano
 Author URI: http://picandocodigo.net/
 */
@@ -55,15 +55,18 @@ class ListCategoryPosts{
                             'comments' => 'no',
                             'thumbnail' => 'no',
                             'thumbnail_size' => 'thumbnail',
+                            'thumbnail_class' => '',
                             'post_type' => '',
                             'post_parent' => '0',
                             'class' => 'lcp_catlist',
                             'customfield_name' => '',
                             'customfield_value' =>'',
-                            'customfield_display' =>''
+                            'customfield_display' =>'',
+                            'taxonomy' => '',
+                            'categorypage' => '',
+                            'morelink' => ''
                     ), $atts);
 
-            
             $catlist_displayer = new CatListDisplayer($atts);
             return $catlist_displayer->display();
 
@@ -75,13 +78,11 @@ add_shortcode( 'catlist', array('ListCategoryPosts', 'catlist_func') );
 
 /**
  * TO-DO:
- * From WordPress Answers:
 Add Older Posts at bottom of List Category Post page
   http://wordpress.stackexchange.com/questions/26398/add-older-posts-at-bottom-of-list-category-post-page
-Include the latest post of a specific category on a matching page
-  http://wordpress.stackexchange.com/questions/26224/how-to-include-the-latest-post-of-a-specific-category-on-a-matching-page
-Link the thumbnail image
-  http://wordpress.stackexchange.com/questions/28431/im-trying-to-link-the-thumbnail-image
+Getting the “more” tag to work with plugin-list-category-post
+  http://wordpress.stackexchange.com/questions/30376/getting-the-more-tag-to-work-with-plugin-list-category-post
+- Fix the code for the WordPress Coding Standards: http://codex.wordpress.org/WordPress_Coding_Standards
 - i18n
 - Pagination
 - Simpler template system

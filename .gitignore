@@ -9,3 +9,5 @@ drupal/sites/default/settings.php
 
 # Wordpress config
 wordpress/wp-config.php
+
+wordpress/wp-content/uploads/*

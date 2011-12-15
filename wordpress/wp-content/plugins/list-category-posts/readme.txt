@@ -3,8 +3,8 @@ Contributors: fernandobt
 Donate Link: http://picandocodigo.net/programacion/wordpress/list-category-posts-wordpress-plugin-english/#support
 Tags: list, categories, posts, cms
 Requires at least: 2.8
-Tested up to: 3.2.1
-Stable tag: 0.19.1
+Tested up to: 3.3
+Stable tag: 0.22.2
 
 == Description ==
 List Category Posts allows you to list posts from a category into a post/page using the [catlist] shortcode.
@@ -13,38 +13,49 @@ The shortcode accepts a category name or id, the order in which you want the pos
 
 Great to use WordPress as a CMS, and create pages with several categories posts.
 
-The plugin includes a widget, which works pretty much the same as the plugin. Just add as many widgets as you want, and select all the available options from the Appearence > Widgets page.
+It includes a widget which works pretty much the same as the plugin. Just add as many widgets as you want, and select all the available options from the Appearence > Widgets page.
 
-Since version 0.18, **this plugins does not work on server with PHP 4**. If you're still using PHP 4 on your webhost, you should consider upgrading to PHP 5. WordPress 3.1 will be the last version to support PHP 4, from 3.2 and forward, only PHP 5 will be supported. You can still [download an older version of the plugin ] (https://wordpress.org/extend/plugins/list-category-posts/download/ "download an older version of the plugin") if you're using PHP 4.
+Since version 0.18, **this plugins does not work on servers with PHP 4**. If you're still using PHP 4 on your webhost, you should consider upgrading to PHP 5. WordPress 3.1 will be the last version to support PHP 4, from 3.2 and forward, only PHP 5 will be supported. You can still [download an older version of the plugin](https://wordpress.org/extend/plugins/list-category-posts/download/ "download an older version of the plugin") if you're using PHP 4.
 
-Works correctly with WordPress 3.1 and default Twenty Ten theme
-(http://wordpress.org/support/topic/399754)
+Please, read the information on [Other Notes](http://wordpress.org/extend/plugins/list-category-posts/other_notes/) and [Changelog](http://wordpress.org/extend/plugins/list-category-posts/changelog/) to be aware of new functionality, and improvements to the plugin.
 
-**Usage**: `[catlist argument1=value1 argument2=value2]`
+**Usage**
 
-**Tell us how you use this plugin!**
-http://foro.picandocodigo.net/discussion/261/do-you-like-list-category-posts-read-me
+`[catlist argument1=value1 argument2=value2]`
+
+
 
 **Support the plugin**
-If you've found the plugin useful, consider making a [donation via PayPal](http://picandocodigo.net/programacion/wordpress/list-category-posts-wordpress-plugin-english/ "Donate via PayPal") or visit my [Amazon Wishlist](http://www.amazon.com/gp/registry/wishlist/2HU1JYOF7DX5Q/ref=wl_web "Amazon Wishlist").
+
+If you've found the plugin useful, consider making a [donation via PayPal](http://picandocodigo.net/programacion/wordpress/list-category-posts-wordpress-plugin-english/ "Donate via PayPal") or visit my [Amazon Wishlist](http://www.amazon.com/gp/registry/wishlist/2HU1JYOF7DX5Q/ref=wl_web "Amazon Wishlist"). 
+
+**New Code is always welcome** :D
+[Fork the plugin on GitHub](https://github.com/picandocodigo/List-Category-Posts).
 
 
 ==Installation==
 
 * Upload listcat directory into you wp-content/plugins/ directory.
 * Login to your WordPress Admin menu, go to Plugins, and activate it.
-* Edit the default.php file on templates to customize the way the categories are displayed, or use the default one included in the plugin's code. You can use several different templates if you want.
-* You can find the ListCategoryPostsWidget in the Appearence > Widgets section on your WordPress Dashboard.
+* You can find the List Category Posts widget in the Appearence > Widgets section on your WordPress Dashboard.
+* If you want to customize the way the plugin displays the information, check the section on Templates on this documentation.
 
 ==Other notes==
 
-**Usage**
-The arguments you can use are:
+**Selecting the category**
 
-* **name** - To display posts from a category using the category's name. Ex: [catlist name=mycategory]
+The plugin can figure out the category from which you want to list posts in three different ways: Using the *category id*, the *category name or slug* and *detecting the current post's category*.
+When using List Category Posts inside a post, if you don't pass the category id, name or slug, it will post the latest posts from every category. 
+You can use the *categorypage* parameter to make it detect the category id of the current posts, and list posts from that category.
+ The parameters for choosing the category id are:
 
-* **id** - To display posts from a category using the category's id. Ex: [catlist id=24]. You can **include several categories**: Ex: [catlist id=17,24,32] or **exclude** a category with the minus (-)  
-If you use both arguments (wrong!), List Category Posts will show the posts from the category in 'name'.
+* **name** - To display posts from a category using the category's name or slug. Ex: [catlist name=mycategory]
+
+* **id** - To display posts from a category using the category's id. Ex: [catlist id=24]. You can **include several categories**: Ex: [catlist id=17,24,32] or **exclude** a category with the minus (-)
+
+* **categorypage** - Set it to "yes" if you want to list the posts from the current post's category.
+
+**Other parameters**
 
 * **tags** - Tag support, you can display posts from a certain tag. 
 
@@ -77,8 +88,6 @@ If you use both arguments (wrong!), List Category Posts will show the posts from
 
 * **dateformat** - Format of the date output. Default is get_option('date_format'). Check http://codex.wordpress.org/Formatting_Date_and_Time for possible formats.
 
-* **template** - File name of template from templates directory without extension. Example: For 'template.php' value is only 'template'. Default is 'default', which displays an unordered list (ul html tag) with a CSS class. This class can be passed as a parameter or by default it's: 'lcp_catlist'. You can also use the default 'div' value. This will output a div with the 'lcp_catlist' CSS class (or one you pass as parameter with the class argument). The inner items (posts) will be displayed between p tags.
-
 * **excerpt** - Display the post's excerpt. Default is 'no', use excerpt=yes to activate it.
 
 * **excludeposts** - IDs of posts to exclude from the list. Ex: [catlist excludeposts=12,52,37]
@@ -95,6 +104,8 @@ If you use both arguments (wrong!), List Category Posts will show the posts from
 
 * **thumbnail_size** - Either a string keyword (thumbnail, medium, large or full) or a 2-item array representing width and height in pixels, e.g. array(32,32).
 
+* **thumbnail_class** - Set a CSS class to the thumbnail and style it.
+
 * **post_type** - The type of post to show. Available options are: post - Default, page, attachment, any - all post types.
 
 * **post_parent** - Show only the children of the post with this ID. Default: None.
@@ -103,25 +114,32 @@ If you use both arguments (wrong!), List Category Posts will show the posts from
 
 * **custom fields** - To use custom fields, you must specify two values: customfield_name and customfield_value. Using this only show posts that contain a custom field with this name and value. Both parameters must be defined, or neither will work.
 
-* **customfield_display** - Display custom field(s). You can specify many fields to show, separating them with a coma. 
+* **customfield_display** - Display custom field(s). You can specify many fields to show, separating them with a coma.
 
+* **template** - File name of template from templates directory without extension. Example: For 'template.php' value is only 'template'. Default is 'default', which displays an unordered list (ul html tag) with a CSS class. This class can be passed as a parameter or by default it's: 'lcp_catlist'. You can also use the default 'div' value. This will output a div with the 'lcp_catlist' CSS class (or one you pass as parameter with the class argument). The inner items (posts) will be displayed between p tags.
 
-Your comments and feedback are welcome at:  
-http://foro.picandocodigo.net/categories/list-category-posts
+* **morelink** - Include a "more" link to access the category archive for the category. The link is inserted after listing the posts. It receives a string of characters as a parameter which will be used as the text of the link. Example: [catlist id=38 morelink="Read more"]
 
-**New Code is welcome too** :D
+== Template System ==
+
+Templates for the List Category Plugin are searched for in your WordPress theme's folder. You should create a folder named list-category-posts under 'wp-content/themes/your-theme-folder'. Template files are .php files.
+
+You can use the included template as an example to start. It's in the plugin's template folder under the name default.php. To use a template, use this code:
+[catlist id=1 template=templatename]
+If the template file were templatename.php.
+
+You can have as many different templates as you want, and use them in different pages and posts. The template code is pretty well documented, so if you're a bit familiar with HTML and PHP, you'll have no problems creating your own template. I'm planning on reworking the template system in order to have a really user friendly way to create templates.
 
 == Frequently Asked Questions ==
-* **Instructions** on how to use the plugin: http://foro.picandocodigo.net/discussion/251/list-category-posts-documentation/
-* **Template system** how to customize the way the posts are shown: http://foro.picandocodigo.net/discussion/253/list-category-posts-using-templates/. I am aware the Template System is not really friendly right now, I'll work on this whenever I get the time to work on the plugin for a while.
+* **Instructions** on how to use the plugin: http://wordpress.org/extend/plugins/list-category-posts/other_notes/
+* **Template system** how to customize the way the posts are shown: http://wordpress.org/extend/plugins/list-category-posts/other_notes/. I am aware the Template System is not really friendly right now, I'll work on this whenever I get the time to work on the plugin for a while.
 * **New feature requests** - Contact me on fernando at picandocodigo dot net.
 * **Support** I've decided to use WordPress Answers (http://meta.wordpress.stackexchange.com/) as the place for support. It's a great place with a large community of WordPress users and developers. Just ask your question with the tag 'plugin-list-category-post'.
 
 * **FAQ**
 
-Plugin could not be activated because it triggered a fatal error.
-Parse error: syntax error, unexpected T_STRING, expecting T_OLD_FUNCTION or T_FUNCTION or T_VAR or '}' in /.../wp-content/plugins/list-category-posts/include/CatListDisplayer.php on line 10
-
+**Plugin could not be activated because it triggered a fatal error.**
+*Parse error: syntax error, unexpected T_STRING, expecting T_OLD_FUNCTION or T_FUNCTION or T_VAR or '}' in /.../wp-content/plugins/list-category-posts/include/CatListDisplayer.php on line 10*
 Please check:
 http://wordpress.stackexchange.com/questions/9338/list-category-posts-plugin-upgrade-fails-fatal-error/9340#9340
 
@@ -147,12 +165,61 @@ Template system has changed. Custom templates should be stored in WordPress them
 
 == Changelog ==
 
+= 0.22.2 =
+ * Fixed bug with  the categorypage=yes param.
+ * Tested with WordPress 3.3.
+
+= 0.22.1 =
+ * Fixed accidentally deleted line which made the catlink=yes param not work.
+
+= 0.22 =
+ * Added CSS "current" class hook for current post in the list: .current class attached to either the li or a tag of the currently viewed page in the said list. http://wordpress.stackexchange.com/q/35552/298
+ * Added *morelink* parameter, check Other notes for usage.
+
+= 0.21.2 =
+ * Removed var_dump... (Sorry about that)
+
+= 0.21.1 =
+* Small fixes: 
+  * Used "empty()" function for some Strings instead of evaluating isset() and != ''.
+  * Include parameters on the get_posts args only when they are set (post_parent among others).
+
+= 0.21 =
+* Added 'thumbnail_class' parameter, so you can set a CSS class to the thumbnail and style it.
+
+= 0.20.5 =
+* Brought back the multiple categories functionality for the id parameter. Hopefully the last 0.20 bugfix release so I can start working on new stuff to implement.
+* Now the name parameter accepts multiple categories too. Just use: `[catlist name=category1,category2]`
+
+= 0.20.4 =
+* Yet another bugfix, regarding nothing being displayed when using tags.
+
+= 0.20.3 =
+* Fixed category detection code, which created some messy bugs in some cases
+
+= 0.20.2 =
+* Minor bugfix release
+
+= 0.20.1 =
+* Fixed extra " added to ul tag, thanks ideric (http://wordpress.org/support/topic/plugin-list-category-posts-extra-added-to-ul-tag)
+
+= 0.20 =
+* Added the possibility to list posts from the current post's category
+* Some fixes to documentation
+
+= 0.19.3 =
+* Another taxonomy fix, thanks frisco! http://wordpress.org/support/topic/plugin-list-category-posts-problem-with-custom-taxonomies
+
+= 0.19.2 =
+* Small fix, missing parameter for taxonomy.
+
 = 0.19.1 =
 * Added thumbnail to Widget.
 * Added thumbnail link to post (http://picod.net/33).
 
 = 0.19 =
-This update is dedicated to S. Keller from Switzerland who gave me "The Ultimate Hitchhiker's Guide to the Galaxy" from my Amazon Wishlit in appreciation for the plugin. I am really enjoying the read :D. If you 
+This update is dedicated to S. Keller from Switzerland who gave me "The Ultimate Hitchhiker's Guide to the Galaxy" from my Amazon Wishlit in appreciation for the plugin. I am really enjoying the read :D. If you, like S would like to show your appreciation, here's my wishlist: http://www.amazon.com/gp/registry/wishlist/2HU1JYOF7DX5Q/ref=wl_web 
+ 
 * Fixed private post logic, not displaying post if private. Thanks Bainternet from WordPress Answers: http://wordpress.stackexchange.com/questions/12514/list-category-posts-not-showing-posts-marked-private-to-logged-in-users/12520#12520
 * Added thumbnail_size parameter.
 * Added support for custom taxonomies and also moved to the array call of get_posts. Coded by wsherliker, thanks! http://picod.net/32
@@ -186,7 +253,8 @@ This update is dedicated to S. Keller from Switzerland who gave me "The Ultimate
 = 0.16 =
 * Changed STYLESHEETPATH to TEMPLATEPATH to point to the parent theme.
 * Added support to display custom fields. (http://picod.net/wp03)
-* Tested with WordPress 3.1.
+* Tested with WordPress 3.1 - http://wordpress.org/support/topic/399754
+
 
 = 0.15.1 =
 * Fixed a bug with undeclared variable. (Check http://picod.net/walcp, thanks Das!)

@@ -1,6 +1,6 @@
-<?php if ( ! defined('WP_CONTENT_DIR')) exit('No direct script access allowed');
+<?php if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
 /*------------------------------------------------------------------------------
-Template used for CCTM manager pages. This page should be included by the 
+Template used for CCTM manager pages. This page should be included by the
 controllers with the following variables set:
 
 $data['page_title']:	Header of this Admin page
@@ -9,8 +9,8 @@ $data['menu']:			Navigation links (e.g. back, cancel, etc)
 $data['content']:		Main content block
 ------------------------------------------------------------------------------*/
 $active = array();
-$active['cctm'] 		= '';
-$active['cctm_fields']	= '';
+$active['cctm']   = '';
+$active['cctm_fields'] = '';
 $active['cctm_settings'] = '';
 $active['cctm_themes'] = '';
 $active['cctm_tools'] = '';
@@ -32,33 +32,33 @@ if (!isset($data['help']) || empty($data['help'])) {
 ?>
 <div class="wrap">
 
-	<?php /*---------------- HEADER --------------------------- */ ?>	
+	<?php /*---------------- HEADER --------------------------- */ ?>
 	<div id="cctm_header">
 		<img src="<?php print CCTM_URL; ?>/images/cctm-logo.jpg" alt="custom-content-type-manager-logo" width="88" height="55" style="float:left; margin-right:20px;"/>
-		<p class="cctm_header_text">Custom Content Type Manager <span class="cctm_version">[<?php print CCTM::get_current_version(); ?>]</span> 		
+		<p class="cctm_header_text">Custom Content Type Manager <span class="cctm_version">[<?php print CCTM::get_current_version(); ?>]</span>
 			<a href="<?php print $data['help']; ?>" target="_new" title="Contextual Help" style="text-decoration: none;">
 				<img src="<?php print CCTM_URL; ?>/images/question-mark.gif" width="16" height="16" />
-			</a>		
+			</a>
 		<br/>
 		<span class="cctm_page_title"><?php print $data['page_title']; ?></span>
 		</p>
 	</div>
-	
+
 	<div id="cctm_mainmenu">
-		<a href="<?php print get_admin_url(false,'admin.php'); ?>?page=cctm" class="cctm_tab<?php print $active['cctm']; ?>"><?php _e('Content Types', CCTM_TXTDOMAIN); ?></a>
-		<a href="<?php get_admin_url(false,'admin.php'); ?>?page=cctm_fields" class="cctm_tab<?php print $active['cctm_fields']; ?>"><?php _e('Custom Fields', CCTM_TXTDOMAIN); ?></a>
-		<a href="<?php print get_admin_url(false,'admin.php'); ?>?page=cctm_settings" class="cctm_tab<?php print $active['cctm_settings']; ?>"><?php _e('Settings', CCTM_TXTDOMAIN); ?></a>
+		<a href="<?php print get_admin_url(false, 'admin.php'); ?>?page=cctm" class="cctm_tab<?php print $active['cctm']; ?>"><?php _e('Content Types', CCTM_TXTDOMAIN); ?></a>
+		<a href="<?php print get_admin_url(false, 'admin.php'); ?>?page=cctm_fields" class="cctm_tab<?php print $active['cctm_fields']; ?>"><?php _e('Custom Fields', CCTM_TXTDOMAIN); ?></a>
+		<a href="<?php print get_admin_url(false, 'admin.php'); ?>?page=cctm_settings" class="cctm_tab<?php print $active['cctm_settings']; ?>"><?php _e('Global Settings', CCTM_TXTDOMAIN); ?></a>
 		<!-- a href="<?php ?>?page=cctm_themes" class="cctm_tab<?php print $active['cctm_themes']; ?>"><?php _e('Themes', CCTM_TXTDOMAIN); ?></a -->
-		<a href="<?php print get_admin_url(false,'admin.php'); ?>?page=cctm_tools" class="cctm_tab<?php print $active['cctm_tools']; ?>"><?php _e('Tools', CCTM_TXTDOMAIN); ?></a>
-		<a href="<?php print get_admin_url(false,'admin.php'); ?>?page=cctm&a=info" class="cctm_tab<?php print $active['cctm_info']; ?>"><?php _e('Info', CCTM_TXTDOMAIN); ?></a>
-	</div>	
-	
+		<a href="<?php print get_admin_url(false, 'admin.php'); ?>?page=cctm_tools" class="cctm_tab<?php print $active['cctm_tools']; ?>"><?php _e('Tools', CCTM_TXTDOMAIN); ?></a>
+		<a href="<?php print get_admin_url(false, 'admin.php'); ?>?page=cctm&a=info" class="cctm_tab<?php print $active['cctm_info']; ?>"><?php _e('Info', CCTM_TXTDOMAIN); ?></a>
+	</div>
+
 	<?php print $data['msg']; ?>
 
 	<div id="cctm_nav"><?php print $data['menu']; ?></div>
-	
+
 	<?php print $data['content']; ?>
-	
+
 	<?php /*--------------- FOOTER --------------------------*/ ?>
 	<div id="cctm_footer">
 		<p style="margin:10px;">
@@ -69,26 +69,26 @@ if (!isset($data['help']) || empty($data['help'])) {
 			</span>
 			<span class="cctm-link">
 				<a href="?page=cctm&a=help">
-					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/help.png" height="32" width="32" alt="help"/> 
+					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/help.png" height="32" width="32" alt="help"/>
 					<?php _e('Help', CCTM_TXTDOMAIN); ?>
 				</a>
 			</span>
 			<span class="cctm-link">
 				<a href="?page=cctm&a=bug_report">
-					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/space-invader.png" height="32" width="32" alt="bug"/> 
+					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/space-invader.png" height="32" width="32" alt="bug"/>
 					<?php _e('Report a Bug', CCTM_TXTDOMAIN); ?></a></span>
 			<span class="cctm-link">
 				<a href="http://eepurl.com/dlfHg" target="_blank">
-					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/newspaper.png" height="32" width="32" alt="Newsletter"/> 
+					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/newspaper.png" height="32" width="32" alt="Newsletter"/>
 					<?php _e('Get eMail Updates', CCTM_TXTDOMAIN); ?>
 				</a>
 			</span>
 			<span class="cctm-link">
 				<a href="http://wordpress.org/tags/custom-content-type-manager?forum_id=10" target="_blank">
-					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/forum.png" height="32" width="32" alt="forum"/> 			
+					<img class="cctm-img" src="<?php print CCTM_URL; ?>/images/forum.png" height="32" width="32" alt="forum"/>
 					<?php _e('Forum', CCTM_TXTDOMAIN); ?>
 				</a>
-			</span>		
+			</span>
 		</p>
 	</div>
 

@@ -44,7 +44,7 @@ class Gecka_Submenu_NavMenuHacks {
                 
                     case 'subpages':
                         
-                        $pages = get_pages(array('child_of' => $item->object_id, 'sort_column' => 'menu_order'));
+                        $pages = get_pages( apply_filters('gecka-submenu-get_pages', array('child_of' => $item->object_id, 'sort_column' => 'menu_order, post_title')) );
                         
                         $this->setup_posts ('post', &$item, &$pages, &$items, &$order);
                         
@@ -116,8 +116,18 @@ class Gecka_Submenu_NavMenuHacks {
         $_item->type = 'post_type';
         $_item->menu_order = $order;
         $_item->description = $_item->post_excerpt;
-        wp_setup_nav_menu_item($_item);
         
+        $object = get_post_type_object( $post->post_type );
+		$_item->object 		= $object->name;
+		$_item->type_label 	= $object->labels->singular_name;
+        
+        $_item->url = get_permalink( $post->ID );
+        $_item->title = $post->post_title;
+        $_item->target = '';
+        $_item->attr_title = '';
+        $_item->classes = array ( 0 => '');
+        $_item->xfn = '';
+                
         $_item->db_id =  $pseudo_id;
         
         return $_item;

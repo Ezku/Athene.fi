@@ -1,6 +1,8 @@
 <?php
 
 class Gecka_Submenu_Shortcodes {
+
+	static $cache = array ();
 	
 	public function __construct()  {
 		
@@ -12,8 +14,11 @@ class Gecka_Submenu_Shortcodes {
 	
 	public function menu ($Attributes) {
 
+		$key = serialize($Attributes);
+		if( isset( self::$cache[$key] ) ) return self::$cache[$key];
+		
 		$Menu = new Gecka_Submenu_Submenu();
-		return $Menu->Get($Attributes);
+		return self::$cache[$key] = $Menu->Get($Attributes);
 		
 	}
 	

@@ -110,7 +110,7 @@ if ( !empty($_POST) && check_admin_referer($d['action_name'], $d['nonce_name']) 
 			.'</p></div>';
 		self::set_flash($data['msg']);
 
-		print '<script type="text/javascript">window.location.replace("?page=cctm");</script>';
+		print '<script type="text/javascript">window.location.replace("'.get_admin_url(false,'admin.php').'?page=cctm");</script>';
 		return;
 	}
 	else {
