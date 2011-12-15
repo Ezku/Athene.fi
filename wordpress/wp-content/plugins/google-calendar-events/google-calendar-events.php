@@ -3,7 +3,7 @@
 Plugin Name: Google Calendar Events
 Plugin URI: http://www.rhanney.co.uk/plugins/google-calendar-events
 Description: Parses Google Calendar feeds and displays the events as a calendar grid or list on a page, post or widget.
-Version: 0.7.1
+Version: 0.7.2
 Author: Ross Hanney
 Author URI: http://www.rhanney.co.uk
 License: GPL2
@@ -36,7 +36,7 @@ define( 'GCE_PLUGIN_NAME', str_replace( '.php', '', basename( __FILE__ ) ) );
 define( 'GCE_TEXT_DOMAIN', 'google-calendar-events' );
 define( 'GCE_OPTIONS_NAME', 'gce_options' );
 define( 'GCE_GENERAL_OPTIONS_NAME', 'gce_general' );
-define( 'GCE_VERSION', '0.7.1' );
+define( 'GCE_VERSION', '0.7.2' );
 
 if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 	class Google_Calendar_Events {
@@ -51,8 +51,8 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 			if ( ! defined( 'DOING_AJAX' ) || !DOING_AJAX ) {
 				add_action( 'admin_menu', array( $this, 'setup_admin' ) );
 				add_action( 'admin_init', array( $this, 'init_admin' ) );
-				add_action( 'wp_print_styles', array( $this, 'add_styles' ) );
-				add_action( 'wp_print_scripts', array( $this, 'add_scripts' ) );
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_styles' ) );
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
 				add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_settings_link' ) );
 				add_shortcode( 'google-calendar-events', array( $this, 'shortcode_handler' ) );
 			}
@@ -569,37 +569,31 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 
 		//Adds the required CSS
 		function add_styles() {
-			//Don't add styles if on admin screens
-			if( ! is_admin() ) {
-				wp_enqueue_style( 'gce_styles', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/css/gce-style.css' );
+			wp_enqueue_style( 'gce_styles', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/css/gce-style.css' );
 
-				$options = get_option( GCE_GENERAL_OPTIONS_NAME );
+			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
 
-				//If old stylesheet option is enabled, enqueue old styles
-				if ( $options['old_stylesheet'] )
-					wp_enqueue_style( 'gce_old_styles', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/css/gce-old-style.css' );
+			//If old stylesheet option is enabled, enqueue old styles
+			if ( $options['old_stylesheet'] )
+				wp_enqueue_style( 'gce_old_styles', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/css/gce-old-style.css' );
 
-				//If user has entered a URL to a custom stylesheet, enqueue it too
-				if( '' != $options['stylesheet'] )
-					wp_enqueue_style( 'gce_custom_styles', $options['stylesheet'] );
-			}
+			//If user has entered a URL to a custom stylesheet, enqueue it too
+			if( '' != $options['stylesheet'] )
+				wp_enqueue_style( 'gce_custom_styles', $options['stylesheet'] );
 		}
 
 		//Adds the required scripts
 		function add_scripts() {
-			//Don't add scripts if on admin pages
-			if ( ! is_admin() ) {
-				$options = get_option( GCE_GENERAL_OPTIONS_NAME );
-				$add_to_footer = (bool) $options['javascript'];
+			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
+			$add_to_footer = (bool) $options['javascript'];
 
-				wp_enqueue_script( 'jquery' );
-				wp_enqueue_script( 'gce_jquery_qtip', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/jquery-qtip.js', array( 'jquery' ), null, $add_to_footer );
-				wp_enqueue_script( 'gce_scripts', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/gce-script.js', array( 'jquery' ), null, $add_to_footer );
-				wp_localize_script( 'gce_scripts', 'GoogleCalendarEvents', array(
-					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-					'loading' => $options['loading']
-				) );
-			}
+			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'gce_jquery_qtip', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/jquery-qtip.js', array( 'jquery' ), null, $add_to_footer );
+			wp_enqueue_script( 'gce_scripts', WP_PLUGIN_URL . '/' . GCE_PLUGIN_NAME . '/js/gce-script.js', array( 'jquery' ), null, $add_to_footer );
+			wp_localize_script( 'gce_scripts', 'GoogleCalendarEvents', array(
+				'ajaxurl' => admin_url( 'admin-ajax.php', is_ssl() ? 'https' : 'http' ),
+				'loading' => $options['loading']
+			) );
 		}
 
 		//AJAX stuffs

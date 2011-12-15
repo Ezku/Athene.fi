@@ -53,7 +53,7 @@ class GCE_Feed{
 		$this->events = get_transient( 'gce_feed_' . $this->feed_id );
 
 		//If the cached feed data isn't valid any more (has expired), or the URL has changed (settings have changed), then the feed data needs to be retrieved and decoded again
-		if ( false === $this->events || get_transient( 'gce_feed_' . $this->feed_id . '_url' ) != $url ) {
+		if ( false === $this->events || 0 == $this->cache_duration || get_transient( 'gce_feed_' . $this->feed_id . '_url' ) != $url ) {
 			$this->events = array();
 
 			//Retrieve the feed data
@@ -88,9 +88,11 @@ class GCE_Feed{
 							}
 						}
 
-						//Cache the feed data
-						set_transient( 'gce_feed_' . $this->feed_id, $this->events, $this->cache_duration );
-						set_transient( 'gce_feed_' . $this->feed_id . '_url', $url, $this->cache_duration );
+						if ( 0 != $this->cache_duration ) {
+							//Cache the feed data
+							set_transient( 'gce_feed_' . $this->feed_id, $this->events, $this->cache_duration );
+							set_transient( 'gce_feed_' . $this->feed_id . '_url', $url, $this->cache_duration );
+						}
 					} else {
 						//json_decode failed
 						$this->error = __( 'Some data was retrieved, but could not be parsed successfully. Please ensure your feed URL is correct.', GCE_TEXT_DOMAIN );

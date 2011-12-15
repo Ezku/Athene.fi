@@ -207,7 +207,7 @@ class GCE_Event{
 					$title = Markdown( $title );
 
 				if ( $html )
-					$title = wp_kses_post( html_entity_decode( $title , ENT_COMPAT , "UTF-8" ) );
+					$title = wp_kses_post( html_entity_decode( $title ) );
 
 				return $m[1] . $title . $m[6];
 
@@ -242,7 +242,7 @@ class GCE_Event{
 					$location = Markdown( $location );
 
 				if ( $html )
-					$location = wp_kses_post( html_entity_decode( $location , ENT_COMPAT , "UTF-8" ) );
+					$location = wp_kses_post( html_entity_decode( $location ) );
 
 				return $m[1] . $location . $m[6];
 
@@ -260,7 +260,7 @@ class GCE_Event{
 						$description = Markdown( $description );
 
 					if ( $html )
-						$description = wp_kses_post( html_entity_decode( $description , ENT_COMPAT , "UTF-8" ) );
+						$description = wp_kses_post( html_entity_decode( $description ) );
 				}else{
 					//Otherwise, preserve line breaks
 					$description = nl2br( $description );
@@ -472,8 +472,8 @@ class GCE_Event{
 		}
 
 		//If link should be displayed add to $markup
-		if ( isset($display_options['display_link'] ) )                                                                                    //Below: add target="_blank" if required
-			$markup .= '<p class="gce-' . $this->type . '-link"><a href="' . esc_url( $this->link ) . '&amp;ctz=' . esc_url( $this->feed->get_timezone() ) . '"' . ( ( isset( $display_options['display_link_target'] ) ) ? ' target="_blank"' : '' ) . '>' . esc_html( $display_options['display_link_text'] ) . '</a></p>';
+		if ( isset($display_options['display_link'] ) )
+			$markup .= '<p class="gce-' . $this->type . '-link"><a href="' . esc_url( $this->link ) . '&amp;ctz=' . esc_html( $this->feed->get_timezone() ) . '"' . ( ( isset( $display_options['display_link_target'] ) ) ? ' target="_blank"' : '' ) . '>' . esc_html( $display_options['display_link_text'] ) . '</a></p>';
 
 		return $markup;
 	}

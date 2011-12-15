@@ -1,9 +1,9 @@
 === Gecka Submenu ===
-Contributors: Laurent Dinclaux, Gecka 
-Tags: nav menu, 3.0, submenu, sub-menu, child, child men
+Contributors: Gecka
+Tags: nav menu, 3.0, submenu, sub-menu, child, child men, subpages, subpage, dynamic menu, dynamic subpages, dynamic submenu
 Requires at least: 3.0
-Tested up to: 3.0.1
-Stable tag: 0.5.3
+Tested up to: 3.1
+Stable tag: 0.6
 Donate link: http://gecka-apps.com/wordpress-plugins/gecka-submenu-pro/
 
 Submenu autopopulates any nav menu page item with its children and allows to put menus, or portion of menus, anywhere in your site.
@@ -18,13 +18,13 @@ Submenu enhances the WordPress 3.x navigation system. When you have a website ba
 Submenu also allows you to put menus or portion of menus anywhere in your site: sidebar, templates or page contents.
 
 Languages available: english, french  
+
+**Contribute:** [This plugin is on GitHub](https://github.com/Gecka-Apps/Wordpress_Gecka_Submenu) !
   
-Check out the [Gecka Submenu video](http://www.youtube.com/watch?v=DHjMfD-k2Mo):  
+[Discover the pro version](http://gecka-apps.com/wordpress-plugins/gecka-submenu-pro/ "Discover the pro version") by checking out the [Gecka Submenu Pro video](http://www.youtube.com/watch?v=DHjMfD-k2Mo):  
   
 http://www.youtube.com/watch?v=DHjMfD-k2Mo  
   
-[Discover the pro version](http://gecka-apps.com/wordpress-plugins/gecka-submenu-pro/ "Discover the pro version")
-
 == Installation ==
 
 **PHP 5 required. Please be sure to check your PHP version before marking the plugin as broken.**
@@ -33,6 +33,8 @@ http://www.youtube.com/watch?v=DHjMfD-k2Mo
 1.  Activate the plugin through the 'Plugins' menu in WordPress
 1.  [Read the documentation](http://gecka-apps.com/documentation/geka-submenu-pro/)
 
+**Contribute:** [This plugin is on GitHub](https://github.com/Gecka-Apps/Wordpress_Gecka_Submenu) !
+
 == Screenshots ==
 
 1. Advanced custom menu widget
@@ -40,8 +42,15 @@ http://www.youtube.com/watch?v=DHjMfD-k2Mo
 
 == Changelog ==
 
+= 0.6 =
+* shortcodes caching
+* performances improvement
+* fix: show categories submenus when viewing posts or archives
+* WPML support
+* more fixes
+
 = 0.5.3 =
-* add mennu item description positioning
+* add menu item description positioning
 * fix template action
 * fix start_from parameter that wasn't used
 

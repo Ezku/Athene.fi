@@ -176,7 +176,7 @@ class Gecka_Submenu {
 	        jQuery.post(ajaxurl, data, function(response) {
 		        $('#gecka_submenu_notice').hide('slow');
 	        });
-	        }
+	        };
         });
         </script>
         <?php

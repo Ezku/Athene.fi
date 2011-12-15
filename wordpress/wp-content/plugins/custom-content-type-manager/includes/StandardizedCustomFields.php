@@ -320,8 +320,10 @@ class StandardizedCustomFields
 					$FieldObj = new $field_type_name(); // Instantiate the field element
 					$FieldObj->props = CCTM::$data['custom_field_defs'][$field_name];
 					$value = $FieldObj->save_post_filter($_POST, $field_name);
-					
-					update_post_meta( $post_id, $field_name, $value );
+					// Custom fields can return a literal null if they don't ever save data to the db.
+					if ($value !== null) {
+						update_post_meta( $post_id, $field_name, $value );
+					}
 				}
 				else {
 					// error!

@@ -16,21 +16,9 @@ $data['msg'] = self::get_flash();
 $data['menu'] = sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm_fields&a=list_custom_field_types" class="button">%s</a>', __('Create Custom Field', CCTM_TXTDOMAIN) );
 
 // Load 'em up
-$def = array();
-if ( isset(self::$data['custom_field_defs']) ) {
-	$def = self::$data['custom_field_defs'];
-}
-// sort them
-usort($def, CCTM::sort_custom_fields('name', 'strnatcasecmp'));
+$defs = CCTM::get_custom_field_defs();
 
-foreach ( $def as $i => $d ) {
-	$field_name = $d['name'];
-	$def[$field_name] = $d; // re-establish the key version.
-	unset($def[$i]); // kill the integer version
-} 			
-
-
-$def_cnt = count($def);
+$def_cnt = count($defs);
 
 if (!isset($reset) && !$def_cnt ) {
 	$data['msg'] .= sprintf('<div class="updated"><p>%s</p></div>'
@@ -39,15 +27,25 @@ if (!isset($reset) && !$def_cnt ) {
 
 $data['fields'] = '';
 
-foreach ($def as $field_name => $d) {
+foreach ($defs as $field_name => $d) {
+	
 	$d['name'] = $field_name; // just in case the key and the 'name' got out of sync.
-	$icon_src = self::get_custom_icons_src_dir() . $d['type'].'.png';
+	
 
-	if ( !CCTM::is_valid_img($icon_src) ) {
+	$field_type_name = CCTM::classname_prefix.$d['type'];
+	if (!CCTM::include_form_element_class($d['type']) ) {
+		continue;
+	}
+	
+	$FieldObj = new $field_type_name();
+	
+	$d['icon'] 			= $FieldObj->get_icon();
+
+	if ( !CCTM::is_valid_img($d['icon']) ) {
 		$icon_src = self::get_custom_icons_src_dir() . 'default.png';
 	}
 
-	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $icon_src);
+	$d['icon'] = sprintf('<img src="%s" style="float:left; margin:5px;"/>', $d['icon']);
 
 	
 	$d['edit'] = __('Edit');

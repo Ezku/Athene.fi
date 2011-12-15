@@ -7,10 +7,11 @@
     
     gk_toggle_autopopulate_posttype_options = function (id) {
     
-        var value = $('input:radio[name=menu-item-autopopulate_type['+id+']]:checked').val();
-        
-        if(value=='posttype') $('.edit-menu-item-autopopulate-posttype-options-'+id).show();
-        else $('.edit-menu-item-autopopulate-posttype-options-'+id).hide();
+        var value = $('#edit-menu-item-autopopulate_type-'+id+'-posttype:checked').val();
+        if(value=='posttype') {
+           $('.edit-menu-item-autopopulate-posttype-options-'+id).show();
+           gk_autopopulate_posttype_taxonomies (id, $('#edit-menu-item-autopopulate_posttype-'+id));
+        }
     
         
     }

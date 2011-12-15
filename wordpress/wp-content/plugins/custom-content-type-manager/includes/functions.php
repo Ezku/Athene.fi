@@ -9,65 +9,6 @@ for the official documentation.
 
 //------------------------------------------------------------------------------
 /**
-Scour the custom field definitions for any fields
-of the type specified.  This is useful e.g. if you want to return all images 
-attached to a post.
-
-Must be used when there is an active post.
-
-A $def looks something like this:
- Array
-(
-    [label] => Author
-    [name] => author
-    [description] => This is who wrote the book
-    [type] => text
-    [sort_param] => 
-)
-
-@param	string	$type is one of the defined field types , currently:
-	'checkbox','dropdown','media','relation','text','textarea','wysiwyg'
-@param	string	$prefix	string identifying the beginning of the name of each field.
-@return	array	List of names for each field of the type specified. 
-*/
-function get_all_fields_of_type($type, $prefix='')
-{
-	global $post;
-
-	$values = array();
-
-	$data = get_option( CCTM::db_key );
-	
-	$post_type = $post->post_type;
-	if ( !isset($data[$post_type]['custom_fields']) )
-	{
-		return  sprintf( __('No custom fields defined for the %1$s field.', CCTM_TXTDOMAIN), $fieldname );
-	}
-	
-	foreach ( $data[$post_type]['custom_fields'] as $def )
-	{
-		if ($def['type'] == $type )
-		{
-			if ($prefix)
-			{			
-				if ( preg_match('/^'.$prefix.'/', $def['name']) )
-				{
-					$values[] = get_custom_field($def['name']);
-				}
-			}
-			else
-			{
-				$values[] = get_custom_field($def['name']);
-			}
-		}		
-	}
-	
-	return $values;
-
-}
-
-//------------------------------------------------------------------------------
-/**
  * SYNOPSIS: Used inside theme files, e.g. single.php or single-my_post_type.php
  * where you need to print out the value of a specific custom field.
  * 
@@ -168,9 +109,8 @@ function get_custom_field_meta($fieldname, $item) {
 * @param	string	$fieldname name of the custom field
 * @return	string	an HTML img element or empty string on failure.
 */
-function get_custom_image($fieldname)
-{
-	$id = get_custom_field($fieldname);
+function get_custom_image($fieldname) {
+	$id = get_custom_field($fieldname.':raw');
 	return wp_get_attachment_image($id, 'full');
 }
 
@@ -275,7 +215,7 @@ OUTPUT:
 */
 function get_relation($fieldname)
 {
-	return get_post_complete( get_custom_field($fieldname) );
+	return get_post_complete( get_custom_field($fieldname.':raw') );
 }
 
 //------------------------------------------------------------------------------

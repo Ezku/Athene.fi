@@ -2,9 +2,9 @@
 /*
 Plugin Name: Gecka Submenu
 Plugin URI: http://gecka-apps.com/wordpress-plugins/geka-submenu/
-Description: Enhances the worpdress nav menu system
-Version: 0.5.3
-Author: Gecka
+Description: Enhances the worpdress nav menu system, autopopulate with children pages
+Version: 0.6
+Author: Gecka Apps
 Author URI: http://gecka-apps.com
 Licence: GPL2
 */

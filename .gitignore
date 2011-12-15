@@ -11,3 +11,4 @@ drupal/sites/default/settings.php
 wordpress/wp-config.php
 
 .picasa.ini
+wordpress/wp-content/uploads/*

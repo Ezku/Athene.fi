@@ -3,21 +3,24 @@ if ( ! defined('CCTM_PATH')) exit('No direct script access allowed');
 if (!current_user_can('administrator')) exit('Admins only.');
 //------------------------------------------------------------------------------
 /**
-* Manager Page -- called by page_main_controller()
-* Show what a single page for this custom post-type might look like.  This is
-* me throwing a bone to template editors and creators.
-*
-* I'm using a tpl and my parse() function because I have to print out sample PHP
-* code and it's too much of a pain in the ass to include PHP without it executing.
-*
-* @param string $post_type
-*/
+ * Manager Page -- called by page_main_controller()
+ * Show what a single page for this custom post-type might look like.  This is
+ * me throwing a bone to template editors and creators.
+ *
+ * I'm using a tpl and my parse() function because I have to print out sample PHP
+ * code and it's too much of a pain in the ass to include PHP without it executing.
+ *
+ * @param string  $post_type
+ * @package
+ */
 
-$data 				= array();
-$data['page_title']	= sprintf(__('Sample Themes for %s', CCTM_TXTDOMAIN), "<em>$post_type</em>");
-$data['help']		= 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/SampleTemplates?ts=1317363617&updated=SampleTemplates';
-$data['menu'] 		= sprintf('<a href="'.get_admin_url(false,'admin.php').'?page=cctm&a=list_post_types" class="button">%s</a>', __('Back', CCTM_TXTDOMAIN) );
-$data['msg']		= '';
+
+$data     = array();
+$data['page_title'] = sprintf(__('Sample Themes for %s', CCTM_TXTDOMAIN), "<em>$post_type</em>");
+$data['help']  = 'http://code.google.com/p/wordpress-custom-content-type-manager/wiki/SampleTemplates?ts=1317363617&updated=SampleTemplates';
+$data['menu']   = sprintf('<a href="'.get_admin_url(false, 'admin.php').'?page=cctm&a=list_post_types" class="button">%s</a>', __('Back', CCTM_TXTDOMAIN) )
+	. ' ' . sprintf('<a href="'.get_admin_url(false, 'admin.php').'?page=cctm&a=list_custom_field_types&pt=%s" class="button">%s</a>', $post_type, __('Create Custom Field for this Post Type', CCTM_TXTDOMAIN) );
+$data['msg']  = '';
 $data['post_type'] = $post_type;
 
 // Validate post type
@@ -86,7 +89,8 @@ if (isset(self::$data['post_type_defs'][$post_type]['supports']) && is_array(sel
 	if ( in_array('comments', self::$data['post_type_defs'][$post_type]['supports']) ) {
 		$comments_str .= "\n\t\t<?php comments_template(); ?>";
 	}
-} 
+}
+
 // We show this for built-in types
 elseif ($post_type == 'post') {
 	$builtin_fields_str .= "\n\t<h1><?php the_title(); ?></h1>";
@@ -105,38 +109,30 @@ elseif ($post_type == 'page') {
 
 
 // Custom fields
-/*
-if ( isset(self::$data['post_type_defs'][$post_type]['custom_fields']) 
+if ( isset(self::$data['post_type_defs'][$post_type]['custom_fields'])
 	&& is_array(self::$data['post_type_defs'][$post_type]['custom_fields']) ) {
-	foreach ( 	$def = self::$data['post_type_defs'][$post_type]['custom_fields'] as $cf ) {
+	foreach (  $def = self::$data['post_type_defs'][$post_type]['custom_fields'] as $cf ) {
 		if (isset(self::$data['custom_field_defs'][$cf])) {
-			$custom_fields_str .= sprintf("\t\t<strong>%s:</strong> <?php print_custom_field('%s'); ?><br />\n"
-				, self::$data['custom_field_defs'][$cf]['label'], self::$data['custom_field_defs'][$cf]['name']);
-		}
-	}
-}
-*/
-if ( isset(self::$data['post_type_defs'][$post_type]['custom_fields']) 
-	&& is_array(self::$data['post_type_defs'][$post_type]['custom_fields']) ) {
-	foreach ( 	$def = self::$data['post_type_defs'][$post_type]['custom_fields'] as $cf ) {
-		if (isset(self::$data['custom_field_defs'][$cf])) {
+
+			$hide_from_templates = self::get_value(self::$data['custom_field_defs'][$cf], 'hide_from_templates');
+			if ($hide_from_templates) {
+				continue;
+			}
 			// Get the example from the Output Filter
-			if (isset(self::$data['custom_field_defs'][$cf]['output_filter']) 
+			if (isset(self::$data['custom_field_defs'][$cf]['output_filter'])
 				&& !empty(self::$data['custom_field_defs'][$cf]['output_filter'])
 				&& self::$data['custom_field_defs'][$cf]['output_filter'] != 'raw'
 				&& CCTM::include_output_filter_class(self::$data['custom_field_defs'][$cf]['output_filter'])
 			) {
-				$filter_class = CCTM::classname_prefix.self::$data['custom_field_defs'][$cf]['output_filter'];		
+				$filter_class = CCTM::classname_prefix.self::$data['custom_field_defs'][$cf]['output_filter'];
 				$OutputFilter = new $filter_class();
 				$custom_fields_str .= sprintf("\t\t<strong>%s:</strong> %s<br />\n"
 					, self::$data['custom_field_defs'][$cf]['label']
 					, $OutputFilter->get_example(self::$data['custom_field_defs'][$cf]['name'])
 				);
-
-			
 			}
 			else {
-				$custom_fields_str .= sprintf("\t\t<strong>%s:</strong> <?php print_custom_field('%s'); ?><br />\n"
+				$custom_fields_str .= sprintf("\t\t<strong>%s</strong> <?php print_custom_field('%s'); ?><br />\n"
 					, self::$data['custom_field_defs'][$cf]['label'], self::$data['custom_field_defs'][$cf]['name']);
 			}
 		}

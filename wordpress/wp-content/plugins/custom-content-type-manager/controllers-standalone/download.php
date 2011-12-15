@@ -4,8 +4,8 @@ Standalone controller to cough up a download.
 ------------------------------------------------------------------------------*/
 require_once( realpath('../../../../').'/wp-load.php' );
 
-include_once('../includes/constants.php');
-include_once(CCTM_PATH.'/includes/CCTM.php');
+//include_once('../includes/constants.php');
+//include_once(CCTM_PATH.'/includes/CCTM.php');
 include_once(CCTM_PATH.'/includes/ImportExport.php');
 
 if ( !current_user_can('manage_options') ) {
