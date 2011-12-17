@@ -4,7 +4,10 @@
  * @subpackage Athene
  */
 
-get_header(); ?>
+if (get_post()->post_parent == 0) {
+    $no_small_submenu = true;
+}
+include("header.php"); ?>
 
 		<div id="primary" class="container_16">
 			<div id="content" class="grid_10 alpha" role="main">
