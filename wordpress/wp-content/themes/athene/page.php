@@ -4,7 +4,7 @@
  * @subpackage Athene
  */
 
-if (get_post()->post_parent == 0) {
+if (get_post(get_the_ID())->post_parent == 0) {
     $no_small_submenu = true;
 }
 include("header.php"); ?>
