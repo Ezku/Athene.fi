@@ -31,23 +31,25 @@ class FlickrPhotosetsWidget extends WP_Widget {
   		$options = get_option('flickr_photosets_options');
   		$link = get_permalink($instance['link_target'])
   		?>
-  		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickr.css" type="text/css" media="screen" />
+  		<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/css/flickr.css" type="text/css" media="screen" />
   		<div class="widget widget-flickr">
       		<header class="widget-header">
       		    <h2><a href="<?php echo $link ?>"><?php echo $instance['title']; ?></a></h2>
       		</header>
   		    <div id="flickr-widget" class="widget-content" style="position: relative;">
-  		        <div class="spinner">
-  		        </div>
   		    </div>
-  		    <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/flickrbrowser.js"></script>
+  		    <script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/FlickrPhotosets/js/flickrphotosets.js"></script>
   		    <script type="text/javascript">
-                flickrbrowser.api_key = "<?php echo $options['apikey'] ?>";
-                flickrbrowser.user_id = "<?php echo $options['username'] ?>";
-                flickrbrowser.link_url = "<?php echo $link ?>";
+                flickrphotosets.api_key = "<?php echo $options['apikey'] ?>";
+                flickrphotosets.user_id = "<?php echo $options['username'] ?>";
+                flickrphotosets.link_url = "<?php echo $link ?>";
+                
+                flickrphotosets.texts.flickr_link = "Albumi Flickr-palvelussa";
+                flickrphotosets.texts.updated = "päivitetty";
+                flickrphotosets.texts.photos = "kuvaa";
                 
                 jQuery(function() {
-                    flickrbrowser.showWidget();
+                    flickrphotosets.initWidget('#flickr-widget');
                 });
             </script>
         </div>

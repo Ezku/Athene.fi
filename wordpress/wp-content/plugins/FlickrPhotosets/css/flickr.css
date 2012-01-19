@@ -1,0 +1,41 @@
+#flickrphotos {
+  position: relative;
+}
+.photoset {
+  clear: both;
+}
+.photosettitle:hover {
+  cursor: pointer;
+}
+.photoset.active {
+}
+.photo {
+  float: left;
+  margin: 5px;
+}
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  padding: 10px;
+  background-image: url('../img/spinner.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.flickr-photoset {
+    display: block;
+    position: relative;
+    margin: 5px;
+}
+
+.flickr-photoset-info {
+    position: absolute; 
+    top: 50%; 
+    height: 2.5em; 
+    margin-top: -1.25em;
+}
+
+.hide {
+  display: none;
+}
