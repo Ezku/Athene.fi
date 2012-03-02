@@ -7,8 +7,7 @@
  * handled by a callback to toolbox_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 ?>
@@ -63,11 +62,11 @@
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
+	<?php endif; // have_comments() ?>
+
 	<?php
-		/* If there are no comments and comments are closed, let's leave a little note, shall we?
-		 * But we don't want the note on pages or post types that do not support comments.
-		 */
-		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
+		// If comments are closed and there are no comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'toolbox' ); ?></p>
 	<?php endif; ?>

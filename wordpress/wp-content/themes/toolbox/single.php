@@ -2,8 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 
@@ -20,7 +19,11 @@ get_header(); ?>
 
 				<?php toolbox_content_nav( 'nav-below' ); ?>
 
-				<?php comments_template( '', true ); ?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 

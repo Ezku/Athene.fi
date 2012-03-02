@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  */
 ?>
 

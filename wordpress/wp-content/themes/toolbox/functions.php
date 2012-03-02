@@ -18,8 +18,7 @@
  *
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 
@@ -294,9 +293,11 @@ add_action( 'save_post', 'toolbox_category_transient_flusher' );
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
 function toolbox_enhanced_image_navigation( $url ) {
-	global $post;
+	global $post, $wp_rewrite;
 
-	if ( wp_attachment_is_image( $post->ID ) )
+	$id = (int) $post->ID;
+	$object = get_post( $id );
+	if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) )
 		$url = $url . '#main';
 
 	return $url;

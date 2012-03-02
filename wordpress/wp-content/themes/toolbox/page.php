@@ -7,8 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 

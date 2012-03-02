@@ -2,8 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 1.0
  */
 ?>

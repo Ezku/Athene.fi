@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Google Analytics for WordPress
-Plugin URI: http://yoast.com/wordpress/google-analytics/#utm_source=wordpress&utm_medium=plugin&utm_campaign=google-analytics-for-wordpress&utm_content=v420
+Plugin URI: http://yoast.com/wordpress/google-analytics/#utm_source=wordpress&utm_medium=plugin&utm_campaign=wpgaplugin&utm_content=v420
 Description: This plugin makes it simple to add Google Analytics to your WordPress blog, adding lots of features, eg. custom variables and automatic clickout and download tracking. 
 Author: Joost de Valk
-Version: 4.2.2
+Version: 4.2.4
 Requires at least: 3.0
 Author URI: http://yoast.com/
 License: GPL
@@ -12,7 +12,7 @@ License: GPL
 
 // This plugin was originally based on Rich Boakes' Analytics plugin: http://boakes.org/analytics
 
-define('GAWP_VERSION', '4.2.2');
+define('GAWP_VERSION', '4.2.3');
 
 /*
  * Admin User Interface
@@ -53,7 +53,7 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 			add_action( 'admin_menu', 			array(&$this, 'register_settings_page') );
 
 			// Register the contextual help for the settings page
-			add_action( 'contextual_help', 		array(&$this, 'plugin_help'), 10, 3 );
+//			add_action( 'contextual_help', 		array(&$this, 'plugin_help'), 10, 3 );
 			
 			// Give the settings page a nice icon in Ozh's menu
 			add_filter( 'ozh_adminmenu_icon', 	array(&$this, 'add_ozh_adminmenu_icon' ) );				
@@ -65,9 +65,6 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 			add_action('admin_print_scripts', 	array(&$this, 'config_page_scripts') );
 			add_action('admin_print_styles', 	array(&$this, 'config_page_styles') );
 			
-			// Setup the dashboard news widget
-			add_action('wp_dashboard_setup', 	array(&$this, 'widget_setup') );	
-
 			// Print stuff in the settings page's head
 			add_action('admin_head', 			array(&$this, 'config_page_head') );
 
@@ -213,9 +210,10 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 				$options = $this->set_defaults();
 				$options['msg'] = "<div class=\"updated\"><p>".__('Google Analytics settings reset.')."</p></div>\n";
 			} elseif ( isset($_POST['submit']) && isset($_POST['plugin']) && $_POST['plugin'] == 'google-analytics-for-wordpress') {
+			
 				if (!current_user_can('manage_options')) die(__('You cannot edit the Google Analytics for WordPress options.'));
 				check_admin_referer('analyticspp-config');
-				
+
 				foreach (array('uastring', 'dlextensions', 'domainorurl','position','domain', 'customcode', 'ga_token', 'extraseurl', 'gajsurl', 'gfsubmiteventpv', 'trackprefix', 'ignore_userlevel', 'internallink', 'internallinklabel', 'primarycrossdomain', 'othercrossdomains') as $option_name) {
 					if (isset($_POST[$option_name]))
 						$options[$option_name] = $_POST[$option_name];
@@ -223,8 +221,8 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 						$options[$option_name] = '';
 				}
 				
-				foreach (array('extrase', 'trackoutbound', 'admintracking', 'trackadsense', 'allowanchor', 'allowlinker', 'allowhash', 'rsslinktagging', 'advancedsettings', 'trackregistration', 'theme_updated', 'cv_loggedin', 'cv_authorname', 'cv_category', 'cv_all_categories', 'cv_tags', 'cv_year', 'cv_post_type', 'outboundpageview', 'downloadspageview', 'trackcrossdomain','gajslocalhosting', 'manual_uastring', 'taggfsubmit', 'wpec_tracking', 'shopp_tracking', 'anonymizeip', 'trackcommentform', 'debug','firebuglite', 'disable_pagespeed_tracking') as $option_name) {
-					if (isset($_POST[$option_name]) && $_POST[$option_name] != 'off')
+				foreach (array('extrase', 'trackoutbound', 'admintracking', 'trackadsense', 'allowanchor', 'allowlinker', 'allowhash', 'rsslinktagging', 'advancedsettings', 'trackregistration', 'theme_updated', 'cv_loggedin', 'cv_authorname', 'cv_category', 'cv_all_categories', 'cv_tags', 'cv_year', 'cv_post_type', 'outboundpageview', 'downloadspageview', 'trackcrossdomain','gajslocalhosting', 'manual_uastring', 'taggfsubmit', 'wpec_tracking', 'shopp_tracking', 'anonymizeip', 'trackcommentform', 'debug','firebuglite') as $option_name) {
+					if (isset($_POST[$option_name]) && $_POST[$option_name] == 'on')
 						$options[$option_name] = true;
 					else
 						$options[$option_name] = false;
@@ -243,20 +241,23 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 						$options['primarycrossdomain'] = $origin["domain"];
 					}
 				}
-				
-				$cache = '';
-				if ( function_exists('w3tc_pgcache_flush') ) {
+
+				if ( function_exists('w3tc_pgcache_flush') )
 					w3tc_pgcache_flush();
+
+				if ( function_exists('w3tc_dbcache_flush') )
 					w3tc_dbcache_flush();
+					
+				if ( function_exists('w3tc_minify_flush') )
 					w3tc_minify_flush();
+
+				if ( function_exists('w3tc_objectcache_flush') )					
 					w3tc_objectcache_flush();
-					$cache = ' and <strong>W3TC Caches cleared</strong>';
-				} else if ( function_exists('wp_cache_clear_cache') ) {
+
+				if ( function_exists('wp_cache_clear_cache') )
 					wp_cache_clear_cache();
-					$cache = ' and <strong>WP Super Cache cleared</strong>';
-				}
 										
-				$options['msg'] = "<div id=\"updatemessage\" class=\"updated fade\"><p>Google Analytics <strong>settings updated</strong>$cache.</p></div>\n";
+				$options['msg'] = "<div id=\"updatemessage\" class=\"updated fade\"><p>Google Analytics <strong>settings updated</strong>.</p></div>\n";
 				$options['msg'] .= "<script type=\"text/javascript\">setTimeout(function(){jQuery('#updatemessage').hide('slow');}, 3000);</script>";
 			}
 			update_option($this->optionname, $options);
@@ -579,12 +580,6 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 										'content' => $this->textinput('othercrossdomains'),
 									);
 									$rows[] = array(
-										'id' => 'disable_pagespeed_tracking',
-										'label' => 'Disable Site Speed tracking',
-										'desc' => 'This disables the Site Speed tracking feature of Google Analytics that is enabled by default in this plugin.',
-										'content' => $this->checkbox('disable_pagespeed_tracking'),
-									);
-									$rows[] = array(
 										'id' => 'customcode',
 										'label' => 'Custom Code',
 										'desc' => 'Not for the average user: this allows you to add a line of code, to be added before the <code>trackPageview</code> call.',
@@ -746,13 +741,19 @@ if ( is_admin() && ( !defined('DOING_AJAX') || !DOING_AJAX ) && !class_exists( '
 					<?php
 						if ( count($modules) > 0 )
 							$this->postbox('toc','List of Available Modules',$this->toc($modules));
-						$this->plugin_like();
-						$this->postbox('donate','<strong class="red">Donate $10, $20 or $50!</strong>','<p>This plugin has cost me countless hours of work, if you use it, please donate a token of your appreciation!</p><br/><form style="margin-left:50px;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						$this->postbox('donate','<strong class="red">'.__( 'Help Spread the Word!' ).'</strong>','<p><strong>'.__( 'Want to help make this plugin even better? All donations are used to improve this plugin, so donate $20, $50 or $100 now!' ).'</strong></p><form style="width:160px;margin:0 auto;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="FW9FK4EBZ9FVJ">
-						<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit">
 						<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-						</form>');
+						</form>'
+						.'<p>'.__('Or you could:').'</p>'
+						.'<ul>'
+						.'<li><a href="http://wordpress.org/extend/plugins/google-analytics-for-wordpress/">'.__('Rate the plugin 5★ on WordPress.org').'</a></li>'
+						.'<li><a href="http://wordpress.org/tags/google-analytics-for-wordpress">'.__('Help out other users in the forums').'</a></li>'
+						.'<li>'.sprintf( __('Blog about it & link to the %1$splugin page%2$s'), '<a href="http://yoast.com/wordpress/google-analytics/#utm_source=wpadmin&utm_medium=sidebanner&utm_term=link&utm_campaign=wpgaplugin">', '</a>').'</li>');
+						$this->postbox('sitereview','<strong>'.__('Want to Improve your Site?').'</strong>','<p>'.sprintf( __('If you want to improve your site, but don\'t know where to start, you should order a %1$swebsite review%2$s from Yoast!'), '<a href="http://yoast.com/hire-me/website-review/#utm_source=wpadmin&utm_medium=sidebanner&utm_term=link&utm_campaign=wpgaplugin">', '</a>').'</p>'.'<p>'.__('The results of this review contain a full report of improvements for your site, encompassing my findings for improvements in different key areas such as SEO to Usability to Site Speed & more.').'</p>'.'<p><a class="button-secondary" href="http://yoast.com/hire-me/website-review/#utm_source=wpadmin&utm_medium=sidebanner&utm_term=button&utm_campaign=wpgaplugin">'.__('Click here to read more &raquo;').'</a></p>');
+
 						$this->plugin_support();
 						$this->news(); 
 					?>
@@ -919,10 +920,10 @@ if ( ! class_exists( 'GA_Filter' ) ) {
 				if ( isset($options['domain']) && $options['domain'] != "" ) 
 					$push[] = "'_setDomainName','".$options['domain']."'";
 
-				if ( $options['trackcrossdomain'] )
+				if ( isset($options['trackcrossdomain']) && $options['trackcrossdomain'] )
 					$push[] = "'_setDomainName','".$options['primarycrossdomain']."'";
 
-				if ( $options['allowhash'] )
+				if ( isset($options['allowhash']) && $options['allowhash'] )
 					$push[] = "'_setAllowHash',false";
 
 				if ( $options['cv_loggedin'] ) {
@@ -1018,10 +1019,6 @@ if ( ! class_exists( 'GA_Filter' ) ) {
 					$push[] = "'_trackPageview'";
 				}
 				
-				if ( !isset( $options['disable_pagespeed_tracking'] ) || !$options['disable_pagespeed_tracking'] ) {
-					$push[] = "'_trackPageLoadTime'";
-				}
-
 				$push = apply_filters('yoast-ga-push-after-pageview',$push);
 
 				if ( defined('WPSC_VERSION') && $options['wpec_tracking'] )
@@ -1152,8 +1149,10 @@ if ( $options['gajslocalhosting'] && !empty($options['gajsurl']) ) {
 				} else if ( in_array($extension, $dlextensions) ) {
 					$trackBit = GA_Filter::ga_get_tracking_link('download', $matches[3],'');
 				} else if ( $target["domain"] != $origin["domain"] ){
-					$crossdomains = explode(',',str_replace(' ','',$options['othercrossdomains']));
-					if ( $options['trackcrossdomain'] && in_array($target["host"],$crossdomains) ) {
+					$crossdomains = array();
+					if (isset($options['othercrossdomains']))
+						$crossdomains = explode(',',str_replace(' ','',$options['othercrossdomains']));
+					if ( isset($options['trackcrossdomain']) && $options['trackcrossdomain'] && in_array($target["host"],$crossdomains) ) {
 						$trackBit = '_gaq.push([\'_link\', \'' . $matches[2] . '//' . $matches[3] . '\']); return false;"';
 					} else if ( $options['trackoutbound'] && in_array($options['domainorurl'], array('domain','url')) ) {
 						$url = $options['domainorurl'] == 'domain' ? $target["host"] : $matches[3];
@@ -1253,7 +1252,7 @@ if ( $options['gajslocalhosting'] && !empty($options['gajsurl']) ) {
 
 	        static $anchorPattern = '/(.*\s+.*?href\s*=\s*)["\'](.*?)["\'](.*)/';
 			preg_match($anchorPattern, $text, $matches);
-			if ($matches[2] == "") return $text;
+			if (!isset($matches[2]) || $matches[2] == "") return $text;
 
 			$trackBit = '';
 			$target = GA_Filter::ga_get_domain($matches[2]);
@@ -1460,7 +1459,7 @@ function track_comment_form_head() {
 }
 add_action('wp_print_scripts','track_comment_form_head');
 
-$comment_form_id = '';
+$comment_form_id = 'commentform';
 function yoast_get_comment_form_id($args) {
 	global $comment_form_id;
 	$comment_form_id = $args['id_form'];
@@ -1478,7 +1477,7 @@ function yoast_track_comment_form() {
         jQuery('#<?php echo $comment_form_id; ?>').submit(function() {
             _gaq.push(
                 ['_setAccount','<?php echo $yoast_ga_options["uastring"]; ?>'],
-                ['_trackEvent','comment']
+                ['_trackEvent','comment','submit']
             );
         });
     });    

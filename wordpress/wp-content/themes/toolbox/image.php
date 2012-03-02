@@ -2,8 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 

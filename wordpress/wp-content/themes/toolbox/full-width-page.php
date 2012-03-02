@@ -3,8 +3,7 @@
  * Template Name: Full-width, no sidebar
  * Description: A full-width template with no sidebar
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 

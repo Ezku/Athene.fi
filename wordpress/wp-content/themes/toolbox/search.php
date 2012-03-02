@@ -2,8 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 

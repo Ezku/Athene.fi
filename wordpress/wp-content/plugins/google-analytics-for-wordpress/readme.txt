@@ -3,8 +3,8 @@ Contributors: joostdevalk
 Donate link: http://yoast.com/donate/
 Tags: analytics, google analytics, statistics, tracking, stats, google
 Requires at least: 2.8
-Tested up to: 3.2.1
-Stable tag: 4.2.2
+Tested up to: 3.3
+Stable tag: 4.2.4
 
 Track your WordPress site easily and with lots of metadata: views per author & category, automatic tracking of outbound clicks and pageviews.
 
@@ -43,10 +43,9 @@ Full list of features:
 
 Other interesting stuff:
 
-* Check out the other [Wordpress plugins](http://yoast.com/wordpress/) by the same author.
+* Check out the other [WordPress Plugins](http://yoast.com/wordpress/) by the same author.
 * Want to increase traffic to your WordPress blog? Check out the [WordPress SEO](http://yoast.com/articles/wordpress-seo/) Guide!
 * Check out the authors [WordPress Hosting](http://yoast.com/articles/wordpress-hosting/) experience. Good hosting is hard to come by, but it doesn't have to be expensive, Joost tells you why!
-* If you've still not seen enough, or you'd rather listen than read, check out the [WordPress Podcast](http://wp-community.org/), hosted by the author of this plugin and Frederick Townes, the creator of [W3 Total Cache](http://wordpress.org/extend/plugins/w3-total-cache/).
 
 == Installation ==
 
@@ -58,6 +57,16 @@ This section describes how to install the plugin and get it working.
 1. Go to the options panel under the 'Settings' menu and add your Analytics account number and set the settings you want.
 
 == Changelog ==
+
+= 4.2.4 =
+
+* Fixed bug introduced with 4.2.3 that wouldn't allow saving settings.
+* Now only flushing enabled W3TC caches.
+
+= 4.2.3 =
+
+* Removed Dashboard widget.
+* Improvements to comment form tracking.
 
 = 4.2.2 =
 
@@ -337,7 +346,3 @@ Because that's where it belongs. It makes the page load faster (yes, faster, due
 5. Screenshot of the debugging mode in action.
 
 == Upgrade Notice ==
-
-= 4.0.11 =
-
-You can now properly disable the comment form tracking, and the charset attribute on script tags is gone so you can validate as HTML5 too.

@@ -4,8 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 ?>

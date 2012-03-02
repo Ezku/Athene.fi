@@ -4,8 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 1.0
  */
 ?>

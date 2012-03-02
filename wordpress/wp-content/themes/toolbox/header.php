@@ -4,8 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package WordPress
- * @subpackage Toolbox
+ * @package Toolbox
  * @since Toolbox 0.1
  */
 ?><!DOCTYPE html>
@@ -58,6 +57,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
+<?php do_action( 'before' ); ?>
 	<header id="branding" role="banner">
 		<hgroup>
 			<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
