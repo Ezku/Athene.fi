@@ -74,7 +74,7 @@ th {
 }
 
 #access a {
-	font-size: 26px;
+	font-size: 22px;
 	line-height: 59px;
 	margin: 0;
 }
@@ -192,9 +192,14 @@ h1, h2, h3 {
 /* = spacing and layout
 -------------------------------------------------------------- */
 
-#main .container_16 {
-	margin-bottom: 3em;
+#main {
+	padding: 1em;
 }
+
+#main .container_16 {
+    margin-bottom: 1.4em; 
+}
+
 #main hgroup.container_16 {
 	margin-bottom: 0;
 }
@@ -464,13 +469,14 @@ a#twitter span, a#facebook span {
 }
 .entry-content {
 	background-color: #FBFBFB;
-	padding: 0.5em;
+	padding: 1.6em;
 }
 
 /* = content: news pages
 -------------------------------------------------------------- */
 .lcp_catlist li {
   list-style-type: none;
+  margin: 0;
 }
 
 .lcp_catlist li .date {
