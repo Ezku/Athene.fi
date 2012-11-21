@@ -23,14 +23,14 @@ get_header(); ?>
 		        // Keep track of whether container is open
 		        $containerOpen = false;
 		        // A new container will be started for every set of 4 widgets
-		        $gridContainerStart = cycle(function() use($containerOpen) {
+		        $gridContainerStart = cycle(function() use(&$containerOpen) {
 		            $containerOpen = true;
 		            return '<div class="container_16 clearfix">';
 		        }, '', '', '');
 		        // The container will be closed after every set of 4 widgets
-		        $gridContainerEnd = cycle('', '', '', function() use($containerOpen) {
+		        $gridContainerEnd = cycle('', '', '', function() use(&$containerOpen) {
 		            $containerOpen = false;
-		            return '</div>';
+		            return "</div>\n";
 		        });
 		        // Each set of 4 widgets within containers will get these classes
 		        $gridClass = cycle('grid_4 alpha', 'grid_4', 'grid_4', 'grid_4 omega');
@@ -39,6 +39,7 @@ get_header(); ?>
 			    <?php for($i=1; $i<13; $i++): ?>
       			    <?php if ( is_active_sidebar( 'index-widget-'.$i ) ) : ?>
       			        <?php echo $gridContainerStart() ?>
+
               		        <div class="widget-area <?php echo $gridClass() ?>" role="complementary">
               			        <?php dynamic_sidebar( 'index-widget-'.$i ); ?>
               		        </div>
